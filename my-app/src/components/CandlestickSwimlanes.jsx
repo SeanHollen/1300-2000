@@ -56,11 +56,26 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     setCursorX(null);
   };
 
+  useEffect(() => {
+    const container = containerRef.current;
+    if (!container) return;
+
+    const handleWheel = (e) => {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+        document.documentElement.scrollLeft += e.deltaY;
+      }
+    };
+
+    container.addEventListener('wheel', handleWheel);
+    
+    return () => container.removeEventListener('wheel', handleWheel);
+  }, []);
+
   const svgPad = 150;
   const axisHeight = 40;
   const laneCount = data.length;
   const windowHeight = typeof window !== 'undefined' ? window.innerHeight - 20 : 800;
-  const laneUnit = (windowHeight - svgPad) / (laneCount + 0.5);
+  const laneUnit = (windowHeight - 50) / (laneCount + 0.5);
   const lanePct = 0.1;
   const laneThickness = laneUnit * lanePct;
   const lanePadding = laneUnit * (1 - lanePct);
@@ -75,6 +90,12 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
   const yearToX = (year) => {
     const yearPosition = (year - startYear) / yearRange;
     return yearPosition * chartWidth;
+  };
+
+  // Convert x position back to year
+  const xToYear = (x) => {
+    const yearPosition = x / chartWidth;
+    return Math.round(startYear + yearPosition * yearRange);
   };
 
   // Helper function to constrain tooltip position
@@ -281,15 +302,35 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
 
         {/* Vertical cursor line */}
         {cursorX !== null && (
-          <line
-            x1={cursorX}
-            y1={axisHeight}
-            x2={cursorX}
-            y2={data.length * (laneThickness + lanePadding) + svgPad}
-            stroke="#374151"
-            strokeWidth="1"
-            strokeDasharray="4 4"
-          />
+          <>
+            <line
+              x1={cursorX}
+              y1={axisHeight}
+              x2={cursorX}
+              y2={data.length * (laneThickness + lanePadding) + svgPad}
+              stroke="#374151"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+            />
+            <g transform={`translate(${cursorX}, ${axisHeight})`}>
+              <rect
+                x="-20"
+                y="12"
+                width="40"
+                height="20"
+                fill="white"
+                rx="4"
+              />
+              <text
+                y="25"
+                textAnchor="middle"
+                fontSize="12"
+                fill="#374151"
+              >
+                {xToYear(cursorX)}
+              </text>
+            </g>
+          </>
         )}
       </svg>
     </div>
