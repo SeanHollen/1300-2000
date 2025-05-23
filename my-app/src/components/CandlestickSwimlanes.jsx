@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
 import { mockData } from "../data/swimlaneRandomData";
+// import { mockData } from "../data/revolutionsData";
 import "../styles/swimlanes.css";
 // import { Tooltip } from "@/components/ui/tooltip";
 
@@ -14,7 +15,6 @@ export default function CandlestickSwimlanes({ data = mockData }) {
       const newWidth = bbox.width + 20;
       const newX = -bbox.width / 2 - 10;
       
-      // Only update if dimensions have changed
       if (newWidth !== tooltipDimensions.width || newX !== tooltipDimensions.x) {
         setTooltipDimensions({
           width: newWidth,
@@ -32,14 +32,14 @@ export default function CandlestickSwimlanes({ data = mockData }) {
     setTooltip({
       x: pointX,
       y: pointY,
-      content: item.description,
+      content: item.label,
     });
   };
 
   const svgPad = 100;
-  const screenHeight = window.innerHeight - svgPad;
   const laneCount = data.length;
-  const laneUnit = (screenHeight / laneCount);
+  const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
+  const laneUnit = windowHeight / (laneCount + 0.5);
   const lanePct = 0.1;
   const laneThickness = laneUnit * lanePct;
   const lanePadding = laneUnit * (1 - lanePct);
@@ -47,13 +47,10 @@ export default function CandlestickSwimlanes({ data = mockData }) {
   const segmentPct = 0.5;
   const segmentThickness = laneUnit * segmentPct;
   const pointRadius = 12;
-
-  // Define the year range for the timeline
-  const startYear = 1400;  // Adjust these values based on your needs
+  const startYear = 1400;
   const endYear = 2024;
   const yearRange = endYear - startYear;
 
-  // Convert a year to x-coordinate
   const yearToX = (year) => {
     const yearPosition = (year - startYear) / yearRange;
     return yearPosition * chartWidth;
@@ -69,15 +66,53 @@ export default function CandlestickSwimlanes({ data = mockData }) {
               <rect x="0" y={String(-laneThickness/2)} width={chartWidth} height={laneThickness} className="swimlane-lane" />
               {lane.items.map((item, idx) => {
                 if (item.type === "segment") {
+                  const segmentX = yearToX(item.start);
+                  const segmentWidth = yearToX(item.end) - yearToX(item.start);
+                  const centerX = segmentX + segmentWidth / 2;
+                  
                   return (
-                    <rect
-                      key={idx}
-                      x={yearToX(item.start)}
-                      y={-segmentThickness / 2}
-                      width={yearToX(item.end) - yearToX(item.start)}
-                      height={String(segmentThickness)}
-                      className="swimlane-segment"
-                    />
+                    <g key={idx}>
+                      <rect
+                        x={segmentX}
+                        y={-segmentThickness / 2}
+                        width={segmentWidth}
+                        height={String(segmentThickness)}
+                        className="swimlane-segment"
+                      />
+                      <g transform={`translate(${centerX}, -30)`}>
+                        <rect
+                          x="-60"
+                          y="-20"
+                          width="120"
+                          height="24"
+                          rx="5"
+                          ry="5"
+                          fill="white"
+                          stroke="rgba(0,0,0,0.1)"
+                          strokeWidth="1"
+                          ref={el => {
+                            if (el) {
+                              const text = el.nextSibling;
+                              if (text) {
+                                const bbox = text.getBBox();
+                                el.setAttribute('width', bbox.width + 20);
+                                el.setAttribute('x', -bbox.width/2 - 10);
+                              }
+                            }
+                          }}
+                        />
+                        <text
+                          x="0"
+                          y="-8"
+                          textAnchor="middle"
+                          dominantBaseline="middle"
+                          fontSize="12"
+                          fill="#374151"
+                        >
+                          {item.label}
+                        </text>
+                      </g>
+                    </g>
                   );
                 } else if (item.type === "point") {
                   const pointX = yearToX(item.at);

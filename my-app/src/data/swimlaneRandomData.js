@@ -9,8 +9,7 @@ export const mockData = [
         return {
           type: "point",
           at: baseYear + randomOffset,
-          label: `Lane 1 - Event ${i + 1}`,
-          description: `Historical event in year ${baseYear + randomOffset}`,
+          label: `Historical event in year ${baseYear + randomOffset}`,
         };
       }),
     ],
@@ -25,8 +24,7 @@ export const mockData = [
         return {
           type: "point",
           at: baseYear + randomOffset,
-          label: `Lane 2 - Event ${i + 1}`,
-          description: `Historical event in year ${baseYear + randomOffset}`,
+          label: `Historical event in year ${baseYear + randomOffset}`,
         };
       }),
     ],
@@ -41,8 +39,7 @@ export const mockData = [
         return {
           type: "point",
           at: baseYear + randomOffset,
-          label: `Lane 3 - Event ${i + 1}`,
-          description: `Historical event in year ${baseYear + randomOffset}`,
+          label: `Historical event in year ${baseYear + randomOffset}`,
         };
       }),
     ],
@@ -57,8 +54,7 @@ export const mockData = [
         return {
           type: "point",
           at: baseYear + randomOffset,
-          label: `Lane 4 - Event ${i + 1}`,
-          description: `Historical event in year ${baseYear + randomOffset}`,
+          label: `Historical event in year ${baseYear + randomOffset}`,
         };
       }),
     ],
@@ -73,8 +69,7 @@ export const mockData = [
         return {
           type: "point",
           at: baseYear + randomOffset,
-          label: `Lane 5 - Event ${i + 1}`,
-          description: `Historical event in year ${baseYear + randomOffset}`,
+          label: `Historical event in year ${baseYear + randomOffset}`,
         };
       }),
     ],

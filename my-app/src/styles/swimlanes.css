@@ -4,10 +4,12 @@
 
 .swimlane-lane {
   fill: #f0f0f0;
+  fill-opacity: 0.6;
 }
 
 .swimlane-segment {
   fill: #9ac4f3;
+  fill-opacity: 0.7;
 }
 
 .swimlane-point {
