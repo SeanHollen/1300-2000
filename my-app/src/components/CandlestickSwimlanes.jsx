@@ -1,12 +1,11 @@
 import React, { useState, useRef, useEffect } from "react";
-import { mockData } from "../data/swimlaneRandomData";
-// import { mockData } from "../data/revolutionsData";
+import { historicalData } from "../data/revolutionsData";
 import "../styles/swimlanes.css";
-// import { Tooltip } from "@/components/ui/tooltip";
 
-export default function CandlestickSwimlanes({ data = mockData }) {
+export default function CandlestickSwimlanes({ data = historicalData }) {
   const [tooltip, setTooltip] = useState(null);
   const [tooltipDimensions, setTooltipDimensions] = useState({ width: 120, x: -60 });
+  const [activeSegment, setActiveSegment] = useState(null);
   const containerRef = useRef(null);
 
   const tooltipTextRef = (element) => {
@@ -32,6 +31,7 @@ export default function CandlestickSwimlanes({ data = mockData }) {
     setTooltip({
       x: pointX,
       y: pointY,
+      year: item.at,
       content: item.label,
     });
   };
@@ -47,7 +47,7 @@ export default function CandlestickSwimlanes({ data = mockData }) {
   const segmentPct = 0.5;
   const segmentThickness = laneUnit * segmentPct;
   const pointRadius = 12;
-  const startYear = 1400;
+  const startYear = 1300;
   const endYear = 2024;
   const yearRange = endYear - startYear;
 
@@ -56,22 +56,32 @@ export default function CandlestickSwimlanes({ data = mockData }) {
     return yearPosition * chartWidth;
   };
 
+  // Helper function to constrain tooltip position
+  const constrainTooltipPosition = (x, tooltipWidth) => {
+    const padding = 10; // Minimum padding from SVG edges
+    return Math.min(Math.max(x, tooltipWidth/2 + padding), chartWidth - tooltipWidth/2 - padding);
+  };
+
   return (
     <div className="w-screen h-screen swimlane-container relative m-0" ref={containerRef}>
       <svg width={chartWidth} height={data.length * (laneThickness + lanePadding) + svgPad} className="overflow-hidden">
+        {/* First render all lanes and segments */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
           return (
-            <g key={laneIndex} transform={`translate(0, ${y})`}>
+            <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
               <rect x="0" y={String(-laneThickness/2)} width={chartWidth} height={laneThickness} className="swimlane-lane" />
               {lane.items.map((item, idx) => {
                 if (item.type === "segment") {
                   const segmentX = yearToX(item.start);
                   const segmentWidth = yearToX(item.end) - yearToX(item.start);
-                  const centerX = segmentX + segmentWidth / 2;
                   
                   return (
-                    <g key={idx}>
+                    <g 
+                      key={`segment-${laneIndex}-${idx}`}
+                      onMouseEnter={() => setActiveSegment({ laneIndex, itemIndex: idx })}
+                      onMouseLeave={() => setActiveSegment(null)}
+                    >
                       <rect
                         x={segmentX}
                         y={-segmentThickness / 2}
@@ -79,39 +89,6 @@ export default function CandlestickSwimlanes({ data = mockData }) {
                         height={String(segmentThickness)}
                         className="swimlane-segment"
                       />
-                      <g transform={`translate(${centerX}, -30)`}>
-                        <rect
-                          x="-60"
-                          y="-20"
-                          width="120"
-                          height="24"
-                          rx="5"
-                          ry="5"
-                          fill="white"
-                          stroke="rgba(0,0,0,0.1)"
-                          strokeWidth="1"
-                          ref={el => {
-                            if (el) {
-                              const text = el.nextSibling;
-                              if (text) {
-                                const bbox = text.getBBox();
-                                el.setAttribute('width', bbox.width + 20);
-                                el.setAttribute('x', -bbox.width/2 - 10);
-                              }
-                            }
-                          }}
-                        />
-                        <text
-                          x="0"
-                          y="-8"
-                          textAnchor="middle"
-                          dominantBaseline="middle"
-                          fontSize="12"
-                          fill="#374151"
-                        >
-                          {item.label}
-                        </text>
-                      </g>
                     </g>
                   );
                 } else if (item.type === "point") {
@@ -134,9 +111,74 @@ export default function CandlestickSwimlanes({ data = mockData }) {
           );
         })}
 
-        {/* Place the tooltip elements after all lanes are rendered */}
+        {/* Then render all tooltips in a separate group */}
+        {data.map((lane, laneIndex) => {
+          const y = laneIndex * (laneThickness + lanePadding) + svgPad;
+          return (
+            <g key={`tooltips-${laneIndex}`}>
+              {lane.items
+                .map((item, idx) => ({ item, idx }))
+                .sort((a, b) => {
+                  if (activeSegment?.laneIndex === laneIndex) {
+                    if (a.idx === activeSegment.itemIndex) return 1;
+                    if (b.idx === activeSegment.itemIndex) return -1;
+                  }
+                  return 0;
+                })
+                .map(({ item, idx }) => {
+                  if (item.type === "segment") {
+                    const segmentX = yearToX(item.start);
+                    const segmentWidth = yearToX(item.end) - yearToX(item.start);
+                    const centerX = segmentX + segmentWidth / 2;
+                    const constrainedX = constrainTooltipPosition(centerX, tooltipDimensions.width);
+                    
+                    return (
+                      <g key={`tooltip-${laneIndex}-${idx}`} transform={`translate(0, ${y})`}>
+                        <g transform={`translate(${constrainedX}, -30)`}>
+                          <rect
+                            x="-60"
+                            y="-20"
+                            width="120"
+                            height="24"
+                            rx="5"
+                            ry="5"
+                            fill="white"
+                            stroke="rgba(0,0,0,0.1)"
+                            strokeWidth="1"
+                            ref={el => {
+                              if (el) {
+                                const text = el.nextSibling;
+                                if (text) {
+                                  const bbox = text.getBBox();
+                                  el.setAttribute('width', bbox.width + 20);
+                                  el.setAttribute('x', -bbox.width/2 - 10);
+                                }
+                              }
+                            }}
+                          />
+                          <text
+                            x="0"
+                            y="-8"
+                            textAnchor="middle"
+                            dominantBaseline="middle"
+                            fontSize="12"
+                            fill="#374151"
+                          >
+                            {`${item.label} (${item.start})`}
+                          </text>
+                        </g>
+                      </g>
+                    );
+                  }
+                  return null;
+                })}
+            </g>
+          );
+        })}
+
+        {/* Point tooltips remain at the end since they're temporary */}
         {tooltip && (
-          <g transform={`translate(${tooltip.x}, ${tooltip.y - 30})`}>
+          <g transform={`translate(${constrainTooltipPosition(tooltip.x, tooltipDimensions.width)}, ${tooltip.y - 30})`}>
             <rect
               x={tooltipDimensions.x}
               y="-20"
@@ -157,7 +199,7 @@ export default function CandlestickSwimlanes({ data = mockData }) {
               fontSize="12"
               fill="#374151"
             >
-              {tooltip.content}
+              {`${tooltip.content} (${tooltip.year})`}
             </text>
           </g>
         )}
