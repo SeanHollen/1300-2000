@@ -1,0 +1,20 @@
+.swimlane-container {
+  background-color: white;
+}
+
+.swimlane-lane {
+  fill: #f0f0f0;
+}
+
+.swimlane-segment {
+  fill: #9ac4f3;
+}
+
+.swimlane-point {
+  fill: #D0021B;
+}
+
+.swimlane-tooltip {
+  background-color: black;
+  color: white;
+}
