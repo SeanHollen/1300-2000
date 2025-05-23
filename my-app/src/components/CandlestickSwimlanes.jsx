@@ -3,9 +3,10 @@ import { historicalData } from "../data/revolutionsData";
 import "../styles/swimlanes.css";
 
 export default function CandlestickSwimlanes({ data = historicalData }) {
-  const [tooltip, setTooltip] = useState(null);
-  const [tooltipDimensions, setTooltipDimensions] = useState({ width: 120, x: -60 });
+  const [pointTooltip, setPointTooltip] = useState(null);
+  const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
   const [activeSegment, setActiveSegment] = useState(null);
+  const [cursorX, setCursorX] = useState(null);
   const containerRef = useRef(null);
 
   const tooltipTextRef = (element) => {
@@ -14,8 +15,8 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
       const newWidth = bbox.width + 20;
       const newX = -bbox.width / 2 - 10;
       
-      if (newWidth !== tooltipDimensions.width || newX !== tooltipDimensions.x) {
-        setTooltipDimensions({
+      if (newWidth !== tooltipMeasurements.width || newX !== tooltipMeasurements.x) {
+        setTooltipMeasurements({
           width: newWidth,
           x: newX
         });
@@ -25,10 +26,10 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
 
   const handlePointHover = (e, item, pointX, pointY) => {
     if (!item) {
-      setTooltip(null);
+      setPointTooltip(null);
       return;
     }
-    setTooltip({
+    setPointTooltip({
       x: pointX,
       y: pointY,
       year: item.at,
@@ -36,10 +37,30 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     });
   };
 
-  const svgPad = 100;
+  const handleClick = (url) => {
+    if (url) {
+      window.open(url, '_blank');
+    }
+  };
+
+  const handleMouseMove = (e) => {
+    if (containerRef.current) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const scrollLeft = containerRef.current.scrollLeft;
+      const x = e.clientX - rect.left + scrollLeft;
+      setCursorX(x);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setCursorX(null);
+  };
+
+  const svgPad = 150;
+  const axisHeight = 40;
   const laneCount = data.length;
-  const windowHeight = typeof window !== 'undefined' ? window.innerHeight : 800;
-  const laneUnit = windowHeight / (laneCount + 0.5);
+  const windowHeight = typeof window !== 'undefined' ? window.innerHeight - 20 : 800;
+  const laneUnit = (windowHeight - svgPad) / (laneCount + 0.5);
   const lanePct = 0.1;
   const laneThickness = laneUnit * lanePct;
   const lanePadding = laneUnit * (1 - lanePct);
@@ -62,9 +83,58 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     return Math.min(Math.max(x, tooltipWidth/2 + padding), chartWidth - tooltipWidth/2 - padding);
   };
 
+  // Generate decade ticks
+  const generateDecadeTicks = () => {
+    const ticks = [];
+    const startDecade = Math.floor(startYear / 10) * 10;
+    const endDecade = Math.ceil(endYear / 10) * 10;
+    for (let year = startDecade; year <= endDecade; year += 10) {
+      ticks.push(year);
+    }
+    return ticks;
+  };
+
   return (
-    <div className="w-screen h-screen swimlane-container relative m-0" ref={containerRef}>
+    <div 
+      className="w-screen h-screen swimlane-container relative m-0" 
+      ref={containerRef}
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
       <svg width={chartWidth} height={data.length * (laneThickness + lanePadding) + svgPad} className="overflow-hidden">
+        {/* Add X-axis ticks and labels */}
+        <g transform={`translate(0, ${axisHeight})`}>
+          {generateDecadeTicks().map(year => {
+            const x = yearToX(year);
+            return (
+              <g key={`tick-${year}`} transform={`translate(${x}, 0)`}>
+                <line
+                  y1="0"
+                  y2="10"
+                  stroke="#374151"
+                  strokeWidth="1"
+                />
+                <text
+                  y="25"
+                  textAnchor="middle"
+                  fontSize="12"
+                  fill="#374151"
+                >
+                  {year}
+                </text>
+              </g>
+            );
+          })}
+          <line
+            x1="0"
+            y1="0"
+            x2={chartWidth}
+            y2="0"
+            stroke="#374151"
+            strokeWidth="1"
+          />
+        </g>
+
         {/* First render all lanes and segments */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
@@ -81,6 +151,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                       key={`segment-${laneIndex}-${idx}`}
                       onMouseEnter={() => setActiveSegment({ laneIndex, itemIndex: idx })}
                       onMouseLeave={() => setActiveSegment(null)}
+                      onClick={() => handleClick(item.url)}
                     >
                       <rect
                         x={segmentX}
@@ -94,15 +165,19 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                 } else if (item.type === "point") {
                   const pointX = yearToX(item.at);
                   return (
-                    <circle
-                      key={idx}
-                      cx={pointX}
-                      cy="0"
-                      r={String(pointRadius)}
-                      className="swimlane-point"
-                      onMouseEnter={(e) => handlePointHover(e, item, pointX, y)}
-                      onMouseLeave={() => handlePointHover(null)}
-                    />
+                    <g
+                      key={`point-${laneIndex}-${idx}`}
+                      onClick={() => handleClick(item.url)}
+                    >
+                      <circle
+                        cx={pointX}
+                        cy="0"
+                        r={String(pointRadius)}
+                        className="swimlane-point"
+                        onMouseEnter={(e) => handlePointHover(e, item, pointX, y)}
+                        onMouseLeave={() => handlePointHover(null)}
+                      />
+                    </g>
                   );
                 }
                 return null;
@@ -130,7 +205,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                     const segmentX = yearToX(item.start);
                     const segmentWidth = yearToX(item.end) - yearToX(item.start);
                     const centerX = segmentX + segmentWidth / 2;
-                    const constrainedX = constrainTooltipPosition(centerX, tooltipDimensions.width);
+                    const constrainedX = constrainTooltipPosition(centerX, tooltipMeasurements.width);
                     
                     return (
                       <g key={`tooltip-${laneIndex}-${idx}`} transform={`translate(0, ${y})`}>
@@ -177,12 +252,12 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
         })}
 
         {/* Point tooltips remain at the end since they're temporary */}
-        {tooltip && (
-          <g transform={`translate(${constrainTooltipPosition(tooltip.x, tooltipDimensions.width)}, ${tooltip.y - 30})`}>
+        {pointTooltip && (
+          <g transform={`translate(${constrainTooltipPosition(pointTooltip.x, tooltipMeasurements.width)}, ${pointTooltip.y - 30})`}>
             <rect
-              x={tooltipDimensions.x}
+              x={tooltipMeasurements.x}
               y="-20"
-              width={tooltipDimensions.width}
+              width={tooltipMeasurements.width}
               height="24"
               rx="5"
               ry="5"
@@ -199,9 +274,22 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
               fontSize="12"
               fill="#374151"
             >
-              {`${tooltip.content} (${tooltip.year})`}
+              {`${pointTooltip.content} (${pointTooltip.year})`}
             </text>
           </g>
+        )}
+
+        {/* Vertical cursor line */}
+        {cursorX !== null && (
+          <line
+            x1={cursorX}
+            y1={axisHeight}
+            x2={cursorX}
+            y2={data.length * (laneThickness + lanePadding) + svgPad}
+            stroke="#374151"
+            strokeWidth="1"
+            strokeDasharray="4 4"
+          />
         )}
       </svg>
     </div>
