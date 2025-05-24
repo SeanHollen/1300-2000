@@ -5,7 +5,7 @@ import "../styles/swimlanes.css";
 export default function CandlestickSwimlanes({ data = historicalData }) {
   const [pointTooltip, setPointTooltip] = useState(null);
   const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
-  const [activeSegment, setActiveSegment] = useState(null);
+  const [interactionOrder, setInteractionOrder] = useState([]);
   const [cursorX, setCursorX] = useState(null);
   const containerRef = useRef(null);
 
@@ -84,7 +84,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
   const segmentThickness = laneUnit * segmentPct;
   const pointRadius = 12;
   const startYear = 1300;
-  const endYear = 2024;
+  const endYear = 2000;
   const yearRange = endYear - startYear;
 
   const yearToX = (year) => {
@@ -113,6 +113,14 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
       ticks.push(year);
     }
     return ticks;
+  };
+
+  const handleSegmentHover = (laneIndex, idx) => {
+    const segmentId = `${laneIndex}-${idx}`;
+    setInteractionOrder(prev => {
+      const newOrder = prev.filter(id => id !== segmentId);
+      return [...newOrder, segmentId];
+    });
   };
 
   return (
@@ -156,12 +164,54 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           />
         </g>
 
-        {/* First render all lanes and segments */}
+        {/* First render all lanes */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
           return (
             <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
               <rect x="0" y={String(-laneThickness/2)} width={chartWidth} height={laneThickness} className="swimlane-lane" />
+            </g>
+          );
+        })}
+
+        {/* Vertical cursor line - now between lanes and segments */}
+        {cursorX !== null && (
+          <>
+            <line
+              x1={cursorX}
+              y1={axisHeight}
+              x2={cursorX}
+              y2={data.length * (laneThickness + lanePadding) + svgPad}
+              stroke="#374151"
+              strokeWidth="1"
+              strokeDasharray="4 4"
+            />
+            <g transform={`translate(${cursorX}, ${axisHeight})`}>
+              <rect
+                x="-20"
+                y="12"
+                width="40"
+                height="20"
+                fill="white"
+                rx="4"
+              />
+              <text
+                y="25"
+                textAnchor="middle"
+                fontSize="12"
+                fill="#374151"
+              >
+                {xToYear(cursorX)}
+              </text>
+            </g>
+          </>
+        )}
+
+        {/* Then render all segments and points */}
+        {data.map((lane, laneIndex) => {
+          const y = laneIndex * (laneThickness + lanePadding) + svgPad;
+          return (
+            <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
               {lane.items.map((item, idx) => {
                 if (item.type === "segment") {
                   const segmentX = yearToX(item.start);
@@ -170,9 +220,9 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                   return (
                     <g 
                       key={`segment-${laneIndex}-${idx}`}
-                      onMouseEnter={() => setActiveSegment({ laneIndex, itemIndex: idx })}
-                      onMouseLeave={() => setActiveSegment(null)}
+                      onMouseEnter={() => handleSegmentHover(laneIndex, idx)}
                       onClick={() => handleClick(item.url)}
+                      style={{ cursor: item.url ? 'pointer' : 'default' }}
                     >
                       <rect
                         x={segmentX}
@@ -189,6 +239,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                     <g
                       key={`point-${laneIndex}-${idx}`}
                       onClick={() => handleClick(item.url)}
+                      style={{ cursor: item.url ? 'pointer' : 'default' }}
                     >
                       <circle
                         cx={pointX}
@@ -213,13 +264,15 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           return (
             <g key={`tooltips-${laneIndex}`}>
               {lane.items
-                .map((item, idx) => ({ item, idx }))
+                .map((item, idx) => ({ item, idx, order: interactionOrder.indexOf(`${laneIndex}-${idx}`) }))
                 .sort((a, b) => {
-                  if (activeSegment?.laneIndex === laneIndex) {
-                    if (a.idx === activeSegment.itemIndex) return 1;
-                    if (b.idx === activeSegment.itemIndex) return -1;
-                  }
-                  return 0;
+                  // If neither has been interacted with, maintain original order
+                  if (a.order === -1 && b.order === -1) return 0;
+                  // If only one has been interacted with, it goes on top
+                  if (a.order === -1) return -1;
+                  if (b.order === -1) return 1;
+                  // Otherwise, sort by interaction order
+                  return a.order - b.order;
                 })
                 .map(({ item, idx }) => {
                   if (item.type === "segment") {
@@ -298,39 +351,6 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
               {`${pointTooltip.content} (${pointTooltip.year})`}
             </text>
           </g>
-        )}
-
-        {/* Vertical cursor line */}
-        {cursorX !== null && (
-          <>
-            <line
-              x1={cursorX}
-              y1={axisHeight}
-              x2={cursorX}
-              y2={data.length * (laneThickness + lanePadding) + svgPad}
-              stroke="#374151"
-              strokeWidth="1"
-              strokeDasharray="4 4"
-            />
-            <g transform={`translate(${cursorX}, ${axisHeight})`}>
-              <rect
-                x="-20"
-                y="12"
-                width="40"
-                height="20"
-                fill="white"
-                rx="4"
-              />
-              <text
-                y="25"
-                textAnchor="middle"
-                fontSize="12"
-                fill="#374151"
-              >
-                {xToYear(cursorX)}
-              </text>
-            </g>
-          </>
         )}
       </svg>
     </div>
