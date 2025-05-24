@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { historicalData } from "../data/revolutionsData";
+import { historicalData } from "../data/laneData/revolutionsData";
+import { lineChartData } from "../data/lineChartData/historicalTrends";
 import "../styles/swimlanes.css";
 
 export default function CandlestickSwimlanes({ data = historicalData }) {
@@ -123,6 +124,20 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     });
   };
 
+  // Create the SVG path string for a single line
+  const createLinePath = (points) => {
+    const totalHeight = data.length * (laneThickness + lanePadding) + svgPad;
+    const bottomPadding = 20;
+    
+    return points.reduce((path, point, i) => {
+      const x = yearToX(point.year);
+      // Map the value (100-800) to our SVG space
+      const normalizedValue = (point.value - 100) / (800 - 100); // Convert to 0-1 range
+      const y = (totalHeight - bottomPadding) - (normalizedValue * ((totalHeight - bottomPadding) - axisHeight));
+      return path + (i === 0 ? `M ${x},${y}` : ` L ${x},${y}`);
+    }, '');
+  };
+
   return (
     <div 
       className="w-screen h-screen swimlane-container relative m-0" 
@@ -131,7 +146,19 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
       onMouseLeave={handleMouseLeave}
     >
       <svg width={chartWidth} height={data.length * (laneThickness + lanePadding) + svgPad} className="overflow-hidden">
-        {/* Add X-axis ticks and labels */}
+        {/* Background Line Charts */}
+        {lineChartData.map((lineData) => (
+          <path
+            key={lineData.id}
+            d={createLinePath(lineData.points)}
+            stroke={lineData.color}
+            strokeWidth="2"
+            fill="none"
+            opacity="0.2"
+          />
+        ))}
+
+        {/* X-Axis Ticks and Labels */}
         <g transform={`translate(0, ${axisHeight})`}>
           {generateDecadeTicks().map(year => {
             const x = yearToX(year);
@@ -164,7 +191,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           />
         </g>
 
-        {/* First render all lanes */}
+        {/* Swimlane Lines */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
           return (
@@ -174,7 +201,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           );
         })}
 
-        {/* Vertical cursor line - now between lanes and segments */}
+        {/* Vertical Cursor Line */}
         {cursorX !== null && (
           <>
             <line
@@ -207,7 +234,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           </>
         )}
 
-        {/* Then render all segments and points */}
+        {/* Segments and Points */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
           return (
@@ -258,7 +285,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           );
         })}
 
-        {/* Then render all tooltips in a separate group */}
+        {/* Segment Tooltips (permanent) */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
           return (
@@ -325,7 +352,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           );
         })}
 
-        {/* Point tooltips remain at the end since they're temporary */}
+        {/* Point Tooltips (temporary) */}
         {pointTooltip && (
           <g transform={`translate(${constrainTooltipPosition(pointTooltip.x, tooltipMeasurements.width)}, ${pointTooltip.y - 30})`}>
             <rect
