@@ -1,6 +1,7 @@
 export const historicalData = [
   {
     lane: "Wars and Revolutions",
+    icon: "sword",
     items: [
       { 
         type: "segment",
@@ -110,6 +111,7 @@ export const historicalData = [
   },
   {
     lane: "Technology and Industry",
+    icon: "cog",
     items: [
       { 
         type: "segment",
@@ -132,6 +134,7 @@ export const historicalData = [
   },
   {
     lane: "Religion and Culture",
+    icon: "book",
     items: [
       { 
         type: "segment",
@@ -154,6 +157,7 @@ export const historicalData = [
   },
   {
     lane: "Health and Disease",
+    icon: "vaccine",
     items: [
       { 
         type: "segment",
@@ -176,6 +180,7 @@ export const historicalData = [
   },
   {
     lane: "Politics, Philosophy, and Law",
+    icon: "scale",
     items: [
       { 
         type: "segment",
@@ -198,6 +203,7 @@ export const historicalData = [
   },
   {
     lane: "Exploration and Trade",
+    icon: "ship",
     items: [
       { 
         type: "segment",
@@ -220,6 +226,7 @@ export const historicalData = [
   },
   {
     lane: "Science",
+    icon: "telescope",
     items: [
       { 
         type: "segment",

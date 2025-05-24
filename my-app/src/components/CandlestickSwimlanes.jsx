@@ -1,6 +1,8 @@
 import React, { useState, useRef, useEffect } from "react";
-import { historicalData } from "../data/laneData/revolutionsData";
+import { historicalData } from "../data/laneData/timelineData";
 import { lineChartData } from "../data/lineChartData/historicalTrends";
+import { FaCog, FaBook, FaBalanceScale } from "react-icons/fa";
+import { GiCrossedSwords, GiSailboat, GiSpyglass, GiSyringe } from "react-icons/gi";
 import "../styles/swimlanes.css";
 
 export default function CandlestickSwimlanes({ data = historicalData }) {
@@ -93,19 +95,16 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     return yearPosition * chartWidth;
   };
 
-  // Convert x position back to year
   const xToYear = (x) => {
     const yearPosition = x / chartWidth;
     return Math.round(startYear + yearPosition * yearRange);
   };
 
-  // Helper function to constrain tooltip position
   const constrainTooltipPosition = (x, tooltipWidth) => {
     const padding = 10; // Minimum padding from SVG edges
     return Math.min(Math.max(x, tooltipWidth/2 + padding), chartWidth - tooltipWidth/2 - padding);
   };
 
-  // Generate decade ticks
   const generateDecadeTicks = () => {
     const ticks = [];
     const startDecade = Math.floor(startYear / 10) * 10;
@@ -124,7 +123,6 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     });
   };
 
-  // Create the SVG path string for a single line
   const createLinePath = (points) => {
     const totalHeight = data.length * (laneThickness + lanePadding) + svgPad;
     const bottomPadding = 20;
@@ -136,6 +134,19 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
       const y = (totalHeight - bottomPadding) - (normalizedValue * ((totalHeight - bottomPadding) - axisHeight));
       return path + (i === 0 ? `M ${x},${y}` : ` L ${x},${y}`);
     }, '');
+  };
+
+  const iconRadius = 20; // Smaller radius (was 24)
+
+  // Map of icon types to components
+  const iconMap = {
+    sword: GiCrossedSwords,
+    cog: FaCog,
+    book: FaBook,
+    vaccine: GiSyringe,
+    scale: FaBalanceScale,
+    ship: GiSailboat,
+    telescope: GiSpyglass
   };
 
   return (
@@ -191,12 +202,70 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
           />
         </g>
 
-        {/* Swimlane Lines */}
+        {/* Swimlane Lines with Icons */}
         {data.map((lane, laneIndex) => {
           const y = laneIndex * (laneThickness + lanePadding) + svgPad;
+          const IconComponent = iconMap[lane.icon] || FaCog; // Fallback to cog if icon not found
+          
           return (
             <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
+              {/* Lane background */}
               <rect x="0" y={String(-laneThickness/2)} width={chartWidth} height={laneThickness} className="swimlane-lane" />
+              
+              {/* Lane Icon Container */}
+              <foreignObject 
+                x={90} 
+                y={-iconRadius} 
+                width={iconRadius * 2} 
+                height={iconRadius * 2}
+                style={{ overflow: 'visible' }}
+              >
+                <div
+                  style={{
+                    position: 'relative',
+                    width: '100%',
+                    height: '100%'
+                  }}
+                >
+                  <div
+                    style={{
+                      position: 'absolute',
+                      width: '200px',
+                      left: '50%',
+                      bottom: '100%',
+                      transform: 'translateX(-50%)',
+                      marginBottom: '5px',
+                      fontSize: '14px',
+                      color: '#374151',
+                      textAlign: 'center',
+                      whiteSpace: 'nowrap',
+                      fontWeight: '500'
+                    }}
+                  >
+                    {lane.lane}
+                  </div>
+                  <div
+                    style={{
+                      width: '100%',
+                      height: '100%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      background: 'rgba(255, 255, 255, 0.8)',
+                      borderRadius: '50%',
+                      border: '2px solid rgba(55, 65, 81, 0.8)'
+                    }}
+                  >
+                    <IconComponent 
+                      style={{ 
+                        width: '65%', 
+                        height: '65%', 
+                        color: 'rgba(55, 65, 81, 0.8)' 
+                      }} 
+                    />
+                  </div>
+                </div>
+              </foreignObject>
             </g>
           );
         })}
