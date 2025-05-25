@@ -124,14 +124,14 @@ export default function CandlestickGraph({ data = historicalData }) {
     });
   };
 
-  const createLinePath = (points) => {
+  const createLinePath = (points, range) => {
     const totalHeight = data.length * (laneThickness + lanePadding) + svgPad;
     const bottomPadding = 20;
     
     return points.reduce((path, point, i) => {
       const x = yearToX(point.year);
-      // Map the value (100-800) to our SVG space
-      const normalizedValue = (point.value - 100) / (800 - 100); // Convert to 0-1 range
+      // Map the value to our SVG space using the provided range
+      const normalizedValue = (point.value - range.start) / (range.end - range.start); // Convert to 0-1 range
       const y = (totalHeight - bottomPadding) - (normalizedValue * ((totalHeight - bottomPadding) - axisHeight));
       return path + (i === 0 ? `M ${x},${y}` : ` L ${x},${y}`);
     }, '');
@@ -160,21 +160,24 @@ export default function CandlestickGraph({ data = historicalData }) {
     >
       <svg width={chartWidth} height={data.length * (laneThickness + lanePadding) + svgPad} className="overflow-hidden">
         {/* Background Line Charts */}
-        {lineChartData.map((lineData) => (
-          <path
-            key={lineData.id}
-            d={createLinePath(lineData.points)}
-            stroke={lineData.color}
-            strokeWidth="2"
-            fill="none"
-            opacity="0.2"
-          />
-        ))}
+        {lineChartData
+          .filter(lineData => lineData.toShow)
+          .map((lineData) => (
+            <path
+              key={lineData.id}
+              d={createLinePath(lineData.points, lineData.range)}
+              stroke={lineData.color}
+              strokeWidth="2"
+              fill="none"
+              opacity="0.2"
+            />
+          ))}
 
         {/* X-Axis Ticks and Labels */}
         <g transform={`translate(0, ${axisHeight})`}>
           {generateDecadeTicks().map(year => {
             const x = yearToX(year);
+            const isEdgeTick = year === startYear || year === endYear;
             return (
               <g key={`tick-${year}`} transform={`translate(${x}, 0)`}>
                 <line
@@ -183,14 +186,16 @@ export default function CandlestickGraph({ data = historicalData }) {
                   stroke="#374151"
                   strokeWidth="1"
                 />
-                <text
-                  y="25"
-                  textAnchor="middle"
-                  fontSize="12"
-                  fill="#374151"
-                >
-                  {year}
-                </text>
+                {!isEdgeTick && (
+                  <text
+                    y="25"
+                    textAnchor="middle"
+                    fontSize="12"
+                    fill="#374151"
+                  >
+                    {year}
+                  </text>
+                )}
               </g>
             );
           })}
@@ -411,7 +416,7 @@ export default function CandlestickGraph({ data = historicalData }) {
                             fontSize="12"
                             fill="#374151"
                           >
-                            {`${item.label} (${item.start}-${item.end})`}
+                            {`${item.label} (${item.start}-${item.ongoing ? 'present' : item.end})`}
                           </text>
                         </g>
                       </g>

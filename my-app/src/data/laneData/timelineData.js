@@ -253,6 +253,20 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Penicillin#Development_and_medical_application",
         category: "good"
       },
+      {
+        type: "point",
+        at: 1854,
+        label: `John Snow's Research, Third Cholera Pandemic`,
+        url: "https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1519,
+        label: `Smallpox Introduced to Americas`,
+        url: "https://en.wikipedia.org/wiki/History_of_smallpox#Epidemics_in_the_Americas",
+        category: "bad"
+      },
     ],
   },
   {
@@ -294,31 +308,39 @@ export const historicalData = [
       },
     ],
   },
-  {
-    lane: "Climate",
-    icon: "cloud",
-    items: [
-      {
-        type: "point",
-        at: 1815,
-        label: "Mount Tambora Eruption",
-        url: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
-        category: "bad"
-      },
-      {
-        type: "segment",
-        start: 1920,
-        end: 2000,
-        label: "Modern Global Warming",
-        url: "https://en.wikipedia.org/wiki/Climate_change"
-      },
-      {
-        type: "segment",
-        start: 1660,
-        end: 1715,
-        label: "Maunder Minimum",
-        url: "https://en.wikipedia.org/wiki/Maunder_Minimum"
-      }
-    ],
-  },
+  // {
+  //   lane: "Climate",
+  //   icon: "cloud",
+  //   items: [
+  //     {
+  //       type: "point",
+  //       at: 1300,
+  //       label: "Start of Little Ice Age",
+  //       url: "https://en.wikipedia.org/wiki/Little_Ice_Age",
+  //       category: "bad"
+  //     },
+  //     {
+  //       type: "point",
+  //       at: 1815,
+  //       label: "Mount Tambora Eruption",
+  //       url: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+  //       category: "bad"
+  //     },
+  //     {
+  //       type: "segment",
+  //       start: 1920,
+  //       end: 2000,
+  //       label: "Modern Global Warming",
+  //       ongoing: true,
+  //       url: "https://en.wikipedia.org/wiki/Climate_change"
+  //     },
+  //     {
+  //       type: "segment",
+  //       start: 1660,
+  //       end: 1715,
+  //       label: "Maunder Minimum",
+  //       url: "https://en.wikipedia.org/wiki/Maunder_Minimum"
+  //     }
+  //   ],
+  // },
 ];
