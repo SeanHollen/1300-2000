@@ -1,11 +1,11 @@
-import CandlestickSwimlanes from './components/CandlestickSwimlanes';
+import CandlestickGraph from './components/CandlestickGraph';
 import './App.css'
 
 function App() {
 
   return (
     <div>
-      <CandlestickSwimlanes />
+      <CandlestickGraph />
     </div>
   );
 }

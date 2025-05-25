@@ -1,11 +1,12 @@
 import React, { useState, useRef, useEffect } from "react";
 import { historicalData } from "../data/laneData/timelineData";
 import { lineChartData } from "../data/lineChartData/historicalTrends";
-import { FaCog, FaBook, FaBalanceScale } from "react-icons/fa";
-import { GiCrossedSwords, GiSailboat, GiSpyglass, GiSyringe } from "react-icons/gi";
+import { FaCog, FaBook, FaBalanceScale, FaCloud } from "react-icons/fa";
+import { GiCrossedSwords, GiSailboat, GiSyringe } from "react-icons/gi";
+import { IoTelescopeSharp } from "react-icons/io5";
 import "../styles/swimlanes.css";
 
-export default function CandlestickSwimlanes({ data = historicalData }) {
+export default function CandlestickGraph({ data = historicalData }) {
   const [pointTooltip, setPointTooltip] = useState(null);
   const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
   const [interactionOrder, setInteractionOrder] = useState([]);
@@ -146,7 +147,8 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
     vaccine: GiSyringe,
     scale: FaBalanceScale,
     ship: GiSailboat,
-    telescope: GiSpyglass
+    telescope: IoTelescopeSharp,
+    cloud: FaCloud,
   };
 
   return (
@@ -341,7 +343,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                         cx={pointX}
                         cy="0"
                         r={String(pointRadius)}
-                        className="swimlane-point"
+                        className={`swimlane-point ${item.category ? `point-${item.category}` : ''}`}
                         onMouseEnter={(e) => handlePointHover(e, item, pointX, y)}
                         onMouseLeave={() => handlePointHover(null)}
                       />
@@ -409,7 +411,7 @@ export default function CandlestickSwimlanes({ data = historicalData }) {
                             fontSize="12"
                             fill="#374151"
                           >
-                            {`${item.label} (${item.start})`}
+                            {`${item.label} (${item.start}-${item.end})`}
                           </text>
                         </g>
                       </g>

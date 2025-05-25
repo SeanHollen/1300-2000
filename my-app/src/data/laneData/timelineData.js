@@ -53,59 +53,67 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/World_War_II"
       },
       { 
-        type: "segment",
-        start: 1870,
-        end: 1871,
+        type: "point",
+        at: 1870,
         label: "Franco-Prussian War",
-        url: "https://en.wikipedia.org/wiki/Franco-Prussian_War"
+        url: "https://en.wikipedia.org/wiki/Franco-Prussian_War",
+        category: "bad"
       },
       {
         type: "point",
         at: 1815,
         label: `Congress of Vienna Signed`,
-        url: "https://en.wikipedia.org/wiki/Congress_of_Vienna"
+        url: "https://en.wikipedia.org/wiki/Congress_of_Vienna",
+        category: "good"
       },
       {
         type: "point",
         at: 1648,
         label: `Peace of Westphilia Signed`,
-        url: "https://en.wikipedia.org/wiki/Peace_of_Westphalia"
+        url: "https://en.wikipedia.org/wiki/Peace_of_Westphalia",
+        category: "good"
       },
       {
         type: "point",
         at: 1917,
         label: `Russian Revolution`,
-        url: "https://en.wikipedia.org/wiki/Russian_Revolution"
+        url: "https://en.wikipedia.org/wiki/Russian_Revolution",
+        category: "neutral"
       },
       {
         type: "point",
         at: 1776,
         label: `US Declaration of Independence`,
-        url: "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence"
+        url: "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence",
+        category: "neutral"
       },
       {
         type: "point",
         at: 1789,
         label: `French Revolution Start`,
-        url: "https://en.wikipedia.org/wiki/French_Revolution"
+        url: "https://en.wikipedia.org/wiki/French_Revolution",
+        category: "neutral"
       },
       {
         type: "point",
         at: 1688,
         label: `Glorious Revolution Start`,
-        url: "https://en.wikipedia.org/wiki/Glorious_Revolution"
+        url: "https://en.wikipedia.org/wiki/Glorious_Revolution",
+        category: "neutral"
       },
       {
         type: "point",
         at: 1848,
         label: `Springtime of Nations`,
-        url: "https://en.wikipedia.org/wiki/Revolutions_of_1848"
+        url: "https://en.wikipedia.org/wiki/Revolutions_of_1848",
+        category: "neutral"
       },
       {
         type: "point",
         at: 1989,
         label: `End of Cold War`,
-        url: "https://en.wikipedia.org/wiki/End_of_the_Cold_War"
+        url: "https://en.wikipedia.org/wiki/End_of_the_Cold_War",
+        category: "good"
       },
     ],
   },
@@ -120,16 +128,6 @@ export const historicalData = [
         label: "Industrial Revolution",
         url: "https://en.wikipedia.org/wiki/Industrial_Revolution"
       },
-      ...Array.from({ length: 3 }, (_, i) => {
-        const randomOffset = Math.floor(Math.random() * 20) * 12; 
-        const baseYear = 1400 + (i * 20);
-        return {
-          type: "point",
-          at: baseYear + randomOffset,
-          label: `Historical event in year ${baseYear + randomOffset}`,
-          url: `https://en.wikipedia.org/wiki/Timeline_of_the_${baseYear + randomOffset}s`
-        };
-      }),
     ],
   },
   {
@@ -143,16 +141,6 @@ export const historicalData = [
         label: "Protestant Reformation",
         url: "https://en.wikipedia.org/wiki/Protestant_Reformation"
       },
-      ...Array.from({ length: 3 }, (_, i) => {
-        const randomOffset = Math.floor(Math.random() * 20) * 12; 
-        const baseYear = 1400 + (i * 20);
-        return {
-          type: "point",
-          at: baseYear + randomOffset,
-          label: `Historical event in year ${baseYear + randomOffset}`,
-          url: `https://en.wikipedia.org/wiki/Timeline_of_the_${baseYear + randomOffset}s`
-        };
-      }),
     ],
   },
   {
@@ -161,21 +149,110 @@ export const historicalData = [
     items: [
       { 
         type: "segment",
-        start: 1347,
-        end: 1351,
+        start: 1346,
+        end: 1353,
         label: "Black Death",
         url: "https://en.wikipedia.org/wiki/Black_Death"
       },
-      ...Array.from({ length: 3 }, (_, i) => {
-        const randomOffset = Math.floor(Math.random() * 20) * 12; 
-        const baseYear = 1400 + (i * 20);
-        return {
-          type: "point",
-          at: baseYear + randomOffset,
-          label: `Historical event in year ${baseYear + randomOffset}`,
-          url: `https://en.wikipedia.org/wiki/Timeline_of_the_${baseYear + randomOffset}s`
-        };
-      }),
+      { 
+        type: "point",
+        at: 1918,
+        label: "Spanish Flu",
+        url: "https://en.wikipedia.org/wiki/Spanish_flu",
+        category: "bad"
+      },
+      { 
+        type: "segment",
+        start: 1492,
+        end: 1600,
+        label: "Colombian Exchange",
+        url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_diseases",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1907,
+        label: "Peak of Third Plague Pandemic",
+        url: "https://en.wikipedia.org/wiki/Third_plague_pandemic",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1630,
+        label: "Italy Plague",
+        url: "https://en.wikipedia.org/wiki/1629%E2%80%931631_Italian_plague",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1665,
+        label: `Great Plague of London`,
+        url: `https://en.wikipedia.org/wiki/Great_Plague_of_London`,
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1889,
+        label: `Russian Flu`,
+        url: `https://en.wikipedia.org/wiki/1889%E2%80%931890_pandemic`,
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1796,
+        label: `Smallpox Vaccine`,
+        url: `https://en.wikipedia.org/wiki/Smallpox_vaccine`,
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1963,
+        label: `Measles Vaccine`,
+        url: `https://en.wikipedia.org/wiki/Measles_vaccine`,
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1948,
+        label: `DTP Vaccine`,
+        url: `https://en.wikipedia.org/wiki/DPT_vaccine`,
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1955,
+        label: `Polio Vaccine`,
+        url: `https://en.wikipedia.org/wiki/Polio_vaccine`,
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1981,
+        label: `Hepatitis B Vaccine`,
+        url: `https://en.wikipedia.org/wiki/Hepatitis_B_vaccine`,
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1861,
+        label: `Germ Theory of Disease`,
+        url: `https://en.wikipedia.org/wiki/Germ_theory_of_disease`,
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1361,
+        label: `Children's Plague`,
+        url: "https://biographics.org/return-of-the-black-death-the-plague-of-children/",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1942,
+        label: `Penicillin Rollout`,
+        url: "https://en.wikipedia.org/wiki/Penicillin#Development_and_medical_application",
+        category: "good"
+      },
     ],
   },
   {
@@ -189,16 +266,6 @@ export const historicalData = [
         label: "Enlightenment",
         url: "https://en.wikipedia.org/wiki/Age_of_Enlightenment"
       },
-      ...Array.from({ length: 3 }, (_, i) => {
-        const randomOffset = Math.floor(Math.random() * 20) * 12; 
-        const baseYear = 1400 + (i * 20);
-        return {
-          type: "point",
-          at: baseYear + randomOffset,
-          label: `Historical event in year ${baseYear + randomOffset}`,
-          url: `https://en.wikipedia.org/wiki/Timeline_of_the_${baseYear + randomOffset}s`
-        };
-      }),
     ],
   },
   {
@@ -212,16 +279,6 @@ export const historicalData = [
         label: "Age of Exploration",
         url: "https://en.wikipedia.org/wiki/Age_of_Discovery"
       },
-      ...Array.from({ length: 3 }, (_, i) => {
-        const randomOffset = Math.floor(Math.random() * 20) * 12; 
-        const baseYear = 1400 + (i * 20);
-        return {
-          type: "point",
-          at: baseYear + randomOffset,
-          label: `Historical event in year ${baseYear + randomOffset}`,
-          url: `https://en.wikipedia.org/wiki/Timeline_of_the_${baseYear + randomOffset}s`
-        };
-      }),
     ],
   },
   {
@@ -235,16 +292,33 @@ export const historicalData = [
         label: "Scientific Revolution",
         url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
       },
-      ...Array.from({ length: 3 }, (_, i) => {
-        const randomOffset = Math.floor(Math.random() * 20) * 12; 
-        const baseYear = 1400 + (i * 20);
-        return {
-          type: "point",
-          at: baseYear + randomOffset,
-          label: `Historical event in year ${baseYear + randomOffset}`,
-          url: `https://en.wikipedia.org/wiki/Timeline_of_the_${baseYear + randomOffset}s`
-        };
-      }),
+    ],
+  },
+  {
+    lane: "Climate",
+    icon: "cloud",
+    items: [
+      {
+        type: "point",
+        at: 1815,
+        label: "Mount Tambora Eruption",
+        url: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+        category: "bad"
+      },
+      {
+        type: "segment",
+        start: 1920,
+        end: 2000,
+        label: "Modern Global Warming",
+        url: "https://en.wikipedia.org/wiki/Climate_change"
+      },
+      {
+        type: "segment",
+        start: 1660,
+        end: 1715,
+        label: "Maunder Minimum",
+        url: "https://en.wikipedia.org/wiki/Maunder_Minimum"
+      }
     ],
   },
 ];
