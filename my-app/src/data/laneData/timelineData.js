@@ -55,6 +55,8 @@ export const historicalData = [
       { 
         type: "point",
         at: 1870,
+        start: 1870,
+        end: 1871,
         label: "Franco-Prussian War",
         url: "https://en.wikipedia.org/wiki/Franco-Prussian_War",
         category: "bad"
@@ -90,14 +92,18 @@ export const historicalData = [
       {
         type: "point",
         at: 1789,
-        label: `French Revolution Start`,
+        start: 1789,
+        end: 1799,
+        label: `French Revolution`,
         url: "https://en.wikipedia.org/wiki/French_Revolution",
         category: "neutral"
       },
       {
         type: "point",
         at: 1688,
-        label: `Glorious Revolution Start`,
+        start: 1688,
+        end: 1689,
+        label: `Glorious Revolution`,
         url: "https://en.wikipedia.org/wiki/Glorious_Revolution",
         category: "neutral"
       },
@@ -136,10 +142,72 @@ export const historicalData = [
     items: [
       { 
         type: "segment",
+        start: 1378,
+        end: 1417,
+        label: "Western Schism",
+        url: "https://en.wikipedia.org/wiki/Western_Schism"
+      },
+      { 
+        type: "segment",
         start: 1517,
         end: 1648,
         label: "Protestant Reformation",
         url: "https://en.wikipedia.org/wiki/Protestant_Reformation"
+      },
+      { 
+        type: "point",
+        at: 1626,
+        start: 1580,
+        end: 1650,
+        label: "European Witch Trials",
+        url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1534,
+        label: "Acts of Supremacy",
+        url: "https://en.wikipedia.org/wiki/Acts_of_Supremacy",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1517,
+        label: `Ninety-Five Theses`,
+        url: "https://en.wikipedia.org/wiki/Ninety-Five_Theses",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1685,
+        label: `Revocation of the Edict of Nantes`,
+        url: "https://en.wikipedia.org/wiki/Edict_of_Fontainebleau",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1478,
+        start: 1478,
+        end: 1834,
+        label: `Spanish Inquisition`,
+        url: "https://en.wikipedia.org/wiki/Spanish_Inquisition",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1455,
+        label: `Gutenberg Bible`,
+        url: "https://en.wikipedia.org/wiki/Gutenberg_Bible",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1545,
+        start: 1545,
+        end: 1563,
+        label: `Council of Trent`,
+        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
+        category: "neutral"
       },
     ],
   },
@@ -157,6 +225,8 @@ export const historicalData = [
       { 
         type: "point",
         at: 1918,
+        start: 1918,
+        end: 1920,
         label: "Spanish Flu",
         url: "https://en.wikipedia.org/wiki/Spanish_flu",
         category: "bad"
@@ -172,13 +242,17 @@ export const historicalData = [
       { 
         type: "point",
         at: 1907,
-        label: "Peak of Third Plague Pandemic",
+        start: 1855,
+        end: 1960,
+        label: "Third Plague Pandemic",
         url: "https://en.wikipedia.org/wiki/Third_plague_pandemic",
         category: "bad"
       },
       { 
         type: "point",
         at: 1630,
+        start: 1629,
+        end: 1631,
         label: "Italy Plague",
         url: "https://en.wikipedia.org/wiki/1629%E2%80%931631_Italian_plague",
         category: "bad"
@@ -186,6 +260,8 @@ export const historicalData = [
       {
         type: "point",
         at: 1665,
+        start: 1665,
+        end: 1666,
         label: `Great Plague of London`,
         url: `https://en.wikipedia.org/wiki/Great_Plague_of_London`,
         category: "bad"
@@ -193,6 +269,8 @@ export const historicalData = [
       {
         type: "point",
         at: 1889,
+        start: 1889,
+        end: 1890,
         label: `Russian Flu`,
         url: `https://en.wikipedia.org/wiki/1889%E2%80%931890_pandemic`,
         category: "bad"
@@ -242,6 +320,8 @@ export const historicalData = [
       {
         type: "point",
         at: 1361,
+        start: 1360,
+        end: 1364,
         label: `Children's Plague`,
         url: "https://biographics.org/return-of-the-black-death-the-plague-of-children/",
         category: "bad"
@@ -249,7 +329,9 @@ export const historicalData = [
       {
         type: "point",
         at: 1942,
-        label: `Penicillin Rollout`,
+        start: 1928,
+        end: 1943,
+        label: `Penicillin`,
         url: "https://en.wikipedia.org/wiki/Penicillin#Development_and_medical_application",
         category: "good"
       },
@@ -263,6 +345,8 @@ export const historicalData = [
       {
         type: "point",
         at: 1519,
+        start: 1519,
+        end: 1520,
         label: `Smallpox Introduced to Americas`,
         url: "https://en.wikipedia.org/wiki/History_of_smallpox#Epidemics_in_the_Americas",
         category: "bad"

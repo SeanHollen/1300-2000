@@ -11,6 +11,7 @@ export default function CandlestickGraph({ data = historicalData }) {
   const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
   const [interactionOrder, setInteractionOrder] = useState([]);
   const [cursorX, setCursorX] = useState(null);
+  const [hoveredYear, setHoveredYear] = useState(null);
   const containerRef = useRef(null);
 
   const tooltipTextRef = (element) => {
@@ -37,6 +38,8 @@ export default function CandlestickGraph({ data = historicalData }) {
       x: pointX,
       y: pointY,
       year: item.at,
+      start: item.start,
+      end: item.end,
       content: item.label,
     });
   };
@@ -53,11 +56,13 @@ export default function CandlestickGraph({ data = historicalData }) {
       const scrollLeft = containerRef.current.scrollLeft;
       const x = e.clientX - rect.left + scrollLeft;
       setCursorX(x);
+      setHoveredYear(xToYear(x));
     }
   };
 
   const handleMouseLeave = () => {
     setCursorX(null);
+    setHoveredYear(null);
   };
 
   useEffect(() => {
@@ -151,6 +156,31 @@ export default function CandlestickGraph({ data = historicalData }) {
     cloud: FaCloud,
   };
 
+  const findValueForYear = (points, year) => {
+    if (!year) return null;
+    let closestPoint = points[0];
+    let minDistance = Math.abs(points[0].year - year);
+    for (let i = 1; i < points.length; i++) {
+      const distance = Math.abs(points[i].year - year);
+      if (distance < minDistance) {
+        minDistance = distance;
+        closestPoint = points[i];
+      }
+    }
+    
+    return closestPoint.value;
+  };
+
+  const hasDataAtYear = (points, year) => {
+    if (!year) return false;
+    for (let i = 0; i < points.length - 1; i++) {
+      if (points[i].year <= year && points[i + 1].year >= year) {
+        return true;
+      }
+    }
+    return false;
+  };
+
   return (
     <div 
       className="w-screen h-screen swimlane-container relative m-0" 
@@ -158,6 +188,31 @@ export default function CandlestickGraph({ data = historicalData }) {
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
+      {/* Legend */}
+      <div 
+        style={{
+          position: 'fixed',
+          top: '10px',
+          left: '10px',
+          zIndex: 1000,
+          display: 'flex',
+          gap: '16px',
+          fontSize: '12px',
+          fontFamily: 'monospace'
+        }}
+      >
+        {lineChartData
+          .filter(lineData => lineData.toShow && hasDataAtYear(lineData.points, hoveredYear))
+          .map((lineData) => {
+            const value = findValueForYear(lineData.points, hoveredYear);
+            return (
+              <div key={lineData.id} style={{ color: lineData.color }}>
+                {lineData.label}: {value.toFixed(2)} {lineData.unit}
+              </div>
+            );
+          })}
+      </div>
+
       <svg width={chartWidth} height={data.length * (laneThickness + lanePadding) + svgPad} className="overflow-hidden">
         {/* Background Line Charts */}
         {lineChartData
@@ -451,7 +506,10 @@ export default function CandlestickGraph({ data = historicalData }) {
               fontSize="12"
               fill="#374151"
             >
-              {`${pointTooltip.content} (${pointTooltip.year})`}
+              {(() => {
+                const year = pointTooltip.start ? `${pointTooltip.start}-${pointTooltip.end}` : pointTooltip.year;
+                return `${pointTooltip.content} (${year})`;
+              })()}
             </text>
           </g>
         )}
