@@ -15,7 +15,7 @@ const iconMap = {
   cloud: FaCloud,
 };
 
-export default function SwimlneIcons({ 
+export default function SwimlaneIcons({ 
   data,
   config,
   chartWidth,

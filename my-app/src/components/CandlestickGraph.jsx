@@ -4,7 +4,7 @@ import { lineChartData } from "../data/lineChartData/historicalTrends";
 import LineChartLegends from "./CandlestickGraph/LineChartLegends";
 import SwimlaneLines from "./CandlestickGraph/SwimlaneLines";
 import XAxis from "./CandlestickGraph/XAxis";
-import SwimlneIcons from "./CandlestickGraph/SwimlneIcons";
+import SwimlaneIcons from "./CandlestickGraph/SwimlaneIcons";
 import CursorLine from "./CandlestickGraph/CursorLine";
 import PointsAndSegments from "./CandlestickGraph/PointsAndSegments";
 import SegmentTooltips from "./CandlestickGraph/SegmentTooltips";
@@ -182,7 +182,7 @@ export default function CandlestickGraph({ data = historicalData }) {
           chartWidth={chartWidth}
         />
 
-        <SwimlneIcons 
+        <SwimlaneIcons 
           data={data}
           config={config}
           chartWidth={chartWidth}
