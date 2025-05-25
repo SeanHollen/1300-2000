@@ -372,10 +372,55 @@ export const historicalData = [
     items: [
       { 
         type: "segment",
-        start: 1400,
-        end: 1600,
+        start: 1418,
+        end: 1620,
         label: "Age of Exploration",
         url: "https://en.wikipedia.org/wiki/Age_of_Discovery"
+      },
+      { 
+        type: "segment",
+        start: 1700,
+        end: 1850,
+        label: "Triangular Trade / Trans-Atlantic Slave Trade peak",
+        url: "https://en.wikipedia.org/wiki/Triangular_trade"
+      },
+      { 
+        type: "point",
+        at: 1492,
+        label: "Columbus' Sail",
+        url: "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+      },
+      { 
+        type: "point",
+        at: 1498,
+        label: "Vasco da Gama reaches India",
+        url: "https://en.wikipedia.org/wiki/Vasco_da_Gama#First_voyage"
+      },
+      { 
+        type: "point",
+        at: 1602,
+        label: "Founding of Dutch East India Company",
+        url: "https://en.wikipedia.org/wiki/Dutch_East_India_Company"
+      },
+      { 
+        type: "point",
+        at: 1884,
+        start: 1884,
+        end: 1885,
+        label: "Scramble for Africa",
+        url: "https://en.wikipedia.org/wiki/Scramble_for_Africa"
+      },
+      { 
+        type: "point",
+        at: 1869,
+        label: "Suez Canal Opens",
+        url: "https://en.wikipedia.org/wiki/Suez_Canal#Inauguration_(17_November_1869)"
+      },
+      { 
+        type: "point",
+        at: 1914,
+        label: "Panama Canal Opens",
+        url: "https://en.wikipedia.org/wiki/Panama_Canal#United_States_construction_of_the_Panama_canal,_1904%E2%80%931914"
       },
     ],
   },
