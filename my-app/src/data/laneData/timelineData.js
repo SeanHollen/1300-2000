@@ -52,6 +52,14 @@ export const historicalData = [
         label: "World War II",
         url: "https://en.wikipedia.org/wiki/World_War_II"
       },
+      {
+        type: "segment",
+        start: 1756,
+        end: 1763,
+        label: `Seven Years’ War`,
+        url: "https://en.wikipedia.org/wiki/Seven_Years'_War",
+        category: "bad"
+      },
       { 
         type: "point",
         at: 1870,
@@ -85,7 +93,7 @@ export const historicalData = [
       {
         type: "point",
         at: 1776,
-        label: `US Declaration of Independence`,
+        label: `U.S. Declaration of Independence`,
         url: "https://en.wikipedia.org/wiki/United_States_Declaration_of_Independence",
         category: "neutral"
       },
@@ -110,6 +118,8 @@ export const historicalData = [
       {
         type: "point",
         at: 1848,
+        start: 1848,
+        end: 1849,
         label: `Springtime of Nations`,
         url: "https://en.wikipedia.org/wiki/Revolutions_of_1848",
         category: "neutral"
@@ -146,36 +156,36 @@ export const historicalData = [
         type: "point",
         at: 1793,
         label: "Cotton Gin",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Cotton_gin",
         category: "good"
       },
       { 
         type: "point",
         at: 1945,
         start: 1942,
-        end: 1945,
+        end: 1946,
         label: "Atomic Bomb",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Manhattan_Project",
       },
       { 
         type: "point",
         at: 1785,
         label: "Power Loom",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Power_loom",
         category: "good"
       },
       { 
         type: "point",
         at: 1975,
         label: "Personal Computer",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/IBM_5100",
         category: "good"
       },
       { 
         type: "point",
         at: 1903,
         label: "Airplane",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Wright_brothers",
         category: "good"
       },
       { 
@@ -187,11 +197,9 @@ export const historicalData = [
       },
       { 
         type: "point",
-        at: 1776,
-        start: 1776,
-        end: 1781,
+        at: 1712,
         label: "Steam Engine",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Steam_engine",
         category: "good"
       },
       { 
@@ -199,8 +207,22 @@ export const historicalData = [
         at: 1300,
         start: 1270,
         end: 1300,
-        label: "Mechanical Clock",
-        url: "",
+        label: "First Mechanical Clocks",
+        url: "https://en.wikipedia.org/wiki/Mechanical_clock",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1761,
+        label: "Marine Chronometer",
+        url: "https://en.wikipedia.org/wiki/Marine_chronometer",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1656,
+        label: "Pendulum Clock",
+        url: "https://en.wikipedia.org/wiki/Clock#Pendulum",
         category: "good"
       },
       { 
@@ -209,72 +231,76 @@ export const historicalData = [
         start: 1299,
         end: 1494,
         label: "Double-Entry Bookkeeping",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Double-entry_bookkeeping",
         category: "good"
       },
       { 
         type: "point",
-        at: 1320,
-        label: "Hand Cannons",
-        url: "",
+        at: 1326,
+        label: "Hand Cannons in Europe",
+        url: "https://en.wikipedia.org/wiki/Hand_cannon#Spread",
         category: "good"
       },
       { 
         type: "point",
         at: 1885,
         label: "Automobile",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Car#History",
         category: "good"
       },
       { 
         type: "point",
         at: 1769,
         label: "Water Frame",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Water_frame",
         category: "good"
       },
       { 
         type: "point",
         at: 1764,
+        start: 1764,
+        end: 1765,
         label: "Spinning Jenny",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Spinning_jenny",
         category: "good"
       },
       { 
         type: "point",
-        at: 1525,
-        start: 1520,
-        end: 1530,
-        label: "Musket",
-        url: "",
+        at: 1411,
+        start: 1411,
+        end: 1503,
+        label: "Long Gun",
+        url: "https://en.wikipedia.org/wiki/Arquebus",
         category: "good"
       },
       { 
         type: "point",
-        at: 1807,
+        at: 1783,
         label: "Steamship",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Steamship#First_ocean-going_steamships",
         category: "good"
       },
       { 
         type: "point",
         at: 1831,
+        start: 1831,
+        end: 1832,
         label: "Electric Generator",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Electric_generator#Faraday_disk_generator",
         category: "good"
       },
       { 
         type: "point",
         at: 1856,
-        label: "Bessemer Process",
-        url: "",
+        label: "Mass-Production of Steel",
+        url: "https://en.wikipedia.org/wiki/Bessemer_process",
         category: "good"
       },
       { 
         type: "point",
         at: 1440,
         label: "Printing Press",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Printing_press",
         category: "good"
       },
       { 
@@ -283,7 +309,7 @@ export const historicalData = [
         start: 1290,
         end: 1320,
         label: "Eyeglasses",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Glasses#Invention",
         category: "good"
       },
       { 
@@ -292,7 +318,7 @@ export const historicalData = [
         start: 1187,
         end: 1410,
         label: "Mechanical Compass in Europe",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/History_of_the_compass#Medieval_Europe",
         category: "good"
       },
       { 
@@ -306,7 +332,7 @@ export const historicalData = [
         type: "point",
         at: 1824,
         label: "Portland Cement",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Portland_cement",
         category: "good"
       },
       { 
@@ -315,37 +341,67 @@ export const historicalData = [
         start: 1682,
         end: 1749,
         label: "Sextant",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Sextant",
         category: "good"
       },
       { 
         type: "point",
         at: 1837,
         label: "Telegraph",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Electrical_telegraph",
         category: "good"
       },
       { 
         type: "point",
         at: 1876,
         label: "Telephone",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Telephone#",
         category: "good"
       },
       { 
         type: "point",
         at: 1879,
         label: "Light Bulb",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Incandescent_light_bulb",
         category: "good"
       },
       { 
         type: "point",
         at: 1855,
-        start: 1855,
-        end: 1857,
-        label: "Central Heating",
-        url: "",
+        label: "Radiator",
+        url: "https://en.wikipedia.org/wiki/Radiator_(heating)",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1913,
+        label: "Domestic Refrigerator",
+        url: "https://en.wikipedia.org/wiki/Refrigerator#Electric_refrigerators",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1937,
+        label: "Domestic Washing Machine",
+        url: "https://en.wikipedia.org/wiki/Washing_machine#Automatic_machines",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1910,
+        start: 1880,
+        end: 1910,
+        label: "Radio",
+        url: "https://en.wikipedia.org/wiki/Invention_of_radio",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1775,
+        start: 1775,
+        end: 1851,
+        label: "Modern Flush Toilet",
+        url: "https://en.wikipedia.org/wiki/Flush_toilet#Development_of_the_modern_flush_toilet",
         category: "good"
       },
     ],
@@ -389,6 +445,13 @@ export const historicalData = [
         at: 1517,
         label: `Ninety-Five Theses`,
         url: "https://en.wikipedia.org/wiki/Ninety-Five_Theses",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1598,
+        label: `Edict of Nantes`,
+        url: "https://en.wikipedia.org/wiki/Edict_of_Nantes",
         category: "neutral"
       },
       {
@@ -437,8 +500,7 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Black_Death"
       },
       { 
-        type: "point",
-        at: 1918,
+        type: "segment",
         start: 1918,
         end: 1920,
         label: "Spanish Flu",
@@ -568,7 +630,7 @@ export const historicalData = [
     ],
   },
   {
-    lane: "Politics, Philosophy, and Law",
+    lane: "Politics and Philosophy",
     icon: "scale",
     items: [
       { 
@@ -651,39 +713,214 @@ export const historicalData = [
       },
     ],
   },
-  // {
-  //   lane: "Climate",
-  //   icon: "cloud",
-  //   items: [
-  //     {
-  //       type: "point",
-  //       at: 1300,
-  //       label: "Start of Little Ice Age",
-  //       url: "https://en.wikipedia.org/wiki/Little_Ice_Age",
-  //       category: "bad"
-  //     },
-  //     {
-  //       type: "point",
-  //       at: 1815,
-  //       label: "Mount Tambora Eruption",
-  //       url: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
-  //       category: "bad"
-  //     },
-  //     {
-  //       type: "segment",
-  //       start: 1920,
-  //       end: 2000,
-  //       label: "Modern Global Warming",
-  //       ongoing: true,
-  //       url: "https://en.wikipedia.org/wiki/Climate_change"
-  //     },
-  //     {
-  //       type: "segment",
-  //       start: 1660,
-  //       end: 1715,
-  //       label: "Maunder Minimum",
-  //       url: "https://en.wikipedia.org/wiki/Maunder_Minimum"
-  //     }
-  //   ],
-  // },
+  {
+    lane: "Farming and Climate",
+    icon: "wheat",
+    items: [
+      {
+        type: "point",
+        at: 1815,
+        label: "Mount Tambora Eruption",
+        url: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
+        category: "bad"
+      },
+      {
+        type: "segment",
+        start: 1920,
+        end: 2000,
+        label: "Modern Global Warming",
+        ongoing: true,
+        url: "https://en.wikipedia.org/wiki/Climate_change#Global_temperature_rise"
+      },
+      {
+        type: "segment",
+        start: 1660,
+        end: 1715,
+        label: "Maunder Minimum",
+        url: "https://en.wikipedia.org/wiki/Maunder_Minimum"
+      },
+      {
+        type: "point",
+        at: 1720,
+        start: 1650,
+        end: 1850,
+        label: "British Agricultural Revolution",
+        url: "https://en.wikipedia.org/wiki/British_Agricultural_Revolution"
+      },
+      {
+        type: "point",
+        at: 1877,
+        start: 1876,
+        end: 1878,
+        label: "Famine in India",
+        url: "https://en.wikipedia.org/wiki/Great_Famine_of_1876%E2%80%931878",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1783,
+        start: 1783,
+        end: 1784,
+        label: "Famine in India",
+        url: "https://en.wikipedia.org/wiki/Chalisa_famine",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1769,
+        start: 1769,
+        end: 1770,
+        label: "Bengal Famine in India",
+        url: "https://en.wikipedia.org/wiki/Great_Bengal_famine_of_1770",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1791,
+        start: 1791,
+        end: 1792,
+        label: "Famine in India",
+        url: "https://en.wikipedia.org/wiki/Doji_bara_famine",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1959,
+        start: 1959,
+        end: 1961,
+        label: "Chinese Famine (Great Leap Forward)",
+        url: "https://en.wikipedia.org/wiki/Great_Chinese_Famine",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1930,
+        start: 1930,
+        end: 1933,
+        label: "Soviet Famine and Holodomor",
+        url: "https://en.wikipedia.org/wiki/Soviet_famine_of_1930%E2%80%931933",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1845,
+        start: 1845,
+        end: 1852,
+        label: "Irish Potato Famine",
+        url: "https://en.wikipedia.org/wiki/Great_Famine_(Ireland)",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1928,
+        start: 1928,
+        end: 1930,
+        label: "Chinese Famine",
+        url: "https://en.wikipedia.org/wiki/Chinese_famine_of_1928%E2%80%931930",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1311,
+        start: 1315,
+        end: 1317,
+        label: "Great Famine",
+        url: "https://en.wikipedia.org/wiki/Great_Famine_of_1315%E2%80%931317",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1590,
+        start: 1590,
+        end: 1598,
+        label: "Famine in Europe",
+        url: "https://en.wikipedia.org/wiki/List_of_famines",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1708,
+        start: 1708,
+        end: 1711,
+        label: "Famine in Europe",
+        url: "https://en.wikipedia.org/wiki/List_of_famines",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1693,
+        start: 1693,
+        end: 1697,
+        label: "Famine in Europe",
+        url: "https://en.wikipedia.org/wiki/List_of_famines",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1601,
+        start: 1601,
+        end: 1603,
+        label: "Russian Famine",
+        url: "https://en.wikipedia.org/wiki/Russian_famine_of_1601%E2%80%931603",
+        category: "bad"
+      },
+      {
+        type: "point",
+        at: 1783,
+        start: 1760,
+        end: 1790,
+        label: "Selective Breeding, Bakewell",
+        url: "https://en.wikipedia.org/wiki/Selective_breeding#History",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1730,
+        start: 1500,
+        end: 1750,
+        label: "Four-Field Crop Rotation",
+        url: "https://en.wikipedia.org/wiki/Crop_rotation#Four-field_rotations",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1801,
+        label: "General Enclosure Act",
+        url: "https://celdf.org/the-enclosure-movement",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1730,
+        label: "Improved Plows",
+        url: "https://en.wikipedia.org/wiki/Plough#Improved_designs",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1701,
+        label: "Agricultural Mechanization Begins",
+        url: "https://en.wikipedia.org/wiki/Seed_drill#History",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1940,
+        start: 1940,
+        end: 1970,
+        label: "Green Revolution",
+        url: "https://en.wikipedia.org/wiki/Green_Revolution",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1834,
+        start: 1831,
+        end: 1834,
+        label: "Mechanical Reaper",
+        url: "https://en.wikipedia.org/wiki/Green_Revolution",
+        category: "good"
+      },
+    ],
+  },
 ];

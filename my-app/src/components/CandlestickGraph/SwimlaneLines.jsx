@@ -2,9 +2,8 @@ import React from 'react';
 import { FaCog, FaBook, FaBalanceScale, FaCloud, FaCross } from "react-icons/fa";
 import { GiCrossedSwords, GiSailboat, GiSyringe, GiGears } from "react-icons/gi";
 import { IoTelescopeSharp } from "react-icons/io5";
+import { LuWheat } from "react-icons/lu";
 
-
-// Map of icon types to components
 const iconMap = {
   sword: GiCrossedSwords,
   cog: FaCog,
@@ -16,6 +15,7 @@ const iconMap = {
   ship: GiSailboat,
   telescope: IoTelescopeSharp,
   cloud: FaCloud,
+  wheat: LuWheat,
 };
 
 export default function SwimlaneLines({ 
