@@ -70,7 +70,6 @@ export default function CandlestickGraph({ data = historicalData }) {
   const laneThickness = config.lane.getThickness(laneUnit);
   const lanePadding = config.lane.getPadding(laneUnit);
   const chartWidth = config.layout.chartWidth;
-  const pointRadius = config.point.radius;
 
   const tooltipTextRef = (element) => {
     if (element) {

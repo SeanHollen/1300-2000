@@ -351,21 +351,117 @@ export const lineChartData = [
     ]
   },
   {
-    id: "literacy",
-    label: "Literacy Rate",
+    id: "gdp",
+    label: "World Per Capita GDP",
     color: "#60a5fa", // sky blue
-    unit: "%",
-    toShow: false,
+    prefix: "$",
+    unit: "",
+    toShow: true,
     range: {
       start: 0,
-      end: 800
+      end: 13_000
     },
     points: [
-      { year: 1300, value: 750 },
-      { year: 1600, value: 600 },
-      { year: 1800, value: 400 },
-      { year: 1900, value: 200 },
-      { year: 2000, value: 120 }
+      {
+        "year": 1300,
+        "value": 1220
+      },
+      {
+        "year": 1500,
+        "value": 1300
+      },
+      {
+        "year": 1600,
+        "value": 1400
+      },
+      {
+        "year": 1700,
+        "value": 1400
+      },
+      {
+        "year": 1820,
+        "value": 1500
+      },
+      {
+        "year": 1850,
+        "value": 1800
+      },
+      {
+        "year": 1870,
+        "value": 2100
+      },
+      {
+        "year": 1900,
+        "value": 3100
+      },
+      {
+        "year": 1920,
+        "value": 3400
+      },
+      {
+        "year": 1940,
+        "value": 4700
+      },
+      {
+        "year": 1950,
+        "value": 4600
+      },
+      {
+        "year": 1960,
+        "value": 6000
+      },
+      {
+        "year": 1970,
+        "value": 8200
+      },
+      {
+        "year": 1980,
+        "value": 9900
+      },
+      {
+        "year": 1990,
+        "value": 11262.591
+      },
+      {
+        "year": 1991,
+        "value": 11168.17
+      },
+      {
+        "year": 1992,
+        "value": 11127.493
+      },
+      {
+        "year": 1993,
+        "value": 11117.146
+      },
+      {
+        "year": 1994,
+        "value": 11237.744
+      },
+      {
+        "year": 1995,
+        "value": 11410.432
+      },
+      {
+        "year": 1996,
+        "value": 11655.746
+      },
+      {
+        "year": 1997,
+        "value": 11939.21
+      },
+      {
+        "year": 1998,
+        "value": 12062.652
+      },
+      {
+        "year": 1999,
+        "value": 12324.528
+      },
+      {
+        "year": 2000,
+        "value": 12739.303
+      },
     ]
   },
   {

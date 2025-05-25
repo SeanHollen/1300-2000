@@ -26,7 +26,7 @@ export default function LineCharts({
             stroke={lineData.color}
             strokeWidth="2"
             fill="none"
-            opacity="0.2"
+            opacity="0.3"
           />
         ))}
     </>

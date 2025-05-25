@@ -51,7 +51,7 @@ export default function LineChartLegends({ lineChartData, hoveredYear }) {
           const value = findValueForYear(lineData.points, hoveredYear);
           return (
             <div key={lineData.id} style={{ color: lineData.color }}>
-              {lineData.label}: {formatValue(value)} {lineData.unit}
+              {lineData.label}: {lineData.prefix}{formatValue(value)} {lineData.unit}
             </div>
           );
         })}
