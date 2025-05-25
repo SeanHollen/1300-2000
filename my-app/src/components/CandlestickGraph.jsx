@@ -2,9 +2,9 @@ import React, { useState, useRef, useEffect } from "react";
 import { historicalData } from "../data/laneData/timelineData";
 import { lineChartData } from "../data/lineChartData/historicalTrends";
 import LineChartLegends from "./CandlestickGraph/LineChartLegends";
-import SwimlaneLines from "./CandlestickGraph/SwimlaneLines";
+import LineChartLines from "./CandlestickGraph/LineChartLines";
 import XAxis from "./CandlestickGraph/XAxis";
-import SwimlaneIcons from "./CandlestickGraph/SwimlaneIcons";
+import SwimlaneLines from "./CandlestickGraph/SwimlaneLines";
 import CursorLine from "./CandlestickGraph/CursorLine";
 import PointsAndSegments from "./CandlestickGraph/PointsAndSegments";
 import SegmentTooltips from "./CandlestickGraph/SegmentTooltips";
@@ -169,7 +169,7 @@ export default function CandlestickGraph({ data = historicalData }) {
       <LineChartLegends lineChartData={lineChartData} hoveredYear={hoveredYear} />
 
       <svg width={chartWidth} height={totalHeight} className="overflow-hidden">
-        <SwimlaneLines 
+        <LineChartLines 
           lineChartData={lineChartData}
           config={config}
           yearToX={yearToX}
@@ -182,7 +182,7 @@ export default function CandlestickGraph({ data = historicalData }) {
           chartWidth={chartWidth}
         />
 
-        <SwimlaneIcons 
+        <SwimlaneLines 
           data={data}
           config={config}
           chartWidth={chartWidth}

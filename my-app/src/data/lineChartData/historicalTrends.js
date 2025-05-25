@@ -2,7 +2,7 @@ export const lineChartData = [
   {
     id: "population",
     label: "World Population",
-    color: "#4a5568",
+    color: "#e879f9", // bright pink
     unit: "",
     toShow: true,
     range: {
@@ -335,7 +335,7 @@ export const lineChartData = [
   {
     id: "technology",
     label: "Technological Progress",
-    color: "#2563eb",
+    color: "#22c55e", // emerald green
     unit: "innovations per decade",
     toShow: false,
     range: {
@@ -353,7 +353,7 @@ export const lineChartData = [
   {
     id: "literacy",
     label: "Literacy Rate",
-    color: "#059669",
+    color: "#60a5fa", // sky blue
     unit: "%",
     toShow: false,
     range: {
@@ -371,7 +371,7 @@ export const lineChartData = [
   {
     id: "temperature",
     label: "European Smoothed Summer Temperature",
-    color: "#059669",
+    color: "#fbbf24", // amber yellow
     unit: "Anomaly",
     toShow: true,
     range: {
