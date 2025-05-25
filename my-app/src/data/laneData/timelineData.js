@@ -125,7 +125,7 @@ export const historicalData = [
   },
   {
     lane: "Technology and Industry",
-    icon: "cog",
+    icon: "gears",
     items: [
       { 
         type: "segment",
@@ -134,11 +134,225 @@ export const historicalData = [
         label: "Industrial Revolution",
         url: "https://en.wikipedia.org/wiki/Industrial_Revolution"
       },
+      { 
+        type: "segment",
+        start: 1947,
+        end: 2000,
+        ongoing: true,
+        label: "Information Age",
+        url: "https://en.wikipedia.org/wiki/Information_Age"
+      },
+      { 
+        type: "point",
+        at: 1793,
+        label: "Cotton Gin",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1945,
+        start: 1942,
+        end: 1945,
+        label: "Atomic Bomb",
+        url: "",
+      },
+      { 
+        type: "point",
+        at: 1785,
+        label: "Power Loom",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1975,
+        label: "Personal Computer",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1903,
+        label: "Airplane",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1798,
+        label: "Interchangeable Parts",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1776,
+        start: 1776,
+        end: 1781,
+        label: "Steam Engine",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1300,
+        start: 1270,
+        end: 1300,
+        label: "Mechanical Clock",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1494,
+        start: 1299,
+        end: 1494,
+        label: "Double-Entry Bookkeeping",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1320,
+        label: "Hand Cannons",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1885,
+        label: "Automobile",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1769,
+        label: "Water Frame",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1764,
+        label: "Spinning Jenny",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1525,
+        start: 1520,
+        end: 1530,
+        label: "Musket",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1807,
+        label: "Steamship",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1831,
+        label: "Electric Generator",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1856,
+        label: "Bessemer Process",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1440,
+        label: "Printing Press",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1311,
+        start: 1290,
+        end: 1320,
+        label: "Eyeglasses",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1302,
+        start: 1187,
+        end: 1410,
+        label: "Mechanical Compass in Europe",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1609,
+        label: "Central Banking",
+        url: "https://en.wikipedia.org/wiki/Bank_of_Amsterdam",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1824,
+        label: "Portland Cement",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1731,
+        start: 1682,
+        end: 1749,
+        label: "Sextant",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1837,
+        label: "Telegraph",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1876,
+        label: "Telephone",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1879,
+        label: "Light Bulb",
+        url: "",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1855,
+        start: 1855,
+        end: 1857,
+        label: "Central Heating",
+        url: "",
+        category: "good"
+      },
     ],
   },
   {
     lane: "Religion and Culture",
-    icon: "book",
+    icon: "cross",
     items: [
       { 
         type: "segment",
@@ -159,7 +373,7 @@ export const historicalData = [
         at: 1626,
         start: 1580,
         end: 1650,
-        label: "European Witch Trials",
+        label: "European Witch Trials Peak",
         url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
         category: "bad"
       },
@@ -235,7 +449,7 @@ export const historicalData = [
         type: "segment",
         start: 1492,
         end: 1600,
-        label: "Colombian Exchange",
+        label: "Colombian Exchange of Disease",
         url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_diseases",
         category: "bad"
       },
@@ -367,7 +581,7 @@ export const historicalData = [
     ],
   },
   {
-    lane: "Exploration and Trade",
+    lane: "Trade and Exploration",
     icon: "ship",
     items: [
       { 
@@ -381,7 +595,7 @@ export const historicalData = [
         type: "segment",
         start: 1700,
         end: 1850,
-        label: "Triangular Trade / Trans-Atlantic Slave Trade peak",
+        label: "Triangular Trade / Trans-Atlantic Slave Trade Peak",
         url: "https://en.wikipedia.org/wiki/Triangular_trade"
       },
       { 
@@ -425,7 +639,7 @@ export const historicalData = [
     ],
   },
   {
-    lane: "Science",
+    lane: "Science and Education",
     icon: "telescope",
     items: [
       { 

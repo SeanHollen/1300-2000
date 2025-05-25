@@ -1,13 +1,16 @@
 import React from 'react';
-import { FaCog, FaBook, FaBalanceScale, FaCloud } from "react-icons/fa";
-import { GiCrossedSwords, GiSailboat, GiSyringe } from "react-icons/gi";
+import { FaCog, FaBook, FaBalanceScale, FaCloud, FaCross } from "react-icons/fa";
+import { GiCrossedSwords, GiSailboat, GiSyringe, GiGears } from "react-icons/gi";
 import { IoTelescopeSharp } from "react-icons/io5";
+
 
 // Map of icon types to components
 const iconMap = {
   sword: GiCrossedSwords,
   cog: FaCog,
+  gears: GiGears,
   book: FaBook,
+  cross: FaCross,
   vaccine: GiSyringe,
   scale: FaBalanceScale,
   ship: GiSailboat,

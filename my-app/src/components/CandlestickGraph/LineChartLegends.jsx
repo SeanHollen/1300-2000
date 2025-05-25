@@ -25,6 +25,12 @@ const hasDataAtYear = (points, year) => {
   return false;
 };
 
+const formatValue = (value) => {
+  const withDecimals = parseFloat(value.toFixed(2)).toString();
+  const withCommas = withDecimals.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  return withCommas;
+}
+
 export default function LineChartLegends({ lineChartData, hoveredYear }) {
   return (
     <div 
@@ -45,7 +51,7 @@ export default function LineChartLegends({ lineChartData, hoveredYear }) {
           const value = findValueForYear(lineData.points, hoveredYear);
           return (
             <div key={lineData.id} style={{ color: lineData.color }}>
-              {lineData.label}: {value.toFixed(2)} {lineData.unit}
+              {lineData.label}: {formatValue(value)} {lineData.unit}
             </div>
           );
         })}
