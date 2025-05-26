@@ -18,7 +18,8 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Thirty_Years%27_War"
       },
       { 
-        type: "segment",
+        type: "point",
+        at: 1708,
         start: 1700,
         end: 1721,
         label: "Great Northern War",
@@ -26,10 +27,17 @@ export const historicalData = [
       },
       { 
         type: "segment",
-        start: 1803,
+        start: 1700,
+        end: 1714,
+        label: "War of the Spanish Succession",
+        url: "https://en.wikipedia.org/wiki/War_of_the_Spanish_Succession"
+      },
+      { 
+        type: "segment",
+        start: 1792,
         end: 1815,
-        label: "Napoleonic Wars",
-        url: "https://en.wikipedia.org/wiki/Napoleonic_Wars"
+        label: "French Revolutionary and Napoleonic Wars",
+        url: "https://en.wikipedia.org/wiki/French_Revolutionary_and_Napoleonic_Wars"
       },
       { 
         type: "segment",
