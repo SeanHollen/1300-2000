@@ -23,7 +23,7 @@ export default function CandlestickGraph({ data = historicalData }) {
     layout: {
       svgPad: 150,
       axisHeight: 40,
-      chartWidth: 5000,
+      chartWidth: 10000,
       windowHeight: typeof window !== 'undefined' ? window.innerHeight - 20 : 800,
       bottomPadding: 20
     },

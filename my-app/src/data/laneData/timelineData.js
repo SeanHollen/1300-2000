@@ -142,7 +142,7 @@ export const historicalData = [
       { 
         type: "point",
         at: 1453,
-        label: "Fall of Constantinople",
+        label: "Constantinople Falls to Ottoman Empire",
         url: "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
       },
       { 
@@ -232,8 +232,10 @@ export const historicalData = [
       { 
         type: "point",
         at: 1798,
+        start: 1778,
+        end: 1798,
         label: "Interchangeable Parts",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/Interchangeable_parts",
         category: "good"
       },
       { 
@@ -357,7 +359,7 @@ export const historicalData = [
         type: "point",
         at: 1839,
         label: "Photography",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/History_of_photography",
         category: "good"
       },
       { 
@@ -481,6 +483,12 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1415,
+        label: "Jan Hus Burned at the Stake",
+        url: "https://en.wikipedia.org/wiki/Jan_Hus",
+      },
+      { 
+        type: "point",
         at: 1626,
         start: 1580,
         end: 1650,
@@ -521,8 +529,17 @@ export const historicalData = [
         at: 1478,
         start: 1478,
         end: 1834,
-        label: `Spanish Inquisition`,
+        label: `Spanish Inquisition Begins`,
         url: "https://en.wikipedia.org/wiki/Spanish_Inquisition",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1536,
+        start: 1536,
+        end: 1559,
+        label: `Calvinism Starts`,
+        url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
         category: "neutral"
       },
       {
@@ -537,7 +554,7 @@ export const historicalData = [
         at: 1545,
         start: 1545,
         end: 1563,
-        label: `Council of Trent`,
+        label: `Council of Trent - Start of Counter-Reformation`,
         url: "https://en.wikipedia.org/wiki/Council_of_Trent",
         category: "neutral"
       },
@@ -725,6 +742,12 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1532,
+        label: "Political Theory - Machiavelli",
+        url: "https://en.wikipedia.org/wiki/The_Prince",
+      },
+      { 
+        type: "point",
         at: 1620,
         label: "Inductive Reasoning - Francis Bacon",
         url: "https://en.wikipedia.org/wiki/Novum_Organum",
@@ -744,13 +767,20 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/The_Spirit_of_Law",
         category: "good"
       },
-      { 
+      {
         type: "point",
         at: 1400,
         start: 1400,
         end: 1500,
         label: "Renaissance Humanism",
         url: "https://en.wikipedia.org/wiki/Renaissance_humanism",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1323,
+        label: "Nominalism - Ockham",
+        url: "https://en.wikipedia.org/wiki/Sum_of_Logic",
         category: "good"
       },
       { 
@@ -889,13 +919,32 @@ export const historicalData = [
         type: "point",
         at: 1869,
         label: "Suez Canal Opens",
-        url: "https://en.wikipedia.org/wiki/Suez_Canal#Inauguration_(17_November_1869)"
+        url: "https://en.wikipedia.org/wiki/Suez_Canal#Inauguration_(17_November_1869)",
+        category: "good"
       },
       { 
         type: "point",
         at: 1914,
         label: "Panama Canal Opens",
-        url: "https://en.wikipedia.org/wiki/Panama_Canal#United_States_construction_of_the_Panama_canal,_1904%E2%80%931914"
+        url: "https://en.wikipedia.org/wiki/Panama_Canal#United_States_construction_of_the_Panama_canal,_1904%E2%80%931914",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1405,
+        start: 1405,
+        end: 1433,
+        label: "Zheng He’s Voyages",
+        url: "https://en.wikipedia.org/wiki/Zheng_He#Expeditions",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1854,
+        start: 1852,
+        end: 1855,
+        label: "Perry Expeditions to Japan",
+        url: "https://en.wikipedia.org/wiki/Perry_Expedition",
       },
     ],
   },
@@ -1067,14 +1116,14 @@ export const historicalData = [
         type: "point",
         at: 1543,
         label: "Dissection and Anatomy",
-        url: "",
+        url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
         category: "good"
       },
       { 
         type: "point",
         at: 1820,
         label: "Discovery of Electromagnetism",
-        url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
+        url: "https://en.wikipedia.org/wiki/History_of_electromagnetic_theory#19th_century",
         category: "good"
       },
       { 
@@ -1345,6 +1394,20 @@ export const historicalData = [
         end: 1834,
         label: "Mechanical Reaper",
         url: "https://en.wikipedia.org/wiki/Green_Revolution",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1536,
+        label: "Potato Introduced to Old World",
+        url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_plants",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1493,
+        label: "Maize Introduced to Old World",
+        url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_plants",
         category: "good"
       },
     ],
