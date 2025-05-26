@@ -17,7 +17,7 @@ The research was mostly done via GPT 4o and fact-checked via Wikipedia.
 ```
 git clone https://github.com/SeanHollen/1300-2000.git
 
-#cd into repo
+cd 1300-2000
 
 npm run dev
 ```
