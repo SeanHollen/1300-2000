@@ -797,6 +797,255 @@ export const historicalData = [
     ],
   },
   {
+    lane: "Science and Education",
+    icon: "telescope",
+    items: [
+      { 
+        type: "segment",
+        start: 1543,
+        end: 1687,
+        label: "Scientific Revolution",
+        url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
+      },
+      {
+        type: "point",
+        at: 1545,
+        start: 1545,
+        end: 1563,
+        label: `Start of Jesuit Education`,
+        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1748,
+        label: "Mathematical Analysis - Euler",
+        url: "https://en.wikipedia.org/wiki/Introductio_in_analysin_infinitorum",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1801,
+        label: "Number Theory - Gauss",
+        url: "https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1654,
+        label: "Probability Theory",
+        url: "https://en.wikipedia.org/wiki/History_of_probability#Seventeenth_century",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1543,
+        label: "Heliocentrism",
+        url: "https://en.wikipedia.org/wiki/Copernican_Revolution",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1620,
+        label: "Scientific Method - Experimentation",
+        url: "https://en.wikipedia.org/wiki/History_of_scientific_method#Francis_Bacon's_eliminative_induction",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1953,
+        label: "DNA Structure Discovery",
+        url: "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1869,
+        label: "Periodic Table of Elements",
+        url: "https://en.wikipedia.org/wiki/History_of_the_periodic_table",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1969,
+        label: "Apollo 11",
+        url: "https://en.wikipedia.org/wiki/Apollo_11",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1543,
+        label: "Copernican Model",
+        url: "https://en.wikipedia.org/wiki/Copernican_heliocentrism",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1960,
+        start: 1960,
+        end: 1970,
+        label: "Plate Tectonics Theory",
+        url: "https://en.wikipedia.org/wiki/Plate_tectonics",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1859,
+        label: "Theory of Evolution by Natural Selection",
+        url: "https://en.wikipedia.org/wiki/Theory_of_evolution",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1804,
+        label: "Atomic Theory",
+        url: "https://en.wikipedia.org/wiki/History_of_atomic_theory",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1838,
+        start: 1838,
+        end: 1839,
+        label: "Cell Theory",
+        url: "https://en.wikipedia.org/wiki/Cell_theory",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1674,
+        label: "Microbiology",
+        url: "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1687,
+        label: "Principia - Newton",
+        url: "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1670,
+        label: "Calculus",
+        url: "https://en.wikipedia.org/wiki/Calculus#Modern",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1915,
+        label: "General Relativity",
+        url: "https://en.wikipedia.org/wiki/General_relativity",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1925,
+        label: "Quantum Mechanics",
+        url: "https://en.wikipedia.org/wiki/History_of_quantum_mechanics",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1628,
+        label: "Discovery of the Circulation of Blood",
+        url: "https://en.wikipedia.org/wiki/Exercitatio_Anatomica_de_Motu_Cordis_et_Sanguinis_in_Animalibus",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1590,
+        start: 1590,
+        end: 1609,
+        label: "Microscope",
+        url: "https://en.wikipedia.org/wiki/Timeline_of_microscope_technology",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1608,
+        label: "Telescope",
+        url: "https://en.wikipedia.org/wiki/History_of_the_telescope#Invention",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1543,
+        label: "Dissection and Anatomy",
+        url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1820,
+        label: "Discovery of Electromagnetism",
+        url: "https://en.wikipedia.org/wiki/History_of_electromagnetic_theory#19th_century",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1784,
+        label: "Blinded Experiment",
+        url: "https://en.wikipedia.org/wiki/Blinded_experiment#History",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1835,
+        label: "Double-Blind Experiment",
+        url: "https://en.wikipedia.org/wiki/Blinded_experiment#History",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1643,
+        label: "Barometer",
+        url: "https://en.wikipedia.org/wiki/Barometer",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1593,
+        label: "Thermoscope",
+        url: "https://en.wikipedia.org/wiki/Thermoscope",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1789,
+        label: "Chemical Revolution",
+        url: "https://en.wikipedia.org/wiki/Trait%C3%A9_%C3%89l%C3%A9mentaire_de_Chimie",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1936,
+        label: "Turing Machines",
+        url: "https://en.wikipedia.org/wiki/Turing_machine",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1609,
+        start: 1609,
+        end: 1619,
+        label: "Kepler’s Laws of Planetary Motion",
+        url: "https://en.wikipedia.org/wiki/Kepler's_laws_of_planetary_motion#History",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 2000,
+        start: 1990,
+        end: 2003,
+        label: "Human Genome Project",
+        url: "https://en.wikipedia.org/wiki/Human_Genome_Project",
+        category: "good"
+      }
+    ],
+  },
+  {
     lane: "Religion and Culture",
     icon: "cross",
     items: [
@@ -1096,255 +1345,6 @@ export const historicalData = [
         label: "Communism - Marx",
         url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
       },
-    ],
-  },
-  {
-    lane: "Science and Education",
-    icon: "telescope",
-    items: [
-      { 
-        type: "segment",
-        start: 1543,
-        end: 1687,
-        label: "Scientific Revolution",
-        url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
-      },
-      {
-        type: "point",
-        at: 1545,
-        start: 1545,
-        end: 1563,
-        label: `Start of Jesuit Education`,
-        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1748,
-        label: "Mathematical Analysis - Euler",
-        url: "https://en.wikipedia.org/wiki/Introductio_in_analysin_infinitorum",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1801,
-        label: "Number Theory - Gauss",
-        url: "https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1654,
-        label: "Probability Theory",
-        url: "https://en.wikipedia.org/wiki/History_of_probability#Seventeenth_century",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1543,
-        label: "Heliocentrism",
-        url: "https://en.wikipedia.org/wiki/Copernican_Revolution",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1620,
-        label: "Scientific Method - Experimentation",
-        url: "https://en.wikipedia.org/wiki/History_of_scientific_method#Francis_Bacon's_eliminative_induction",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1953,
-        label: "DNA Structure Discovery",
-        url: "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1869,
-        label: "Periodic Table of Elements",
-        url: "https://en.wikipedia.org/wiki/History_of_the_periodic_table",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1969,
-        label: "Apollo 11",
-        url: "https://en.wikipedia.org/wiki/Apollo_11",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1543,
-        label: "Copernican Model",
-        url: "https://en.wikipedia.org/wiki/Copernican_heliocentrism",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1960,
-        start: 1960,
-        end: 1970,
-        label: "Plate Tectonics Theory",
-        url: "https://en.wikipedia.org/wiki/Plate_tectonics",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1859,
-        label: "Theory of Evolution by Natural Selection",
-        url: "https://en.wikipedia.org/wiki/Theory_of_evolution",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1804,
-        label: "Atomic Theory",
-        url: "https://en.wikipedia.org/wiki/History_of_atomic_theory",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1838,
-        start: 1838,
-        end: 1839,
-        label: "Cell Theory",
-        url: "https://en.wikipedia.org/wiki/Cell_theory",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1674,
-        label: "Microbiology",
-        url: "https://en.wikipedia.org/wiki/Antonie_van_Leeuwenhoek",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1687,
-        label: "Principia - Newton",
-        url: "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1670,
-        label: "Calculus",
-        url: "https://en.wikipedia.org/wiki/Calculus#Modern",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1915,
-        label: "General Relativity",
-        url: "https://en.wikipedia.org/wiki/General_relativity",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1925,
-        label: "Quantum Mechanics",
-        url: "https://en.wikipedia.org/wiki/History_of_quantum_mechanics",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1628,
-        label: "Discovery of the Circulation of Blood",
-        url: "https://en.wikipedia.org/wiki/Exercitatio_Anatomica_de_Motu_Cordis_et_Sanguinis_in_Animalibus",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1590,
-        start: 1590,
-        end: 1609,
-        label: "Microscope",
-        url: "https://en.wikipedia.org/wiki/Timeline_of_microscope_technology",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1608,
-        label: "Telescope",
-        url: "https://en.wikipedia.org/wiki/History_of_the_telescope#Invention",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1543,
-        label: "Dissection and Anatomy",
-        url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1820,
-        label: "Discovery of Electromagnetism",
-        url: "https://en.wikipedia.org/wiki/History_of_electromagnetic_theory#19th_century",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1784,
-        label: "Blinded Experiment",
-        url: "https://en.wikipedia.org/wiki/Blinded_experiment#History",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1835,
-        label: "Double-Blind Experiment",
-        url: "https://en.wikipedia.org/wiki/Blinded_experiment#History",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1643,
-        label: "Barometer",
-        url: "https://en.wikipedia.org/wiki/Barometer",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1593,
-        label: "Thermoscope",
-        url: "https://en.wikipedia.org/wiki/Thermoscope",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1789,
-        label: "Chemical Revolution",
-        url: "https://en.wikipedia.org/wiki/Trait%C3%A9_%C3%89l%C3%A9mentaire_de_Chimie",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1936,
-        label: "Turing Machines",
-        url: "https://en.wikipedia.org/wiki/Turing_machine",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1609,
-        start: 1609,
-        end: 1619,
-        label: "Kepler’s Laws of Planetary Motion",
-        url: "https://en.wikipedia.org/wiki/Kepler's_laws_of_planetary_motion#History",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 2000,
-        start: 1990,
-        end: 2003,
-        label: "Human Genome Project",
-        url: "https://en.wikipedia.org/wiki/Human_Genome_Project",
-        category: "good"
-      }
     ],
   },
   {
