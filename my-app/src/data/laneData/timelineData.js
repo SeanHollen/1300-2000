@@ -156,6 +156,14 @@ export const historicalData = [
         at: 1346,
         label: "Battle of Crécy",
         url: "https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
+      },
+      { 
+        type: "point",
+        at: 1428,
+        start: 1428,
+        end: 1429,
+        label: "Siege of Orléans (Joan of Arc)",
+        url: "https://en.wikipedia.org/wiki/Siege_of_Orl%C3%A9ans"
       }
     ],
   },
@@ -168,6 +176,13 @@ export const historicalData = [
         start: 1760,
         end: 1840,
         label: "Industrial Revolution",
+        url: "https://en.wikipedia.org/wiki/Second_Industrial_Revolution"
+      },
+      { 
+        type: "segment",
+        start: 1870,
+        end: 1914,
+        label: "Second Industrial Revolution",
         url: "https://en.wikipedia.org/wiki/Industrial_Revolution"
       },
       { 
@@ -694,6 +709,130 @@ export const historicalData = [
         label: "Renaissance",
         url: "https://en.wikipedia.org/wiki/Renaissance"
       },
+      { 
+        type: "point",
+        at: 1788,
+        label: "U.S. Constitution and Bill of Rights",
+        url: "https://en.wikipedia.org/wiki/Constitution_of_the_United_States",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1804,
+        label: "Napoleonic Code",
+        url: "https://en.wikipedia.org/wiki/Napoleonic_Code",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1620,
+        label: "Inductive Reasoning - Francis Bacon",
+        url: "https://en.wikipedia.org/wiki/Novum_Organum",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1637,
+        label: "Cartesianism - Descartes",
+        url: "https://en.wikipedia.org/wiki/Discourse_on_the_Method",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1748,
+        label: "Separation of Powers - Montesquieu",
+        url: "https://en.wikipedia.org/wiki/The_Spirit_of_Law",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1400,
+        start: 1400,
+        end: 1500,
+        label: "Renaissance Humanism",
+        url: "https://en.wikipedia.org/wiki/Renaissance_humanism",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1759,
+        label: "Rational Humanism - Voltaire",
+        url: "https://en.wikipedia.org/wiki/Candide",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1689,
+        label: "Limited Government - Loche",
+        url: "https://en.wikipedia.org/wiki/John_Locke",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1781,
+        label: "Kantianism",
+        url: "https://en.wikipedia.org/wiki/Critique_of_Pure_Reason",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1739,
+        label: "Humeanism",
+        url: "https://en.wikipedia.org/wiki/A_Treatise_of_Human_Nature",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1751,
+        start: 1751,
+        end: 1772,
+        label: "Materialist Enlightenment - Diderot",
+        url: "https://en.wikipedia.org/wiki/Encyclop%C3%A9die",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1776,
+        label: "Free Markets - Adam Smith",
+        url: "https://en.wikipedia.org/wiki/The_Wealth_of_Nations",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1763,
+        label: "Prussia Compulsory Education",
+        url: "https://en.wikipedia.org/wiki/Prussian_education_system",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1689,
+        label: "English Bill of Rights",
+        url: "https://en.wikipedia.org/wiki/Bill_of_Rights_1689",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1679,
+        label: "Habeas Corpus Act",
+        url: "https://en.wikipedia.org/wiki/Habeas_Corpus_Act_1679",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1624,
+        start: 1450,
+        end: 1800,
+        label: "Emergence of Patents",
+        url: "https://en.wikipedia.org/wiki/History_of_patent_law",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1848,
+        label: "Communism - Marx",
+        url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
+      },
     ],
   },
   {
@@ -719,6 +858,12 @@ export const historicalData = [
         at: 1492,
         label: "Columbus' Sail",
         url: "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+      },
+      { 
+        type: "point",
+        at: 1521,
+        label: "Fall of Tenochtitlan",
+        url: "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan"
       },
       { 
         type: "point",
@@ -775,7 +920,7 @@ export const historicalData = [
       { 
         type: "point",
         at: 1748,
-        label: "Mathematical Analysis",
+        label: "Mathematical Analysis - Euler",
         url: "https://en.wikipedia.org/wiki/Introductio_in_analysin_infinitorum",
         category: "good"
       },
@@ -870,7 +1015,7 @@ export const historicalData = [
       { 
         type: "point",
         at: 1687,
-        label: "Principia",
+        label: "Principia - Newton",
         url: "https://en.wikipedia.org/wiki/Philosophi%C3%A6_Naturalis_Principia_Mathematica",
         category: "good"
       },
@@ -946,15 +1091,6 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Blinded_experiment#History",
         category: "good"
       },
-      // { 
-      //   type: "point",
-      //   at: 1400,
-      //   start: 1400,
-      //   end: 1500,
-      //   label: "Renaissance humanism",
-      //   url: "https://en.wikipedia.org/wiki/Renaissance_humanism",
-      //   category: "good"
-      // },
       { 
         type: "point",
         at: 1643,
