@@ -18,6 +18,7 @@ export default function CursorLine({
         stroke="#374151"
         strokeWidth="1"
         strokeDasharray="4 4"
+        pointerEvents="none"
       />
       <g transform={`translate(${cursorX}, ${config.layout.axisHeight})`}>
         <rect

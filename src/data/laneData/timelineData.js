@@ -1415,7 +1415,8 @@ export const historicalData = [
         start: 1650,
         end: 1850,
         label: "British Agricultural Revolution",
-        url: "https://en.wikipedia.org/wiki/British_Agricultural_Revolution"
+        url: "https://en.wikipedia.org/wiki/British_Agricultural_Revolution",
+        category: "good"
       },
       {
         type: "point",

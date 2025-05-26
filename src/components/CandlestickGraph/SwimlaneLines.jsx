@@ -58,6 +58,7 @@ export default function SwimlaneLines({
                   width: '100%',
                   height: '100%'
                 }}
+                title={lane.lane}
               >
                 <div
                   style={{
