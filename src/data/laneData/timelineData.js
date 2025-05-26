@@ -40,6 +40,12 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1381,
+        label: "Peasants' Revolt",
+        url: "htthttps://en.wikipedia.org/wiki/Peasants%27_Revolt"
+      },
+      { 
+        type: "point",
         at: 1861,
         start: 1861,
         end: 1865,

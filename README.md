@@ -21,5 +21,7 @@ git clone https://github.com/SeanHollen/1300-2000.git
 
 cd 1300-2000
 
+npm i
+
 npm run dev
 ```
