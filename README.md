@@ -1,5 +1,7 @@
 # About
 
+Timeline of 1300-1000 AD.
+
 Candlestick Chart superimposed on Line Graphs.
 
 Feel free to PR for minor changes / corrections and fork for major changes / adaptations.
