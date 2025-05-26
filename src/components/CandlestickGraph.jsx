@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import isMobile from "../utils/isMobile";
 import { historicalData } from "../data/laneData/timelineData";
 import { lineChartData } from "../data/lineChartData/historicalTrends";
 import LineChartLegends from "./CandlestickGraph/LineChartLegends";
@@ -12,6 +13,7 @@ import PointTooltips from "./CandlestickGraph/PointTooltips";
 import "../styles/swimlanes.css";
 
 export default function CandlestickGraph({ data = historicalData }) {
+  const onMobile = isMobile();
   const [pointTooltip, setPointTooltip] = useState(null);
   const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
   const [interactionOrder, setInteractionOrder] = useState([]);
@@ -21,10 +23,10 @@ export default function CandlestickGraph({ data = historicalData }) {
 
   const config = {
     layout: {
-      svgPad: 150,
-      axisHeight: 40,
-      chartWidth: 10000,
-      windowHeight: typeof window !== 'undefined' ? window.innerHeight - 20 : 800,
+      svgPad: onMobile ? 80 : 150,
+      axisHeight: onMobile ? 30 : 40,
+      chartWidth: onMobile && typeof window !== 'undefined' ? window.innerWidth : 10000,
+      windowHeight: typeof window !== 'undefined' ? window.innerHeight - (onMobile ? 60 : 20) : 800,
       bottomPadding: 20
     },
     lane: {
@@ -102,6 +104,7 @@ export default function CandlestickGraph({ data = historicalData }) {
   };
 
   const handleMouseMove = (e) => {
+    if (onMobile) return;
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
       const scrollLeft = containerRef.current.scrollLeft;
@@ -112,8 +115,44 @@ export default function CandlestickGraph({ data = historicalData }) {
   };
 
   const handleMouseLeave = () => {
+    if (onMobile) return;
     setCursorX(null);
     setHoveredYear(null);
+  };
+
+  const handleTouchMove = (e) => {
+    if (containerRef.current && e.touches.length > 0) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const scrollLeft = containerRef.current.scrollLeft;
+      const x = e.touches[0].clientX - rect.left + scrollLeft;
+      setCursorX(x);
+      setHoveredYear(xToYear(x));
+    }
+  };
+
+  const handleTouchStart = (e) => {
+    if (containerRef.current && e.touches.length > 0) {
+      const rect = containerRef.current.getBoundingClientRect();
+      const scrollLeft = containerRef.current.scrollLeft;
+      const x = e.touches[0].clientX - rect.left + scrollLeft;
+      setCursorX(x);
+      setHoveredYear(xToYear(x));
+    }
+  };
+
+  const handleTouchEnd = () => {
+  };
+
+  const handlePointClick = (e, item, pointX, pointY) => {
+    if (onMobile) {
+      handlePointHover(e, item, pointX, pointY);
+    }
+  };
+
+  const handleSegmentClick = (laneIndex, idx) => {
+    if (onMobile) {
+      handleSegmentHover(laneIndex, idx);
+    }
   };
 
   useEffect(() => {
@@ -159,11 +198,14 @@ export default function CandlestickGraph({ data = historicalData }) {
   const totalHeight = data.length * (laneThickness + lanePadding) + config.layout.svgPad;
 
   return (
-    <div 
-      className="w-screen h-screen swimlane-container relative m-0" 
+      <div
+      className="w-screen h-screen swimlane-container relative m-0"
       ref={containerRef}
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
+      onMouseMove={!onMobile ? handleMouseMove : undefined}
+      onMouseLeave={!onMobile ? handleMouseLeave : undefined}
+      onTouchStart={onMobile ? handleTouchStart : undefined}
+      onTouchMove={onMobile ? handleTouchMove : undefined}
+      onTouchEnd={onMobile ? handleTouchEnd : undefined}
     >
       <LineChartLegends lineChartData={lineChartData} hoveredYear={hoveredYear} />
 
@@ -204,9 +246,12 @@ export default function CandlestickGraph({ data = historicalData }) {
           config={config}
           handleSegmentHover={handleSegmentHover}
           handlePointHover={handlePointHover}
+          onMobile={onMobile}
+          handlePointClick={handlePointClick}
+          handleSegmentClick={handleSegmentClick}
         />
 
-        <SegmentTooltips 
+        <SegmentTooltips
           data={data}
           yearToX={yearToX}
           laneThickness={laneThickness}

@@ -7,15 +7,26 @@ export default function PointsAndSegments({
   lanePadding,
   config,
   handleSegmentHover,
-  handlePointHover
+  handlePointHover,
+  onMobile,
+  handlePointClick,
+  handleSegmentClick
 }) {
   const pointRadius = config.point.radius;
   const laneUnit = laneThickness / config.lane.percentages.lane;
   const segmentThickness = laneUnit * config.lane.percentages.segment;
 
-  const handleClick = (url) => {
-    if (url) {
-      window.open(url, '_blank');
+  const handleItemClick = (e, item, type, laneIndex, itemIndex, pointXValue, pointYValue) => {
+    if (onMobile) {
+      if (type === "point") {
+        handlePointClick(e, item, pointXValue, pointYValue);
+      } else if (type === "segment") {
+        handleSegmentClick(laneIndex, itemIndex);
+      }
+    }
+
+    if (item.url) {
+      window.open(item.url, '_blank');
     }
   };
 
@@ -35,9 +46,9 @@ export default function PointsAndSegments({
                   return (
                     <g
                       key={`segment-${laneIndex}-${idx}`}
-                      onMouseEnter={() => handleSegmentHover(laneIndex, idx)}
-                      onClick={() => handleClick(item.url)}
-                      style={{ cursor: item.url ? 'pointer' : 'default' }}
+                      onMouseEnter={() => !onMobile && handleSegmentHover(laneIndex, idx)}
+                      onClick={(e) => handleItemClick(e, item, "segment", laneIndex, idx)}
+                      style={{ cursor: item.url || onMobile ? 'pointer' : 'default' }}
                     >
                       <rect
                         x={segmentX}
@@ -53,16 +64,16 @@ export default function PointsAndSegments({
                   return (
                     <g
                       key={`point-${laneIndex}-${idx}`}
-                      onClick={() => handleClick(item.url)}
-                      style={{ cursor: item.url ? 'pointer' : 'default' }}
+                      onClick={(e) => handleItemClick(e, item, "point", laneIndex, idx, pointX, y)}
+                      style={{ cursor: item.url || onMobile ? 'pointer' : 'default' }}
                     >
                       <circle
                         cx={pointX}
                         cy="0"
                         r={String(pointRadius)}
                         className={`swimlane-point ${item.category ? `point-${item.category}` : ''}`}
-                        onMouseEnter={(e) => handlePointHover(e, item, pointX, y)}
-                        onMouseLeave={() => handlePointHover(null)}
+                        onMouseEnter={(e) => !onMobile && handlePointHover(e, item, pointX, y)}
+                        onMouseLeave={() => !onMobile && handlePointHover(null)}
                       />
                     </g>
                   );
@@ -74,4 +85,4 @@ export default function PointsAndSegments({
       })}
     </>
   );
-} 
+}
