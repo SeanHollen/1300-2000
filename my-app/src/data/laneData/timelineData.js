@@ -46,6 +46,23 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/World_War_I"
       },
       { 
+        type: "point",
+        at: 1937,
+        start: 1937,
+        end: 1945,
+        label: "Second Sino-Japanese War",
+        url: "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War"
+      },
+      { 
+        type: "point",
+        at: 1941,
+        start: 1941,
+        end: 1945,
+        label: "Holocaust",
+        url: "https://en.wikipedia.org/wiki/Holocaust",
+        category: "bad"
+      },
+      { 
         type: "segment",
         start: 1939,
         end: 1945,
@@ -58,7 +75,27 @@ export const historicalData = [
         end: 1763,
         label: `Seven Years’ War`,
         url: "https://en.wikipedia.org/wiki/Seven_Years'_War",
-        category: "bad"
+      },
+      {
+        type: "segment",
+        start: 1562,
+        end: 1598,
+        label: `French Wars of Religion`,
+        url: "https://en.wikipedia.org/wiki/French_Wars_of_Religion",
+      },
+      {
+        type: "point",
+        at: 1598,
+        label: `Edict of Nantes`,
+        url: "https://en.wikipedia.org/wiki/Edict_of_Nantes",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1685,
+        label: `Revocation of the Edict of Nantes`,
+        url: "https://en.wikipedia.org/wiki/Edict_of_Fontainebleau",
+        category: "neutral"
       },
       { 
         type: "point",
@@ -66,8 +103,13 @@ export const historicalData = [
         start: 1870,
         end: 1871,
         label: "Franco-Prussian War",
-        url: "https://en.wikipedia.org/wiki/Franco-Prussian_War",
-        category: "bad"
+        url: "https://en.wikipedia.org/wiki/Franco-Prussian_War"
+      },
+      {
+        type: "point",
+        at: 1947,
+        label: `Partition of India`,
+        url: "https://en.wikipedia.org/wiki/Partition_of_India"
       },
       {
         type: "point",
@@ -159,12 +201,116 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1588,
+        label: "Defeat of the Spanish Armada",
+        url: "https://en.wikipedia.org/wiki/Spanish_Armada#Battle_of_Gravelines"
+      },
+      { 
+        type: "point",
         at: 1428,
         start: 1428,
         end: 1429,
         label: "Siege of Orléans (Joan of Arc)",
         url: "https://en.wikipedia.org/wiki/Siege_of_Orl%C3%A9ans"
+      },
+      { 
+        type: "point",
+        at: 1978,
+        start: 1975,
+        end: 1979,
+        label: "Cambodian Genocide",
+        url: "https://en.wikipedia.org/wiki/Cambodian_genocide",
+        category: "bad"
       }
+    ],
+  },
+  {
+    lane: "Trade and Exploration",
+    icon: "ship",
+    items: [
+      { 
+        type: "segment",
+        start: 1418,
+        end: 1620,
+        label: "Age of Exploration",
+        url: "https://en.wikipedia.org/wiki/Age_of_Discovery"
+      },
+      { 
+        type: "segment",
+        start: 1700,
+        end: 1850,
+        label: "Triangular Trade / Trans-Atlantic Slave Trade Peak",
+        url: "https://en.wikipedia.org/wiki/Triangular_trade"
+      },
+      { 
+        type: "point",
+        at: 1492,
+        label: "Columbus' Sail",
+        url: "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+      },
+      { 
+        type: "point",
+        at: 1521,
+        label: "Fall of Tenochtitlan",
+        url: "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan"
+      },
+      { 
+        type: "point",
+        at: 1498,
+        label: "Vasco da Gama reaches India",
+        url: "https://en.wikipedia.org/wiki/Vasco_da_Gama#First_voyage"
+      },
+      { 
+        type: "point",
+        at: 1600,
+        label: "Founding of British East India Company",
+        url: "https://en.wikipedia.org/wiki/East_India_Company"
+      },
+      { 
+        type: "point",
+        at: 1602,
+        label: "Founding of Dutch East India Company",
+        url: "https://en.wikipedia.org/wiki/Dutch_East_India_Company"
+      },
+      { 
+        type: "point",
+        at: 1884,
+        start: 1884,
+        end: 1914,
+        label: "Scramble for Africa",
+        url: "https://en.wikipedia.org/wiki/Scramble_for_Africa"
+      },
+      { 
+        type: "point",
+        at: 1869,
+        label: "Suez Canal Opens",
+        url: "https://en.wikipedia.org/wiki/Suez_Canal#Inauguration_(17_November_1869)",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1914,
+        label: "Panama Canal Opens",
+        url: "https://en.wikipedia.org/wiki/Panama_Canal#United_States_construction_of_the_Panama_canal,_1904%E2%80%931914",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1405,
+        start: 1405,
+        end: 1433,
+        label: "Zheng He’s Voyages",
+        url: "https://en.wikipedia.org/wiki/Zheng_He#Expeditions",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1854,
+        start: 1852,
+        end: 1855,
+        label: "Perry Expeditions to Japan",
+        url: "https://en.wikipedia.org/wiki/Perry_Expedition",
+      },
     ],
   },
   {
@@ -270,15 +416,6 @@ export const historicalData = [
       },
       { 
         type: "point",
-        at: 1494,
-        start: 1299,
-        end: 1494,
-        label: "Double-Entry Bookkeeping",
-        url: "https://en.wikipedia.org/wiki/Double-entry_bookkeeping",
-        category: "good"
-      },
-      { 
-        type: "point",
         at: 1326,
         label: "Hand Cannons in Europe",
         url: "https://en.wikipedia.org/wiki/Hand_cannon#Spread",
@@ -371,6 +508,16 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/History_of_the_compass#Medieval_Europe",
         category: "good"
       },
+
+      { 
+        type: "point",
+        at: 1494,
+        start: 1299,
+        end: 1494,
+        label: "Double-Entry Bookkeeping",
+        url: "https://en.wikipedia.org/wiki/Double-entry_bookkeeping",
+        category: "good"
+      },
       { 
         type: "point",
         at: 1609,
@@ -378,6 +525,30 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Bank_of_Amsterdam",
         category: "good"
       },
+      { 
+        type: "point",
+        at: 1397,
+        label: "Medici Bank Founded in Florence",
+        url: "https://en.wikipedia.org/wiki/Medici_Bank#Founding",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1694,
+        label: "Bank of England founded",
+        url: "https://en.wikipedia.org/wiki/Bank_of_England#Founding",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1624,
+        start: 1450,
+        end: 1800,
+        label: "Emergence of Patents",
+        url: "https://en.wikipedia.org/wiki/History_of_patent_law",
+        category: "good"
+      },
+
       { 
         type: "point",
         at: 1824,
@@ -460,103 +631,6 @@ export const historicalData = [
         label: "Lead Chamber Process",
         url: "https://en.wikipedia.org/wiki/Lead_chamber_process",
         category: "good"
-      },
-    ],
-  },
-  {
-    lane: "Religion and Culture",
-    icon: "cross",
-    items: [
-      { 
-        type: "segment",
-        start: 1378,
-        end: 1417,
-        label: "Western Schism",
-        url: "https://en.wikipedia.org/wiki/Western_Schism"
-      },
-      { 
-        type: "segment",
-        start: 1517,
-        end: 1648,
-        label: "Protestant Reformation",
-        url: "https://en.wikipedia.org/wiki/Protestant_Reformation"
-      },
-      { 
-        type: "point",
-        at: 1415,
-        label: "Jan Hus Burned at the Stake",
-        url: "https://en.wikipedia.org/wiki/Jan_Hus",
-      },
-      { 
-        type: "point",
-        at: 1626,
-        start: 1580,
-        end: 1650,
-        label: "European Witch Trials Peak",
-        url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
-        category: "bad"
-      },
-      { 
-        type: "point",
-        at: 1534,
-        label: "Acts of Supremacy",
-        url: "https://en.wikipedia.org/wiki/Acts_of_Supremacy",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1517,
-        label: `Ninety-Five Theses`,
-        url: "https://en.wikipedia.org/wiki/Ninety-Five_Theses",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1598,
-        label: `Edict of Nantes`,
-        url: "https://en.wikipedia.org/wiki/Edict_of_Nantes",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1685,
-        label: `Revocation of the Edict of Nantes`,
-        url: "https://en.wikipedia.org/wiki/Edict_of_Fontainebleau",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1478,
-        start: 1478,
-        end: 1834,
-        label: `Spanish Inquisition Begins`,
-        url: "https://en.wikipedia.org/wiki/Spanish_Inquisition",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1536,
-        start: 1536,
-        end: 1559,
-        label: `Calvinism Starts`,
-        url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1455,
-        label: `Gutenberg Bible`,
-        url: "https://en.wikipedia.org/wiki/Gutenberg_Bible",
-        category: "good"
-      },
-      {
-        type: "point",
-        at: 1545,
-        start: 1545,
-        end: 1563,
-        label: `Council of Trent - Start of Counter-Reformation`,
-        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
-        category: "neutral"
       },
     ],
   },
@@ -699,12 +773,166 @@ export const historicalData = [
       },
       {
         type: "point",
+        at: 1858,
+        label: `Bazalgette's proposal, Great Stink`,
+        url: "https://en.wikipedia.org/wiki/Great_Stink",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1867,
+        label: `Antiseptics Adopted`,
+        url: "https://en.wikipedia.org/wiki/Joseph_Lister#On_a_new_method_of_treating_compound_fracture,_abscess",
+        category: "good"
+      },
+      {
+        type: "point",
         at: 1519,
         start: 1519,
         end: 1520,
         label: `Smallpox Introduced to Americas`,
         url: "https://en.wikipedia.org/wiki/History_of_smallpox#Epidemics_in_the_Americas",
         category: "bad"
+      },
+    ],
+  },
+  {
+    lane: "Religion and Culture",
+    icon: "cross",
+    items: [
+      { 
+        type: "segment",
+        start: 1378,
+        end: 1417,
+        label: "Western Schism",
+        url: "https://en.wikipedia.org/wiki/Western_Schism"
+      },
+      { 
+        type: "segment",
+        start: 1309,
+        end: 1376,
+        label: "Avignon Papacy",
+        url: "https://en.wikipedia.org/wiki/Avignon_Papacy"
+      },
+      { 
+        type: "segment",
+        start: 1517,
+        end: 1648,
+        label: "Protestant Reformation",
+        url: "https://en.wikipedia.org/wiki/Protestant_Reformation"
+      },
+      { 
+        type: "point",
+        at: 1415,
+        label: "Jan Hus Burned at the Stake",
+        url: "https://en.wikipedia.org/wiki/Jan_Hus",
+      },
+      { 
+        type: "point",
+        at: 1321,
+        label: "Divine Comedy - Dante",
+        url: "https://en.wikipedia.org/wiki/Divine_Comedy",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1601,
+        start: 1599,
+        end: 1601,
+        label: "Hamlet - Shakespeare",
+        url: "https://en.wikipedia.org/wiki/Hamlet",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1387,
+        start: 1387,
+        end: 1400,
+        label: "The Canterbury Tales",
+        url: "https://en.wikipedia.org/wiki/The_Canterbury_Tales",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1605,
+        start: 1605,
+        end: 1615,
+        label: "Don Quixote",
+        url: "https://en.wikipedia.org/wiki/The_Canterbury_Tales",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1492,
+        start: 1492,
+        end: 1498,
+        label: "The Last Supper - da Vinci",
+        url: "https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo)",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1434,
+        label: "Arnolfini Portrait",
+        url: "https://en.wikipedia.org/wiki/Arnolfini_Portrait",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1626,
+        start: 1580,
+        end: 1650,
+        label: "European Witch Trials Peak",
+        url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1534,
+        label: "Acts of Supremacy",
+        url: "https://en.wikipedia.org/wiki/Acts_of_Supremacy",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1517,
+        label: `Ninety-Five Theses`,
+        url: "https://en.wikipedia.org/wiki/Ninety-Five_Theses",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1478,
+        start: 1478,
+        end: 1834,
+        label: `Spanish Inquisition Begins`,
+        url: "https://en.wikipedia.org/wiki/Spanish_Inquisition",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1536,
+        start: 1536,
+        end: 1559,
+        label: `Calvinism Starts`,
+        url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1455,
+        label: `Gutenberg Bible`,
+        url: "https://en.wikipedia.org/wiki/Gutenberg_Bible",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1545,
+        start: 1545,
+        end: 1563,
+        label: `Council of Trent, Start of Counter-Reformation and Jesuit Education`,
+        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
+        category: "neutral"
       },
     ],
   },
@@ -727,6 +955,13 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Renaissance"
       },
       { 
+        type: "point",
+        at: 1650,
+        label: "First Coffeehouses",
+        url: "https://en.wikipedia.org/wiki/History_of_coffee",
+        category: "good"
+      },
+      {
         type: "point",
         at: 1788,
         label: "U.S. Constitution and Bill of Rights",
@@ -792,6 +1027,13 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1651,
+        label: "Absolutism - Hobbes",
+        url: "https://en.wikipedia.org/wiki/Leviathan_(Hobbes_book)",
+        category: "good"
+      },
+      { 
+        type: "point",
         at: 1689,
         label: "Limited Government - Loche",
         url: "https://en.wikipedia.org/wiki/John_Locke",
@@ -850,101 +1092,9 @@ export const historicalData = [
       },
       { 
         type: "point",
-        at: 1624,
-        start: 1450,
-        end: 1800,
-        label: "Emergence of Patents",
-        url: "https://en.wikipedia.org/wiki/History_of_patent_law",
-        category: "good"
-      },
-      { 
-        type: "point",
         at: 1848,
         label: "Communism - Marx",
         url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
-      },
-    ],
-  },
-  {
-    lane: "Trade and Exploration",
-    icon: "ship",
-    items: [
-      { 
-        type: "segment",
-        start: 1418,
-        end: 1620,
-        label: "Age of Exploration",
-        url: "https://en.wikipedia.org/wiki/Age_of_Discovery"
-      },
-      { 
-        type: "segment",
-        start: 1700,
-        end: 1850,
-        label: "Triangular Trade / Trans-Atlantic Slave Trade Peak",
-        url: "https://en.wikipedia.org/wiki/Triangular_trade"
-      },
-      { 
-        type: "point",
-        at: 1492,
-        label: "Columbus' Sail",
-        url: "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
-      },
-      { 
-        type: "point",
-        at: 1521,
-        label: "Fall of Tenochtitlan",
-        url: "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan"
-      },
-      { 
-        type: "point",
-        at: 1498,
-        label: "Vasco da Gama reaches India",
-        url: "https://en.wikipedia.org/wiki/Vasco_da_Gama#First_voyage"
-      },
-      { 
-        type: "point",
-        at: 1602,
-        label: "Founding of Dutch East India Company",
-        url: "https://en.wikipedia.org/wiki/Dutch_East_India_Company"
-      },
-      { 
-        type: "point",
-        at: 1884,
-        start: 1884,
-        end: 1914,
-        label: "Scramble for Africa",
-        url: "https://en.wikipedia.org/wiki/Scramble_for_Africa"
-      },
-      { 
-        type: "point",
-        at: 1869,
-        label: "Suez Canal Opens",
-        url: "https://en.wikipedia.org/wiki/Suez_Canal#Inauguration_(17_November_1869)",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1914,
-        label: "Panama Canal Opens",
-        url: "https://en.wikipedia.org/wiki/Panama_Canal#United_States_construction_of_the_Panama_canal,_1904%E2%80%931914",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1405,
-        start: 1405,
-        end: 1433,
-        label: "Zheng He’s Voyages",
-        url: "https://en.wikipedia.org/wiki/Zheng_He#Expeditions",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1854,
-        start: 1852,
-        end: 1855,
-        label: "Perry Expeditions to Japan",
-        url: "https://en.wikipedia.org/wiki/Perry_Expedition",
       },
     ],
   },
@@ -971,6 +1121,13 @@ export const historicalData = [
         at: 1748,
         label: "Mathematical Analysis - Euler",
         url: "https://en.wikipedia.org/wiki/Introductio_in_analysin_infinitorum",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1801,
+        label: "Number Theory - Gauss",
+        url: "https://en.wikipedia.org/wiki/Disquisitiones_Arithmeticae",
         category: "good"
       },
       { 
@@ -1296,7 +1453,7 @@ export const historicalData = [
       },
       {
         type: "point",
-        at: 1311,
+        at: 1315,
         start: 1315,
         end: 1317,
         label: "Great Famine",
@@ -1400,7 +1557,7 @@ export const historicalData = [
         type: "point",
         at: 1536,
         label: "Potato Introduced to Old World",
-        url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_plants",
+        url: "https://wilsonscountry.com/about-us/history",
         category: "good"
       },
       {
