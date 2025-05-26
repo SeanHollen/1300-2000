@@ -11,7 +11,7 @@ const findValueForYear = (points, year) => {
       closestPoint = points[i];
     }
   }
-  
+
   return closestPoint.value;
 };
 
@@ -33,7 +33,7 @@ const formatValue = (value) => {
 
 export default function LineChartLegends({ lineChartData, hoveredYear }) {
   return (
-    <div 
+    <div
       style={{
         position: 'fixed',
         top: '10px',
@@ -50,11 +50,21 @@ export default function LineChartLegends({ lineChartData, hoveredYear }) {
         .map((lineData) => {
           const value = findValueForYear(lineData.points, hoveredYear);
           return (
-            <div key={lineData.id} style={{ color: lineData.color }}>
-              {lineData.label}: {lineData.prefix}{formatValue(value)}{lineData.unit || ""}
+            <div key={lineData.id}>
+              <a
+                href={lineData.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: lineData.color,
+                  cursor: 'pointer',
+                }}
+              >
+                {lineData.label}: {lineData.prefix}{formatValue(value)}{lineData.unit || ""}
+              </a>
             </div>
           );
         })}
     </div>
   );
-} 
+}

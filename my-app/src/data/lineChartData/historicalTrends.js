@@ -9,6 +9,7 @@ export const lineChartData = [
       start: 0,
       end: 7_000_000_000
     },
+    sourceUrl: "https://ourworldindata.org/grapher/population",
     points: [
       {
         "year": 1300,
@@ -342,6 +343,7 @@ export const lineChartData = [
       start: 25,
       end: 70
     },
+    sourceUrl: "https://ourworldindata.org/grapher/life-expectancy?country=~OWID_WRL",
     points: [
       {
         "year": 1770,
@@ -587,6 +589,7 @@ export const lineChartData = [
       start: 0,
       end: 6
     },
+    sourceUrl: "https://docs.google.com/spreadsheets/d/1aLtIpAWvDGGa9k2XXEz6hZugWn0wCd5nmzaRPPjbYNA/edit?gid=569008164#gid=569008164",
     points: [
       {
         "year": 1801,
@@ -1401,6 +1404,7 @@ export const lineChartData = [
       start: 0,
       end: 13_000
     },
+    sourceUrl: "https://ourworldindata.org/grapher/global-average-gdp-per-capita-over-the-long-run",
     points: [
       {
         "year": 1300,
@@ -1514,6 +1518,7 @@ export const lineChartData = [
       start: -1.3,
       end: 2
     },
+    sourceUrl: "https://www.ncei.noaa.gov/pub/data/paleo/pages2k/EuroMed2k/eujja_2krecon_nested_cps-noaa.txt",
     points: [
       {
         "year": 1300,
@@ -4331,6 +4336,7 @@ export const lineChartData = [
       start: 0,
       end: 50
     },
+    sourceUrl: "https://ourworldindata.org/trade-and-globalization?utm_content=buffer501bb&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer",
     points: [
       {
         "year": 1500,
@@ -4871,6 +4877,256 @@ export const lineChartData = [
       {
         "year": 2000,
         "value": 47.301876
+      }
+    ]
+  },
+  {
+    id: "literacy",
+    label: "Literacy Rate",
+    color: "#03f4fc",
+    unit: "%",
+    toShow: true,
+    range: {
+      start: 0,
+      end: 100
+    },
+    sourceUrl: "https://ourworldindata.org/literacy",
+    points: [
+      {
+        "year": 1820,
+        "value": 12
+      },
+      {
+        "year": 1870,
+        "value": 19
+      },
+      {
+        "year": 1880,
+        "value": 20
+      },
+      {
+        "year": 1890,
+        "value": 21
+      },
+      {
+        "year": 1900,
+        "value": 21
+      },
+      {
+        "year": 1910,
+        "value": 26
+      },
+      {
+        "year": 1920,
+        "value": 32
+      },
+      {
+        "year": 1930,
+        "value": 33
+      },
+      {
+        "year": 1940,
+        "value": 42
+      },
+      {
+        "year": 1950,
+        "value": 36
+      },
+      {
+        "year": 1960,
+        "value": 42
+      },
+      {
+        "year": 1976,
+        "value": 65.65878
+      },
+      {
+        "year": 1977,
+        "value": 65.9491
+      },
+      {
+        "year": 1978,
+        "value": 66.57206
+      },
+      {
+        "year": 1979,
+        "value": 67.23375
+      },
+      {
+        "year": 1980,
+        "value": 67.84755
+      },
+      {
+        "year": 1981,
+        "value": 68.45053
+      },
+      {
+        "year": 1982,
+        "value": 69.04214
+      },
+      {
+        "year": 1983,
+        "value": 69.61132
+      },
+      {
+        "year": 1984,
+        "value": 70.27237
+      },
+      {
+        "year": 1985,
+        "value": 70.86436
+      },
+      {
+        "year": 1986,
+        "value": 71.41604
+      },
+      {
+        "year": 1987,
+        "value": 72.10942
+      },
+      {
+        "year": 1988,
+        "value": 73.82409
+      },
+      {
+        "year": 1989,
+        "value": 74.34682
+      },
+      {
+        "year": 1990,
+        "value": 74.90692
+      },
+      {
+        "year": 1991,
+        "value": 75.28641
+      },
+      {
+        "year": 1992,
+        "value": 75.69422
+      },
+      {
+        "year": 1993,
+        "value": 76.10236
+      },
+      {
+        "year": 1994,
+        "value": 76.50139
+      },
+      {
+        "year": 1995,
+        "value": 76.91177
+      },
+      {
+        "year": 1996,
+        "value": 77.29624
+      },
+      {
+        "year": 1997,
+        "value": 79.28838
+      },
+      {
+        "year": 1998,
+        "value": 80.46865
+      },
+      {
+        "year": 1999,
+        "value": 80.80594
+      },
+      {
+        "year": 2000,
+        "value": 80.97918
+      },
+      {
+        "year": 2001,
+        "value": 81.28596
+      },
+      {
+        "year": 2002,
+        "value": 81.64014
+      },
+      {
+        "year": 2003,
+        "value": 82.11424
+      },
+      {
+        "year": 2004,
+        "value": 82.44724
+      },
+      {
+        "year": 2005,
+        "value": 82.45471
+      },
+      {
+        "year": 2006,
+        "value": 82.42525
+      },
+      {
+        "year": 2007,
+        "value": 83.0118
+      },
+      {
+        "year": 2008,
+        "value": 83.38551
+      },
+      {
+        "year": 2009,
+        "value": 83.60867
+      },
+      {
+        "year": 2010,
+        "value": 84.22716
+      },
+      {
+        "year": 2011,
+        "value": 84.41078
+      },
+      {
+        "year": 2012,
+        "value": 84.60138
+      },
+      {
+        "year": 2013,
+        "value": 84.9031
+      },
+      {
+        "year": 2014,
+        "value": 85.28639
+      },
+      {
+        "year": 2015,
+        "value": 85.67888
+      },
+      {
+        "year": 2016,
+        "value": 86.00011
+      },
+      {
+        "year": 2017,
+        "value": 86.177
+      },
+      {
+        "year": 2018,
+        "value": 86.43748
+      },
+      {
+        "year": 2019,
+        "value": 86.54791
+      },
+      {
+        "year": 2020,
+        "value": 86.74745
+      },
+      {
+        "year": 2021,
+        "value": 86.92751
+      },
+      {
+        "year": 2022,
+        "value": 87.15533
+      },
+      {
+        "year": 2023,
+        "value": 87.356
       }
     ]
   }

@@ -131,6 +131,14 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/End_of_the_Cold_War",
         category: "good"
       },
+      { 
+        type: "point",
+        at: 1945,
+        start: 1945,
+        end: 1975,
+        label: "Independence movements",
+        url: "https://en.wikipedia.org/wiki/Decolonization#The_emergence_of_the_Third_World_(1945%E2%80%93present)"
+      },
     ],
   },
   {
@@ -404,6 +412,13 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Flush_toilet#Development_of_the_modern_flush_toilet",
         category: "good"
       },
+      { 
+        type: "point",
+        at: 1733,
+        label: "Lead Chamber Process",
+        url: "https://en.wikipedia.org/wiki/Lead_chamber_process",
+        category: "good"
+      },
     ],
   },
   {
@@ -640,6 +655,13 @@ export const historicalData = [
         label: "Enlightenment",
         url: "https://en.wikipedia.org/wiki/Age_of_Enlightenment"
       },
+      { 
+        type: "segment",
+        start: 1350,
+        end: 1600,
+        label: "Renaissance",
+        url: "https://en.wikipedia.org/wiki/Renaissance"
+      },
     ],
   },
   {
@@ -682,7 +704,7 @@ export const historicalData = [
         type: "point",
         at: 1884,
         start: 1884,
-        end: 1885,
+        end: 1914,
         label: "Scramble for Africa",
         url: "https://en.wikipedia.org/wiki/Scramble_for_Africa"
       },
