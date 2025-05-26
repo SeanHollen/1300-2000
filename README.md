@@ -1,12 +1,9 @@
-# React + Vite
+# How it was made
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Candlestick Chart superimposed on Line Graphs.
 
-Currently, two official plugins are available:
+Made with React + Vite.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The JSX was mostly vibe coded using Cursor, hense the empty commit messages.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The research was mostly done via GPT 4o.
