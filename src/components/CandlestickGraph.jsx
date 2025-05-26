@@ -11,6 +11,9 @@ import SegmentTooltips from "./CandlestickGraph/SegmentTooltips";
 import PointTooltips from "./CandlestickGraph/PointTooltips";
 import "../styles/swimlanes.css";
 
+const CHART_WIDTH = 10000;
+// const CHART_WIDTH = 1800;
+
 export default function CandlestickGraph({ data = historicalData }) {
   const [pointTooltip, setPointTooltip] = useState(null);
   const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
@@ -23,7 +26,7 @@ export default function CandlestickGraph({ data = historicalData }) {
     layout: {
       svgPad: 150,
       axisHeight: 40,
-      chartWidth: 10000,
+      chartWidth: CHART_WIDTH,
       windowHeight: typeof window !== 'undefined' ? window.innerHeight - 20 : 800,
       bottomPadding: 20
     },
