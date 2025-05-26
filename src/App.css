@@ -1,9 +1,14 @@
 #root {
-  max-width: 1280px; /* This can remain if it's for centering content on large screens */
-  margin: 0 auto; /* Changed from '0 0' to '0 auto' for centering */
+  max-width: 1280px;
+  margin: 0 0;
   padding: 0rem;
   text-align: center;
-  /* overflow-x: hidden; */ /* This line is removed */
+  overflow-x: hidden;
+}
+
+.root-mobile {
+  max-width: 0;
+  margin: 0 auto;
 }
 
 .logo {
