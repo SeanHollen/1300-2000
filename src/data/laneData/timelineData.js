@@ -314,7 +314,7 @@ export const historicalData = [
     ],
   },
   {
-    lane: "Technology and Industry",
+    lane: "Technology and Economics",
     icon: "gears",
     items: [
       { 
@@ -930,7 +930,7 @@ export const historicalData = [
         at: 1545,
         start: 1545,
         end: 1563,
-        label: `Council of Trent, Start of Counter-Reformation and Jesuit Education`,
+        label: `Start of Counter-Reformation`,
         url: "https://en.wikipedia.org/wiki/Council_of_Trent",
         category: "neutral"
       },
@@ -1109,13 +1109,15 @@ export const historicalData = [
         label: "Scientific Revolution",
         url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
       },
-      // { 
-      //   type: "point",
-      //   at: 1202,
-      //   label: "Decimal Place System in Europe",
-      //   url: "",
-      //   category: "good"
-      // },
+      {
+        type: "point",
+        at: 1545,
+        start: 1545,
+        end: 1563,
+        label: `Start of Jesuit Education`,
+        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
+        category: "good"
+      },
       { 
         type: "point",
         at: 1748,
