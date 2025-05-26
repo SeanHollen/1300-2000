@@ -39,6 +39,14 @@ export const historicalData = [
         url: "https://en.wikipedia.org/wiki/Taiping_Rebellion"
       },
       { 
+        type: "point",
+        at: 1861,
+        start: 1861,
+        end: 1865,
+        label: "American Civil War",
+        url: "https://en.wikipedia.org/wiki/American_Civil_War"
+      },
+      { 
         type: "segment",
         start: 1914,
         end: 1918,
@@ -250,6 +258,14 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1519,
+        start: 1519,
+        end: 1522,
+        label: "Magellan Expedition",
+        url: "https://en.wikipedia.org/wiki/Magellan_expedition"
+      },
+      { 
+        type: "point",
         at: 1521,
         label: "Fall of Tenochtitlan",
         url: "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan"
@@ -344,6 +360,13 @@ export const historicalData = [
         at: 1793,
         label: "Cotton Gin",
         url: "https://en.wikipedia.org/wiki/Cotton_gin",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1750,
+        label: "Textile Mills in Britain",
+        url: "https://en.wikipedia.org/wiki/Industrial_Revolution#British_textile_industry",
         category: "good"
       },
       { 
@@ -806,6 +829,13 @@ export const historicalData = [
         end: 1687,
         label: "Scientific Revolution",
         url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
+      },
+      {
+        type: "point",
+        at: 1650,
+        label: `High Literacy in Protestant Europe`,
+        url: "https://ourworldindata.org/grapher/cross-country-literacy-rates?country=RUS~GBR~NLD~OWID_WRL~IND~SWE~NOR~DNK~FRA~DEU",
+        category: "good"
       },
       {
         type: "point",
@@ -1535,6 +1565,15 @@ export const historicalData = [
         at: 1701,
         label: "Agricultural Mechanization Begins",
         url: "https://en.wikipedia.org/wiki/Seed_drill#History",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1911,
+        start: 1894,
+        end: 1911,
+        label: "Haber–Bosch Process",
+        url: "https://en.wikipedia.org/wiki/Fritz_Haber",
         category: "good"
       },
       {
