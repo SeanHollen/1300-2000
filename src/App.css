@@ -1,6 +1,6 @@
 #root {
-  max-width: 1280px; /* This can remain if it's for centering content on large screens */
-  margin: 0 auto; /* Changed from '0 0' to '0 auto' for centering */
+  /* max-width: 1280px; */ /* Removed to make #root full-width */
+  margin: 0; /* Changed from '0 auto' to ensure no horizontal auto margins */
   padding: 0rem;
   text-align: center;
   /* overflow-x: hidden; */ /* This line is removed */
