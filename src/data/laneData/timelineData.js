@@ -76,7 +76,7 @@ export const historicalData = [
       },
       { 
         type: "point",
-        at: 1937,
+        at: 1940,
         start: 1937,
         end: 1945,
         label: "Second Sino-Japanese War",

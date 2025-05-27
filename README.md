@@ -1,6 +1,6 @@
 # About
 
-Timeline of 1300-1000 AD.
+Timeline of 1300-2000 AD.
 
 Candlestick Chart superimposed on Line Graphs.
 
@@ -18,10 +18,7 @@ The research was mostly done via GPT 4o and fact-checked via Wikipedia.
 
 ```
 git clone https://github.com/SeanHollen/1300-2000.git
-
 cd 1300-2000
-
 npm i
-
 npm run dev
 ```
