@@ -7,14 +7,14 @@ export const historicalData = [
         type: "segment",
         start: 1337,
         end: 1453,
-        label: "Hundred Years' War",
+        label: "Hundred Years’ War",
         url: "https://en.wikipedia.org/wiki/Hundred_Years%27_War"
       },
       { 
         type: "segment",
         start: 1618,
         end: 1648,
-        label: "Thirty Years' War",
+        label: "Thirty Years’ War",
         url: "https://en.wikipedia.org/wiki/Thirty_Years%27_War"
       },
       { 
@@ -34,6 +34,13 @@ export const historicalData = [
       },
       { 
         type: "segment",
+        start: 1740,
+        end: 1748,
+        label: "War of the Austrian Succession",
+        url: "https://en.wikipedia.org/wiki/War_of_the_Austrian_Succession"
+      },
+      { 
+        type: "segment",
         start: 1792,
         end: 1815,
         label: "French Revolutionary and Napoleonic Wars",
@@ -49,7 +56,7 @@ export const historicalData = [
       { 
         type: "point",
         at: 1381,
-        label: "Peasants' Revolt",
+        label: "Peasants’ Revolt",
         url: "htthttps://en.wikipedia.org/wiki/Peasants%27_Revolt"
       },
       { 
@@ -267,7 +274,7 @@ export const historicalData = [
       { 
         type: "point",
         at: 1492,
-        label: "Columbus' Sail",
+        label: "Columbus’ Sail",
         url: "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
       },
       { 
@@ -330,8 +337,7 @@ export const historicalData = [
         start: 1405,
         end: 1433,
         label: "Zheng He’s Voyages",
-        url: "https://en.wikipedia.org/wiki/Zheng_He#Expeditions",
-        category: "good"
+        url: "https://en.wikipedia.org/wiki/Zheng_He#Expeditions"
       },
       { 
         type: "point",
@@ -788,7 +794,7 @@ export const historicalData = [
         at: 1361,
         start: 1360,
         end: 1364,
-        label: `Children's Plague`,
+        label: `Children’s Plague`,
         url: "https://biographics.org/return-of-the-black-death-the-plague-of-children/",
         category: "bad"
       },
@@ -804,14 +810,14 @@ export const historicalData = [
       {
         type: "point",
         at: 1854,
-        label: `John Snow's Research, Third Cholera Pandemic`,
+        label: `John Snow’s Research, Third Cholera Pandemic`,
         url: "https://en.wikipedia.org/wiki/1854_Broad_Street_cholera_outbreak",
         category: "neutral"
       },
       {
         type: "point",
         at: 1858,
-        label: `Bazalgette's proposal, Great Stink`,
+        label: `Bazalgette’s proposal, Great Stink`,
         url: "https://en.wikipedia.org/wiki/Great_Stink",
         category: "neutral"
       },
