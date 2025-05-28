@@ -12,9 +12,6 @@ import PointTooltips from "./CandlestickGraph/PointTooltips";
 import SettingsModal from "./CandlestickGraph/SettingsModal";
 import "../styles/swimlanes.css";
 
-const CHART_WIDTH = 10000;
-// const CHART_WIDTH = 1800;
-
 export default function CandlestickGraph({ 
   timelineData = _timelineData,
   lineChartData = _lineChartData 
@@ -26,6 +23,7 @@ export default function CandlestickGraph({
   const [hoveredYear, setHoveredYear] = useState(null);
   const containerRef = useRef(null);
   const [showModal, setShowModal] = useState(false);
+  const [chartWidth, setChartWidth] = useState(10000);
 
   const [lineChartState, setLineChartState] = useState(
     lineChartData
@@ -45,7 +43,6 @@ export default function CandlestickGraph({
     layout: {
       svgPad: 150,
       axisHeight: 40,
-      chartWidth: CHART_WIDTH,
       windowHeight: typeof window !== 'undefined' ? window.innerHeight - 20 : 800,
       bottomPadding: 20
     },
@@ -91,7 +88,6 @@ export default function CandlestickGraph({
   const laneUnit = config.lane.getUnit(laneCount);
   const laneThickness = config.lane.getThickness(laneUnit);
   const lanePadding = config.lane.getPadding(laneUnit);
-  const chartWidth = config.layout.chartWidth;
 
   const tooltipTextRef = (element) => {
     if (element) {
@@ -188,6 +184,10 @@ export default function CandlestickGraph({
     );
   };
 
+  const updateChartWidth = (value) => {
+    setChartWidth(value);
+  };
+
   return (
     <div
       className="w-screen h-screen swimlane-container relative m-0"
@@ -202,6 +202,8 @@ export default function CandlestickGraph({
           lineChartData={lineChartState}
           onClose={() => setShowModal(false)}
           onToggle={updateLineChartState}
+          onSliderChange={updateChartWidth}
+          sliderValue={chartWidth}
         />
       )}
 

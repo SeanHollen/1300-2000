@@ -70,6 +70,25 @@ export default function LineChartLegends({ lineChartData, hoveredYear, setShowMo
             </div>
           );
         })}
+      {!hoveredYear && lineChartData
+        .filter(lineData => lineData.toShow)
+        .map((lineData) => {
+          return (
+            <div key={lineData.id}>
+              <a
+                href={lineData.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  color: lineData.color,
+                  cursor: 'pointer',
+                }}
+              >
+                {lineData.shortLabel || lineData.label}{lineData.unit ? ", " : ""}{lineData.unit || ""}
+              </a>
+            </div>
+          );
+        })}
     </div>
   );
 }

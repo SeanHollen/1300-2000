@@ -1,6 +1,4 @@
-import { useState } from "react";
-
-export default function SettingsModal({ lineChartData, onClose, onToggle }) {
+export default function SettingsModal({ lineChartData, onClose, onToggle, onSliderChange, sliderValue }) {
   return (
     <div style={{
       position: "fixed",
@@ -75,6 +73,28 @@ export default function SettingsModal({ lineChartData, onClose, onToggle }) {
               />
             </div>
           ))}
+        </div>
+
+        {/* Slider */}
+        <div style={{ marginTop: "1.5rem" }}>
+          <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}>
+            Chart Width
+          </label>
+          <input
+            type="range"
+            min={1000}
+            max={20000}
+            value={sliderValue}
+            onChange={(e) => onSliderChange(Number(e.target.value))}
+            style={{ width: "100%" }}
+          />
+          <div style={{
+            fontWeight: "500",
+            fontSize: "0.95rem",
+            color: "#333"
+          }}>
+            {sliderValue}px
+          </div>
         </div>
       </div>
     </div>
