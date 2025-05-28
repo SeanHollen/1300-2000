@@ -1144,6 +1144,15 @@ export const historicalData = [
       },
       { 
         type: "point",
+        at: 1667,
+        start: 1608,
+        end: 1674,
+        label: "Paradise Lost - Milton",
+        url: "https://en.wikipedia.org/wiki/Paradise_Lost",
+        category: "good"
+      },
+      { 
+        type: "point",
         at: 1387,
         start: 1387,
         end: 1400,
