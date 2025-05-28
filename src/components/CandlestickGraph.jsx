@@ -1,6 +1,6 @@
 import React, { useState, useRef, useEffect } from "react";
-import { historicalData } from "../data/laneData/timelineData";
-import { lineChartData } from "../data/lineChartData/historicalTrends";
+import { timelineData as _timelineData } from "../data/laneData/timelineData";
+import { lineChartData as _lineChartData } from "../data/lineChartData/historicalTrends";
 import LineChartLegends from "./CandlestickGraph/LineChartLegends";
 import LineChartLines from "./CandlestickGraph/LineChartLines";
 import XAxis from "./CandlestickGraph/XAxis";
@@ -9,18 +9,37 @@ import CursorLine from "./CandlestickGraph/CursorLine";
 import PointsAndSegments from "./CandlestickGraph/PointsAndSegments";
 import SegmentTooltips from "./CandlestickGraph/SegmentTooltips";
 import PointTooltips from "./CandlestickGraph/PointTooltips";
+import SettingsModal from "./CandlestickGraph/SettingsModal";
 import "../styles/swimlanes.css";
 
 const CHART_WIDTH = 10000;
 // const CHART_WIDTH = 1800;
 
-export default function CandlestickGraph({ data = historicalData }) {
+export default function CandlestickGraph({ 
+  timelineData = _timelineData,
+  lineChartData = _lineChartData 
+}) {
   const [pointTooltip, setPointTooltip] = useState(null);
   const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
   const [interactionOrder, setInteractionOrder] = useState([]);
   const [cursorX, setCursorX] = useState(null);
   const [hoveredYear, setHoveredYear] = useState(null);
   const containerRef = useRef(null);
+  const [showModal, setShowModal] = useState(false);
+
+  const [lineChartState, setLineChartState] = useState(
+    lineChartData
+    .map(item => ({ ...item }))
+    .map(item => ({
+      ...item,
+      points: item.points.sort((a, b) => a.year - b.year)
+    }))
+    .sort((a, b) => {
+      const aLength = a.points[a.points.length - 1].year - a.points[0].year;
+      const bLength = b.points[b.points.length - 1].year - b.points[0].year;
+      return bLength - aLength;
+    })
+  );
 
   const config = {
     layout: {
@@ -68,7 +87,7 @@ export default function CandlestickGraph({ data = historicalData }) {
     }
   };
 
-  const laneCount = data.length;
+  const laneCount = timelineData.length;
   const laneUnit = config.lane.getUnit(laneCount);
   const laneThickness = config.lane.getThickness(laneUnit);
   const lanePadding = config.lane.getPadding(laneUnit);
@@ -79,7 +98,7 @@ export default function CandlestickGraph({ data = historicalData }) {
       const bbox = element.getBBox();
       const newWidth = bbox.width + 20;
       const newX = -bbox.width / 2 - 10;
-      
+
       if (newWidth !== tooltipMeasurements.width || newX !== tooltipMeasurements.x) {
         setTooltipMeasurements({
           width: newWidth,
@@ -130,7 +149,7 @@ export default function CandlestickGraph({ data = historicalData }) {
     };
 
     container.addEventListener('wheel', handleWheel);
-    
+
     return () => container.removeEventListener('wheel', handleWheel);
   }, []);
 
@@ -146,8 +165,8 @@ export default function CandlestickGraph({ data = historicalData }) {
 
   const constrainTooltipPosition = (x, tooltipWidth) => {
     return Math.min(
-      Math.max(x, tooltipWidth/2 + config.tooltip.padding), 
-      chartWidth - tooltipWidth/2 - config.tooltip.padding
+      Math.max(x, tooltipWidth / 2 + config.tooltip.padding),
+      chartWidth - tooltipWidth / 2 - config.tooltip.padding
     );
   };
 
@@ -159,48 +178,64 @@ export default function CandlestickGraph({ data = historicalData }) {
     });
   };
 
-  const totalHeight = data.length * (laneThickness + lanePadding) + config.layout.svgPad;
+  const totalHeight = timelineData.length * (laneThickness + lanePadding) + config.layout.svgPad;
+
+  const updateLineChartState = (label, toShow) => {
+    setLineChartState(prev =>
+      prev.map(item =>
+        item.label === label ? { ...item, toShow: toShow } : item
+      )
+    );
+  };
 
   return (
-    <div 
-      className="w-screen h-screen swimlane-container relative m-0" 
+    <div
+      className="w-screen h-screen swimlane-container relative m-0"
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <LineChartLegends lineChartData={lineChartData} hoveredYear={hoveredYear} />
+      <LineChartLegends lineChartData={lineChartState} hoveredYear={hoveredYear} setShowModal={setShowModal} />
+
+      {showModal && (
+        <SettingsModal
+          lineChartData={lineChartState}
+          onClose={() => setShowModal(false)}
+          onToggle={updateLineChartState}
+        />
+      )}
 
       <svg width={chartWidth} height={totalHeight} className="overflow-hidden">
-        <LineChartLines 
-          lineChartData={lineChartData}
+        <LineChartLines
+          lineChartData={lineChartState}
           config={config}
           yearToX={yearToX}
           totalHeight={totalHeight}
         />
 
-        <XAxis 
+        <XAxis
           config={config}
           yearToX={yearToX}
           chartWidth={chartWidth}
         />
 
-        <SwimlaneLines 
-          data={data}
+        <SwimlaneLines
+          data={timelineData}
           config={config}
           chartWidth={chartWidth}
           laneThickness={laneThickness}
           lanePadding={lanePadding}
         />
 
-        <CursorLine 
+        <CursorLine
           cursorX={cursorX}
           config={config}
           totalHeight={totalHeight}
           xToYear={xToYear}
         />
 
-        <PointsAndSegments 
-          data={data}
+        <PointsAndSegments
+          data={timelineData}
           yearToX={yearToX}
           laneThickness={laneThickness}
           lanePadding={lanePadding}
@@ -209,8 +244,8 @@ export default function CandlestickGraph({ data = historicalData }) {
           handlePointHover={handlePointHover}
         />
 
-        <SegmentTooltips 
-          data={data}
+        <SegmentTooltips
+          data={timelineData}
           yearToX={yearToX}
           laneThickness={laneThickness}
           lanePadding={lanePadding}
@@ -220,7 +255,7 @@ export default function CandlestickGraph({ data = historicalData }) {
           constrainTooltipPosition={constrainTooltipPosition}
         />
 
-        <PointTooltips 
+        <PointTooltips
           pointTooltip={pointTooltip}
           tooltipMeasurements={tooltipMeasurements}
           tooltipTextRef={tooltipTextRef}

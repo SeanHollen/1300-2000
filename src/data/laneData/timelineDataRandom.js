@@ -1,4 +1,4 @@
-export const mockData = [
+export const timelineData = [
   {
     lane: "Lane 1",
     items: [

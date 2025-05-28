@@ -1,4 +1,4 @@
-export const historicalData = [
+export const timelineData = [
   {
     lane: "Wars and Revolutions",
     icon: "sword",
@@ -1183,6 +1183,13 @@ export const historicalData = [
         at: 1434,
         label: "Arnolfini Portrait",
         url: "https://en.wikipedia.org/wiki/Arnolfini_Portrait",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1749,
+        label: "Bach – Mass in B Minor",
+        url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
         category: "good"
       },
       { 

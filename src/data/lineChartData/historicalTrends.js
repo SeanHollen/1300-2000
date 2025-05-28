@@ -1,7 +1,8 @@
 export const lineChartData = [
   {
     id: "population",
-    label: "Population",
+    label: "World Population",
+    shortLabel: "Pop",
     color: "#e879f9", // bright pink
     unit: "",
     toShow: true,
@@ -335,8 +336,9 @@ export const lineChartData = [
   },
   {
     id: "population-europe",
-    label: "Europe Population",
-    color: "#e879f9", // bright pink
+    label: "European Population",
+    shortLabel: "Europe Pop",
+    color: "#f542d7", // bright pink 2
     unit: "",
     toShow: false,
     range: {
@@ -1225,7 +1227,8 @@ export const lineChartData = [
   },
   {
     id: "gdp",
-    label: "Per Capita GDP",
+    label: "World Per Capita GDP, Dollars",
+    shortLabel: "Per Capita GDP",
     color: "#60a5fa", // sky blue
     prefix: "$",
     unit: "",
@@ -1340,9 +1343,10 @@ export const lineChartData = [
   },
   {
     id: "temperature",
-    label: "European Smoothed Summer Temperature",
+    label: "European Smoothed Summer Temperature Anomaly",
+    shortLabel: "Europe Temperature",
     color: "#fbbf24", // amber yellow
-    unit: "Anomaly",
+    unit: " Anomaly",
     toShow: false,
     range: {
       start: -1.3,
@@ -4158,7 +4162,8 @@ export const lineChartData = [
   },
   {
     id: "urbanization",
-    label: "Urbanization",
+    label: "World Urbanization, Percent Urban",
+    shortLabel: "Urbanization",
     color: "#ed9624",
     unit: "%",
     toShow: true,
@@ -4492,7 +4497,8 @@ export const lineChartData = [
   },
   {
     id: "trade",
-    label: "Exports",
+    label: "World Exports as a Percent of GDP",
+    shortLabel: "Exports",
     color: "#a39d9b",
     unit: "% of GDP",
     toShow: true,
@@ -5046,7 +5052,8 @@ export const lineChartData = [
   },
   {
     id: "life-expectancy",
-    label: "Life Expectancy",
+    label: "World Life Expectancy, Years",
+    shortLabel: "Life Expectancy",
     color: "#22c55e", // emerald green
     unit: " years",
     toShow: true,
@@ -5292,7 +5299,8 @@ export const lineChartData = [
   },
   {
     id: "fertility",
-    label: "Total Fertility",
+    label: "World Total Fertility, Children per Woman",
+    shortLabel: "Fertility",
     color: "#ff7373", // sky blue
     unit: "",
     toShow: true,
@@ -6106,7 +6114,8 @@ export const lineChartData = [
   },
   {
     id: "literacy",
-    label: "Literacy Rate",
+    label: "World Literacy Rate, Percent Literate",
+    shortLabel: "Literacy",
     color: "#03f4fc",
     unit: "%",
     toShow: true,

@@ -1,4 +1,6 @@
 import React from 'react';
+import { CiSettings } from "react-icons/ci";
+
 
 const findValueForYear = (points, year) => {
   if (!year) return null;
@@ -31,7 +33,7 @@ const formatValue = (value) => {
   return withCommas;
 }
 
-export default function LineChartLegends({ lineChartData, hoveredYear }) {
+export default function LineChartLegends({ lineChartData, hoveredYear, setShowModal }) {
   return (
     <div
       style={{
@@ -42,9 +44,12 @@ export default function LineChartLegends({ lineChartData, hoveredYear }) {
         display: 'flex',
         gap: '16px',
         fontSize: '12px',
-        fontFamily: 'monospace'
+        fontFamily: 'monospace',
       }}
     >
+      <span style={{ display: 'inline-block' }}>
+        <CiSettings onClick={() => setShowModal(true)} style={{ fontSize: '1.2rem', verticalAlign: 'middle', cursor: 'pointer' }} />
+      </span>
       {lineChartData
         .filter(lineData => lineData.toShow && hasDataAtYear(lineData.points, hoveredYear))
         .map((lineData) => {
@@ -60,7 +65,7 @@ export default function LineChartLegends({ lineChartData, hoveredYear }) {
                   cursor: 'pointer',
                 }}
               >
-                {lineData.label}: {lineData.prefix}{formatValue(value)}{lineData.unit || ""}
+                {lineData.shortLabel || lineData.label}: {lineData.prefix}{formatValue(value)}{lineData.unit || ""}
               </a>
             </div>
           );
