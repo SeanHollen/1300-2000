@@ -1513,15 +1513,6 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1928,
-        start: 1928,
-        end: 1930,
-        label: "Chinese Famine",
-        url: "https://en.wikipedia.org/wiki/Chinese_famine_of_1928%E2%80%931930",
-        category: "bad"
-      },
-      {
-        type: "point",
         at: 1315,
         start: 1315,
         end: 1317,

@@ -41,8 +41,10 @@ export default function LineChartLegends({ lineChartData, hoveredYear, setShowMo
         top: '10px',
         left: '10px',
         zIndex: 1000,
-        display: 'flex',
-        gap: '16px',
+        display: 'inline-flex',
+        flexWrap: 'wrap',
+        alignItems: 'center',
+        gap: '10px',
         fontSize: '12px',
         fontFamily: 'monospace',
       }}
