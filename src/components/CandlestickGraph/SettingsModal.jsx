@@ -1,16 +1,27 @@
-export default function SettingsModal({ lineChartData, onClose, onToggle, onSliderChange, sliderValue }) {
+export default function SettingsModal({
+  lineChartData,
+  onClose,
+  onToggle,
+  onSliderChange,
+  sliderValue,
+  onRestoreDefaults,
+}) {
   return (
     <div
       onClick={onClose}
       style={{
         position: "fixed",
-        top: 0, left: 0, right: 0, bottom: 0,
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
         backgroundColor: "rgba(0,0,0,0.4)",
         display: "flex",
         justifyContent: "center",
         alignItems: "center",
-        zIndex: 1000
-      }}>
+        zIndex: 1000,
+      }}
+    >
       <div
         onClick={(e) => e.stopPropagation()}
         style={{
@@ -18,8 +29,9 @@ export default function SettingsModal({ lineChartData, onClose, onToggle, onSlid
           padding: "1rem",
           borderRadius: "8px",
           position: "relative",
-          minWidth: "300px"
-        }}>
+          minWidth: "300px",
+        }}
+      >
         <button
           onClick={onClose}
           tabIndex={-1}
@@ -31,40 +43,51 @@ export default function SettingsModal({ lineChartData, onClose, onToggle, onSlid
             border: "none",
             fontSize: "1.2rem",
             cursor: "pointer",
-            outline: "none"
+            outline: "none",
           }}
         >
           ×
         </button>
 
-        <h2 style={{
-          margin: 0,
-          marginBottom: "1rem",
-          textAlign: "center",
-          fontSize: "1.2rem"
-        }}>
+        <h2
+          style={{
+            margin: 0,
+            marginBottom: "1rem",
+            textAlign: "center",
+            fontSize: "1.2rem",
+          }}
+        >
           Settings
         </h2>
 
         <div>
-          {lineChartData.map(item => (
+          <label
+            style={{
+              display: "block",
+              marginBottom: "0.5rem",
+              fontWeight: "500",
+            }}
+          >
+            Trendlines Opened
+          </label>
+          {lineChartData.map((item) => (
             <div
               key={item.label}
               style={{
                 display: "flex",
                 justifyContent: "space-between",
                 alignItems: "center",
-                padding: "0.4rem 0"
+                padding: "0.4rem 0",
               }}
             >
-              <div key={item.id} style={{ paddingRight: "1rem" }} >
+              <div key={item.id} style={{ paddingRight: "1rem" }}>
                 <a
                   href={item.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   style={{
                     color: item.color,
-                    cursor: 'pointer',
+                    cursor: "pointer",
                   }}
                 >
                   {item.label}
@@ -79,9 +102,14 @@ export default function SettingsModal({ lineChartData, onClose, onToggle, onSlid
           ))}
         </div>
 
-        {/* Slider */}
         <div style={{ marginTop: "1.5rem" }}>
-          <label style={{ display: "block", marginBottom: "0.5rem", fontWeight: "500" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "0.5rem",
+              fontWeight: "500",
+            }}
+          >
             Chart Width
           </label>
           <input
@@ -92,13 +120,41 @@ export default function SettingsModal({ lineChartData, onClose, onToggle, onSlid
             onChange={(e) => onSliderChange(Number(e.target.value))}
             style={{ width: "100%" }}
           />
-          <div style={{
-            fontWeight: "500",
-            fontSize: "0.95rem",
-            color: "#333"
-          }}>
-            {sliderValue}px
+          <div
+            style={{
+              fontWeight: "500",
+              fontSize: "0.95rem",
+              color: "#333",
+            }}
+          >
+            {sliderValue} px
           </div>
+        </div>
+
+        <div style={{ marginTop: "2rem", textAlign: "center" }}>
+          <label
+            style={{
+              display: "block",
+              marginBottom: "0.5rem",
+              fontWeight: "500",
+            }}
+          >
+            Other
+          </label>
+          <button
+            onClick={onRestoreDefaults}
+            style={{
+              background: "#808080",
+              color: "white",
+              border: "none",
+              padding: "0.5rem 1rem",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontSize: "1rem",
+            }}
+          >
+            Restore Defaults
+          </button>
         </div>
       </div>
     </div>

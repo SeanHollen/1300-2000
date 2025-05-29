@@ -3,6 +3,7 @@ import { FaCog, FaBook, FaBalanceScale, FaCloud, FaCross } from "react-icons/fa"
 import { GiCrossedSwords, GiSailboat, GiSyringe, GiGears } from "react-icons/gi";
 import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
+import { GiQuillInk } from "react-icons/gi";
 
 const iconMap = {
   sword: GiCrossedSwords,
@@ -16,6 +17,7 @@ const iconMap = {
   telescope: IoTelescopeSharp,
   cloud: FaCloud,
   wheat: LuWheat,
+  quill: GiQuillInk,
 };
 
 export default function SwimlaneLines({ 

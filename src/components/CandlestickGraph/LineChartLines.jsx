@@ -24,9 +24,9 @@ export default function LineCharts({
             key={lineData.id}
             d={createLinePath(lineData.points, lineData.range, config, totalHeight, yearToX)}
             stroke={lineData.color}
-            strokeWidth="2"
+            strokeWidth="1.5"
             fill="none"
-            opacity="0.3"
+            opacity="0.4"
           />
         ))}
     </>

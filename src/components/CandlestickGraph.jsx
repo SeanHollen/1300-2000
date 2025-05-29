@@ -12,57 +12,87 @@ import PointTooltips from "./CandlestickGraph/PointTooltips";
 import SettingsModal from "./CandlestickGraph/SettingsModal";
 import "../styles/swimlanes.css";
 
-export default function CandlestickGraph({ 
-  timelineData = _timelineData,
-  lineChartData = _lineChartData 
-}) {
-  const [pointTooltip, setPointTooltip] = useState(null);
-  const [tooltipMeasurements, setTooltipMeasurements] = useState({ width: 120, x: -60 });
-  const [interactionOrder, setInteractionOrder] = useState([]);
-  const [cursorX, setCursorX] = useState(null);
-  const [hoveredYear, setHoveredYear] = useState(null);
+export default function CandlestickGraph() {
+  const DEFAULT_CHART_WIDTH = 10000;
   const containerRef = useRef(null);
-  const [showModal, setShowModal] = useState(false);
-  const [chartWidth, setChartWidth] = useState(10000);
 
-  const [lineChartState, setLineChartState] = useState(
-    lineChartData
-    .map(item => ({ ...item }))
-    .map(item => ({
-      ...item,
-      points: item.points.sort((a, b) => a.year - b.year)
-    }))
-    .sort((a, b) => {
-      const aLength = a.points[a.points.length - 1].year - a.points[0].year;
-      const bLength = b.points[b.points.length - 1].year - b.points[0].year;
-      return bLength - aLength;
-    })
-  );
+  const getLineChartState = () => {
+    return _lineChartData
+      .map((item) => ({ ...item }))
+      .map((item) => ({
+        ...item,
+        points: item.points.sort((a, b) => a.year - b.year),
+      }))
+      .sort((a, b) => {
+        const aLength = a.points[a.points.length - 1].year - a.points[0].year;
+        const bLength = b.points[b.points.length - 1].year - b.points[0].year;
+        return bLength - aLength;
+      });
+  };
+
+  const getTimelineData = () => {
+    return _timelineData.map((item) => ({ ...item }));
+  };
+
+  const [lineChartState, setLineChartState] = useState(() => {
+    const savedState = localStorage.getItem("lineChartState");
+    return savedState ? JSON.parse(savedState) : getLineChartState();
+  });
+
+  const [timelineState, setTimelineState] = useState(() => {
+    const savedState = localStorage.getItem("timelineState");
+    return savedState ? JSON.parse(savedState) : getTimelineData();
+  });
+
+  const [chartWidth, setChartWidth] = useState(() => {
+    const savedWidth = localStorage.getItem("chartWidth");
+    return savedWidth ? Number(savedWidth) : DEFAULT_CHART_WIDTH;
+  });
+
+  useEffect(() => {
+    localStorage.setItem("lineChartState", JSON.stringify(lineChartState));
+  }, [lineChartState]);
+
+  useEffect(() => {
+    localStorage.setItem("timelineState", JSON.stringify(timelineState));
+  }, [timelineState]);
+
+  useEffect(() => {
+    localStorage.setItem("chartWidth", chartWidth.toString());
+  }, [chartWidth]);
+
+  const onRestoreDefaults = () => {
+    setLineChartState(getLineChartState());
+    setTimelineState(getTimelineData());
+    setChartWidth(DEFAULT_CHART_WIDTH);
+  };
 
   const config = {
     layout: {
       svgPad: 150,
       axisHeight: 40,
-      windowHeight: typeof window !== 'undefined' ? window.innerHeight - 20 : 800,
-      bottomPadding: 20
+      windowHeight:
+        typeof window !== "undefined" ? window.innerHeight - 20 : 800,
+      bottomPadding: 20,
     },
     lane: {
       percentages: {
         lane: 0.1,
-        segment: 0.5
+        segment: 0.5,
       },
-      getUnit: (laneCount) => (config.layout.windowHeight - 50) / (laneCount + 0.5),
+      getUnit: (laneCount) =>
+        (config.layout.windowHeight - 50) / (laneCount + 0.5),
       getThickness: (unit) => unit * config.lane.percentages.lane,
       getPadding: (unit) => unit * (1 - config.lane.percentages.lane),
     },
     point: {
       radius: 12,
-      iconRadius: 20
+      iconRadius: 20,
     },
     timeline: {
       startYear: 1300,
       endYear: 2000,
-      getYearRange: () => config.timeline.endYear - config.timeline.startYear
+      getYearRange: () => config.timeline.endYear - config.timeline.startYear,
     },
     tooltip: {
       defaultWidth: 120,
@@ -72,22 +102,27 @@ export default function CandlestickGraph({
       yearLabelHeight: 20,
       yearLabelOffset: {
         x: -20,
-        y: 12
+        y: 12,
       },
       segment: {
         x: -60,
         y: -20,
         width: 120,
         height: 24,
-        textY: -8
-      }
-    }
+        textY: -8,
+      },
+    },
   };
 
-  const laneCount = timelineData.length;
+  const laneCount = timelineState.length;
   const laneUnit = config.lane.getUnit(laneCount);
   const laneThickness = config.lane.getThickness(laneUnit);
   const lanePadding = config.lane.getPadding(laneUnit);
+
+  const [tooltipMeasurements, setTooltipMeasurements] = useState({
+    width: 120,
+    x: -60,
+  });
 
   const tooltipTextRef = (element) => {
     if (element) {
@@ -95,14 +130,19 @@ export default function CandlestickGraph({
       const newWidth = bbox.width + 20;
       const newX = -bbox.width / 2 - 10;
 
-      if (newWidth !== tooltipMeasurements.width || newX !== tooltipMeasurements.x) {
+      if (
+        newWidth !== tooltipMeasurements.width ||
+        newX !== tooltipMeasurements.x
+      ) {
         setTooltipMeasurements({
           width: newWidth,
-          x: newX
+          x: newX,
         });
       }
     }
   };
+
+  const [pointTooltip, setPointTooltip] = useState(null);
 
   const handlePointHover = (e, item, pointX, pointY) => {
     if (!item) {
@@ -118,6 +158,9 @@ export default function CandlestickGraph({
       content: item.label,
     });
   };
+
+  const [cursorX, setCursorX] = useState(null);
+  const [hoveredYear, setHoveredYear] = useState(null);
 
   const handleMouseMove = (e) => {
     if (containerRef.current) {
@@ -144,19 +187,22 @@ export default function CandlestickGraph({
       }
     };
 
-    container.addEventListener('wheel', handleWheel);
+    container.addEventListener("wheel", handleWheel);
 
-    return () => container.removeEventListener('wheel', handleWheel);
+    return () => container.removeEventListener("wheel", handleWheel);
   }, []);
 
   const yearToX = (year) => {
-    const yearPosition = (year - config.timeline.startYear) / config.timeline.getYearRange();
+    const yearPosition =
+      (year - config.timeline.startYear) / config.timeline.getYearRange();
     return yearPosition * chartWidth;
   };
 
   const xToYear = (x) => {
     const yearPosition = x / chartWidth;
-    return Math.round(config.timeline.startYear + yearPosition * config.timeline.getYearRange());
+    return Math.round(
+      config.timeline.startYear + yearPosition * config.timeline.getYearRange()
+    );
   };
 
   const constrainTooltipPosition = (x, tooltipWidth) => {
@@ -166,19 +212,22 @@ export default function CandlestickGraph({
     );
   };
 
+  const [interactionOrder, setInteractionOrder] = useState([]);
+
   const handleSegmentHover = (laneIndex, idx) => {
     const segmentId = `${laneIndex}-${idx}`;
-    setInteractionOrder(prev => {
-      const newOrder = prev.filter(id => id !== segmentId);
+    setInteractionOrder((prev) => {
+      const newOrder = prev.filter((id) => id !== segmentId);
       return [...newOrder, segmentId];
     });
   };
 
-  const totalHeight = timelineData.length * (laneThickness + lanePadding) + config.layout.svgPad;
+  const totalHeight =
+    timelineState.length * (laneThickness + lanePadding) + config.layout.svgPad;
 
   const updateLineChartState = (label, toShow) => {
-    setLineChartState(prev =>
-      prev.map(item =>
+    setLineChartState((prev) =>
+      prev.map((item) =>
         item.label === label ? { ...item, toShow: toShow } : item
       )
     );
@@ -188,6 +237,8 @@ export default function CandlestickGraph({
     setChartWidth(value);
   };
 
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <div
       className="w-screen h-screen swimlane-container relative m-0"
@@ -195,7 +246,11 @@ export default function CandlestickGraph({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
-      <LineChartLegends lineChartData={lineChartState} hoveredYear={hoveredYear} setShowModal={setShowModal} />
+      <LineChartLegends
+        lineChartData={lineChartState}
+        hoveredYear={hoveredYear}
+        setShowModal={setShowModal}
+      />
 
       {showModal && (
         <SettingsModal
@@ -204,6 +259,7 @@ export default function CandlestickGraph({
           onToggle={updateLineChartState}
           onSliderChange={updateChartWidth}
           sliderValue={chartWidth}
+          onRestoreDefaults={onRestoreDefaults}
         />
       )}
 
@@ -215,14 +271,10 @@ export default function CandlestickGraph({
           totalHeight={totalHeight}
         />
 
-        <XAxis
-          config={config}
-          yearToX={yearToX}
-          chartWidth={chartWidth}
-        />
+        <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />
 
         <SwimlaneLines
-          data={timelineData}
+          data={timelineState}
           config={config}
           chartWidth={chartWidth}
           laneThickness={laneThickness}
@@ -237,7 +289,7 @@ export default function CandlestickGraph({
         />
 
         <PointsAndSegments
-          data={timelineData}
+          data={timelineState}
           yearToX={yearToX}
           laneThickness={laneThickness}
           lanePadding={lanePadding}
@@ -247,7 +299,7 @@ export default function CandlestickGraph({
         />
 
         <SegmentTooltips
-          data={timelineData}
+          data={timelineState}
           yearToX={yearToX}
           laneThickness={laneThickness}
           lanePadding={lanePadding}

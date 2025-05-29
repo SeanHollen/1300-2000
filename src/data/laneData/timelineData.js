@@ -112,20 +112,6 @@ export const timelineData = [
         label: `French Wars of Religion`,
         url: "https://en.wikipedia.org/wiki/French_Wars_of_Religion",
       },
-      {
-        type: "point",
-        at: 1598,
-        label: `Edict of Nantes`,
-        url: "https://en.wikipedia.org/wiki/Edict_of_Nantes",
-        category: "good"
-      },
-      {
-        type: "point",
-        at: 1685,
-        label: `Revocation of the Edict of Nantes`,
-        url: "https://en.wikipedia.org/wiki/Edict_of_Fontainebleau",
-        category: "neutral"
-      },
       { 
         type: "point",
         at: 1870,
@@ -844,6 +830,13 @@ export const timelineData = [
     icon: "telescope",
     items: [
       { 
+        type: "point",
+        at: 1763,
+        label: "Prussia Compulsory Education",
+        url: "https://en.wikipedia.org/wiki/Prussian_education_system",
+        category: "good"
+      },
+      { 
         type: "segment",
         start: 1543,
         end: 1687,
@@ -1096,9 +1089,23 @@ export const timelineData = [
     ],
   },
   {
-    lane: "Religion and Culture",
+    lane: "Religion and Politics",
     icon: "cross",
     items: [
+      {
+        type: "point",
+        at: 1598,
+        label: `Edict of Nantes`,
+        url: "https://en.wikipedia.org/wiki/Edict_of_Nantes",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1685,
+        label: `Revocation of the Edict of Nantes`,
+        url: "https://en.wikipedia.org/wiki/Edict_of_Fontainebleau",
+        category: "neutral"
+      },
       { 
         type: "segment",
         start: 1378,
@@ -1126,6 +1133,97 @@ export const timelineData = [
         label: "Jan Hus Burned at the Stake",
         url: "https://en.wikipedia.org/wiki/Jan_Hus",
       },
+      { 
+        type: "point",
+        at: 1626,
+        start: 1580,
+        end: 1650,
+        label: "European Witch Trials Peak",
+        url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1534,
+        label: "Acts of Supremacy",
+        url: "https://en.wikipedia.org/wiki/Acts_of_Supremacy",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1517,
+        label: `Ninety-Five Theses`,
+        url: "https://en.wikipedia.org/wiki/Ninety-Five_Theses",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1478,
+        start: 1478,
+        end: 1834,
+        label: `Spanish Inquisition Begins`,
+        url: "https://en.wikipedia.org/wiki/Spanish_Inquisition",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1536,
+        start: 1536,
+        end: 1559,
+        label: `Calvinism Starts`,
+        url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
+        category: "neutral"
+      },
+      {
+        type: "point",
+        at: 1455,
+        label: `Gutenberg Bible`,
+        url: "https://en.wikipedia.org/wiki/Gutenberg_Bible",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1545,
+        start: 1545,
+        end: 1563,
+        label: `Start of Counter-Reformation`,
+        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
+        category: "neutral"
+      },
+      { 
+        type: "point",
+        at: 1804,
+        label: "Napoleonic Code",
+        url: "https://en.wikipedia.org/wiki/Napoleonic_Code",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1689,
+        label: "English Bill of Rights",
+        url: "https://en.wikipedia.org/wiki/Bill_of_Rights_1689",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1679,
+        label: "Habeas Corpus Act",
+        url: "https://en.wikipedia.org/wiki/Habeas_Corpus_Act_1679",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1788,
+        label: "U.S. Constitution and Bill of Rights",
+        url: "https://en.wikipedia.org/wiki/Constitution_of_the_United_States",
+        category: "good"
+      },
+    ],
+  },
+  {
+    lane: "Philosophy and Art",
+    icon: "quill",
+    items: [
       { 
         type: "point",
         at: 1321,
@@ -1193,69 +1291,6 @@ export const timelineData = [
         category: "good"
       },
       { 
-        type: "point",
-        at: 1626,
-        start: 1580,
-        end: 1650,
-        label: "European Witch Trials Peak",
-        url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
-        category: "bad"
-      },
-      { 
-        type: "point",
-        at: 1534,
-        label: "Acts of Supremacy",
-        url: "https://en.wikipedia.org/wiki/Acts_of_Supremacy",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1517,
-        label: `Ninety-Five Theses`,
-        url: "https://en.wikipedia.org/wiki/Ninety-Five_Theses",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1478,
-        start: 1478,
-        end: 1834,
-        label: `Spanish Inquisition Begins`,
-        url: "https://en.wikipedia.org/wiki/Spanish_Inquisition",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1536,
-        start: 1536,
-        end: 1559,
-        label: `Calvinism Starts`,
-        url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
-        category: "neutral"
-      },
-      {
-        type: "point",
-        at: 1455,
-        label: `Gutenberg Bible`,
-        url: "https://en.wikipedia.org/wiki/Gutenberg_Bible",
-        category: "good"
-      },
-      {
-        type: "point",
-        at: 1545,
-        start: 1545,
-        end: 1563,
-        label: `Start of Counter-Reformation`,
-        url: "https://en.wikipedia.org/wiki/Council_of_Trent",
-        category: "neutral"
-      },
-    ],
-  },
-  {
-    lane: "Politics and Philosophy",
-    icon: "scale",
-    items: [
-      { 
         type: "segment",
         start: 1715,
         end: 1789,
@@ -1272,22 +1307,8 @@ export const timelineData = [
       { 
         type: "point",
         at: 1650,
-        label: "First Coffeehouses",
+        label: "Early Coffeehouses",
         url: "https://en.wikipedia.org/wiki/History_of_coffee",
-        category: "good"
-      },
-      {
-        type: "point",
-        at: 1788,
-        label: "U.S. Constitution and Bill of Rights",
-        url: "https://en.wikipedia.org/wiki/Constitution_of_the_United_States",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1804,
-        label: "Napoleonic Code",
-        url: "https://en.wikipedia.org/wiki/Napoleonic_Code",
         category: "good"
       },
       { 
@@ -1386,27 +1407,6 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1763,
-        label: "Prussia Compulsory Education",
-        url: "https://en.wikipedia.org/wiki/Prussian_education_system",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1689,
-        label: "English Bill of Rights",
-        url: "https://en.wikipedia.org/wiki/Bill_of_Rights_1689",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1679,
-        label: "Habeas Corpus Act",
-        url: "https://en.wikipedia.org/wiki/Habeas_Corpus_Act_1679",
-        category: "good"
-      },
-      { 
-        type: "point",
         at: 1848,
         label: "Communism - Marx",
         url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
@@ -1431,13 +1431,6 @@ export const timelineData = [
         label: "Modern Global Warming",
         ongoing: true,
         url: "https://en.wikipedia.org/wiki/Climate_change#Global_temperature_rise"
-      },
-      {
-        type: "segment",
-        start: 1660,
-        end: 1715,
-        label: "Maunder Minimum",
-        url: "https://en.wikipedia.org/wiki/Maunder_Minimum"
       },
       {
         type: "point",
