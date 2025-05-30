@@ -1116,7 +1116,7 @@ export const timelineData = [
       { 
         type: "segment",
         start: 1309,
-        end: 1376,
+        end: 1377,
         label: "Avignon Papacy",
         url: "https://en.wikipedia.org/wiki/Avignon_Papacy"
       },
@@ -1126,6 +1126,12 @@ export const timelineData = [
         end: 1648,
         label: "Protestant Reformation",
         url: "https://en.wikipedia.org/wiki/Protestant_Reformation"
+      },
+      { 
+        type: "point",
+        at: 1492,
+        label: "Close of Reconquista and Expulsion of Jews",
+        url: "https://en.wikipedia.org/wiki/Alhambra_Decree",
       },
       { 
         type: "point",
@@ -1299,7 +1305,7 @@ export const timelineData = [
       },
       { 
         type: "segment",
-        start: 1350,
+        start: 1400,
         end: 1600,
         label: "Renaissance",
         url: "https://en.wikipedia.org/wiki/Renaissance"
@@ -1391,6 +1397,15 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1886,
+        start: 1868,
+        end: 1900,
+        label: "Nietzsche",
+        url: "https://en.wikipedia.org/wiki/Friedrich_Nietzsche",
+        category: "neutral"
+      },
+      { 
+        type: "point",
         at: 1751,
         start: 1751,
         end: 1772,
@@ -1411,12 +1426,49 @@ export const timelineData = [
         label: "Communism - Marx",
         url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
       },
+      { 
+        type: "point",
+        at: 1516,
+        label: "Humanism - Erasmus",
+        url: "https://en.wikipedia.org/wiki/Erasmus",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1496,
+        label: "Hermetic Reformation",
+        url: "https://en.wikipedia.org/wiki/Oration_on_the_Dignity_of_Man",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1504,
+        start: 1501,
+        end: 1504,
+        label: "Michaelangelo - David",
+        url: "https://en.wikipedia.org/wiki/David_(Michelangelo)",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1445,
+        label: "Donatello - David",
+        url: "https://en.wikipedia.org/wiki/David_(Donatello,_bronze)",
+        category: "good"
+      },
     ],
   },
   {
     lane: "Farming and Climate",
     icon: "wheat",
     items: [
+      {
+        type: "segment",
+        start: 1300,
+        end: 1500,
+        label: "Late Feudalism",
+        url: "",
+      },
       {
         type: "point",
         at: 1815,
