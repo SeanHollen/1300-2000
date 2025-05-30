@@ -55,9 +55,41 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1356,
+        start: 1351,
+        end: 1368,
+        label: "Red Turban Rebellions, Yuan->Ming",
+        url: "https://en.wikipedia.org/wiki/Red_Turban_Rebellions"
+      },
+      { 
+        type: "point",
+        at: 1644,
+        start: 1618,
+        end: 1683,
+        label: "Ming->Qing",
+        url: "https://en.wikipedia.org/wiki/Transition_from_Ming_to_Qing"
+      },
+      { 
+        type: "point",
+        at: 1911,
+        start: 1911,
+        end: 1912,
+        label: "Xinhai Revolution, Qing->ROC",
+        url: "https://en.wikipedia.org/wiki/1911_Revolution"
+      },
+      { 
+        type: "point",
+        at: 1949,
+        start: 1927,
+        end: 1949,
+        label: "Chinese Comunist Revolution, ROC->PRC",
+        url: "https://en.wikipedia.org/wiki/Chinese_Communist_Revolution"
+      },
+      { 
+        type: "point",
         at: 1381,
         label: "Peasants’ Revolt",
-        url: "htthttps://en.wikipedia.org/wiki/Peasants%27_Revolt"
+        url: "https://en.wikipedia.org/wiki/Peasants%27_Revolt"
       },
       { 
         type: "point",
@@ -208,12 +240,12 @@ export const timelineData = [
         label: "Battle of Agincourt",
         url: "https://en.wikipedia.org/wiki/Battle_of_Agincourt"
       },
-      { 
-        type: "point",
-        at: 1346,
-        label: "Battle of Crécy",
-        url: "https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
-      },
+      // { 
+      //   type: "point",
+      //   at: 1346,
+      //   label: "Battle of Crécy",
+      //   url: "https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
+      // },
       { 
         type: "point",
         at: 1588,
@@ -843,13 +875,13 @@ export const timelineData = [
         label: "Scientific Revolution",
         url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
       },
-      {
-        type: "point",
-        at: 1650,
-        label: `High Literacy in Protestant Europe`,
-        url: "https://ourworldindata.org/grapher/cross-country-literacy-rates?country=RUS~GBR~NLD~OWID_WRL~IND~SWE~NOR~DNK~FRA~DEU",
-        category: "good"
-      },
+      // {
+      //   type: "point",
+      //   at: 1650,
+      //   label: `High Literacy in Protestant Europe`,
+      //   url: "https://ourworldindata.org/grapher/cross-country-literacy-rates?country=RUS~GBR~NLD~OWID_WRL~IND~SWE~NOR~DNK~FRA~DEU",
+      //   category: "good"
+      // },
       {
         type: "point",
         at: 1545,
