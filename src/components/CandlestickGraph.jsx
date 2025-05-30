@@ -13,6 +13,7 @@ import SettingsModal from "./CandlestickGraph/SettingsModal";
 import "../styles/swimlanes.css";
 
 export default function CandlestickGraph() {
+  const USE_CACHE = false;
   const DEFAULT_CHART_WIDTH = 10000;
   const containerRef = useRef(null);
 
@@ -36,17 +37,22 @@ export default function CandlestickGraph() {
 
   const [lineChartState, setLineChartState] = useState(() => {
     const savedState = localStorage.getItem("lineChartState");
-    return savedState ? JSON.parse(savedState) : getLineChartState();
+    return USE_CACHE && savedState ? JSON.parse(savedState) : getLineChartState();
   });
 
   const [timelineState, setTimelineState] = useState(() => {
     const savedState = localStorage.getItem("timelineState");
-    return savedState ? JSON.parse(savedState) : getTimelineData();
+    return USE_CACHE && savedState ? JSON.parse(savedState) : getTimelineData();
   });
 
   const [chartWidth, setChartWidth] = useState(() => {
     const savedWidth = localStorage.getItem("chartWidth");
-    return savedWidth ? Number(savedWidth) : DEFAULT_CHART_WIDTH;
+    return USE_CACHE && savedWidth ? Number(savedWidth) : DEFAULT_CHART_WIDTH;
+  });
+
+  const [showTimelineChart, setShowTimelineChart] = useState(() => {
+    const savedState = localStorage.getItem("showTimelineChart");
+    return USE_CACHE && savedState ? JSON.parse(savedState) : true;
   });
 
   useEffect(() => {
@@ -61,10 +67,15 @@ export default function CandlestickGraph() {
     localStorage.setItem("chartWidth", chartWidth.toString());
   }, [chartWidth]);
 
+  useEffect(() => {
+    localStorage.setItem("showTimelineChart", showTimelineChart.toString());
+  }, [showTimelineChart]);
+
   const onRestoreDefaults = () => {
     setLineChartState(getLineChartState());
     setTimelineState(getTimelineData());
     setChartWidth(DEFAULT_CHART_WIDTH);
+    setShowTimelineChart(true);
   };
 
   const config = {
@@ -260,6 +271,8 @@ export default function CandlestickGraph() {
           onSliderChange={updateChartWidth}
           sliderValue={chartWidth}
           onRestoreDefaults={onRestoreDefaults}
+          setShowTimelineChart={setShowTimelineChart}
+          showTimelineChart={showTimelineChart}
         />
       )}
 
@@ -279,35 +292,42 @@ export default function CandlestickGraph() {
           chartWidth={chartWidth}
           laneThickness={laneThickness}
           lanePadding={lanePadding}
+          showTimelineChart={showTimelineChart}
         />
 
-        <CursorLine
-          cursorX={cursorX}
-          config={config}
-          totalHeight={totalHeight}
-          xToYear={xToYear}
-        />
+        {!showModal && (
+          <CursorLine
+            cursorX={cursorX}
+            config={config}
+            totalHeight={totalHeight}
+            xToYear={xToYear}
+          />
+        )}
 
-        <PointsAndSegments
-          data={timelineState}
-          yearToX={yearToX}
-          laneThickness={laneThickness}
-          lanePadding={lanePadding}
-          config={config}
-          handleSegmentHover={handleSegmentHover}
-          handlePointHover={handlePointHover}
-        />
+        {showTimelineChart && (
+          <PointsAndSegments
+            data={timelineState}
+            yearToX={yearToX}
+            laneThickness={laneThickness}
+            lanePadding={lanePadding}
+            config={config}
+            handleSegmentHover={handleSegmentHover}
+            handlePointHover={handlePointHover}
+          />
+        )}
 
-        <SegmentTooltips
-          data={timelineState}
-          yearToX={yearToX}
-          laneThickness={laneThickness}
-          lanePadding={lanePadding}
-          config={config}
-          interactionOrder={interactionOrder}
-          tooltipMeasurements={tooltipMeasurements}
-          constrainTooltipPosition={constrainTooltipPosition}
-        />
+        {showTimelineChart && (
+          <SegmentTooltips
+            data={timelineState}
+            yearToX={yearToX}
+            laneThickness={laneThickness}
+            lanePadding={lanePadding}
+            config={config}
+            interactionOrder={interactionOrder}
+            tooltipMeasurements={tooltipMeasurements}
+            constrainTooltipPosition={constrainTooltipPosition}
+          />
+        )}
 
         <PointTooltips
           pointTooltip={pointTooltip}

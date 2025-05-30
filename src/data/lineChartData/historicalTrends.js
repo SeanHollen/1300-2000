@@ -11,6 +11,7 @@ export const lineChartData = [
       end: 7_000_000_000
     },
     sourceUrl: "https://ourworldindata.org/grapher/population",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1300,
@@ -346,6 +347,7 @@ export const lineChartData = [
       end: 1_000_000_000
     },
     sourceUrl: "https://ourworldindata.org/grapher/population",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1300,
@@ -1238,6 +1240,7 @@ export const lineChartData = [
       end: 0
     },
     sourceUrl: "https://ourworldindata.org/grapher/share-of-the-labor-force-employed-in-agriculture?tab=chart&time=1300..latest&country=~POL",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1400,
@@ -1322,6 +1325,7 @@ export const lineChartData = [
       end: 13_000
     },
     sourceUrl: "https://ourworldindata.org/grapher/global-average-gdp-per-capita-over-the-long-run",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1300,
@@ -1437,6 +1441,7 @@ export const lineChartData = [
       end: .5
     },
     sourceUrl: "https://www.ncei.noaa.gov/pub/data/paleo/pages2k/neukom2019temp/recons/Full_ensemble_median_and_95pct_range.txt",
+    sourceIcon: "noaa",
     points: [
       {
         "year": 1300,
@@ -4256,6 +4261,7 @@ export const lineChartData = [
       end: 2
     },
     sourceUrl: "https://www.ncei.noaa.gov/pub/data/paleo/pages2k/EuroMed2k/eujja_2krecon_nested_cps-noaa.txt",
+    sourceIcon: "noaa",
     points: [
       {
         "year": 1300,
@@ -7075,6 +7081,7 @@ export const lineChartData = [
       end: 60
     },
     sourceUrl: "https://ourworldindata.org/urbanization",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1300,
@@ -7410,6 +7417,7 @@ export const lineChartData = [
       end: 50
     },
     sourceUrl: "https://ourworldindata.org/trade-and-globalization?utm_content=buffer501bb&utm_medium=social&utm_source=twitter.com&utm_campaign=buffer",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1500,
@@ -7965,6 +7973,7 @@ export const lineChartData = [
       end: 70
     },
     sourceUrl: "https://ourworldindata.org/grapher/life-expectancy?country=~OWID_WRL",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1770,
@@ -8212,6 +8221,7 @@ export const lineChartData = [
       end: 6
     },
     sourceUrl: "https://docs.google.com/spreadsheets/d/1aLtIpAWvDGGa9k2XXEz6hZugWn0wCd5nmzaRPPjbYNA/edit?gid=569008164#gid=569008164",
+    sourceIcon: "gapminder",
     points: [
       {
         "year": 1801,
@@ -9027,6 +9037,7 @@ export const lineChartData = [
       end: 100
     },
     sourceUrl: "https://ourworldindata.org/literacy",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1475,
@@ -9062,6 +9073,7 @@ export const lineChartData = [
       end: 100
     },
     sourceUrl: "https://ourworldindata.org/literacy",
+    sourceIcon: "our-world-in-data",
     points: [
       {
         "year": 1820,

@@ -35,7 +35,7 @@ export default function XAxis({
                 stroke="#374151"
                 strokeWidth="1"
               />
-              {!isEdgeTick && (
+              {!isEdgeTick && chartWidth >= 1900 && (
                 <text
                   y="20"
                   textAnchor="middle"

@@ -5,6 +5,8 @@ export default function SettingsModal({
   onSliderChange,
   sliderValue,
   onRestoreDefaults,
+  setShowTimelineChart,
+  showTimelineChart,
 }) {
   return (
     <div
@@ -80,7 +82,15 @@ export default function SettingsModal({
                 padding: "0.4rem 0",
               }}
             >
-              <div key={item.id} style={{ paddingRight: "1rem" }}>
+              <div
+                key={item.id}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  paddingRight: "1rem",
+                  fontSize: "14px",
+                }}
+              >
                 <a
                   href={item.sourceUrl}
                   target="_blank"
@@ -90,6 +100,15 @@ export default function SettingsModal({
                     cursor: "pointer",
                   }}
                 >
+                  <img
+                    src={`/assets/${item.sourceIcon}.png`}
+                    alt={`${item.label} icon`}
+                    style={{
+                      width: "16px",
+                      height: "16px",
+                      marginRight: "0.5rem",
+                    }}
+                  />
                   {item.label}
                 </a>
               </div>
@@ -141,6 +160,29 @@ export default function SettingsModal({
           >
             Other
           </label>
+
+          <div>
+            <div
+              key="hide-timeline"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                paddingRight: "1rem",
+                fontSize: "14px",
+                justifyContent: "space-between",
+              }}
+            >
+              <span style={{ marginRight: "0.5rem" }}>Hide Timeline Chart</span>
+              <input
+                type="checkbox"
+                checked={!showTimelineChart}
+                onChange={(event) =>
+                  setShowTimelineChart(!event.target.checked)
+                }
+              />
+            </div>
+          </div>
+          <br />
           <button
             onClick={onRestoreDefaults}
             style={{
@@ -150,7 +192,7 @@ export default function SettingsModal({
               padding: "0.5rem 1rem",
               borderRadius: "4px",
               cursor: "pointer",
-              fontSize: "1rem",
+              fontSize: "14px",
             }}
           >
             Restore Defaults
