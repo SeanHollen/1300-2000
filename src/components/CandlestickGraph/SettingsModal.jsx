@@ -118,7 +118,7 @@ export default function SettingsModal({
                         marginRight: "0.5rem",
                       }}
                     />
-                    {item.label}
+                    {`${item.label} (${item.points[0].year}-${item.points[item.points.length - 1].year})`}
                   </a>
                 </div>
                 <div
