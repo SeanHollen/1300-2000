@@ -198,13 +198,26 @@ export default function SettingsModal({
               }}
             >
               <span style={{ marginRight: "0.5rem" }}>Hide Timeline Chart</span>
-              <input
-                type="checkbox"
-                checked={!showTimelineChart}
-                onChange={(event) =>
-                  setShowTimelineChart(!event.target.checked)
-                }
-              />
+              <div
+                  style={{
+                    display: "inline-block",
+                    padding: "5px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() =>
+                    setShowTimelineChart(!showTimelineChart)
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    checked={!showTimelineChart}
+                    onChange={() => {}} // dummy to silence warning
+                    style={{
+                      pointerEvents: "auto",
+                      cursor: "pointer",
+                    }}
+                  />
+                </div>
             </div>
           </div>
           <br />

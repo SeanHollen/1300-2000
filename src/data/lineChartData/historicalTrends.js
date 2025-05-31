@@ -1233,11 +1233,11 @@ export const lineChartData = [
     shortLabel: "Farm Employment",
     color: "#6e7a46", // lime blue
     prefix: "",
-    unit: "% of Labor",
+    unit: "%",
     toShow: false,
     range: {
-      start: 100,
-      end: 0,
+      start: 0,
+      end: 100,
     },
     sourceUrl:
       "https://ourworldindata.org/grapher/share-of-the-labor-force-employed-in-agriculture?tab=chart&time=1300..latest&country=~POL",
@@ -9732,7 +9732,7 @@ export const lineChartData = [
     id: "war-deaths",
     label: "World Deaths in War",
     shortLabel: "War Deaths",
-    color: "#964B00",
+    color: "#663300",
     unit: "",
     toShow: true,
     range: {
