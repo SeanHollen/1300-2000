@@ -39,11 +39,13 @@ export default function CandlestickGraph() {
     const savedState = localStorage.getItem("lineChartState");
     return USE_CACHE && savedState ? JSON.parse(savedState) : getLineChartState();
   });
+  window.lineChartState = lineChartState;
 
   const [timelineState, setTimelineState] = useState(() => {
     const savedState = localStorage.getItem("timelineState");
     return USE_CACHE && savedState ? JSON.parse(savedState) : getTimelineData();
   });
+  window.timelineState = timelineState;
 
   const [chartWidth, setChartWidth] = useState(() => {
     const savedWidth = localStorage.getItem("chartWidth");
@@ -287,6 +289,7 @@ export default function CandlestickGraph() {
           xToYear={xToYear}
           totalHeight={totalHeight}
           cursorX={cursorX}
+          modalOpen={modalOpen}
         />
 
         <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />

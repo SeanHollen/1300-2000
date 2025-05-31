@@ -22,6 +22,7 @@ export default function LineCharts({
   xToYear,
   totalHeight,
   cursorX,
+  modalOpen,
 }) {
   return (
     <>
@@ -58,7 +59,7 @@ export default function LineCharts({
                 fill="none"
                 opacity="0.4"
               />
-              {normalizedY && (
+              {!modalOpen && normalizedY && (
                 <text
                   x={typeof cursorX === "number" ? cursorX : yearToX(cursorX)}
                   y={yPosition}

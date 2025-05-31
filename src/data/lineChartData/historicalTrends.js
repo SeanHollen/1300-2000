@@ -8230,6 +8230,10 @@ export const lineChartData = [
     sourceIcon: "gapminder",
     points: [
       {
+        year: 1800,
+        value: 5.8,
+      },
+      {
         year: 1801,
         value: 5.8,
       },
