@@ -55,6 +55,12 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1346,
+        label: "Battle of Crécy",
+        url: "https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
+      },
+      { 
+        type: "point",
         at: 1356,
         start: 1351,
         end: 1368,

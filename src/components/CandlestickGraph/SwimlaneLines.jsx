@@ -97,8 +97,8 @@ export default function SwimlaneLines({
                   </div>
                   <div
                     style={{
-                      width: "100%",
-                      height: "100%",
+                      width: "calc(100% - 4px)",
+                      height: "calc(100% - 4px)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
@@ -140,8 +140,8 @@ export default function SwimlaneLines({
                     >
                       <div
                         style={{
-                          width: "100%",
-                          height: "100%",
+                          width: "calc(100% - 4px)",
+                          height: "calc(100% - 4px)",
                           display: "flex",
                           alignItems: "center",
                           justifyContent: "center",

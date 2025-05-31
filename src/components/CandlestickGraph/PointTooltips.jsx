@@ -24,7 +24,7 @@ export default function PointTooltips({
       <text
         ref={tooltipTextRef}
         x="0"
-        y="-8"
+        y="-7.5"
         textAnchor="middle"
         dominantBaseline="middle"
         fontSize="12"
@@ -37,4 +37,4 @@ export default function PointTooltips({
       </text>
     </g>
   );
-} 
+}
