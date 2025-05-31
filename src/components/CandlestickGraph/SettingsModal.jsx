@@ -74,7 +74,7 @@ export default function SettingsModal({
           </label>
           <div
             style={{
-              maxHeight: "215px",
+              maxHeight: "235px",
               overflowY: "auto",
               border: "1px solid #e0e0e0",
               borderRadius: "4px",
@@ -88,7 +88,7 @@ export default function SettingsModal({
                   display: "flex",
                   justifyContent: "space-between",
                   alignItems: "center",
-                  padding: "0.4rem 0",
+                  padding: "0.1rem 0",
                 }}
               >
                 <div
@@ -121,11 +121,26 @@ export default function SettingsModal({
                     {item.label}
                   </a>
                 </div>
-                <input
-                  type="checkbox"
-                  checked={item.toShow}
-                  onChange={(event) => onToggle(item.label, event.target.checked)}
-                />
+                <div
+                  style={{
+                    display: "inline-block",
+                    padding: "5px",
+                    cursor: "pointer",
+                  }}
+                  onClick={() =>
+                    onToggle(item.label, !item.toShow)
+                  }
+                >
+                  <input
+                    type="checkbox"
+                    checked={item.toShow}
+                    onChange={() => {}} // dummy to silence warning
+                    style={{
+                      pointerEvents: "auto",
+                      cursor: "pointer",
+                    }}
+                  />
+                </div>
               </div>
             ))}
           </div>
