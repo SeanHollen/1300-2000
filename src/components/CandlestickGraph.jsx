@@ -174,6 +174,7 @@ export default function CandlestickGraph() {
 
   const [cursorX, setCursorX] = useState(null);
   const [hoveredYear, setHoveredYear] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
 
   const handleMouseMove = (e) => {
     if (containerRef.current) {
@@ -195,7 +196,7 @@ export default function CandlestickGraph() {
     if (!container) return;
 
     const handleWheel = (e) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX)) {
+      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && !modalOpen) {
         document.documentElement.scrollLeft += e.deltaY;
       }
     };
@@ -203,7 +204,7 @@ export default function CandlestickGraph() {
     container.addEventListener("wheel", handleWheel);
 
     return () => container.removeEventListener("wheel", handleWheel);
-  }, []);
+  }, [modalOpen]);
 
   const yearToX = (year) => {
     const yearPosition =
@@ -250,8 +251,6 @@ export default function CandlestickGraph() {
     setChartWidth(value);
   };
 
-  const [modalOpen, setModalOpen] = useState(false);
-
   return (
     <div
       className="w-screen h-screen swimlane-container relative m-0"
@@ -264,7 +263,7 @@ export default function CandlestickGraph() {
         hoveredYear={hoveredYear}
         setModalOpen={setModalOpen}
         modalOpen={modalOpen}
-        onWrapChange={(numRows) => {setAxisHeight(20 + 20 * (numRows))}}
+        onWrapChange={(clientHeight) => {setAxisHeight(20 + clientHeight)}}
       />
 
       {modalOpen && (

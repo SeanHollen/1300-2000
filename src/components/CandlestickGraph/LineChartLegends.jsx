@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useEffect } from 'react';
 import { CiSettings } from "react-icons/ci";
 
 
@@ -35,12 +35,11 @@ const formatValue = (value) => {
 
 export default function LineChartLegends({ lineChartData, hoveredYear, setModalOpen, modalOpen, onWrapChange }) {
   const ref = useRef(null);
-  if (ref.current) {
-    const style = getComputedStyle(ref.current);
-    const lineHeight = parseFloat(style.lineHeight);
-    const lineCount = Math.floor(ref.current.clientHeight / lineHeight);
-    onWrapChange(lineCount);
-  }
+  useEffect(() => {
+    if (ref.current) {
+      onWrapChange(ref.current.clientHeight);
+    }
+  }, [onWrapChange, hoveredYear])
 
   const showHoverView = hoveredYear && !modalOpen;
   return (

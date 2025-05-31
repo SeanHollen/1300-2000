@@ -1168,6 +1168,12 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1341,
+        label: `Hesychast controversy`,
+        url: "https://en.wikipedia.org/wiki/Hesychast_controversy",
+      },
+      {
+        type: "point",
         at: 1685,
         label: `Revocation of the Edict of Nantes`,
         url: "https://en.wikipedia.org/wiki/Edict_of_Fontainebleau",

@@ -2,7 +2,7 @@ export const lineChartData = [
   {
     id: "population",
     label: "World Population",
-    shortLabel: "Pop",
+    shortLabel: "Population",
     color: "#e879f9", // bright pink
     unit: "",
     toShow: true,
@@ -7971,7 +7971,7 @@ export const lineChartData = [
     label: "World Life Expectancy, Years",
     shortLabel: "Life Expectancy",
     color: "#22c55e", // emerald green
-    unit: " years",
+    unit: " yrs",
     toShow: true,
     range: {
       start: 25,
@@ -8220,7 +8220,7 @@ export const lineChartData = [
     label: "World Total Fertility, Children per Woman",
     shortLabel: "Fertility",
     color: "#ff7373", // sky blue
-    unit: "",
+    unit: " children",
     toShow: true,
     range: {
       start: 0,

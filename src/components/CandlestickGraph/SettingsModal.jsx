@@ -72,53 +72,63 @@ export default function SettingsModal({
           >
             Trendlines Opened
           </label>
-          {lineChartData.map((item) => (
-            <div
-              key={item.label}
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                padding: "0.4rem 0",
-              }}
-            >
+          <div
+            style={{
+              maxHeight: "215px",
+              overflowY: "auto",
+              border: "1px solid #e0e0e0",
+              borderRadius: "4px",
+              padding: "0.5rem",
+            }}
+          >
+            {lineChartData.map((item) => (
               <div
-                key={item.id}
+                key={item.label}
                 style={{
                   display: "flex",
+                  justifyContent: "space-between",
                   alignItems: "center",
-                  paddingRight: "1rem",
-                  fontSize: "14px",
+                  padding: "0.4rem 0",
                 }}
               >
-                <a
-                  href={item.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <div
+                  key={item.id}
                   style={{
-                    color: item.color,
-                    cursor: "pointer",
+                    display: "flex",
+                    alignItems: "center",
+                    paddingRight: "1rem",
+                    fontSize: "14px",
                   }}
                 >
-                  <img
-                    src={`/assets/${item.sourceIcon}.png`}
-                    alt={`${item.label} icon`}
+                  <a
+                    href={item.sourceUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{
-                      width: "16px",
-                      height: "16px",
-                      marginRight: "0.5rem",
+                      color: item.color,
+                      cursor: "pointer",
                     }}
-                  />
-                  {item.label}
-                </a>
+                  >
+                    <img
+                      src={`/assets/${item.sourceIcon}.png`}
+                      alt={`${item.label} icon`}
+                      style={{
+                        width: "16px",
+                        height: "16px",
+                        marginRight: "0.5rem",
+                      }}
+                    />
+                    {item.label}
+                  </a>
+                </div>
+                <input
+                  type="checkbox"
+                  checked={item.toShow}
+                  onChange={(event) => onToggle(item.label, event.target.checked)}
+                />
               </div>
-              <input
-                type="checkbox"
-                checked={item.toShow}
-                onChange={(event) => onToggle(item.label, event.target.checked)}
-              />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
 
         <div style={{ marginTop: "1.5rem" }}>
