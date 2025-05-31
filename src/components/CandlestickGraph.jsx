@@ -284,7 +284,9 @@ export default function CandlestickGraph() {
           lineChartData={lineChartState}
           config={config}
           yearToX={yearToX}
+          xToYear={xToYear}
           totalHeight={totalHeight}
+          cursorX={cursorX}
         />
 
         <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />

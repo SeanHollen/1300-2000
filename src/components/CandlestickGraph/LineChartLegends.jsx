@@ -1,21 +1,6 @@
 import React, { useRef, useEffect } from 'react';
 import { CiSettings } from "react-icons/ci";
-
-
-const findValueForYear = (points, year) => {
-  if (!year) return null;
-  let closestPoint = points[0];
-  let minDistance = Math.abs(points[0].year - year);
-  for (let i = 1; i < points.length; i++) {
-    const distance = Math.abs(points[i].year - year);
-    if (distance < minDistance) {
-      minDistance = distance;
-      closestPoint = points[i];
-    }
-  }
-
-  return closestPoint.value;
-};
+import { findXValueForYear } from '../util/findXValueForYear';
 
 const hasDataAtYear = (points, year) => {
   if (!year) return false;
@@ -63,8 +48,8 @@ export default function LineChartLegends({ lineChartData, hoveredYear, setModalO
       </span>
       {showHoverView && lineChartData
         .filter(lineData => lineData.toShow && hasDataAtYear(lineData.points, hoveredYear))
-        .map((lineData) => {
-          const value = findValueForYear(lineData.points, hoveredYear);
+        .map((lineData, i) => {
+          const value = findXValueForYear(lineData.points, hoveredYear);
           return (
             <div key={lineData.id}>
               <a
@@ -76,7 +61,9 @@ export default function LineChartLegends({ lineChartData, hoveredYear, setModalO
                   cursor: 'pointer',
                 }}
               >
-                {lineData.shortLabel || lineData.label}: {lineData.prefix}{formatValue(value)}{lineData.unit || ""}
+                {lineData.shortLabel || lineData.label}: {lineData.prefix}{formatValue(value)}{lineData.unit || ""}<sup style={{
+                  fontSize: "0.6rem",
+                }}>{i}</sup>
               </a>
             </div>
           );

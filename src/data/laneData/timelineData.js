@@ -290,7 +290,7 @@ export const timelineData = [
     ],
   },
   {
-    lane: "Trade and Exploration",
+    lane: "Exchange and Exploration",
     icon: "ship",
     items: [
       { 
@@ -771,6 +771,15 @@ export const timelineData = [
         label: "Third Plague Pandemic",
         url: "https://en.wikipedia.org/wiki/Third_plague_pandemic",
         category: "bad"
+      },
+      {
+        type: "point",
+        at: 1846,
+        start: 1846,
+        end: 1847,
+        label: "Anesthesia",
+        url: "https://en.wikipedia.org/wiki/William_T._G._Morton",
+        category: "good"
       },
       { 
         type: "point",
