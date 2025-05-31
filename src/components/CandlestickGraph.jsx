@@ -78,10 +78,12 @@ export default function CandlestickGraph() {
     setShowTimelineChart(true);
   };
 
+  const [axisHeight, setAxisHeight] = useState(40);
+
   const config = {
     layout: {
       svgPad: 150,
-      axisHeight: 40,
+      axisHeight: axisHeight,
       windowHeight:
         typeof window !== "undefined" ? window.innerHeight - 20 : 800,
       bottomPadding: 20,
@@ -248,7 +250,7 @@ export default function CandlestickGraph() {
     setChartWidth(value);
   };
 
-  const [showModal, setShowModal] = useState(false);
+  const [modalOpen, setModalOpen] = useState(false);
 
   return (
     <div
@@ -260,13 +262,15 @@ export default function CandlestickGraph() {
       <LineChartLegends
         lineChartData={lineChartState}
         hoveredYear={hoveredYear}
-        setShowModal={setShowModal}
+        setModalOpen={setModalOpen}
+        modalOpen={modalOpen}
+        onWrapChange={(numRows) => {setAxisHeight(20 + 20 * (numRows))}}
       />
 
-      {showModal && (
+      {modalOpen && (
         <SettingsModal
           lineChartData={lineChartState}
-          onClose={() => setShowModal(false)}
+          onClose={() => setModalOpen(false)}
           onToggle={updateLineChartState}
           onSliderChange={updateChartWidth}
           sliderValue={chartWidth}
@@ -295,7 +299,7 @@ export default function CandlestickGraph() {
           showTimelineChart={showTimelineChart}
         />
 
-        {!showModal && (
+        {!modalOpen && (
           <CursorLine
             cursorX={cursorX}
             config={config}

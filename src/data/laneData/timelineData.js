@@ -82,8 +82,20 @@ export const timelineData = [
         at: 1949,
         start: 1927,
         end: 1949,
-        label: "Chinese Comunist Revolution, ROC->PRC",
+        label: "Chinese Communist Revolution, ROC->PRC",
         url: "https://en.wikipedia.org/wiki/Chinese_Communist_Revolution"
+      },
+      { 
+        type: "point",
+        at: 1402,
+        label: "Battle of Ankara - Timur Conquests",
+        url: "https://en.wikipedia.org/wiki/Battle_of_Ankara"
+      },
+      { 
+        type: "point",
+        at: 1526,
+        label: "Beginning of Mughal Empire",
+        url: "https://en.wikipedia.org/wiki/First_Battle_of_Panipat"
       },
       { 
         type: "point",
@@ -311,6 +323,14 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1533,
+        start: 1528,
+        end: 1572,
+        label: "Conquest of Incan Empire",
+        url: "https://en.wikipedia.org/wiki/Spanish_conquest_of_the_Inca_Empire"
+      },
+      { 
+        type: "point",
         at: 1498,
         label: "Vasco da Gama reaches India",
         url: "https://en.wikipedia.org/wiki/Vasco_da_Gama#First_voyage"
@@ -326,6 +346,14 @@ export const timelineData = [
         at: 1602,
         label: "Founding of Dutch East India Company",
         url: "https://en.wikipedia.org/wiki/Dutch_East_India_Company"
+      },
+      { 
+        type: "point",
+        at: 1620,
+        start: 1620,
+        end: 1640,
+        label: "Puritan Migrations",
+        url: "https://en.wikipedia.org/wiki/Puritan_migration_to_New_England_(1620%E2%80%931640)"
       },
       { 
         type: "point",
@@ -533,7 +561,7 @@ export const timelineData = [
       { 
         type: "point",
         at: 1856,
-        label: "Mass-Production of Steel",
+        label: "Bessemer Process",
         url: "https://en.wikipedia.org/wiki/Bessemer_process",
         category: "good"
       },
@@ -691,6 +719,13 @@ export const timelineData = [
         at: 1733,
         label: "Lead Chamber Process",
         url: "https://en.wikipedia.org/wiki/Lead_chamber_process",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1989,
+        label: "World Wide Web",
+        url: "https://en.wikipedia.org/wiki/World_Wide_Web",
         category: "good"
       },
     ],
@@ -1302,7 +1337,7 @@ export const timelineData = [
         start: 1605,
         end: 1615,
         label: "Don Quixote",
-        url: "https://en.wikipedia.org/wiki/The_Canterbury_Tales",
+        url: "https://en.wikipedia.org/wiki/Don_Quixote",
         category: "good"
       },
       { 
@@ -1409,7 +1444,7 @@ export const timelineData = [
       { 
         type: "point",
         at: 1689,
-        label: "Limited Government - Loche",
+        label: "Limited Government - Locke",
         url: "https://en.wikipedia.org/wiki/John_Locke",
         category: "good"
       },

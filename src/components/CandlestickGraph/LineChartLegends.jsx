@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import { CiSettings } from "react-icons/ci";
 
 
@@ -33,9 +33,19 @@ const formatValue = (value) => {
   return withCommas;
 }
 
-export default function LineChartLegends({ lineChartData, hoveredYear, setShowModal }) {
+export default function LineChartLegends({ lineChartData, hoveredYear, setModalOpen, modalOpen, onWrapChange }) {
+  const ref = useRef(null);
+  if (ref.current) {
+    const style = getComputedStyle(ref.current);
+    const lineHeight = parseFloat(style.lineHeight);
+    const lineCount = Math.floor(ref.current.clientHeight / lineHeight);
+    onWrapChange(lineCount);
+  }
+
+  const showHoverView = hoveredYear && !modalOpen;
   return (
     <div
+      ref={ref}
       style={{
         position: 'fixed',
         top: '10px',
@@ -50,9 +60,9 @@ export default function LineChartLegends({ lineChartData, hoveredYear, setShowMo
       }}
     >
       <span style={{ display: 'inline-block' }}>
-        <CiSettings onClick={() => setShowModal(true)} style={{ fontSize: '1.2rem', verticalAlign: 'middle', cursor: 'pointer' }} />
+        <CiSettings onClick={() => setModalOpen(true)} style={{ fontSize: '1.2rem', verticalAlign: 'middle', cursor: 'pointer' }} />
       </span>
-      {lineChartData
+      {showHoverView && lineChartData
         .filter(lineData => lineData.toShow && hasDataAtYear(lineData.points, hoveredYear))
         .map((lineData) => {
           const value = findValueForYear(lineData.points, hoveredYear);
@@ -72,7 +82,7 @@ export default function LineChartLegends({ lineChartData, hoveredYear, setShowMo
             </div>
           );
         })}
-      {!hoveredYear && lineChartData
+      {!showHoverView && lineChartData
         .filter(lineData => lineData.toShow)
         .map((lineData) => {
           return (
