@@ -1,11 +1,20 @@
 import React from 'react';
 
+import { Config } from '../types/config';
+
+type Props = {
+  cursorX: number | null;
+  config: Config;
+  totalHeight: number;
+  xToYear: (x: number) => number;
+};
+
 export default function CursorLine({ 
   cursorX,
   config,
   totalHeight,
   xToYear
-}) {
+}: Props) {
   if (cursorX === null) return null;
 
   return (

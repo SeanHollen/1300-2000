@@ -1,7 +1,26 @@
 import React from "react";
-import { findYValueForYear } from "../util/findYValueForYear";
+import { interpolateYValueForYear } from "../util/interpolateYValueForYear";
+import { Config } from "../types/config";
+import { LineTS, TSPoint, Range } from "../types/trendlineData";
 
-function createLinePath(points, range, config, totalHeight, yearToX) {
+export const findYValueForYear = (points: TSPoint[], range: Range, year: number | null) => {
+  if (!year) {
+    return null;
+  }
+  // get value of closest point(s)
+  const value = interpolateYValueForYear(points, year);
+
+  const normalizedInterpolated = (value - range.start) / (range.end - range.start);
+  return normalizedInterpolated;
+};
+
+function createLinePath(
+  points: TSPoint[],
+  range: Range,
+  config: Config,
+  totalHeight: number,
+  yearToX: (year: number) => number
+) {
   return points.reduce((path, point, i) => {
     const x = yearToX(point.year);
     const normalizedValue =
@@ -15,6 +34,16 @@ function createLinePath(points, range, config, totalHeight, yearToX) {
   }, "");
 }
 
+type Props = {
+  lineChartData: LineTS[];
+  config: Config;
+  yearToX: (year: number) => number;
+  xToYear: (x: number) => number;
+  totalHeight: number;
+  cursorX: number | null;
+  modalOpen: boolean;
+};
+
 export default function LineCharts({
   lineChartData,
   config,
@@ -23,7 +52,7 @@ export default function LineCharts({
   totalHeight,
   cursorX,
   modalOpen,
-}) {
+}: Props) {
   return (
     <>
       {lineChartData
@@ -42,7 +71,7 @@ export default function LineCharts({
                 (totalHeight -
                   config.layout.bottomPadding -
                   config.layout.axisHeight)
-            : null;
+            : undefined;
 
           return (
             <g key={lineData.id}>
@@ -61,7 +90,7 @@ export default function LineCharts({
               />
               {!modalOpen && normalizedY && (
                 <text
-                  x={typeof cursorX === "number" ? cursorX : yearToX(cursorX)}
+                  x={cursorX || undefined}
                   y={yPosition}
                   fill={lineData.color}
                   fontSize="0.6rem"

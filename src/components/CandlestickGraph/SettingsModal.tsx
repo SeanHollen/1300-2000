@@ -1,3 +1,16 @@
+import { LineTS } from "../types/trendlineData";
+
+type Props = {
+  lineChartData: LineTS[];
+  onClose: () => void;
+  onToggle: (label: string, toShow: boolean) => void;
+  onSliderChange: (value: number) => void;
+  sliderValue: number;
+  onRestoreDefaults: () => void;
+  setShowTimelineChart: (show: boolean) => void;
+  showTimelineChart: boolean;
+};
+
 export default function SettingsModal({
   lineChartData,
   onClose,
@@ -7,7 +20,7 @@ export default function SettingsModal({
   onRestoreDefaults,
   setShowTimelineChart,
   showTimelineChart,
-}) {
+}: Props) {
   return (
     <div
       onClick={onClose}
@@ -118,7 +131,9 @@ export default function SettingsModal({
                         marginRight: "0.5rem",
                       }}
                     />
-                    {`${item.label} (${item.points[0].year}-${item.points[item.points.length - 1].year})`}
+                    {`${item.label} (${item.points[0].year}-${
+                      item.points[item.points.length - 1].year
+                    })`}
                   </a>
                 </div>
                 <div
@@ -127,9 +142,7 @@ export default function SettingsModal({
                     padding: "5px",
                     cursor: "pointer",
                   }}
-                  onClick={() =>
-                    onToggle(item.label, !item.toShow)
-                  }
+                  onClick={() => onToggle(item.label, !item.toShow)}
                 >
                   <input
                     type="checkbox"
@@ -199,25 +212,23 @@ export default function SettingsModal({
             >
               <span style={{ marginRight: "0.5rem" }}>Hide Timeline Chart</span>
               <div
+                style={{
+                  display: "inline-block",
+                  padding: "5px",
+                  cursor: "pointer",
+                }}
+                onClick={() => setShowTimelineChart(!showTimelineChart)}
+              >
+                <input
+                  type="checkbox"
+                  checked={!showTimelineChart}
+                  onChange={() => {}} // dummy to silence warning
                   style={{
-                    display: "inline-block",
-                    padding: "5px",
+                    pointerEvents: "auto",
                     cursor: "pointer",
                   }}
-                  onClick={() =>
-                    setShowTimelineChart(!showTimelineChart)
-                  }
-                >
-                  <input
-                    type="checkbox"
-                    checked={!showTimelineChart}
-                    onChange={() => {}} // dummy to silence warning
-                    style={{
-                      pointerEvents: "auto",
-                      cursor: "pointer",
-                    }}
-                  />
-                </div>
+                />
+              </div>
             </div>
           </div>
           <br />

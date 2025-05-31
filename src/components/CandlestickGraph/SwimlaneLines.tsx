@@ -15,8 +15,10 @@ import {
 import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
 import { GiQuillInk } from "react-icons/gi";
+import { Config } from "../types/config";
+import { Lane } from "../types/timelineData";
 
-const iconMap = {
+const iconMap: Record<string, any> = {
   sword: GiCrossedSwords,
   cog: FaCog,
   gears: GiGears,
@@ -31,6 +33,15 @@ const iconMap = {
   quill: GiQuillInk,
 };
 
+type Props = {
+  data: Lane[];
+  config: Config;
+  chartWidth: number;
+  laneThickness: number;
+  lanePadding: number;
+  showTimelineChart?: boolean;
+};
+
 export default function SwimlaneLines({
   data,
   config,
@@ -38,7 +49,7 @@ export default function SwimlaneLines({
   laneThickness,
   lanePadding,
   showTimelineChart,
-}) {
+}: Props) {
   const iconRadius = config.point.iconRadius;
 
   return (

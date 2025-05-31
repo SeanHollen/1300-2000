@@ -1,15 +1,28 @@
-import React from 'react';
+import React from "react";
+import { TooltipMeasurement, Tooltip } from "../types/tooltipMeasurement";
+
+type Props = {
+  pointTooltip: Tooltip | null;
+  tooltipMeasurements: TooltipMeasurement;
+  tooltipTextRef: (element: SVGTextElement | null) => void;
+  constrainTooltipPosition: (x: number, width: number) => number;
+};
 
 export default function PointTooltips({
   pointTooltip,
   tooltipMeasurements,
   tooltipTextRef,
-  constrainTooltipPosition
-}) {
+  constrainTooltipPosition,
+}: Props) {
   if (!pointTooltip) return null;
 
   return (
-    <g transform={`translate(${constrainTooltipPosition(pointTooltip.x, tooltipMeasurements.width)}, ${pointTooltip.y - 25})`}>
+    <g
+      transform={`translate(${constrainTooltipPosition(
+        pointTooltip.x,
+        tooltipMeasurements.width
+      )}, ${pointTooltip.y - 25})`}
+    >
       <rect
         x={tooltipMeasurements.x}
         y="-20"
@@ -31,7 +44,9 @@ export default function PointTooltips({
         fill="#374151"
       >
         {(() => {
-          const year = pointTooltip.start ? `${pointTooltip.start}-${pointTooltip.end}` : pointTooltip.year;
+          const year = pointTooltip.start
+            ? `${pointTooltip.start}-${pointTooltip.end}`
+            : pointTooltip.year;
           return `${pointTooltip.content} (${year})`;
         })()}
       </text>

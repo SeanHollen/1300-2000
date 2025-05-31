@@ -1,4 +1,4 @@
-const interpolateYValueForYear = (points, year) => {
+export const interpolateYValueForYear = (points, year) => {
   if (!year) {
     return null;
   }
@@ -25,15 +25,4 @@ const interpolateYValueForYear = (points, year) => {
   }
   // all points are before the year
   return points[points.length - 1].value
-};
-
-export const findYValueForYear = (points, range, year) => {
-  if (!year) {
-    return null;
-  }
-  // get value of closest point(s)
-  const value = interpolateYValueForYear(points, year);
-
-  const normalizedInterpolated = (value - range.start) / (range.end - range.start);
-  return normalizedInterpolated;
 };

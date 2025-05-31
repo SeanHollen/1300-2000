@@ -1,4 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Lane } from "../types/timelineData";
+import { Config } from "../types/config";
+import { TooltipMeasurement } from "../types/tooltipMeasurement";
+
+type Props = {
+  data: Lane[]; // Replace with actual type
+  yearToX: (year: number) => number;
+  laneThickness: number;
+  lanePadding: number;
+  config: Config;
+  interactionOrder: string[];
+  tooltipMeasurements: TooltipMeasurement;
+  constrainTooltipPosition: (x: number, width: number) => number;
+};
 
 export default function SegmentTooltips({
   data,
@@ -8,16 +22,21 @@ export default function SegmentTooltips({
   config,
   interactionOrder,
   tooltipMeasurements,
-  constrainTooltipPosition
-}) {
+  constrainTooltipPosition,
+}: Props) {
   return (
     <>
       {data.map((lane, laneIndex) => {
-        const y = laneIndex * (laneThickness + lanePadding) + config.layout.svgPad;
+        const y =
+          laneIndex * (laneThickness + lanePadding) + config.layout.svgPad;
         return (
           <g key={`tooltips-${laneIndex}`}>
             {lane.items
-              .map((item, idx) => ({ item, idx, order: interactionOrder.indexOf(`${laneIndex}-${idx}`) }))
+              .map((item, idx) => ({
+                item,
+                idx,
+                order: interactionOrder.indexOf(`${laneIndex}-${idx}`),
+              }))
               .sort((a, b) => {
                 // If neither has been interacted with, maintain original order
                 if (a.order === -1 && b.order === -1) return 0;
@@ -32,10 +51,16 @@ export default function SegmentTooltips({
                   const segmentX = yearToX(item.start);
                   const segmentWidth = yearToX(item.end) - yearToX(item.start);
                   const centerX = segmentX + segmentWidth / 2;
-                  const constrainedX = constrainTooltipPosition(centerX, tooltipMeasurements.width);
-                  
+                  const constrainedX = constrainTooltipPosition(
+                    centerX,
+                    tooltipMeasurements.width
+                  );
+
                   return (
-                    <g key={`tooltip-${laneIndex}-${idx}`} transform={`translate(0, ${y})`}>
+                    <g
+                      key={`tooltip-${laneIndex}-${idx}`}
+                      transform={`translate(0, ${y})`}
+                    >
                       <g transform={`translate(${constrainedX}, -25)`}>
                         <rect
                           x={config.tooltip.segment.x}
@@ -47,13 +72,19 @@ export default function SegmentTooltips({
                           fill="white"
                           stroke="rgba(0,0,0,0.1)"
                           strokeWidth="1"
-                          ref={el => {
+                          ref={(el) => {
                             if (el) {
-                              const text = el.nextSibling;
+                              const text = el.nextSibling as SVGGraphicsElement;
                               if (text) {
-                                const bbox = text.getBBox();
-                                el.setAttribute('width', bbox.width + 20);
-                                el.setAttribute('x', -bbox.width/2 - 10);
+                                const bbox: SVGRect = text.getBBox();
+                                el.setAttribute(
+                                  "width",
+                                  (bbox.width + 20).toString()
+                                );
+                                el.setAttribute(
+                                  "x",
+                                  (-bbox.width / 2 - 10).toString()
+                                );
                               }
                             }
                           }}
@@ -66,7 +97,9 @@ export default function SegmentTooltips({
                           fontSize="12"
                           fill="#374151"
                         >
-                          {`${item.label} (${item.start}-${item.ongoing ? 'present' : item.end})`}
+                          {`${item.label} (${item.start}-${
+                            item.ongoing ? "present" : item.end
+                          })`}
                         </text>
                       </g>
                     </g>
@@ -79,4 +112,4 @@ export default function SegmentTooltips({
       })}
     </>
   );
-} 
+}
