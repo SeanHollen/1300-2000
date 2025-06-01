@@ -13,14 +13,20 @@ type Layout = {
   bottomPadding: number;
 }
 
+export type LaneDetails = {
+  laneUnit: number;
+  laneThickness: number;
+  lanePadding: number;
+  segmentThickness: number;
+}
+
 type Lane = {
   percentages: {
     lane: number;
     segment: number;
   };
-  getUnit: (laneCount: number) => number;
-  getThickness: (unit: number) => number;
-  getPadding: (unit: number) => number;
+  getLaneDetails: () => LaneDetails
+  getLaneYPos: (laneIndex: number) => number
 }
 
 type Point = {

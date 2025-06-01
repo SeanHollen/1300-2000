@@ -36,8 +36,6 @@ type Props = {
   data: Lane[];
   config: Config;
   chartWidth: number;
-  laneThickness: number;
-  lanePadding: number;
   showTimelineChart?: boolean;
 };
 
@@ -45,19 +43,16 @@ export default function SwimlaneLines({
   data,
   config,
   chartWidth,
-  laneThickness,
-  lanePadding,
   showTimelineChart,
 }: Props) {
   const iconRadius = config.point.iconRadius;
+  const laneDetails = config.lane.getLaneDetails();
 
   return (
     <>
       {data.map((lane, laneIndex) => {
-        const y =
-          laneIndex * (laneThickness + lanePadding) + config.layout.svgPad;
+        const y = config.lane.getLaneYPos(laneIndex);
         const IconComponent = iconMap[lane.icon] || FaCog; // Fallback to cog if icon not found
-
         const iconOffs = window.screen.width + 200;
 
         return (
@@ -65,9 +60,9 @@ export default function SwimlaneLines({
             {/* Lane background */}
             <rect
               x="0"
-              y={String(-laneThickness / 2)}
+              y={String(-laneDetails.laneThickness / 2)}
               width={chartWidth}
-              height={laneThickness}
+              height={laneDetails.laneThickness}
               className="swimlane-lane"
             />
 

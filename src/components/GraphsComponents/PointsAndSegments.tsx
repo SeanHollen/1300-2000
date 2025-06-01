@@ -5,8 +5,6 @@ import { Config } from "../types/config";
 type Props = {
   data: Lane[];
   yearToX: (year: number) => number;
-  laneThickness: number;
-  lanePadding: number;
   config: Config;
   handleSegmentHover: (laneIndex: number, idx: number) => void;
   handlePointHover: (
@@ -21,16 +19,13 @@ type Props = {
 export default function PointsAndSegments({
   data,
   yearToX,
-  laneThickness,
-  lanePadding,
   config,
   handleSegmentHover,
   handlePointHover,
   handlePointUnhover,
 }: Props) {
   const pointRadius = config.point.radius;
-  const laneUnit = laneThickness / config.lane.percentages.lane;
-  const segmentThickness = laneUnit * config.lane.percentages.segment;
+  const laneDetails = config.lane.getLaneDetails();
 
   const handleClick = (url: string) => {
     if (url) {
@@ -41,8 +36,7 @@ export default function PointsAndSegments({
   return (
     <>
       {data.map((lane, laneIndex) => {
-        const y =
-          laneIndex * (laneThickness + lanePadding) + config.layout.svgPad;
+        const y = config.lane.getLaneYPos(laneIndex);
         return (
           <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
             {lane.items
@@ -63,9 +57,9 @@ export default function PointsAndSegments({
                     >
                       <rect
                         x={segmentX}
-                        y={-segmentThickness / 2}
+                        y={-laneDetails.segmentThickness / 2}
                         width={segmentWidth}
-                        height={String(segmentThickness)}
+                        height={String(laneDetails.segmentThickness)}
                         className="swimlane-segment"
                       />
                     </g>

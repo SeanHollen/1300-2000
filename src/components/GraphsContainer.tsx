@@ -98,10 +98,16 @@ export default function GraphsContainer() {
         lane: 0.1,
         segment: 0.5,
       },
-      getUnit: (laneCount: number) =>
-        (config.layout.windowHeight - 50) / (laneCount + 0.5),
-      getThickness: (unit: number) => unit * config.lane.percentages.lane,
-      getPadding: (unit: number) => unit * (1 - config.lane.percentages.lane),
+      getLaneDetails: () => {
+        const laneUnit = (config.layout.windowHeight - 50) / (timelineState.length + 0.5);
+        const laneThickness = laneUnit * config.lane.percentages.lane;
+        const lanePadding = laneUnit * (1 - config.lane.percentages.lane);
+        const segmentThickness = laneUnit * config.lane.percentages.segment;
+        return { laneUnit, laneThickness, lanePadding, segmentThickness };
+      },
+      getLaneYPos: (laneIndex: number) => {
+        return laneIndex * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
+      }
     },
     point: {
       radius: 12,
@@ -132,10 +138,7 @@ export default function GraphsContainer() {
     },
   };
 
-  const laneCount = timelineState.length;
-  const laneUnit = config.lane.getUnit(laneCount);
-  const laneThickness = config.lane.getThickness(laneUnit);
-  const lanePadding = config.lane.getPadding(laneUnit);
+  const laneDetails = config.lane.getLaneDetails();
 
   const [tooltipMeasurements, setTooltipMeasurements] = useState({
     width: 120,
@@ -246,7 +249,7 @@ export default function GraphsContainer() {
   };
 
   const totalHeight =
-    timelineState.length * (laneThickness + lanePadding) + config.layout.svgPad;
+    timelineState.length * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
 
   const updateLineChartState = (label: string, toShow: boolean) => {
     setLineChartState((prev: LaneItem[]) =>
@@ -305,8 +308,6 @@ export default function GraphsContainer() {
           data={timelineState}
           config={config}
           chartWidth={chartWidth}
-          laneThickness={laneThickness}
-          lanePadding={lanePadding}
           showTimelineChart={showTimelineChart}
         />
 
@@ -323,8 +324,6 @@ export default function GraphsContainer() {
           <PointsAndSegments
             data={timelineState}
             yearToX={yearToX}
-            laneThickness={laneThickness}
-            lanePadding={lanePadding}
             config={config}
             handleSegmentHover={handleSegmentHover}
             handlePointHover={handlePointHover}
@@ -336,8 +335,6 @@ export default function GraphsContainer() {
           <SegmentTooltips
             data={timelineState}
             yearToX={yearToX}
-            laneThickness={laneThickness}
-            lanePadding={lanePadding}
             config={config}
             interactionOrder={interactionOrder}
             tooltipMeasurements={tooltipMeasurements}
@@ -346,10 +343,13 @@ export default function GraphsContainer() {
         )}
 
         <PointTooltips
-          pointTooltip={pointTooltip}
+          config={config}
+          hoveredPointTooltip={pointTooltip}
           tooltipMeasurements={tooltipMeasurements}
           tooltipTextRef={tooltipTextRef}
           constrainTooltipPosition={constrainTooltipPosition}
+          timelineState={timelineState}
+          showAllPointTooltips={false}
         />
       </svg>
     </div>
