@@ -1,21 +1,19 @@
 function readCsvString(csvString) {
   const delimiter = "\n";
   const headerRows = 1;
-  const yearIndex = 2;
 
   let res = csvString.split(delimiter).slice(headerRows).map(row => {
     let spl = row.split(",")
 
-    const value = Number(spl[3]);
+    const year = spl[0]
+    const value = spl[1];
 
     return {
-        year: Number(spl[yearIndex]),
+        year: Number(year),
         value: Number(value),
     }
   })
-  res = res.sort((a, b) => a.year - b.year)
-  JSON.stringify(res)
-  return res;  
+  return res.sort((a, b) => a.year - b.year)
 }
 let res = readCsvString("");
 JSON.stringify(res);

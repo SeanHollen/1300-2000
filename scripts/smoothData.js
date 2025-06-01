@@ -6,7 +6,8 @@ function smoothData(data, windowSize = 3) {
     let sum = 0;
     let count = 0;
 
-    for (let j = i - halfWindow; j <= i + halfWindow; j++) {
+    // subtract an extra 1 so like if you're getting 1855 it is 1850-1859
+    for (let j = i - halfWindow - 1; j <= i + halfWindow; j++) {
       if (j >= 0 && j < data.length) {
         sum += data[j].value;
         count++;

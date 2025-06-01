@@ -78,6 +78,10 @@ export default function GraphsContainer() {
     localStorage.setItem("showTimelineChart", showTimelineChart.toString());
   }, [showTimelineChart]);
 
+  useEffect(() => {
+    localStorage.setItem("showAllPointTooltips", showAllPointTooltips.toString());
+  }, [showAllPointTooltips]);
+
   const onRestoreDefaults = () => {
     setLineChartState(getLineChartState());
     setTimelineState(getTimelineData());

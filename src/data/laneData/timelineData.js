@@ -925,19 +925,12 @@ export const timelineData = [
         label: "Scientific Revolution",
         url: "https://en.wikipedia.org/wiki/Scientific_Revolution"
       },
-      // {
-      //   type: "point",
-      //   at: 1650,
-      //   label: `High Literacy in Protestant Europe`,
-      //   url: "https://ourworldindata.org/grapher/cross-country-literacy-rates?country=RUS~GBR~NLD~OWID_WRL~IND~SWE~NOR~DNK~FRA~DEU",
-      //   category: "good"
-      // },
       {
         type: "point",
         at: 1545,
         start: 1545,
         end: 1563,
-        label: `Start of Jesuit Education`,
+        label: `Start of Jesuit Schools`,
         url: "https://en.wikipedia.org/wiki/Council_of_Trent",
         category: "good"
       },
