@@ -8,7 +8,7 @@ Feel free to PR for minor changes / corrections and fork for major changes / ada
 
 # How it was made
 
-Made with React + Vite.
+Made with React + Vite + SVG.
 
 The JSX was mostly vibe coded using Cursor, hense the empty commit messages.
 

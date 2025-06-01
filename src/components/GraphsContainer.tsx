@@ -1,21 +1,21 @@
 import React, { useState, useRef, useEffect } from "react";
 import { timelineData as _timelineData } from "../data/laneData/timelineData";
 import { lineChartData as _lineChartData } from "../data/lineChartData/historicalTrends";
-import LineChartLegends from "./CandlestickGraph/LineChartLegends";
-import LineChartLines from "./CandlestickGraph/LineChartLines";
-import XAxis from "./CandlestickGraph/XAxis";
-import SwimlaneLines from "./CandlestickGraph/SwimlaneLines";
-import CursorLine from "./CandlestickGraph/CursorLine";
-import PointsAndSegments from "./CandlestickGraph/PointsAndSegments";
-import SegmentTooltips from "./CandlestickGraph/SegmentTooltips";
-import PointTooltips from "./CandlestickGraph/PointTooltips";
-import SettingsModal from "./CandlestickGraph/SettingsModal";
+import LineChartLegends from "./GraphsComponents/LineChartLegends";
+import LineChartLines from "./GraphsComponents/LineChartLines";
+import XAxis from "./GraphsComponents/XAxis";
+import SwimlaneLines from "./GraphsComponents/SwimlaneLines";
+import CursorLine from "./GraphsComponents/CursorLine";
+import PointsAndSegments from "./GraphsComponents/PointsAndSegments";
+import SegmentTooltips from "./GraphsComponents/SegmentTooltips";
+import PointTooltips from "./GraphsComponents/PointTooltips";
+import SettingsModal from "./GraphsComponents/SettingsModal";
 import "../styles/swimlanes.css";
 import { Config } from "./types/config";
 import { LaneItem, Point } from "./types/timelineData";
 import { Tooltip } from "./types/tooltipMeasurement";
 
-export default function CandlestickGraph() {
+export default function GraphsContainer() {
   const USE_CACHE = false;
   const DEFAULT_CHART_WIDTH = 10000;
   const containerRef = useRef<HTMLDivElement>(null);

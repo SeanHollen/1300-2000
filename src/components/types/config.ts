@@ -27,11 +27,13 @@ type Point = {
   radius: number;
   iconRadius: number;
 }
+
 type Timeline = {
   startYear: number;
   endYear: number;
   getYearRange: () => number; 
 }
+
 type Tooltip = {
   defaultWidth: number;
   defaultX: number;

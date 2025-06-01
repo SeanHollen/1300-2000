@@ -759,7 +759,7 @@ export const timelineData = [
         type: "segment",
         start: 1492,
         end: 1600,
-        label: "Colombian Exchange of Diseases",
+        label: "Colombian Exchange of Disease",
         url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_diseases",
         category: "bad"
       },

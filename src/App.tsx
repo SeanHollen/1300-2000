@@ -1,11 +1,11 @@
-import CandlestickGraph from './components/CandlestickGraph';
+import GraphsContainer from './components/GraphsContainer';
 import './App.css'
 
 function App() {
 
   return (
     <div>
-      <CandlestickGraph />
+      <GraphsContainer />
     </div>
   );
 }
