@@ -60,6 +60,8 @@ export default function GraphsContainer() {
     return USE_CACHE && savedState ? JSON.parse(savedState) : true;
   });
 
+  const [showAllPointTooltips, setShowAllPointTooltips] = useState(false);
+
   useEffect(() => {
     localStorage.setItem("lineChartState", JSON.stringify(lineChartState));
   }, [lineChartState]);
@@ -81,6 +83,7 @@ export default function GraphsContainer() {
     setTimelineState(getTimelineData());
     setChartWidth(DEFAULT_CHART_WIDTH);
     setShowTimelineChart(true);
+    setShowAllPointTooltips(false);
   };
 
   const [axisHeight, setAxisHeight] = useState(40);
@@ -262,8 +265,6 @@ export default function GraphsContainer() {
   const updateChartWidth = (value: number) => {
     setChartWidth(value);
   };
-
-  const [showAllPointTooltips, setShowAllPointTooltips] = useState(false);
 
   return (
     <div
