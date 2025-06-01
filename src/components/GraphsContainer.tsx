@@ -263,6 +263,8 @@ export default function GraphsContainer() {
     setChartWidth(value);
   };
 
+  const [showAllPointTooltips, setShowAllPointTooltips] = useState(false);
+
   return (
     <div
       className="w-screen h-screen swimlane-container relative m-0"
@@ -288,6 +290,8 @@ export default function GraphsContainer() {
           onRestoreDefaults={onRestoreDefaults}
           setShowTimelineChart={setShowTimelineChart}
           showTimelineChart={showTimelineChart}
+          showAllPointTooltips={showAllPointTooltips}
+          setShowAllPointTooltips={setShowAllPointTooltips}
         />
       )}
 
@@ -348,8 +352,9 @@ export default function GraphsContainer() {
           tooltipMeasurements={tooltipMeasurements}
           tooltipTextRef={tooltipTextRef}
           constrainTooltipPosition={constrainTooltipPosition}
+          yearToX={yearToX}
           timelineState={timelineState}
-          showAllPointTooltips={false}
+          showAllPointTooltips={showAllPointTooltips}
         />
       </svg>
     </div>

@@ -9,6 +9,8 @@ type Props = {
   onRestoreDefaults: () => void;
   setShowTimelineChart: (show: boolean) => void;
   showTimelineChart: boolean;
+  setShowAllPointTooltips: (show: boolean) => void;
+  showAllPointTooltips: boolean;
 };
 
 export default function SettingsModal({
@@ -20,6 +22,8 @@ export default function SettingsModal({
   onRestoreDefaults,
   setShowTimelineChart,
   showTimelineChart,
+  setShowAllPointTooltips,
+  showAllPointTooltips,
 }: Props) {
   return (
     <div
@@ -199,6 +203,38 @@ export default function SettingsModal({
             Other
           </label>
 
+          <div>
+            <div
+              key="hide-timeline"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                paddingRight: "1rem",
+                fontSize: "14px",
+                justifyContent: "space-between",
+              }}
+            >
+              <span style={{ marginRight: "0.5rem" }}>Show All Point Tooltips</span>
+              <div
+                style={{
+                  display: "inline-block",
+                  padding: "5px",
+                  cursor: "pointer",
+                }}
+                onClick={() => setShowAllPointTooltips(!showAllPointTooltips)}
+              >
+                <input
+                  type="checkbox"
+                  checked={showAllPointTooltips}
+                  onChange={() => {}} // dummy to silence warning
+                  style={{
+                    pointerEvents: "auto",
+                    cursor: "pointer",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
           <div>
             <div
               key="hide-timeline"
