@@ -1222,7 +1222,7 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1626,
+        at: 1615,
         start: 1580,
         end: 1650,
         label: "European Witch Trials Peak",

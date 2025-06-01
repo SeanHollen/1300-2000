@@ -6,7 +6,7 @@ export const findXValueForYear = (points: TSPoint[], year: number) => {
   if (!year) return null;
   let closestPoint = points[0];
   let minDistance = Math.abs(points[0].year - year);
-  
+
   for (let i = 1; i < points.length; i++) {
     const distance = Math.abs(points[i].year - year);
     if (distance < minDistance) {
@@ -135,8 +135,16 @@ export default function LineChartLegends({
                   }}
                 >
                   {lineData.shortLabel || lineData.label}
-                  {lineData.unit ? ", " : ""}
+                  {lineData.unit ? " " : ""}
                   {lineData.unit || ""}
+                  {/** Add an empty superscript so that vertical spacing is the same as the other view */}
+                  <sup
+                    style={{
+                      fontSize: "0.6rem",
+                    }}
+                  >
+                    {" "}
+                  </sup>
                 </a>
               </div>
             );
