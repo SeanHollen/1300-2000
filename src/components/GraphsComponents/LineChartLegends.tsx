@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import { useRef, useEffect } from "react";
 import { CiSettings } from "react-icons/ci";
 import { LineTS, TSPoint, Range } from "../types/trendlineData";
 

@@ -1,4 +1,3 @@
-import React from "react";
 import { Lane } from "../types/timelineData";
 import { Config } from "../types/config";
 import { TooltipMeasurement } from "../types/tooltipMeasurement";

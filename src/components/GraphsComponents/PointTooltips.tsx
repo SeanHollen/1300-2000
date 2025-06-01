@@ -1,4 +1,3 @@
-import React from "react";
 import { TooltipMeasurement, Tooltip } from "../types/tooltipMeasurement";
 
 type Props = {
