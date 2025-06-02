@@ -61,6 +61,12 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1527,
+        label: "Sack of City of Rome",
+        url: "https://en.wikipedia.org/wiki/Sack_of_Rome_(1527)"
+      },
+      { 
+        type: "point",
         at: 1346,
         label: "Battle of Crécy",
         url: "https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
@@ -70,7 +76,7 @@ export const timelineData = [
         at: 1356,
         start: 1351,
         end: 1368,
-        label: "Red Turban Rebellions, Yuan->Ming",
+        label: "Red Turban Rebellions, Yuan→Ming",
         url: "https://en.wikipedia.org/wiki/Red_Turban_Rebellions"
       },
       { 
@@ -78,7 +84,7 @@ export const timelineData = [
         at: 1636,
         start: 1618,
         end: 1683,
-        label: "Ming->Qing",
+        label: "Ming→Qing",
         url: "https://en.wikipedia.org/wiki/Transition_from_Ming_to_Qing"
       },
       { 
@@ -86,7 +92,7 @@ export const timelineData = [
         at: 1911,
         start: 1911,
         end: 1912,
-        label: "Xinhai Revolution, Qing->ROC",
+        label: "Xinhai Revolution, Qing→ROC",
         url: "https://en.wikipedia.org/wiki/1911_Revolution"
       },
       { 
@@ -94,13 +100,21 @@ export const timelineData = [
         at: 1949,
         start: 1927,
         end: 1949,
-        label: "Chinese Communist Revolution, ROC->PRC",
+        label: "Chinese Communist Revolution, ROC→PRC",
         url: "https://en.wikipedia.org/wiki/Chinese_Communist_Revolution"
       },
       { 
         type: "point",
+        at: 1419,
+        start: 1405,
+        end: 1466,
+        label: "Collapse of Golden Horde",
+        url: "https://en.wikipedia.org/wiki/Golden_Horde#Disintegration_and_succession"
+      },
+      { 
+        type: "point",
         at: 1402,
-        label: "Battle of Ankara - Timur Conquests",
+        label: "Timur Invation of Anatolia",
         url: "https://en.wikipedia.org/wiki/Battle_of_Ankara"
       },
       { 
@@ -402,7 +416,7 @@ export const timelineData = [
         at: 1405,
         start: 1405,
         end: 1433,
-        label: "Zheng He’s Voyages",
+        label: "Zheng He Voyages",
         url: "https://en.wikipedia.org/wiki/Zheng_He#Expeditions"
       },
       { 
@@ -940,6 +954,13 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1545,
+        label: "Complex Numbers",
+        url: "https://en.wikipedia.org/wiki/Ars_Magna_(Cardano_book)",
+        category: "good"
+      },
+      { 
+        type: "point",
         at: 1763,
         label: "Prussia Compulsory Education",
         url: "https://en.wikipedia.org/wiki/Prussian_education_system",
@@ -1194,6 +1215,12 @@ export const timelineData = [
     lane: "Religion and Politics",
     icon: "cross",
     items: [
+      { 
+        type: "point",
+        at: 1469,
+        label: "Guru Nanak Born - Sikhism",
+        url: "https://en.wikipedia.org/wiki/History_of_Sikhism#Guru_Nanak"
+      },
       {
         type: "point",
         at: 1598,
