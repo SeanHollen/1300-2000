@@ -28,7 +28,6 @@ export default function hoveredPointTooltips({
   timelineState,
   showAllPointTooltips,
 }: Props) {
-  const laneDetails = config.lane.getLaneDetails();
   return (
     <>
       {hoveredPointTooltip && (

@@ -19,6 +19,12 @@ export const timelineData = [
       },
       { 
         type: "point",
+        at: 1492,
+        label: "End of Reconquista",
+        url: "https://en.wikipedia.org/wiki/Reconquista",
+      },
+      { 
+        type: "point",
         at: 1708,
         start: 1700,
         end: 1721,
@@ -69,7 +75,7 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1644,
+        at: 1636,
         start: 1618,
         end: 1683,
         label: "Ming->Qing",
@@ -124,13 +130,21 @@ export const timelineData = [
         label: "World War I",
         url: "https://en.wikipedia.org/wiki/World_War_I"
       },
+      // { 
+      //   type: "point",
+      //   at: 1940,
+      //   start: 1937,
+      //   end: 1945,
+      //   label: "Second Sino-Japanese War",
+      //   url: "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War"
+      // },
       { 
         type: "point",
-        at: 1940,
-        start: 1937,
-        end: 1945,
-        label: "Second Sino-Japanese War",
-        url: "https://en.wikipedia.org/wiki/Second_Sino-Japanese_War"
+        at: 1905,
+        start: 1904,
+        end: 1905,
+        label: "Russo-Japanese War and Russion Revolution",
+        url: "https://en.wikipedia.org/wiki/Russo-Japanese_War"
       },
       { 
         type: "point",
@@ -258,12 +272,12 @@ export const timelineData = [
         label: "Battle of Agincourt",
         url: "https://en.wikipedia.org/wiki/Battle_of_Agincourt"
       },
-      // { 
-      //   type: "point",
-      //   at: 1346,
-      //   label: "Battle of Crécy",
-      //   url: "https://en.wikipedia.org/wiki/Battle_of_Cr%C3%A9cy"
-      // },
+      { 
+        type: "point",
+        at: 1571,
+        label: "Battle of Lepanto",
+        url: "https://en.wikipedia.org/wiki/Battle_of_Lepanto"
+      },
       { 
         type: "point",
         at: 1588,
@@ -393,7 +407,7 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1854,
+        at: 1853,
         start: 1852,
         end: 1855,
         label: "Perry Expeditions to Japan",
@@ -518,7 +532,9 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1885,
+        at: 1886,
+        start: 1885,
+        end: 1886,
         label: "Automobile",
         url: "https://en.wikipedia.org/wiki/Car#History",
         category: "good"
@@ -590,6 +606,8 @@ export const timelineData = [
       { 
         type: "point",
         at: 1839,
+        start: 1826,
+        end: 1839,
         label: "Photography",
         url: "https://en.wikipedia.org/wiki/History_of_photography",
         category: "good"
@@ -663,6 +681,8 @@ export const timelineData = [
       { 
         type: "point",
         at: 1837,
+        start: 1825,
+        end: 1844,
         label: "Telegraph",
         url: "https://en.wikipedia.org/wiki/Electrical_telegraph",
         category: "good"
@@ -913,6 +933,13 @@ export const timelineData = [
     items: [
       { 
         type: "point",
+        at: 1582,
+        label: "Gregorian Calendar",
+        url: "https://en.wikipedia.org/wiki/Gregorian_calendar",
+        category: "good"
+      },
+      { 
+        type: "point",
         at: 1763,
         label: "Prussia Compulsory Education",
         url: "https://en.wikipedia.org/wiki/Prussian_education_system",
@@ -1053,7 +1080,7 @@ export const timelineData = [
       { 
         type: "point",
         at: 1915,
-        label: "General Relativity",
+        label: "General Relativity - Einstein",
         url: "https://en.wikipedia.org/wiki/General_relativity",
         category: "good"
       },
@@ -1211,7 +1238,7 @@ export const timelineData = [
       { 
         type: "point",
         at: 1492,
-        label: "Close of Reconquista and Expulsion of Jews",
+        label: "Expulsion of Jews from Spain",
         url: "https://en.wikipedia.org/wiki/Alhambra_Decree",
       },
       { 
@@ -1614,7 +1641,7 @@ export const timelineData = [
         type: "point",
         at: 1959,
         start: 1959,
-        end: 1961,
+        end: 1962,
         label: "Chinese Famine (Great Leap Forward)",
         url: "https://en.wikipedia.org/wiki/Great_Chinese_Famine",
         category: "bad"

@@ -1,9 +1,10 @@
 function readCsvString(csvString) {
-  const delimiter = "\n";
+  const lineDelimiter = "\n";
+  const valueDelimiter = ",";
   const headerRows = 1;
 
-  let res = csvString.split(delimiter).slice(headerRows).map(row => {
-    let spl = row.split(",")
+  let res = csvString.split(lineDelimiter).slice(headerRows).map(row => {
+    let spl = row.split(valueDelimiter)
 
     const year = spl[0]
     const value = spl[1];

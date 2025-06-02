@@ -359,7 +359,7 @@ export default function GraphsContainer() {
           constrainTooltipPosition={constrainTooltipPosition}
           yearToX={yearToX}
           timelineState={timelineState}
-          showAllPointTooltips={showAllPointTooltips}
+          showAllPointTooltips={showAllPointTooltips && showTimelineChart}
         />
       </svg>
     </div>
