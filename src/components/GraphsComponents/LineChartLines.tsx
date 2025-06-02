@@ -71,31 +71,30 @@ type Props = {
   lineChartData: LineTS[];
   config: Config;
   yearToX: (year: number) => number;
-  xToYear: (x: number) => number;
   totalHeight: number;
   cursorX: number | null;
   modalOpen: boolean;
+  hoveredYear: number | null;
 };
 
 export default function LineCharts({
   lineChartData,
   config,
   yearToX,
-  xToYear,
   totalHeight,
   cursorX,
   modalOpen,
+  hoveredYear,
 }: Props) {
   return (
     <>
       {lineChartData
         .filter((lineData) => lineData.toShow)
         .map((lineData, i) => {
-          const year = typeof cursorX === "number" ? xToYear(cursorX) : cursorX;
           const normalizedY = findYValueForYear(
             lineData.points,
             lineData.range,
-            year
+            hoveredYear
           );
           const yPosition = normalizedY
             ? totalHeight -
@@ -121,7 +120,7 @@ export default function LineCharts({
                 fill="none"
                 opacity="0.4"
               />
-              {!modalOpen && normalizedY && (
+              {!modalOpen && normalizedY && lineData.hasDataForYear && (
                 <text
                   x={cursorX || undefined}
                   y={yPosition}

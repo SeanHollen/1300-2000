@@ -9,7 +9,8 @@ export type LineTS = {
   range: Range;
   sourceUrl: string;
   sourceIcon: string;
-  points: TSPoint[]
+  points: TSPoint[];
+  hasDataForYear?: boolean;
 }
 
 export type TSPoint = {

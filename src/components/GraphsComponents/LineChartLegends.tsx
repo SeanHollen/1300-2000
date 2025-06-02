@@ -18,16 +18,6 @@ export const findXValueForYear = (points: TSPoint[], year: number) => {
   return closestPoint.value;
 };
 
-const hasDataAtYear = (points: TSPoint[], year: number) => {
-  if (!year) return false;
-  for (let i = 0; i < points.length - 1; i++) {
-    if (points[i].year <= year && points[i + 1].year >= year) {
-      return true;
-    }
-  }
-  return false;
-};
-
 const formatValue = (value: number | null) => {
   if (value === null) return "";
   const withDecimals = parseFloat(value.toFixed(2)).toString();
@@ -88,10 +78,7 @@ export default function LineChartLegends({
       </span>
       {showHoverView &&
         lineChartData
-          .filter(
-            (lineData) =>
-              lineData.toShow && hasDataAtYear(lineData.points, hoveredYear)
-          )
+          .filter((lineData) => lineData.toShow && lineData.hasDataForYear)
           .map((lineData, i) => {
             const value = findXValueForYear(lineData.points, hoveredYear);
             return (

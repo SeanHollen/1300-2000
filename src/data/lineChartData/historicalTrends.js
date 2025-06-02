@@ -10277,7 +10277,7 @@ export const lineChartData = [
     ]    
   },
   // {
-  //   id: "witch-trials-1",
+  //   id: "witch-trials-century",
   //   label: "Witch Trials, People Tried by Century",
   //   shortLabel: "Witch Trials",
   //   color: "#fcba03",
@@ -10346,7 +10346,7 @@ export const lineChartData = [
   //   ]    
   // },
   {
-    id: "witch-trials-2",
+    id: "witch-trials-year",
     label: "Witch Trials, People Tried Per Year, Smoothed",
     shortLabel: "Witch Hunt",
     color: "#fcba03",
@@ -10794,7 +10794,7 @@ export const lineChartData = [
     ]    
   },
   {
-    id: "witch-trials-2",
+    id: "slaves",
     label: "Trans-Atlantic Slave Trade, Slaves",
     shortLabel: "slaves",
     color: "#880E4F",

@@ -14,6 +14,7 @@ import "../styles/swimlanes.css";
 import { Config } from "./types/config";
 import { LaneItem, Point } from "./types/timelineData";
 import { Tooltip } from "./types/tooltipMeasurement";
+import { LineTS, TSPoint } from "./types/trendlineData";
 
 export default function GraphsContainer() {
   const USE_CACHE = false;
@@ -270,6 +271,23 @@ export default function GraphsContainer() {
     setChartWidth(value);
   };
 
+  const hasDataAtYear = (points: TSPoint[], year: number | null) => {
+    if (!year) return false;
+    for (let i = 0; i < points.length - 1; i++) {
+      if (points[i].year <= year && points[i + 1].year >= year) {
+        return true;
+      }
+    }
+    return false;
+  };
+
+  const markedLineChartData = lineChartState.map((lineData: LineTS) => {
+    return {
+      ...lineData,
+      hasDataForYear: hasDataAtYear(lineData.points, hoveredYear)
+    };
+  });
+
   return (
     <div
       className="w-screen h-screen swimlane-container relative m-0"
@@ -278,7 +296,7 @@ export default function GraphsContainer() {
       onMouseLeave={handleMouseLeave}
     >
       <LineChartLegends
-        lineChartData={lineChartState}
+        lineChartData={markedLineChartData}
         hoveredYear={hoveredYear}
         setModalOpen={setModalOpen}
         modalOpen={modalOpen}
@@ -287,7 +305,7 @@ export default function GraphsContainer() {
 
       {modalOpen && (
         <SettingsModal
-          lineChartData={lineChartState}
+          lineChartData={markedLineChartData}
           onClose={() => setModalOpen(false)}
           onToggle={updateLineChartState}
           onSliderChange={updateChartWidth}
@@ -302,13 +320,13 @@ export default function GraphsContainer() {
 
       <svg width={chartWidth} height={totalHeight} className="overflow-hidden">
         <LineChartLines
-          lineChartData={lineChartState}
+          lineChartData={markedLineChartData}
           config={config}
           yearToX={yearToX}
-          xToYear={xToYear}
           totalHeight={totalHeight}
           cursorX={cursorX}
           modalOpen={modalOpen}
+          hoveredYear={hoveredYear}
         />
 
         <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />
