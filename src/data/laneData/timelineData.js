@@ -2,6 +2,7 @@ export const timelineData = [
   {
     lane: "Wars and Revolutions",
     icon: "sword",
+    toShow: true,
     items: [
       { 
         type: "segment",
@@ -320,6 +321,7 @@ export const timelineData = [
   {
     lane: "Exchange and Exploration",
     icon: "ship",
+    toShow: true,
     items: [
       { 
         type: "segment",
@@ -334,6 +336,15 @@ export const timelineData = [
         end: 1850,
         label: "Triangular Trade / Trans-Atlantic Slave Trade Peak",
         url: "https://en.wikipedia.org/wiki/Triangular_trade"
+      },
+      { 
+        type: "point",
+        at: 1716,
+        start: 1650,
+        end: 1740,
+        label: "Golden Age of Piracy",
+        url: "https://en.wikipedia.org/wiki/Golden_Age_of_Piracy",
+        category: "bad",
       },
       { 
         type: "point",
@@ -432,6 +443,7 @@ export const timelineData = [
   {
     lane: "Technology and Economics",
     icon: "gears2",
+    toShow: true,
     items: [
       { 
         type: "segment",
@@ -780,6 +792,7 @@ export const timelineData = [
   {
     lane: "Health and Disease",
     icon: "vaccine",
+    toShow: true,
     items: [
       { 
         type: "segment",
@@ -951,6 +964,7 @@ export const timelineData = [
   {
     lane: "Science and Education",
     icon: "telescope",
+    toShow: true,
     items: [
       { 
         type: "point",
@@ -1221,6 +1235,7 @@ export const timelineData = [
   {
     lane: "Religion and Politics",
     icon: "cross",
+    toShow: true,
     items: [
       { 
         type: "point",
@@ -1371,6 +1386,7 @@ export const timelineData = [
   {
     lane: "Philosophy and Art",
     icon: "quill",
+    toShow: true,
     items: [
       { 
         type: "point",
@@ -1603,6 +1619,7 @@ export const timelineData = [
   {
     lane: "Farming and Climate",
     icon: "wheat",
+    toShow: true,
     items: [
       {
         type: "segment",

@@ -1,6 +1,7 @@
 export type Lane = {
   lane: string;
   icon: string;
+  toShow: boolean;
   items: LaneItem[];
 };
 

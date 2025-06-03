@@ -52,126 +52,128 @@ export default function SwimlaneLines({
 
   return (
     <>
-      {data.map((lane, laneIndex) => {
-        const y = config.lane.getLaneYPos(laneIndex);
-        const IconComponent = iconMap[lane.icon] || FaCog; // Fallback to cog if icon not found
-        const iconOffs = window.screen.width + 200;
+      {data
+        .filter((lane) => lane.toShow)
+        .map((lane, laneIndex) => {
+          const y = config.lane.getLaneYPos(laneIndex);
+          const IconComponent = iconMap[lane.icon] || FaCog; // Fallback to cog if icon not found
+          const iconOffs = window.screen.width + 200;
 
-        return (
-          <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
-            {/* Lane background */}
-            <rect
-              x="0"
-              y={String(-laneDetails.laneThickness / 2)}
-              width={chartWidth}
-              height={laneDetails.laneThickness}
-              className="swimlane-lane"
-            />
+          return (
+            <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
+              {/* Lane background */}
+              <rect
+                x="0"
+                y={String(-laneDetails.laneThickness / 2)}
+                width={chartWidth}
+                height={laneDetails.laneThickness}
+                className="swimlane-lane"
+              />
 
-            {/* Lane Icon Container */}
-            {showTimelineChart && (
-              <foreignObject
-                x={90}
-                y={-iconRadius}
-                width={iconRadius * 2}
-                height={iconRadius * 2}
-                style={{ overflow: "visible" }}
-              >
-                <div
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "100%",
-                  }}
-                  title={lane.lane}
+              {/* Lane Icon Container */}
+              {showTimelineChart && (
+                <foreignObject
+                  x={90}
+                  y={-iconRadius}
+                  width={iconRadius * 2}
+                  height={iconRadius * 2}
+                  style={{ overflow: "visible" }}
                 >
                   <div
                     style={{
-                      position: "absolute",
-                      width: "200px",
-                      left: "50%",
-                      bottom: "100%",
-                      transform: "translateX(-50%)",
-                      marginBottom: "5px",
-                      fontSize: "14px",
-                      color: "#374151",
-                      textAlign: "center",
-                      whiteSpace: "nowrap",
-                      fontWeight: "500",
+                      position: "relative",
+                      width: "100%",
+                      height: "100%",
                     }}
-                  >
-                    {lane.lane}
-                  </div>
-                  <div
-                    style={{
-                      width: "calc(100% - 4px)",
-                      height: "calc(100% - 4px)",
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "center",
-                      background: "rgba(255, 255, 255, 0.8)",
-                      borderRadius: "50%",
-                      border: "2px solid rgba(55, 65, 81, 0.8)",
-                    }}
-                  >
-                    <IconComponent
-                      style={{
-                        width: "65%",
-                        height: "65%",
-                        color: "rgba(55, 65, 81, 0.8)",
-                      }}
-                    />
-                  </div>
-                </div>
-              </foreignObject>
-            )}
-            {showTimelineChart &&
-              Array.from(
-                { length: Math.floor(chartWidth / iconOffs) },
-                (_, i) => (
-                  <foreignObject
-                    key={`icon-${laneIndex}-${i}`}
-                    x={iconOffs * (i + 1) + 250}
-                    y={-iconRadius}
-                    width={iconRadius * 2}
-                    height={iconRadius * 2}
-                    style={{ overflow: "visible" }}
+                    title={lane.lane}
                   >
                     <div
                       style={{
-                        position: "relative",
-                        width: "100%",
-                        height: "100%",
+                        position: "absolute",
+                        width: "200px",
+                        left: "50%",
+                        bottom: "100%",
+                        transform: "translateX(-50%)",
+                        marginBottom: "5px",
+                        fontSize: "14px",
+                        color: "#374151",
+                        textAlign: "center",
+                        whiteSpace: "nowrap",
+                        fontWeight: "500",
                       }}
-                      title={lane.lane}
+                    >
+                      {lane.lane}
+                    </div>
+                    <div
+                      style={{
+                        width: "calc(100% - 4px)",
+                        height: "calc(100% - 4px)",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        background: "rgba(255, 255, 255, 0.8)",
+                        borderRadius: "50%",
+                        border: "2px solid rgba(55, 65, 81, 0.8)",
+                      }}
+                    >
+                      <IconComponent
+                        style={{
+                          width: "65%",
+                          height: "65%",
+                          color: "rgba(55, 65, 81, 0.8)",
+                        }}
+                      />
+                    </div>
+                  </div>
+                </foreignObject>
+              )}
+              {showTimelineChart &&
+                Array.from(
+                  { length: Math.floor(chartWidth / iconOffs) },
+                  (_, i) => (
+                    <foreignObject
+                      key={`icon-${laneIndex}-${i}`}
+                      x={iconOffs * (i + 1) + 250}
+                      y={-iconRadius}
+                      width={iconRadius * 2}
+                      height={iconRadius * 2}
+                      style={{ overflow: "visible" }}
                     >
                       <div
                         style={{
-                          width: "calc(100% - 4px)",
-                          height: "calc(100% - 4px)",
-                          display: "flex",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          background: "rgba(255, 255, 255, 0.8)",
-                          borderRadius: "50%",
-                          border: "2px solid rgba(55, 65, 81, 0.8)",
+                          position: "relative",
+                          width: "100%",
+                          height: "100%",
                         }}
+                        title={lane.lane}
                       >
-                        <IconComponent
+                        <div
                           style={{
-                            width: "65%",
-                            height: "65%",
-                            color: "rgba(55, 65, 81, 0.8)",
+                            width: "calc(100% - 4px)",
+                            height: "calc(100% - 4px)",
+                            display: "flex",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            background: "rgba(255, 255, 255, 0.8)",
+                            borderRadius: "50%",
+                            border: "2px solid rgba(55, 65, 81, 0.8)",
                           }}
-                        />
+                        >
+                          <IconComponent
+                            style={{
+                              width: "65%",
+                              height: "65%",
+                              color: "rgba(55, 65, 81, 0.8)",
+                            }}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </foreignObject>
-                )
-              )}
-          </g>
-        );
-      })}
+                    </foreignObject>
+                  )
+                )}
+            </g>
+          );
+        })}
     </>
   );
 }

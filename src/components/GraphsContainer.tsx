@@ -12,7 +12,7 @@ import PointTooltips from "./GraphsComponents/PointTooltips";
 import SettingsModal from "./GraphsComponents/SettingsModal";
 import "../styles/swimlanes.css";
 import { Config } from "./types/config";
-import { LaneItem, Point } from "./types/timelineData";
+import { LaneItem, Lane, Point } from "./types/timelineData";
 import { Tooltip } from "./types/tooltipMeasurement";
 import { LineTS, TSPoint } from "./types/trendlineData";
 
@@ -93,6 +93,8 @@ export default function GraphsContainer() {
 
   const [axisHeight, setAxisHeight] = useState(40);
 
+  const filteredTimeline = timelineState.filter((lane: Lane) => lane.toShow);
+
   const config: Config = {
     layout: {
       svgPad: 150,
@@ -107,7 +109,7 @@ export default function GraphsContainer() {
         segment: 0.5,
       },
       getLaneDetails: () => {
-        const laneUnit = (config.layout.windowHeight - 50) / (timelineState.length + 0.5);
+        const laneUnit = (config.layout.windowHeight - 50) / (filteredTimeline.length + 0.5);
         const laneThickness = laneUnit * config.lane.percentages.lane;
         const lanePadding = laneUnit * (1 - config.lane.percentages.lane);
         const segmentThickness = laneUnit * config.lane.percentages.segment;
@@ -257,7 +259,7 @@ export default function GraphsContainer() {
   };
 
   const totalHeight =
-    timelineState.length * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
+    filteredTimeline.length * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
 
   const updateLineChartState = (label: string, toShow: boolean) => {
     setLineChartState((prev: LaneItem[]) =>
@@ -333,7 +335,7 @@ export default function GraphsContainer() {
         <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />
 
         <SwimlaneLines
-          data={timelineState}
+          data={filteredTimeline}
           config={config}
           chartWidth={chartWidth}
           showTimelineChart={showTimelineChart}
@@ -350,7 +352,7 @@ export default function GraphsContainer() {
 
         {showTimelineChart && (
           <PointsAndSegments
-            data={timelineState}
+            data={filteredTimeline}
             yearToX={yearToX}
             config={config}
             handleSegmentHover={handleSegmentHover}
@@ -361,7 +363,7 @@ export default function GraphsContainer() {
 
         {showTimelineChart && (
           <SegmentTooltips
-            data={timelineState}
+            data={filteredTimeline}
             yearToX={yearToX}
             config={config}
             interactionOrder={interactionOrder}
@@ -377,7 +379,7 @@ export default function GraphsContainer() {
           tooltipTextRef={tooltipTextRef}
           constrainTooltipPosition={constrainTooltipPosition}
           yearToX={yearToX}
-          timelineState={timelineState}
+          timelineState={filteredTimeline}
           showAllPointTooltips={showAllPointTooltips && showTimelineChart}
         />
       </svg>
