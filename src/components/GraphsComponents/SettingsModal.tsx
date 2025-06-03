@@ -127,7 +127,7 @@ export default function SettingsModal({
                     }}
                   >
                     <img
-                      src={`/assets/${item.sourceIcon}.png`}
+                      src={`/1300-2000/sourceIcons/${item.sourceIcon}.png`}
                       alt={`${item.label} icon`}
                       style={{
                         width: "16px",
