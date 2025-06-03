@@ -23,7 +23,6 @@ export default function GraphsContainer() {
 
   const getLineChartState = () => {
     return _lineChartData
-      .map((item) => ({ ...item }))
       .map((item) => ({
         ...item,
         points: item.points.sort((a, b) => a.year - b.year),

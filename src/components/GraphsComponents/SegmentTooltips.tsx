@@ -3,7 +3,7 @@ import { Config } from "../types/config";
 import { TooltipMeasurement } from "../types/tooltipMeasurement";
 
 type Props = {
-  data: Lane[]; // Replace with actual type
+  data: Lane[];
   yearToX: (year: number) => number;
   config: Config;
   interactionOrder: string[];
