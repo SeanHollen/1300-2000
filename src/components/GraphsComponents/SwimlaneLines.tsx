@@ -10,10 +10,11 @@ import {
   GiSailboat,
   GiSyringe,
   GiGears,
+  GiQuillInk,
 } from "react-icons/gi";
+import { FaGears } from "react-icons/fa6";
 import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
-import { GiQuillInk } from "react-icons/gi";
 import { Config } from "../types/config";
 import { Lane } from "../types/timelineData";
 
@@ -21,6 +22,7 @@ const iconMap: Record<string, any> = {
   sword: GiCrossedSwords,
   cog: FaCog,
   gears: GiGears,
+  gears2: FaGears,
   book: FaBook,
   cross: FaCross,
   vaccine: GiSyringe,

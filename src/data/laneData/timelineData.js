@@ -431,7 +431,7 @@ export const timelineData = [
   },
   {
     lane: "Technology and Economics",
-    icon: "gears",
+    icon: "gears2",
     items: [
       { 
         type: "segment",
@@ -512,6 +512,13 @@ export const timelineData = [
         at: 1712,
         label: "Steam Engine",
         url: "https://en.wikipedia.org/wiki/Steam_engine",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1804,
+        label: "Train",
+        url: "https://en.wikipedia.org/wiki/History_of_rail_transport",
         category: "good"
       },
       { 

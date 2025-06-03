@@ -327,6 +327,7 @@ export default function GraphsContainer() {
           cursorX={cursorX}
           modalOpen={modalOpen}
           hoveredYear={hoveredYear}
+          showTimelineChart={showTimelineChart}
         />
 
         <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />

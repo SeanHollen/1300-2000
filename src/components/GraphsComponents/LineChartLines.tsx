@@ -52,7 +52,7 @@ function createLinePath(
   range: Range,
   config: Config,
   totalHeight: number,
-  yearToX: (year: number) => number
+  yearToX: (year: number) => number,
 ) {
   return points.reduce((path, point, i) => {
     const x = yearToX(point.year);
@@ -75,6 +75,7 @@ type Props = {
   cursorX: number | null;
   modalOpen: boolean;
   hoveredYear: number | null;
+  showTimelineChart: boolean;
 };
 
 export default function LineCharts({
@@ -85,6 +86,7 @@ export default function LineCharts({
   cursorX,
   modalOpen,
   hoveredYear,
+  showTimelineChart,
 }: Props) {
   return (
     <>
@@ -118,7 +120,7 @@ export default function LineCharts({
                 stroke={lineData.color}
                 strokeWidth="1.5"
                 fill="none"
-                opacity="0.4"
+                opacity={showTimelineChart ? "0.4" : "0.8"}
               />
               {!modalOpen && normalizedY && lineData.hasDataForYear && (
                 <text
@@ -127,7 +129,7 @@ export default function LineCharts({
                   fill={lineData.color}
                   fontSize="0.6rem"
                   fontFamily="monospace"
-                  opacity="0.7"
+                  opacity={showTimelineChart ? "0.7" : "1.0"}
                   dy="-5"
                 >
                   {i}
