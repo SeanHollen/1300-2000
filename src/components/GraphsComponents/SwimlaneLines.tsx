@@ -17,6 +17,7 @@ import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
 import { Config } from "../types/config";
 import { Lane } from "../types/timelineData";
+import { isMobileDevice } from "../../utils/deviceUtils";
 
 const iconMap: Record<string, any> = {
   sword: GiCrossedSwords,
@@ -49,6 +50,7 @@ export default function SwimlaneLines({
 }: Props) {
   const iconRadius = config.point.iconRadius;
   const laneDetails = config.lane.getLaneDetails();
+  const isMobile = isMobileDevice();
 
   return (
     <>
@@ -56,8 +58,11 @@ export default function SwimlaneLines({
         .filter((lane) => lane.toShow)
         .map((lane, laneIndex) => {
           const y = config.lane.getLaneYPos(laneIndex);
-          const IconComponent = iconMap[lane.icon] || FaCog; // Fallback to cog if icon not found
+          const IconComponent = iconMap[lane.icon] || FaCog;
           const iconOffs = window.screen.width + 200;
+
+          // mobile doesn't recognize the translate(0, y) of the parent <g>
+          const mobileYOffset = isMobile ? y : 0;
 
           return (
             <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
@@ -74,7 +79,7 @@ export default function SwimlaneLines({
               {showTimelineChart && (
                 <foreignObject
                   x={90}
-                  y={-iconRadius}
+                  y={-iconRadius + mobileYOffset}
                   width={iconRadius * 2}
                   height={iconRadius * 2}
                   style={{ overflow: "visible" }}
@@ -134,7 +139,7 @@ export default function SwimlaneLines({
                     <foreignObject
                       key={`icon-${laneIndex}-${i}`}
                       x={iconOffs * (i + 1) + 250}
-                      y={-iconRadius}
+                      y={-iconRadius + mobileYOffset}
                       width={iconRadius * 2}
                       height={iconRadius * 2}
                       style={{ overflow: "visible" }}
