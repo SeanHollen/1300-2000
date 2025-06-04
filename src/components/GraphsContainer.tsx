@@ -260,13 +260,21 @@ export default function GraphsContainer() {
   const totalHeight =
     filteredTimeline.length * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
 
-  const updateLineChartState = (label: string, toShow: boolean) => {
+  const toggleSelectTrendline = (label: string, toShow: boolean) => {
     setLineChartState((prev: LaneItem[]) =>
       prev.map((item: LaneItem) =>
         item.label === label ? { ...item, toShow: toShow } : item
       )
     );
   };
+
+  const deselectAllTrendlines = () => {
+    setLineChartState((prev: LaneItem[]) =>
+      prev.map((item: LaneItem) =>
+        ({ ...item, toShow: false })
+      )
+    );
+  }
 
   const updateChartWidth = (value: number) => {
     setChartWidth(value);
@@ -308,7 +316,8 @@ export default function GraphsContainer() {
         <SettingsModal
           lineChartData={markedLineChartData}
           onClose={() => setModalOpen(false)}
-          onToggle={updateLineChartState}
+          onToggleSelectTendline={toggleSelectTrendline}
+          onDeselectAllTrendlines={deselectAllTrendlines}
           onSliderChange={updateChartWidth}
           sliderValue={chartWidth}
           onRestoreDefaults={onRestoreDefaults}

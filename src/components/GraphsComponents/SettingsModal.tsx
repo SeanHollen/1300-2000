@@ -3,7 +3,8 @@ import { LineTS } from "../types/trendlineData";
 type Props = {
   lineChartData: LineTS[];
   onClose: () => void;
-  onToggle: (label: string, toShow: boolean) => void;
+  onToggleSelectTendline: (label: string, toShow: boolean) => void;
+  onDeselectAllTrendlines: () => void;
   onSliderChange: (value: number) => void;
   sliderValue: number;
   onRestoreDefaults: () => void;
@@ -16,7 +17,8 @@ type Props = {
 export default function SettingsModal({
   lineChartData,
   onClose,
-  onToggle,
+  onToggleSelectTendline,
+  onDeselectAllTrendlines,
   onSliderChange,
   sliderValue,
   onRestoreDefaults,
@@ -49,6 +51,7 @@ export default function SettingsModal({
           borderRadius: "8px",
           position: "relative",
           minWidth: "300px",
+          color: "black",
         }}
       >
         <button
@@ -146,7 +149,7 @@ export default function SettingsModal({
                     padding: "5px",
                     cursor: "pointer",
                   }}
-                  onClick={() => onToggle(item.label, !item.toShow)}
+                  onClick={() => onToggleSelectTendline(item.label, !item.toShow)}
                 >
                   <input
                     type="checkbox"
@@ -268,6 +271,22 @@ export default function SettingsModal({
             </div>
           </div>
           <br />
+          <button
+            onClick={onDeselectAllTrendlines}
+            style={{
+              display: "block",
+              margin: "10px auto",
+              background: "#808080",
+              color: "white",
+              border: "none",
+              padding: "0.5rem 1rem",
+              borderRadius: "4px",
+              cursor: "pointer",
+              fontSize: "14px",
+            }}
+          >
+            Deselect All Trendlines
+          </button>
           <button
             onClick={onRestoreDefaults}
             style={{

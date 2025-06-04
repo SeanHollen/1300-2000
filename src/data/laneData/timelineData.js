@@ -132,7 +132,7 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1861,
+        at: 1863,
         start: 1861,
         end: 1865,
         label: "American Civil War",

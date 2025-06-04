@@ -1,6 +1,5 @@
-function readCsvString(csvString) {
+function readCsvString(csvString, valueDelimiter = ",") {
   const lineDelimiter = "\n";
-  const valueDelimiter = ",";
   const headerRows = 1;
 
   let res = csvString.split(lineDelimiter).slice(headerRows).map(row => {
@@ -16,5 +15,5 @@ function readCsvString(csvString) {
   })
   return res.sort((a, b) => a.year - b.year)
 }
-let res = readCsvString("");
-JSON.stringify(res);
+
+export default readCsvString;

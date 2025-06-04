@@ -10955,5 +10955,2653 @@ export const lineChartData = [
       { "year": 1999, "value": 3406.9563 },
       { "year": 2000, "value": 3368.8154 }
     ]    
+  },
+  {
+    id: "battles",
+    label: "Battles, Number Recorded per Year",
+    shortLabel: "Battles",
+    color: "#B71C1C", // red
+    unit: "",
+    toShow: false,
+    range: {
+      start: 0,
+      end: 143,
+    },
+    sourceUrl: "https://www.kaggle.com/datasets/mattiaperozzi/history-of-demographics-and-wars",
+    sourceIcon: "kaggle",
+    points: [
+      {
+        "year": 1301,
+        "value": 2
+      },
+      {
+        "year": 1302,
+        "value": 2
+      },
+      {
+        "year": 1303,
+        "value": 1
+      },
+      {
+        "year": 1304,
+        "value": 4
+      },
+      {
+        "year": 1305,
+        "value": 2
+      },
+      {
+        "year": 1306,
+        "value": 4
+      },
+      {
+        "year": 1307,
+        "value": 5
+      },
+      {
+        "year": 1308,
+        "value": 5
+      },
+      {
+        "year": 1309,
+        "value": 2
+      },
+      {
+        "year": 1310,
+        "value": 2
+      },
+      {
+        "year": 1311,
+        "value": 1
+      },
+      {
+        "year": 1312,
+        "value": 2
+      },
+      {
+        "year": 1313,
+        "value": 1
+      },
+      {
+        "year": 1314,
+        "value": 3
+      },
+      {
+        "year": 1315,
+        "value": 2
+      },
+      {
+        "year": 1316,
+        "value": 2
+      },
+      {
+        "year": 1317,
+        "value": 1
+      },
+      {
+        "year": 1318,
+        "value": 5
+      },
+      {
+        "year": 1319,
+        "value": 3
+      },
+      {
+        "year": 1322,
+        "value": 3
+      },
+      {
+        "year": 1325,
+        "value": 1
+      },
+      {
+        "year": 1326,
+        "value": 1
+      },
+      {
+        "year": 1328,
+        "value": 2
+      },
+      {
+        "year": 1330,
+        "value": 1
+      },
+      {
+        "year": 1331,
+        "value": 3
+      },
+      {
+        "year": 1332,
+        "value": 2
+      },
+      {
+        "year": 1333,
+        "value": 5
+      },
+      {
+        "year": 1334,
+        "value": 1
+      },
+      {
+        "year": 1335,
+        "value": 3
+      },
+      {
+        "year": 1336,
+        "value": 4
+      },
+      {
+        "year": 1337,
+        "value": 2
+      },
+      {
+        "year": 1339,
+        "value": 3
+      },
+      {
+        "year": 1340,
+        "value": 6
+      },
+      {
+        "year": 1341,
+        "value": 1
+      },
+      {
+        "year": 1342,
+        "value": 3
+      },
+      {
+        "year": 1343,
+        "value": 2
+      },
+      {
+        "year": 1344,
+        "value": 2
+      },
+      {
+        "year": 1345,
+        "value": 1
+      },
+      {
+        "year": 1346,
+        "value": 6
+      },
+      {
+        "year": 1347,
+        "value": 1
+      },
+      {
+        "year": 1348,
+        "value": 2
+      },
+      {
+        "year": 1350,
+        "value": 1
+      },
+      {
+        "year": 1351,
+        "value": 3
+      },
+      {
+        "year": 1352,
+        "value": 4
+      },
+      {
+        "year": 1353,
+        "value": 1
+      },
+      {
+        "year": 1354,
+        "value": 2
+      },
+      {
+        "year": 1355,
+        "value": 2
+      },
+      {
+        "year": 1356,
+        "value": 2
+      },
+      {
+        "year": 1359,
+        "value": 1
+      },
+      {
+        "year": 1360,
+        "value": 1
+      },
+      {
+        "year": 1361,
+        "value": 1
+      },
+      {
+        "year": 1362,
+        "value": 5
+      },
+      {
+        "year": 1363,
+        "value": 4
+      },
+      {
+        "year": 1364,
+        "value": 2
+      },
+      {
+        "year": 1365,
+        "value": 2
+      },
+      {
+        "year": 1366,
+        "value": 3
+      },
+      {
+        "year": 1367,
+        "value": 2
+      },
+      {
+        "year": 1369,
+        "value": 1
+      },
+      {
+        "year": 1370,
+        "value": 4
+      },
+      {
+        "year": 1371,
+        "value": 2
+      },
+      {
+        "year": 1372,
+        "value": 2
+      },
+      {
+        "year": 1373,
+        "value": 1
+      },
+      {
+        "year": 1375,
+        "value": 1
+      },
+      {
+        "year": 1376,
+        "value": 1
+      },
+      {
+        "year": 1377,
+        "value": 1
+      },
+      {
+        "year": 1378,
+        "value": 2
+      },
+      {
+        "year": 1379,
+        "value": 2
+      },
+      {
+        "year": 1380,
+        "value": 3
+      },
+      {
+        "year": 1381,
+        "value": 1
+      },
+      {
+        "year": 1382,
+        "value": 3
+      },
+      {
+        "year": 1383,
+        "value": 1
+      },
+      {
+        "year": 1384,
+        "value": 1
+      },
+      {
+        "year": 1385,
+        "value": 2
+      },
+      {
+        "year": 1386,
+        "value": 1
+      },
+      {
+        "year": 1387,
+        "value": 5
+      },
+      {
+        "year": 1388,
+        "value": 4
+      },
+      {
+        "year": 1389,
+        "value": 4
+      },
+      {
+        "year": 1391,
+        "value": 2
+      },
+      {
+        "year": 1393,
+        "value": 1
+      },
+      {
+        "year": 1394,
+        "value": 1
+      },
+      {
+        "year": 1395,
+        "value": 2
+      },
+      {
+        "year": 1396,
+        "value": 1
+      },
+      {
+        "year": 1398,
+        "value": 3
+      },
+      {
+        "year": 1399,
+        "value": 3
+      },
+      {
+        "year": 1400,
+        "value": 2
+      },
+      {
+        "year": 1401,
+        "value": 3
+      },
+      {
+        "year": 1402,
+        "value": 5
+      },
+      {
+        "year": 1403,
+        "value": 2
+      },
+      {
+        "year": 1405,
+        "value": 1
+      },
+      {
+        "year": 1406,
+        "value": 2
+      },
+      {
+        "year": 1408,
+        "value": 3
+      },
+      {
+        "year": 1409,
+        "value": 1
+      },
+      {
+        "year": 1410,
+        "value": 3
+      },
+      {
+        "year": 1411,
+        "value": 1
+      },
+      {
+        "year": 1413,
+        "value": 1
+      },
+      {
+        "year": 1415,
+        "value": 3
+      },
+      {
+        "year": 1416,
+        "value": 3
+      },
+      {
+        "year": 1417,
+        "value": 1
+      },
+      {
+        "year": 1418,
+        "value": 1
+      },
+      {
+        "year": 1420,
+        "value": 7
+      },
+      {
+        "year": 1421,
+        "value": 5
+      },
+      {
+        "year": 1422,
+        "value": 5
+      },
+      {
+        "year": 1423,
+        "value": 5
+      },
+      {
+        "year": 1424,
+        "value": 4
+      },
+      {
+        "year": 1426,
+        "value": 4
+      },
+      {
+        "year": 1427,
+        "value": 7
+      },
+      {
+        "year": 1428,
+        "value": 2
+      },
+      {
+        "year": 1429,
+        "value": 5
+      },
+      {
+        "year": 1430,
+        "value": 3
+      },
+      {
+        "year": 1431,
+        "value": 6
+      },
+      {
+        "year": 1434,
+        "value": 1
+      },
+      {
+        "year": 1435,
+        "value": 2
+      },
+      {
+        "year": 1436,
+        "value": 5
+      },
+      {
+        "year": 1437,
+        "value": 2
+      },
+      {
+        "year": 1439,
+        "value": 3
+      },
+      {
+        "year": 1440,
+        "value": 2
+      },
+      {
+        "year": 1441,
+        "value": 2
+      },
+      {
+        "year": 1442,
+        "value": 3
+      },
+      {
+        "year": 1443,
+        "value": 5
+      },
+      {
+        "year": 1444,
+        "value": 4
+      },
+      {
+        "year": 1445,
+        "value": 3
+      },
+      {
+        "year": 1446,
+        "value": 2
+      },
+      {
+        "year": 1448,
+        "value": 5
+      },
+      {
+        "year": 1449,
+        "value": 4
+      },
+      {
+        "year": 1450,
+        "value": 4
+      },
+      {
+        "year": 1451,
+        "value": 2
+      },
+      {
+        "year": 1452,
+        "value": 3
+      },
+      {
+        "year": 1453,
+        "value": 5
+      },
+      {
+        "year": 1454,
+        "value": 2
+      },
+      {
+        "year": 1455,
+        "value": 5
+      },
+      {
+        "year": 1456,
+        "value": 4
+      },
+      {
+        "year": 1457,
+        "value": 1
+      },
+      {
+        "year": 1458,
+        "value": 1
+      },
+      {
+        "year": 1459,
+        "value": 2
+      },
+      {
+        "year": 1460,
+        "value": 4
+      },
+      {
+        "year": 1461,
+        "value": 5
+      },
+      {
+        "year": 1462,
+        "value": 4
+      },
+      {
+        "year": 1463,
+        "value": 1
+      },
+      {
+        "year": 1464,
+        "value": 4
+      },
+      {
+        "year": 1465,
+        "value": 2
+      },
+      {
+        "year": 1466,
+        "value": 1
+      },
+      {
+        "year": 1467,
+        "value": 1
+      },
+      {
+        "year": 1468,
+        "value": 2
+      },
+      {
+        "year": 1469,
+        "value": 2
+      },
+      {
+        "year": 1470,
+        "value": 3
+      },
+      {
+        "year": 1471,
+        "value": 7
+      },
+      {
+        "year": 1472,
+        "value": 2
+      },
+      {
+        "year": 1473,
+        "value": 1
+      },
+      {
+        "year": 1474,
+        "value": 2
+      },
+      {
+        "year": 1475,
+        "value": 2
+      },
+      {
+        "year": 1476,
+        "value": 5
+      },
+      {
+        "year": 1477,
+        "value": 1
+      },
+      {
+        "year": 1478,
+        "value": 2
+      },
+      {
+        "year": 1479,
+        "value": 3
+      },
+      {
+        "year": 1480,
+        "value": 4
+      },
+      {
+        "year": 1481,
+        "value": 2
+      },
+      {
+        "year": 1482,
+        "value": 4
+      },
+      {
+        "year": 1483,
+        "value": 2
+      },
+      {
+        "year": 1484,
+        "value": 1
+      },
+      {
+        "year": 1485,
+        "value": 2
+      },
+      {
+        "year": 1487,
+        "value": 3
+      },
+      {
+        "year": 1488,
+        "value": 3
+      },
+      {
+        "year": 1489,
+        "value": 3
+      },
+      {
+        "year": 1492,
+        "value": 1
+      },
+      {
+        "year": 1493,
+        "value": 1
+      },
+      {
+        "year": 1495,
+        "value": 2
+      },
+      {
+        "year": 1496,
+        "value": 1
+      },
+      {
+        "year": 1497,
+        "value": 3
+      },
+      {
+        "year": 1498,
+        "value": 1
+      },
+      {
+        "year": 1499,
+        "value": 8
+      },
+      {
+        "year": 1500,
+        "value": 5
+      },
+      {
+        "year": 1501,
+        "value": 5
+      },
+      {
+        "year": 1502,
+        "value": 3
+      },
+      {
+        "year": 1503,
+        "value": 6
+      },
+      {
+        "year": 1504,
+        "value": 2
+      },
+      {
+        "year": 1505,
+        "value": 3
+      },
+      {
+        "year": 1506,
+        "value": 2
+      },
+      {
+        "year": 1507,
+        "value": 3
+      },
+      {
+        "year": 1508,
+        "value": 3
+      },
+      {
+        "year": 1509,
+        "value": 4
+      },
+      {
+        "year": 1510,
+        "value": 4
+      },
+      {
+        "year": 1511,
+        "value": 7
+      },
+      {
+        "year": 1512,
+        "value": 4
+      },
+      {
+        "year": 1513,
+        "value": 7
+      },
+      {
+        "year": 1514,
+        "value": 3
+      },
+      {
+        "year": 1515,
+        "value": 4
+      },
+      {
+        "year": 1516,
+        "value": 2
+      },
+      {
+        "year": 1517,
+        "value": 2
+      },
+      {
+        "year": 1518,
+        "value": 1
+      },
+      {
+        "year": 1519,
+        "value": 1
+      },
+      {
+        "year": 1520,
+        "value": 5
+      },
+      {
+        "year": 1521,
+        "value": 7
+      },
+      {
+        "year": 1522,
+        "value": 3
+      },
+      {
+        "year": 1523,
+        "value": 1
+      },
+      {
+        "year": 1524,
+        "value": 5
+      },
+      {
+        "year": 1525,
+        "value": 9
+      },
+      {
+        "year": 1526,
+        "value": 6
+      },
+      {
+        "year": 1527,
+        "value": 4
+      },
+      {
+        "year": 1528,
+        "value": 6
+      },
+      {
+        "year": 1529,
+        "value": 6
+      },
+      {
+        "year": 1531,
+        "value": 5
+      },
+      {
+        "year": 1532,
+        "value": 3
+      },
+      {
+        "year": 1533,
+        "value": 1
+      },
+      {
+        "year": 1534,
+        "value": 2
+      },
+      {
+        "year": 1535,
+        "value": 5
+      },
+      {
+        "year": 1536,
+        "value": 1
+      },
+      {
+        "year": 1537,
+        "value": 3
+      },
+      {
+        "year": 1538,
+        "value": 1
+      },
+      {
+        "year": 1539,
+        "value": 3
+      },
+      {
+        "year": 1540,
+        "value": 2
+      },
+      {
+        "year": 1541,
+        "value": 2
+      },
+      {
+        "year": 1542,
+        "value": 3
+      },
+      {
+        "year": 1543,
+        "value": 3
+      },
+      {
+        "year": 1544,
+        "value": 4
+      },
+      {
+        "year": 1545,
+        "value": 2
+      },
+      {
+        "year": 1546,
+        "value": 2
+      },
+      {
+        "year": 1547,
+        "value": 3
+      },
+      {
+        "year": 1548,
+        "value": 2
+      },
+      {
+        "year": 1549,
+        "value": 5
+      },
+      {
+        "year": 1550,
+        "value": 1
+      },
+      {
+        "year": 1551,
+        "value": 1
+      },
+      {
+        "year": 1552,
+        "value": 5
+      },
+      {
+        "year": 1553,
+        "value": 2
+      },
+      {
+        "year": 1554,
+        "value": 7
+      },
+      {
+        "year": 1555,
+        "value": 4
+      },
+      {
+        "year": 1556,
+        "value": 2
+      },
+      {
+        "year": 1557,
+        "value": 2
+      },
+      {
+        "year": 1558,
+        "value": 4
+      },
+      {
+        "year": 1560,
+        "value": 7
+      },
+      {
+        "year": 1562,
+        "value": 6
+      },
+      {
+        "year": 1563,
+        "value": 8
+      },
+      {
+        "year": 1564,
+        "value": 5
+      },
+      {
+        "year": 1565,
+        "value": 5
+      },
+      {
+        "year": 1566,
+        "value": 4
+      },
+      {
+        "year": 1567,
+        "value": 3
+      },
+      {
+        "year": 1568,
+        "value": 6
+      },
+      {
+        "year": 1569,
+        "value": 7
+      },
+      {
+        "year": 1570,
+        "value": 6
+      },
+      {
+        "year": 1571,
+        "value": 4
+      },
+      {
+        "year": 1572,
+        "value": 13
+      },
+      {
+        "year": 1573,
+        "value": 3
+      },
+      {
+        "year": 1574,
+        "value": 6
+      },
+      {
+        "year": 1575,
+        "value": 4
+      },
+      {
+        "year": 1576,
+        "value": 2
+      },
+      {
+        "year": 1577,
+        "value": 5
+      },
+      {
+        "year": 1578,
+        "value": 4
+      },
+      {
+        "year": 1579,
+        "value": 2
+      },
+      {
+        "year": 1580,
+        "value": 6
+      },
+      {
+        "year": 1581,
+        "value": 6
+      },
+      {
+        "year": 1582,
+        "value": 4
+      },
+      {
+        "year": 1583,
+        "value": 3
+      },
+      {
+        "year": 1584,
+        "value": 4
+      },
+      {
+        "year": 1585,
+        "value": 2
+      },
+      {
+        "year": 1586,
+        "value": 4
+      },
+      {
+        "year": 1587,
+        "value": 11
+      },
+      {
+        "year": 1588,
+        "value": 5
+      },
+      {
+        "year": 1589,
+        "value": 3
+      },
+      {
+        "year": 1590,
+        "value": 3
+      },
+      {
+        "year": 1591,
+        "value": 5
+      },
+      {
+        "year": 1592,
+        "value": 18
+      },
+      {
+        "year": 1593,
+        "value": 9
+      },
+      {
+        "year": 1594,
+        "value": 6
+      },
+      {
+        "year": 1595,
+        "value": 6
+      },
+      {
+        "year": 1596,
+        "value": 6
+      },
+      {
+        "year": 1597,
+        "value": 6
+      },
+      {
+        "year": 1598,
+        "value": 8
+      },
+      {
+        "year": 1599,
+        "value": 3
+      },
+      {
+        "year": 1600,
+        "value": 9
+      },
+      {
+        "year": 1601,
+        "value": 4
+      },
+      {
+        "year": 1602,
+        "value": 3
+      },
+      {
+        "year": 1603,
+        "value": 5
+      },
+      {
+        "year": 1604,
+        "value": 4
+      },
+      {
+        "year": 1605,
+        "value": 6
+      },
+      {
+        "year": 1606,
+        "value": 3
+      },
+      {
+        "year": 1607,
+        "value": 2
+      },
+      {
+        "year": 1608,
+        "value": 2
+      },
+      {
+        "year": 1610,
+        "value": 2
+      },
+      {
+        "year": 1611,
+        "value": 1
+      },
+      {
+        "year": 1612,
+        "value": 5
+      },
+      {
+        "year": 1613,
+        "value": 1
+      },
+      {
+        "year": 1614,
+        "value": 3
+      },
+      {
+        "year": 1615,
+        "value": 1
+      },
+      {
+        "year": 1616,
+        "value": 1
+      },
+      {
+        "year": 1617,
+        "value": 1
+      },
+      {
+        "year": 1618,
+        "value": 3
+      },
+      {
+        "year": 1619,
+        "value": 6
+      },
+      {
+        "year": 1620,
+        "value": 7
+      },
+      {
+        "year": 1621,
+        "value": 7
+      },
+      {
+        "year": 1622,
+        "value": 8
+      },
+      {
+        "year": 1623,
+        "value": 2
+      },
+      {
+        "year": 1624,
+        "value": 5
+      },
+      {
+        "year": 1625,
+        "value": 8
+      },
+      {
+        "year": 1626,
+        "value": 5
+      },
+      {
+        "year": 1627,
+        "value": 8
+      },
+      {
+        "year": 1628,
+        "value": 5
+      },
+      {
+        "year": 1629,
+        "value": 8
+      },
+      {
+        "year": 1630,
+        "value": 7
+      },
+      {
+        "year": 1631,
+        "value": 9
+      },
+      {
+        "year": 1632,
+        "value": 7
+      },
+      {
+        "year": 1633,
+        "value": 5
+      },
+      {
+        "year": 1634,
+        "value": 4
+      },
+      {
+        "year": 1635,
+        "value": 8
+      },
+      {
+        "year": 1636,
+        "value": 7
+      },
+      {
+        "year": 1637,
+        "value": 6
+      },
+      {
+        "year": 1638,
+        "value": 13
+      },
+      {
+        "year": 1639,
+        "value": 8
+      },
+      {
+        "year": 1640,
+        "value": 5
+      },
+      {
+        "year": 1641,
+        "value": 2
+      },
+      {
+        "year": 1642,
+        "value": 10
+      },
+      {
+        "year": 1643,
+        "value": 31
+      },
+      {
+        "year": 1644,
+        "value": 28
+      },
+      {
+        "year": 1645,
+        "value": 21
+      },
+      {
+        "year": 1646,
+        "value": 10
+      },
+      {
+        "year": 1647,
+        "value": 4
+      },
+      {
+        "year": 1648,
+        "value": 16
+      },
+      {
+        "year": 1649,
+        "value": 7
+      },
+      {
+        "year": 1650,
+        "value": 5
+      },
+      {
+        "year": 1651,
+        "value": 6
+      },
+      {
+        "year": 1652,
+        "value": 10
+      },
+      {
+        "year": 1653,
+        "value": 7
+      },
+      {
+        "year": 1654,
+        "value": 5
+      },
+      {
+        "year": 1655,
+        "value": 12
+      },
+      {
+        "year": 1656,
+        "value": 11
+      },
+      {
+        "year": 1657,
+        "value": 6
+      },
+      {
+        "year": 1658,
+        "value": 11
+      },
+      {
+        "year": 1659,
+        "value": 10
+      },
+      {
+        "year": 1660,
+        "value": 9
+      },
+      {
+        "year": 1661,
+        "value": 1
+      },
+      {
+        "year": 1662,
+        "value": 1
+      },
+      {
+        "year": 1663,
+        "value": 4
+      },
+      {
+        "year": 1664,
+        "value": 4
+      },
+      {
+        "year": 1665,
+        "value": 5
+      },
+      {
+        "year": 1666,
+        "value": 5
+      },
+      {
+        "year": 1667,
+        "value": 5
+      },
+      {
+        "year": 1668,
+        "value": 2
+      },
+      {
+        "year": 1670,
+        "value": 4
+      },
+      {
+        "year": 1671,
+        "value": 3
+      },
+      {
+        "year": 1672,
+        "value": 7
+      },
+      {
+        "year": 1673,
+        "value": 7
+      },
+      {
+        "year": 1674,
+        "value": 7
+      },
+      {
+        "year": 1675,
+        "value": 11
+      },
+      {
+        "year": 1676,
+        "value": 14
+      },
+      {
+        "year": 1677,
+        "value": 7
+      },
+      {
+        "year": 1678,
+        "value": 1
+      },
+      {
+        "year": 1679,
+        "value": 5
+      },
+      {
+        "year": 1680,
+        "value": 3
+      },
+      {
+        "year": 1682,
+        "value": 2
+      },
+      {
+        "year": 1683,
+        "value": 4
+      },
+      {
+        "year": 1684,
+        "value": 3
+      },
+      {
+        "year": 1685,
+        "value": 4
+      },
+      {
+        "year": 1686,
+        "value": 1
+      },
+      {
+        "year": 1687,
+        "value": 2
+      },
+      {
+        "year": 1688,
+        "value": 4
+      },
+      {
+        "year": 1689,
+        "value": 10
+      },
+      {
+        "year": 1690,
+        "value": 16
+      },
+      {
+        "year": 1691,
+        "value": 8
+      },
+      {
+        "year": 1692,
+        "value": 8
+      },
+      {
+        "year": 1693,
+        "value": 4
+      },
+      {
+        "year": 1694,
+        "value": 3
+      },
+      {
+        "year": 1695,
+        "value": 5
+      },
+      {
+        "year": 1696,
+        "value": 4
+      },
+      {
+        "year": 1697,
+        "value": 1
+      },
+      {
+        "year": 1698,
+        "value": 1
+      },
+      {
+        "year": 1699,
+        "value": 1
+      },
+      {
+        "year": 1700,
+        "value": 4
+      },
+      {
+        "year": 1701,
+        "value": 7
+      },
+      {
+        "year": 1702,
+        "value": 15
+      },
+      {
+        "year": 1703,
+        "value": 11
+      },
+      {
+        "year": 1704,
+        "value": 15
+      },
+      {
+        "year": 1705,
+        "value": 9
+      },
+      {
+        "year": 1706,
+        "value": 9
+      },
+      {
+        "year": 1707,
+        "value": 10
+      },
+      {
+        "year": 1708,
+        "value": 12
+      },
+      {
+        "year": 1709,
+        "value": 6
+      },
+      {
+        "year": 1710,
+        "value": 12
+      },
+      {
+        "year": 1711,
+        "value": 5
+      },
+      {
+        "year": 1712,
+        "value": 8
+      },
+      {
+        "year": 1713,
+        "value": 4
+      },
+      {
+        "year": 1714,
+        "value": 4
+      },
+      {
+        "year": 1715,
+        "value": 4
+      },
+      {
+        "year": 1716,
+        "value": 2
+      },
+      {
+        "year": 1717,
+        "value": 1
+      },
+      {
+        "year": 1718,
+        "value": 2
+      },
+      {
+        "year": 1719,
+        "value": 6
+      },
+      {
+        "year": 1720,
+        "value": 5
+      },
+      {
+        "year": 1721,
+        "value": 1
+      },
+      {
+        "year": 1722,
+        "value": 3
+      },
+      {
+        "year": 1723,
+        "value": 1
+      },
+      {
+        "year": 1724,
+        "value": 4
+      },
+      {
+        "year": 1725,
+        "value": 1
+      },
+      {
+        "year": 1726,
+        "value": 2
+      },
+      {
+        "year": 1728,
+        "value": 2
+      },
+      {
+        "year": 1729,
+        "value": 4
+      },
+      {
+        "year": 1730,
+        "value": 1
+      },
+      {
+        "year": 1731,
+        "value": 4
+      },
+      {
+        "year": 1732,
+        "value": 1
+      },
+      {
+        "year": 1733,
+        "value": 4
+      },
+      {
+        "year": 1734,
+        "value": 5
+      },
+      {
+        "year": 1735,
+        "value": 1
+      },
+      {
+        "year": 1736,
+        "value": 4
+      },
+      {
+        "year": 1737,
+        "value": 6
+      },
+      {
+        "year": 1738,
+        "value": 5
+      },
+      {
+        "year": 1739,
+        "value": 5
+      },
+      {
+        "year": 1740,
+        "value": 4
+      },
+      {
+        "year": 1741,
+        "value": 4
+      },
+      {
+        "year": 1742,
+        "value": 4
+      },
+      {
+        "year": 1743,
+        "value": 6
+      },
+      {
+        "year": 1744,
+        "value": 6
+      },
+      {
+        "year": 1745,
+        "value": 13
+      },
+      {
+        "year": 1746,
+        "value": 7
+      },
+      {
+        "year": 1747,
+        "value": 7
+      },
+      {
+        "year": 1748,
+        "value": 5
+      },
+      {
+        "year": 1749,
+        "value": 2
+      },
+      {
+        "year": 1750,
+        "value": 6
+      },
+      {
+        "year": 1751,
+        "value": 10
+      },
+      {
+        "year": 1752,
+        "value": 11
+      },
+      {
+        "year": 1753,
+        "value": 5
+      },
+      {
+        "year": 1754,
+        "value": 4
+      },
+      {
+        "year": 1755,
+        "value": 5
+      },
+      {
+        "year": 1756,
+        "value": 10
+      },
+      {
+        "year": 1757,
+        "value": 20
+      },
+      {
+        "year": 1758,
+        "value": 26
+      },
+      {
+        "year": 1759,
+        "value": 19
+      },
+      {
+        "year": 1760,
+        "value": 27
+      },
+      {
+        "year": 1761,
+        "value": 9
+      },
+      {
+        "year": 1762,
+        "value": 13
+      },
+      {
+        "year": 1763,
+        "value": 13
+      },
+      {
+        "year": 1764,
+        "value": 2
+      },
+      {
+        "year": 1765,
+        "value": 1
+      },
+      {
+        "year": 1766,
+        "value": 1
+      },
+      {
+        "year": 1767,
+        "value": 4
+      },
+      {
+        "year": 1768,
+        "value": 4
+      },
+      {
+        "year": 1769,
+        "value": 3
+      },
+      {
+        "year": 1770,
+        "value": 9
+      },
+      {
+        "year": 1771,
+        "value": 7
+      },
+      {
+        "year": 1772,
+        "value": 2
+      },
+      {
+        "year": 1773,
+        "value": 6
+      },
+      {
+        "year": 1774,
+        "value": 12
+      },
+      {
+        "year": 1775,
+        "value": 18
+      },
+      {
+        "year": 1776,
+        "value": 17
+      },
+      {
+        "year": 1777,
+        "value": 20
+      },
+      {
+        "year": 1778,
+        "value": 14
+      },
+      {
+        "year": 1779,
+        "value": 17
+      },
+      {
+        "year": 1780,
+        "value": 36
+      },
+      {
+        "year": 1781,
+        "value": 30
+      },
+      {
+        "year": 1782,
+        "value": 16
+      },
+      {
+        "year": 1783,
+        "value": 6
+      },
+      {
+        "year": 1786,
+        "value": 1
+      },
+      {
+        "year": 1787,
+        "value": 4
+      },
+      {
+        "year": 1788,
+        "value": 8
+      },
+      {
+        "year": 1789,
+        "value": 13
+      },
+      {
+        "year": 1790,
+        "value": 16
+      },
+      {
+        "year": 1791,
+        "value": 10
+      },
+      {
+        "year": 1792,
+        "value": 11
+      },
+      {
+        "year": 1793,
+        "value": 49
+      },
+      {
+        "year": 1794,
+        "value": 51
+      },
+      {
+        "year": 1795,
+        "value": 18
+      },
+      {
+        "year": 1796,
+        "value": 50
+      },
+      {
+        "year": 1797,
+        "value": 16
+      },
+      {
+        "year": 1798,
+        "value": 35
+      },
+      {
+        "year": 1799,
+        "value": 48
+      },
+      {
+        "year": 1800,
+        "value": 18
+      },
+      {
+        "year": 1801,
+        "value": 13
+      },
+      {
+        "year": 1802,
+        "value": 5
+      },
+      {
+        "year": 1803,
+        "value": 14
+      },
+      {
+        "year": 1804,
+        "value": 10
+      },
+      {
+        "year": 1805,
+        "value": 19
+      },
+      {
+        "year": 1806,
+        "value": 19
+      },
+      {
+        "year": 1807,
+        "value": 21
+      },
+      {
+        "year": 1808,
+        "value": 44
+      },
+      {
+        "year": 1809,
+        "value": 65
+      },
+      {
+        "year": 1810,
+        "value": 41
+      },
+      {
+        "year": 1811,
+        "value": 53
+      },
+      {
+        "year": 1812,
+        "value": 83
+      },
+      {
+        "year": 1813,
+        "value": 116
+      },
+      {
+        "year": 1814,
+        "value": 86
+      },
+      {
+        "year": 1815,
+        "value": 29
+      },
+      {
+        "year": 1816,
+        "value": 6
+      },
+      {
+        "year": 1817,
+        "value": 17
+      },
+      {
+        "year": 1818,
+        "value": 20
+      },
+      {
+        "year": 1819,
+        "value": 17
+      },
+      {
+        "year": 1820,
+        "value": 7
+      },
+      {
+        "year": 1821,
+        "value": 22
+      },
+      {
+        "year": 1822,
+        "value": 9
+      },
+      {
+        "year": 1823,
+        "value": 14
+      },
+      {
+        "year": 1824,
+        "value": 13
+      },
+      {
+        "year": 1825,
+        "value": 12
+      },
+      {
+        "year": 1826,
+        "value": 14
+      },
+      {
+        "year": 1827,
+        "value": 16
+      },
+      {
+        "year": 1828,
+        "value": 7
+      },
+      {
+        "year": 1829,
+        "value": 10
+      },
+      {
+        "year": 1830,
+        "value": 4
+      },
+      {
+        "year": 1831,
+        "value": 11
+      },
+      {
+        "year": 1832,
+        "value": 21
+      },
+      {
+        "year": 1833,
+        "value": 5
+      },
+      {
+        "year": 1834,
+        "value": 11
+      },
+      {
+        "year": 1835,
+        "value": 23
+      },
+      {
+        "year": 1836,
+        "value": 26
+      },
+      {
+        "year": 1837,
+        "value": 11
+      },
+      {
+        "year": 1838,
+        "value": 13
+      },
+      {
+        "year": 1839,
+        "value": 28
+      },
+      {
+        "year": 1840,
+        "value": 22
+      },
+      {
+        "year": 1841,
+        "value": 22
+      },
+      {
+        "year": 1842,
+        "value": 21
+      },
+      {
+        "year": 1843,
+        "value": 6
+      },
+      {
+        "year": 1844,
+        "value": 7
+      },
+      {
+        "year": 1845,
+        "value": 15
+      },
+      {
+        "year": 1846,
+        "value": 19
+      },
+      {
+        "year": 1847,
+        "value": 21
+      },
+      {
+        "year": 1848,
+        "value": 23
+      },
+      {
+        "year": 1849,
+        "value": 24
+      },
+      {
+        "year": 1850,
+        "value": 7
+      },
+      {
+        "year": 1851,
+        "value": 12
+      },
+      {
+        "year": 1852,
+        "value": 12
+      },
+      {
+        "year": 1853,
+        "value": 15
+      },
+      {
+        "year": 1854,
+        "value": 20
+      },
+      {
+        "year": 1855,
+        "value": 24
+      },
+      {
+        "year": 1856,
+        "value": 16
+      },
+      {
+        "year": 1857,
+        "value": 58
+      },
+      {
+        "year": 1858,
+        "value": 61
+      },
+      {
+        "year": 1859,
+        "value": 23
+      },
+      {
+        "year": 1860,
+        "value": 33
+      },
+      {
+        "year": 1861,
+        "value": 36
+      },
+      {
+        "year": 1862,
+        "value": 100
+      },
+      {
+        "year": 1863,
+        "value": 106
+      },
+      {
+        "year": 1864,
+        "value": 143
+      },
+      {
+        "year": 1865,
+        "value": 53
+      },
+      {
+        "year": 1866,
+        "value": 49
+      },
+      {
+        "year": 1867,
+        "value": 16
+      },
+      {
+        "year": 1868,
+        "value": 20
+      },
+      {
+        "year": 1869,
+        "value": 11
+      },
+      {
+        "year": 1870,
+        "value": 53
+      },
+      {
+        "year": 1871,
+        "value": 16
+      },
+      {
+        "year": 1872,
+        "value": 5
+      },
+      {
+        "year": 1873,
+        "value": 17
+      },
+      {
+        "year": 1874,
+        "value": 16
+      },
+      {
+        "year": 1875,
+        "value": 6
+      },
+      {
+        "year": 1876,
+        "value": 24
+      },
+      {
+        "year": 1877,
+        "value": 33
+      },
+      {
+        "year": 1878,
+        "value": 10
+      },
+      {
+        "year": 1879,
+        "value": 21
+      },
+      {
+        "year": 1880,
+        "value": 10
+      },
+      {
+        "year": 1881,
+        "value": 8
+      },
+      {
+        "year": 1882,
+        "value": 9
+      },
+      {
+        "year": 1883,
+        "value": 12
+      },
+      {
+        "year": 1884,
+        "value": 11
+      },
+      {
+        "year": 1885,
+        "value": 24
+      },
+      {
+        "year": 1886,
+        "value": 1
+      },
+      {
+        "year": 1887,
+        "value": 3
+      },
+      {
+        "year": 1888,
+        "value": 6
+      },
+      {
+        "year": 1889,
+        "value": 4
+      },
+      {
+        "year": 1890,
+        "value": 3
+      },
+      {
+        "year": 1891,
+        "value": 9
+      },
+      {
+        "year": 1892,
+        "value": 3
+      },
+      {
+        "year": 1893,
+        "value": 8
+      },
+      {
+        "year": 1894,
+        "value": 17
+      },
+      {
+        "year": 1895,
+        "value": 23
+      },
+      {
+        "year": 1896,
+        "value": 14
+      },
+      {
+        "year": 1897,
+        "value": 24
+      },
+      {
+        "year": 1898,
+        "value": 22
+      },
+      {
+        "year": 1899,
+        "value": 33
+      },
+      {
+        "year": 1900,
+        "value": 48
+      },
+      {
+        "year": 1901,
+        "value": 16
+      },
+      {
+        "year": 1902,
+        "value": 9
+      },
+      {
+        "year": 1903,
+        "value": 12
+      },
+      {
+        "year": 1904,
+        "value": 32
+      },
+      {
+        "year": 1905,
+        "value": 8
+      },
+      {
+        "year": 1906,
+        "value": 9
+      },
+      {
+        "year": 1907,
+        "value": 6
+      },
+      {
+        "year": 1908,
+        "value": 7
+      },
+      {
+        "year": 1911,
+        "value": 13
+      },
+      {
+        "year": 1912,
+        "value": 17
+      },
+      {
+        "year": 1913,
+        "value": 20
+      },
+      {
+        "year": 1914,
+        "value": 80
+      },
+      {
+        "year": 1915,
+        "value": 76
+      },
+      {
+        "year": 1916,
+        "value": 77
+      },
+      {
+        "year": 1917,
+        "value": 51
+      },
+      {
+        "year": 1918,
+        "value": 76
+      },
+      {
+        "year": 1919,
+        "value": 41
+      },
+      {
+        "year": 1920,
+        "value": 34
+      },
+      {
+        "year": 1921,
+        "value": 8
+      },
+      {
+        "year": 1922,
+        "value": 14
+      },
+      {
+        "year": 1923,
+        "value": 4
+      },
+      {
+        "year": 1924,
+        "value": 4
+      },
+      {
+        "year": 1925,
+        "value": 10
+      },
+      {
+        "year": 1926,
+        "value": 11
+      },
+      {
+        "year": 1927,
+        "value": 8
+      },
+      {
+        "year": 1928,
+        "value": 3
+      },
+      {
+        "year": 1929,
+        "value": 3
+      },
+      {
+        "year": 1930,
+        "value": 1
+      },
+      {
+        "year": 1931,
+        "value": 2
+      },
+      {
+        "year": 1932,
+        "value": 2
+      },
+      {
+        "year": 1933,
+        "value": 6
+      },
+      {
+        "year": 1934,
+        "value": 11
+      },
+      {
+        "year": 1935,
+        "value": 6
+      },
+      {
+        "year": 1936,
+        "value": 31
+      },
+      {
+        "year": 1937,
+        "value": 18
+      },
+      {
+        "year": 1938,
+        "value": 9
+      },
+      {
+        "year": 1939,
+        "value": 19
+      },
+      {
+        "year": 1940,
+        "value": 34
+      },
+      {
+        "year": 1941,
+        "value": 65
+      },
+      {
+        "year": 1942,
+        "value": 84
+      },
+      {
+        "year": 1943,
+        "value": 75
+      },
+      {
+        "year": 1944,
+        "value": 122
+      },
+      {
+        "year": 1945,
+        "value": 41
+      },
+      {
+        "year": 1946,
+        "value": 9
+      },
+      {
+        "year": 1947,
+        "value": 14
+      },
+      {
+        "year": 1948,
+        "value": 45
+      },
+      {
+        "year": 1949,
+        "value": 12
+      },
+      {
+        "year": 1950,
+        "value": 23
+      },
+      {
+        "year": 1951,
+        "value": 13
+      },
+      {
+        "year": 1952,
+        "value": 6
+      },
+      {
+        "year": 1953,
+        "value": 7
+      },
+      {
+        "year": 1955,
+        "value": 3
+      },
+      {
+        "year": 1956,
+        "value": 8
+      },
+      {
+        "year": 1957,
+        "value": 3
+      },
+      {
+        "year": 1958,
+        "value": 8
+      },
+      {
+        "year": 1959,
+        "value": 1
+      },
+      {
+        "year": 1960,
+        "value": 1
+      },
+      {
+        "year": 1961,
+        "value": 3
+      },
+      {
+        "year": 1962,
+        "value": 10
+      },
+      {
+        "year": 1963,
+        "value": 2
+      },
+      {
+        "year": 1964,
+        "value": 6
+      },
+      {
+        "year": 1965,
+        "value": 17
+      },
+      {
+        "year": 1966,
+        "value": 9
+      },
+      {
+        "year": 1967,
+        "value": 21
+      },
+      {
+        "year": 1968,
+        "value": 10
+      },
+      {
+        "year": 1969,
+        "value": 2
+      },
+      {
+        "year": 1970,
+        "value": 2
+      },
+      {
+        "year": 1971,
+        "value": 9
+      },
+      {
+        "year": 1972,
+        "value": 6
+      },
+      {
+        "year": 1973,
+        "value": 10
+      },
+      {
+        "year": 1974,
+        "value": 2
+      },
+      {
+        "year": 1975,
+        "value": 7
+      },
+      {
+        "year": 1976,
+        "value": 4
+      },
+      {
+        "year": 1977,
+        "value": 8
+      },
+      {
+        "year": 1978,
+        "value": 7
+      },
+      {
+        "year": 1979,
+        "value": 7
+      },
+      {
+        "year": 1980,
+        "value": 6
+      },
+      {
+        "year": 1981,
+        "value": 4
+      },
+      {
+        "year": 1982,
+        "value": 11
+      },
+      {
+        "year": 1983,
+        "value": 8
+      },
+      {
+        "year": 1984,
+        "value": 3
+      },
+      {
+        "year": 1985,
+        "value": 4
+      },
+      {
+        "year": 1986,
+        "value": 6
+      },
+      {
+        "year": 1987,
+        "value": 6
+      },
+      {
+        "year": 1988,
+        "value": 6
+      },
+      {
+        "year": 1989,
+        "value": 3
+      },
+      {
+        "year": 1990,
+        "value": 6
+      },
+      {
+        "year": 1991,
+        "value": 12
+      },
+      {
+        "year": 1992,
+        "value": 2
+      },
+      {
+        "year": 1993,
+        "value": 3
+      },
+      {
+        "year": 1994,
+        "value": 1
+      },
+      {
+        "year": 1995,
+        "value": 1
+      },
+      {
+        "year": 1996,
+        "value": 1
+      },
+      {
+        "year": 1998,
+        "value": 1
+      },
+      {
+        "year": 1999,
+        "value": 4
+      },
+      {
+        "year": 2000,
+        "value": 1
+      }
+    ]
   }
 ];

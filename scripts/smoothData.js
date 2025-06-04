@@ -22,4 +22,5 @@ function smoothData(data, windowSize = 3) {
 
   return smoothed;
 }
-smoothData([{year: 2000, value: 100}, {year: 2001, value: 150}, {year: 2002, value: 200}, {year: 2003, value: 250}, {year: 2004, value: 300}]);
+
+export default smoothData;
