@@ -27,12 +27,6 @@ export default function PointsAndSegments({
   const pointRadius = config.point.radius;
   const laneDetails = config.lane.getLaneDetails();
 
-  const handleClick = (url: string) => {
-    if (url) {
-      window.open(url, "_blank");
-    }
-  };
-
   return (
     <>
       {data
@@ -45,53 +39,36 @@ export default function PointsAndSegments({
                 .sort((a, b) =>
                   a.type === "segment" ? -1 : b.type === "segment" ? 1 : 0
                 )
-                .map((item, idx) => {
-                  if (item.type === "segment") {
-                    const segmentX = yearToX(item.start);
-                    const segmentWidth =
-                      yearToX(item.end) - yearToX(item.start);
-
-                    return (
-                      <g
-                        key={`segment-${laneIndex}-${idx}`}
-                        onMouseEnter={() => handleItemHover(laneIndex, item)}
-                        onClick={() => handleClick(item.url)}
-                        style={{ cursor: item.url ? "pointer" : "default" }}
-                      >
+                .map((item, idx) => {                  
+                  return (
+                    <g 
+                      key={`${item.type}-${laneIndex}-${idx}`}
+                      onMouseEnter={() => handleItemHover(laneIndex, item)}
+                      onClick={() => item.url && window.open(item.url, "_blank")}
+                      style={{ cursor: item.url ? "pointer" : "default" }}
+                    >
+                      {item.type === "segment" ? (
                         <rect
-                          x={segmentX}
+                          x={yearToX(item.start)}
                           y={-laneDetails.segmentThickness / 2}
-                          width={segmentWidth}
+                          width={yearToX(item.end) - yearToX(item.start)}
                           height={String(laneDetails.segmentThickness)}
                           className="swimlane-segment"
                         />
-                      </g>
-                    );
-                  } else if (item.type === "point") {
-                    const pointX = yearToX(item.at);
-                    return (
-                      <g
-                        key={`point-${laneIndex}-${idx}`}
-                        onMouseEnter={() => handleItemHover(laneIndex, item)}
-                        onClick={() => handleClick(item.url)}
-                        style={{ cursor: item.url ? "pointer" : "default" }}
-                      >
+                      ) : (
                         <circle
-                          cx={pointX}
+                          cx={yearToX(item.at)}
                           cy="0"
                           r={String(pointRadius)}
                           className={`swimlane-point ${
                             item.category ? `point-${item.category}` : ""
                           }`}
-                          onMouseEnter={(e) =>
-                            handlePointHover(e, item, pointX, y)
-                          }
+                          onMouseEnter={(e) => handlePointHover(e, item, yearToX(item.at), y)}
                           onMouseLeave={() => handlePointUnhover()}
                         />
-                      </g>
-                    );
-                  }
-                  return null;
+                      )}
+                    </g>
+                  );
                 })}
             </g>
           );
