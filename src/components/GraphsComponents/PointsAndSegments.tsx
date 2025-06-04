@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useMemo } from "react";
 import { Lane, LaneItem, Point } from "../types/timelineData";
 import { Config } from "../types/config";
+import { isMobileDevice } from "../../utils/deviceUtils";
 
 type Props = {
   data: Lane[];
@@ -26,6 +27,22 @@ export default function PointsAndSegments({
 }: Props) {
   const pointRadius = config.point.radius;
   const laneDetails = config.lane.getLaneDetails();
+  const isMobile = useMemo(() => isMobileDevice(), []);
+
+  const handleItemClick = (item: LaneItem, laneIndex: number) => {
+    if (!isMobile) {
+      // open link
+      item.url && window.open(item.url, "_blank");
+      return;
+    }
+    if (item.type === "segment") {
+      handleItemHover(laneIndex, item);
+    } else {
+      const pointX = yearToX(item.at);
+      const pointY = config.lane.getLaneYPos(laneIndex);
+      handlePointHover({} as React.MouseEvent<SVGElement>, item, pointX, pointY);
+    }
+  };
 
   return (
     <>
@@ -44,7 +61,7 @@ export default function PointsAndSegments({
                     <g 
                       key={`${item.type}-${laneIndex}-${idx}`}
                       onMouseEnter={() => handleItemHover(laneIndex, item)}
-                      onClick={() => item.url && window.open(item.url, "_blank")}
+                      onClick={() => handleItemClick(item, laneIndex)}
                       style={{ cursor: item.url ? "pointer" : "default" }}
                     >
                       {item.type === "segment" ? (

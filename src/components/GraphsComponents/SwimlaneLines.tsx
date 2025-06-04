@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import {
   FaCog,
   FaBook,
@@ -50,7 +51,7 @@ export default function SwimlaneLines({
 }: Props) {
   const iconRadius = config.point.iconRadius;
   const laneDetails = config.lane.getLaneDetails();
-  const isMobile = isMobileDevice();
+  const isMobile = useMemo(() => isMobileDevice(), []);
 
   return (
     <>

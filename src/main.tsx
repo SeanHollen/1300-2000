@@ -7,7 +7,6 @@ import readCsvString from '../scripts/readCsvString.js';
 import smoothData from '../scripts/smoothData.js';
 import {sumByYear, countByYear} from '../scripts/sumByYear.js';
 
-// Attach readFile to window
 (window as any).scripts = {
   loadFileToConsole: loadFileToConsole,
   readCsvString: readCsvString,
