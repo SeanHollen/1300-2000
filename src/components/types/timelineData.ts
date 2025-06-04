@@ -14,6 +14,7 @@ export type Segment = {
   url: string;
   label: string;
   ongoing?: boolean;
+  hoveredTs?: number;
 };
 
 export type Point = {
@@ -24,4 +25,5 @@ export type Point = {
   url: string;
   label: string;
   category: string;
+  hoveredTs?: number;
 };

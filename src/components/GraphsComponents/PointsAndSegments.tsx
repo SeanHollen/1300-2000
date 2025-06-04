@@ -1,12 +1,12 @@
 import React from "react";
-import { Lane, Point } from "../types/timelineData";
+import { Lane, LaneItem, Point } from "../types/timelineData";
 import { Config } from "../types/config";
 
 type Props = {
   data: Lane[];
   yearToX: (year: number) => number;
   config: Config;
-  handleSegmentHover: (laneIndex: number, idx: number) => void;
+  handleItemHover: (laneIndex: number, highlighted: LaneItem) => void;
   handlePointHover: (
     _e: React.MouseEvent<SVGElement>,
     item: Point,
@@ -20,7 +20,7 @@ export default function PointsAndSegments({
   data,
   yearToX,
   config,
-  handleSegmentHover,
+  handleItemHover,
   handlePointHover,
   handlePointUnhover,
 }: Props) {
@@ -54,7 +54,7 @@ export default function PointsAndSegments({
                     return (
                       <g
                         key={`segment-${laneIndex}-${idx}`}
-                        onMouseEnter={() => handleSegmentHover(laneIndex, idx)}
+                        onMouseEnter={() => handleItemHover(laneIndex, item)}
                         onClick={() => handleClick(item.url)}
                         style={{ cursor: item.url ? "pointer" : "default" }}
                       >
@@ -72,6 +72,7 @@ export default function PointsAndSegments({
                     return (
                       <g
                         key={`point-${laneIndex}-${idx}`}
+                        onMouseEnter={() => handleItemHover(laneIndex, item)}
                         onClick={() => handleClick(item.url)}
                         style={{ cursor: item.url ? "pointer" : "default" }}
                       >

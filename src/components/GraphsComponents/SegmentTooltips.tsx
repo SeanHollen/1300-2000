@@ -6,7 +6,6 @@ type Props = {
   data: Lane[];
   yearToX: (year: number) => number;
   config: Config;
-  interactionOrder: string[];
   tooltipMeasurements: TooltipMeasurement;
   constrainTooltipPosition: (x: number, width: number) => number;
 };
@@ -15,11 +14,9 @@ export default function SegmentTooltips({
   data,
   yearToX,
   config,
-  interactionOrder,
   tooltipMeasurements,
   constrainTooltipPosition,
 }: Props) {
-  const laneDetails = config.lane.getLaneDetails();
   return (
     <>
       {data.map((lane, laneIndex) => {
@@ -27,21 +24,12 @@ export default function SegmentTooltips({
         return (
           <g key={`tooltips-${laneIndex}`}>
             {lane.items
-              .map((item, idx) => ({
-                item,
-                idx,
-                order: interactionOrder.indexOf(`${laneIndex}-${idx}`),
-              }))
               .sort((a, b) => {
-                // If neither has been interacted with, maintain original order
-                if (a.order === -1 && b.order === -1) return 0;
-                // If only one has been interacted with, it goes on top
-                if (a.order === -1) return -1;
-                if (b.order === -1) return 1;
-                // Otherwise, sort by interaction order
-                return a.order - b.order;
+                // if neither was hovered do deterministic sort order
+                if (!a.hoveredTs && !b.hoveredTs) return Number(a.label) - Number(b.label);
+                return (a.hoveredTs || 0) - (b.hoveredTs || 0);
               })
-              .map(({ item, idx }) => {
+              .map((item, idx) => {
                 if (item.type !== "segment") {
                   return undefined;
                 }

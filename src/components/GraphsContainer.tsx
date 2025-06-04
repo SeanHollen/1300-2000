@@ -40,7 +40,9 @@ export default function GraphsContainer() {
 
   const [lineChartState, setLineChartState] = useState(() => {
     const savedState = localStorage.getItem("lineChartState");
-    return USE_CACHE && savedState ? JSON.parse(savedState) : getLineChartState();
+    return USE_CACHE && savedState
+      ? JSON.parse(savedState)
+      : getLineChartState();
   });
   (window as any).lineChartState = lineChartState;
 
@@ -79,7 +81,10 @@ export default function GraphsContainer() {
   }, [showTimelineChart]);
 
   useEffect(() => {
-    localStorage.setItem("showAllPointTooltips", showAllPointTooltips.toString());
+    localStorage.setItem(
+      "showAllPointTooltips",
+      showAllPointTooltips.toString()
+    );
   }, [showAllPointTooltips]);
 
   const onRestoreDefaults = () => {
@@ -108,15 +113,19 @@ export default function GraphsContainer() {
         segment: 0.5,
       },
       getLaneDetails: () => {
-        const laneUnit = (config.layout.windowHeight - 50) / (filteredTimeline.length + 0.5);
+        const laneUnit =
+          (config.layout.windowHeight - 50) / (filteredTimeline.length + 0.5);
         const laneThickness = laneUnit * config.lane.percentages.lane;
         const lanePadding = laneUnit * (1 - config.lane.percentages.lane);
         const segmentThickness = laneUnit * config.lane.percentages.segment;
         return { laneUnit, laneThickness, lanePadding, segmentThickness };
       },
       getLaneYPos: (laneIndex: number) => {
-        return laneIndex * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
-      }
+        return (
+          laneIndex * (laneDetails.laneThickness + laneDetails.lanePadding) +
+          config.layout.svgPad
+        );
+      },
     },
     point: {
       radius: 12,
@@ -176,9 +185,14 @@ export default function GraphsContainer() {
 
   const handlePointUnhover = () => {
     setPointTooltip(null);
-  }
+  };
 
-  const handlePointHover = (_e: React.MouseEvent<SVGElement>, item: Point, pointX: number, pointY: number) => {
+  const handlePointHover = (
+    _e: React.MouseEvent<SVGElement>,
+    item: Point,
+    pointX: number,
+    pointY: number
+  ) => {
     if (!item) {
       setPointTooltip(null);
       return;
@@ -247,18 +261,29 @@ export default function GraphsContainer() {
     );
   };
 
-  const [interactionOrder, setInteractionOrder] = useState<string[]>([]);
-
-  const handleSegmentHover = (laneIndex: number, idx: number) => {
-    const segmentId = `${laneIndex}-${idx}`;
-    setInteractionOrder((prev: string[]) => {
-      const newOrder = prev.filter((id) => id !== segmentId);
-      return [...newOrder, segmentId];
-    });
+  const handleItemHover = (laneIndex: number, highlighted: LaneItem) => {
+    // timelineState[laneIndex].items.find(i => i === highlighted).hoveredTs = Date.now()
+    setTimelineState((prev: Lane[]) =>
+      prev.map((lane, li) => {
+        if (li !== laneIndex) return lane;
+        return {
+          ...lane,
+          items: lane.items.map((item) => {
+            if (item !== highlighted) return item;
+            return { 
+              ...item, 
+              hoveredTs: Date.now() 
+            };
+          }),
+        };
+      })
+    );
   };
 
   const totalHeight =
-    filteredTimeline.length * (laneDetails.laneThickness + laneDetails.lanePadding) + config.layout.svgPad;
+    filteredTimeline.length *
+      (laneDetails.laneThickness + laneDetails.lanePadding) +
+    config.layout.svgPad;
 
   const toggleSelectTrendline = (label: string, toShow: boolean) => {
     setLineChartState((prev: LaneItem[]) =>
@@ -270,11 +295,9 @@ export default function GraphsContainer() {
 
   const deselectAllTrendlines = () => {
     setLineChartState((prev: LaneItem[]) =>
-      prev.map((item: LaneItem) =>
-        ({ ...item, toShow: false })
-      )
+      prev.map((item: LaneItem) => ({ ...item, toShow: false }))
     );
-  }
+  };
 
   const updateChartWidth = (value: number) => {
     setChartWidth(value);
@@ -293,7 +316,7 @@ export default function GraphsContainer() {
   const markedLineChartData = lineChartState.map((lineData: LineTS) => {
     return {
       ...lineData,
-      hasDataForYear: hasDataAtYear(lineData.points, hoveredYear)
+      hasDataForYear: hasDataAtYear(lineData.points, hoveredYear),
     };
   });
 
@@ -309,7 +332,9 @@ export default function GraphsContainer() {
         hoveredYear={hoveredYear}
         setModalOpen={setModalOpen}
         modalOpen={modalOpen}
-        onWrapChange={(clientHeight: number) => {setAxisHeight(20 + clientHeight)}}
+        onWrapChange={(clientHeight: number) => {
+          setAxisHeight(20 + clientHeight);
+        }}
       />
 
       {modalOpen && (
@@ -329,6 +354,13 @@ export default function GraphsContainer() {
       )}
 
       <svg width={chartWidth} height={totalHeight} className="overflow-hidden">
+        <SwimlaneLines
+          data={filteredTimeline}
+          config={config}
+          chartWidth={chartWidth}
+          showTimelineChart={showTimelineChart}
+        />
+
         <LineChartLines
           lineChartData={markedLineChartData}
           config={config}
@@ -341,13 +373,6 @@ export default function GraphsContainer() {
         />
 
         <XAxis config={config} yearToX={yearToX} chartWidth={chartWidth} />
-
-        <SwimlaneLines
-          data={filteredTimeline}
-          config={config}
-          chartWidth={chartWidth}
-          showTimelineChart={showTimelineChart}
-        />
 
         {!modalOpen && (
           <CursorLine
@@ -363,7 +388,7 @@ export default function GraphsContainer() {
             data={filteredTimeline}
             yearToX={yearToX}
             config={config}
-            handleSegmentHover={handleSegmentHover}
+            handleItemHover={handleItemHover}
             handlePointHover={handlePointHover}
             handlePointUnhover={handlePointUnhover}
           />
@@ -374,7 +399,6 @@ export default function GraphsContainer() {
             data={filteredTimeline}
             yearToX={yearToX}
             config={config}
-            interactionOrder={interactionOrder}
             tooltipMeasurements={tooltipMeasurements}
             constrainTooltipPosition={constrainTooltipPosition}
           />
