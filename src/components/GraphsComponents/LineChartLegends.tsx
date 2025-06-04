@@ -73,6 +73,7 @@ export default function LineChartLegends({
             fontSize: "1.2rem",
             verticalAlign: "middle",
             cursor: "pointer",
+            color: "black",
           }}
         />
       </span>
