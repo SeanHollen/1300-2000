@@ -19,6 +19,7 @@ import { LineTS, TSPoint } from "./types/trendlineData";
 export default function GraphsContainer() {
   const USE_CACHE = false;
   const DEFAULT_CHART_WIDTH = 10000;
+  const CATEGORY_STRATEGY = "icons";
   const containerRef = useRef<HTMLDivElement>(null);
 
   const getLineChartState = () => {
@@ -386,8 +387,9 @@ export default function GraphsContainer() {
         {showTimelineChart && (
           <PointsAndSegments
             data={filteredTimeline}
-            yearToX={yearToX}
             config={config}
+            categoryStrategy={CATEGORY_STRATEGY}
+            yearToX={yearToX}
             handleItemHover={handleItemHover}
             handlePointHover={handlePointHover}
             handlePointUnhover={handlePointUnhover}

@@ -10795,7 +10795,7 @@ export const lineChartData = [
   },
   {
     id: "slaves",
-    label: "Trans-Atlantic Slave Trade, Slaves",
+    label: "Slaves, Trans-Atlantic Slave Trade",
     shortLabel: "Slaves",
     color: "#880E4F",
     unit: "",

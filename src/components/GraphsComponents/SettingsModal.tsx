@@ -99,6 +99,8 @@ export default function SettingsModal({
               border: "1px solid #e0e0e0",
               borderRadius: "4px",
               padding: "0.5rem",
+              paddingRight: "1rem",
+              paddingLeft: "1rem",
             }}
           >
             {lineChartData.map((item) => (

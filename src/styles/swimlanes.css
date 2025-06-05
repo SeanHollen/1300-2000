@@ -13,20 +13,7 @@
 }
 
 .swimlane-point {
-  fill: #808080;
   fill-opacity: 0.9;
-}
-
-.point-bad {
-  fill: #d54b5b;
-}
-
-.point-neutral {
-  fill: #808080;
-}
-
-.point-good {
-  fill: #4CAF50;
 }
 
 .swimlane-tooltip {

@@ -13,7 +13,7 @@ import {
   GiGears,
   GiQuillInk,
 } from "react-icons/gi";
-import { FaGears } from "react-icons/fa6";
+import { FaGears, FaBookBible } from "react-icons/fa6";
 import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
 import { Config } from "../types/config";
@@ -27,6 +27,7 @@ const iconMap: Record<string, any> = {
   gears2: FaGears,
   book: FaBook,
   cross: FaCross,
+  bible: FaBookBible,
   vaccine: GiSyringe,
   scale: FaBalanceScale,
   ship: GiSailboat,

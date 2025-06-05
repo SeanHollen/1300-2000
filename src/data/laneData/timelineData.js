@@ -64,7 +64,8 @@ export const timelineData = [
         type: "point",
         at: 1527,
         label: "Sack of City of Rome",
-        url: "https://en.wikipedia.org/wiki/Sack_of_Rome_(1527)"
+        url: "https://en.wikipedia.org/wiki/Sack_of_Rome_(1527)",
+        category: "bad"
       },
       { 
         type: "point",
@@ -210,14 +211,21 @@ export const timelineData = [
         at: 1815,
         label: `Congress of Vienna Signed`,
         url: "https://en.wikipedia.org/wiki/Congress_of_Vienna",
-        category: "good"
+        category: "peace"
       },
       {
         type: "point",
         at: 1648,
         label: `Peace of Westphilia Signed`,
         url: "https://en.wikipedia.org/wiki/Peace_of_Westphalia",
-        category: "good"
+        category: "peace"
+      },
+      {
+        type: "point",
+        at: 1555,
+        label: `Peace of Augsburg`,
+        url: "https://en.wikipedia.org/wiki/Peace_of_Augsburg",
+        category: "peace"
       },
       {
         type: "point",
@@ -265,7 +273,7 @@ export const timelineData = [
         at: 1989,
         label: `End of Cold War`,
         url: "https://en.wikipedia.org/wiki/End_of_the_Cold_War",
-        category: "good"
+        category: "peace"
       },
       { 
         type: "point",
@@ -1233,8 +1241,8 @@ export const timelineData = [
     ],
   },
   {
-    lane: "Religion and Politics",
-    icon: "cross",
+    lane: "Religion and Ordinance",
+    icon: "bible",
     toShow: true,
     items: [
       { 
@@ -1248,6 +1256,13 @@ export const timelineData = [
         at: 1598,
         label: `Edict of Nantes`,
         url: "https://en.wikipedia.org/wiki/Edict_of_Nantes",
+        category: "good"
+      },
+      {
+        type: "point",
+        at: 1868,
+        label: `U.S. 14th Amendment`,
+        url: "https://en.wikipedia.org/wiki/Fourteenth_Amendment_to_the_United_States_Constitution",
         category: "good"
       },
       {
@@ -1304,6 +1319,13 @@ export const timelineData = [
         label: "European Witch Trials Peak",
         url: "https://en.wikipedia.org/wiki/Witch_trials_in_the_early_modern_period",
         category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1833,
+        label: "Slavery Abolistion Act",
+        url: "https://en.wikipedia.org/wiki/Slavery_Abolition_Act_1833",
+        category: "good"
       },
       { 
         type: "point",
