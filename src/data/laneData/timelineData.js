@@ -729,7 +729,7 @@ export const timelineData = [
         at: 1837,
         start: 1825,
         end: 1844,
-        label: "Telegraph",
+        label: "Electric Telegraph",
         url: "https://en.wikipedia.org/wiki/Electrical_telegraph",
         category: "good"
       },
@@ -1088,13 +1088,6 @@ export const timelineData = [
         at: 1969,
         label: "Apollo 11",
         url: "https://en.wikipedia.org/wiki/Apollo_11",
-        category: "good"
-      },
-      { 
-        type: "point",
-        at: 1543,
-        label: "Copernican Model",
-        url: "https://en.wikipedia.org/wiki/Copernican_heliocentrism",
         category: "good"
       },
       { 
