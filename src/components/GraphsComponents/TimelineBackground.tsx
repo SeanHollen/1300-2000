@@ -44,7 +44,7 @@ type Props = {
   showTimelineChart?: boolean;
 };
 
-export default function SwimlaneLines({
+export default function TimelineBackground({
   data,
   config,
   chartWidth,

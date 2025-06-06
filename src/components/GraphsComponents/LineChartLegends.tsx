@@ -66,17 +66,43 @@ export default function LineChartLegends({
         fontFamily: "monospace",
       }}
     >
-      <span style={{ display: "inline-block" }}>
+      <button
+        onClick={() => setModalOpen(true)}
+        style={{
+          display: "inline-flex",
+          alignItems: "center",
+          gap: "4px",
+          padding: "4px 8px",
+          backgroundColor: "transparent",
+          border: "1px solid #ccc",
+          borderRadius: "3px",
+          cursor: "pointer",
+          fontSize: "12px",
+          fontFamily: "monospace",
+          color: "black",
+          transition: "all 0.2s ease",
+          verticalAlign: "middle",
+          lineHeight: "1",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.backgroundColor = "#4a90e2";
+          e.currentTarget.style.color = "white";
+          e.currentTarget.style.borderColor = "#4a90e2";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.backgroundColor = "transparent";
+          e.currentTarget.style.color = "black";
+          e.currentTarget.style.borderColor = "#ccc";
+        }}
+      >
         <CiSettings
-          onClick={() => setModalOpen(true)}
           style={{
-            fontSize: "1.2rem",
+            fontSize: "1rem",
             verticalAlign: "middle",
-            cursor: "pointer",
-            color: "black",
           }}
         />
-      </span>
+        <span>More</span>
+      </button>
       {showHoverView &&
         lineChartData
           .filter((lineData) => lineData.toShow && lineData.hasDataForYear)

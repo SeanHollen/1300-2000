@@ -78,7 +78,7 @@ export const timelineData = [
         at: 1356,
         start: 1351,
         end: 1368,
-        label: "Red Turban Rebellions, Yuan→Ming",
+        label: "Red Turban Rebellions: Yuan→Ming",
         url: "https://en.wikipedia.org/wiki/Red_Turban_Rebellions"
       },
       { 
@@ -94,7 +94,7 @@ export const timelineData = [
         at: 1911,
         start: 1911,
         end: 1912,
-        label: "Xinhai Revolution, Qing→ROC",
+        label: "Xinhai Revolution: Qing→ROC",
         url: "https://en.wikipedia.org/wiki/1911_Revolution"
       },
       { 
@@ -102,7 +102,7 @@ export const timelineData = [
         at: 1949,
         start: 1927,
         end: 1949,
-        label: "Chinese Communist Revolution, ROC→PRC",
+        label: "Chinese Communist Revolution: ROC→PRC",
         url: "https://en.wikipedia.org/wiki/Chinese_Communist_Revolution"
       },
       { 
@@ -277,14 +277,6 @@ export const timelineData = [
       },
       { 
         type: "point",
-        at: 1945,
-        start: 1945,
-        end: 1975,
-        label: "Independence movements",
-        url: "https://en.wikipedia.org/wiki/Decolonization#The_emergence_of_the_Third_World_(1945%E2%80%93present)"
-      },
-      { 
-        type: "point",
         at: 1453,
         label: "Constantinople Falls to Ottoman Empire",
         url: "https://en.wikipedia.org/wiki/Fall_of_Constantinople"
@@ -333,6 +325,13 @@ export const timelineData = [
     items: [
       { 
         type: "segment",
+        start: 1945,
+        end: 1975,
+        label: "Decolonization",
+        url: "https://en.wikipedia.org/wiki/Decolonization"
+      },
+      { 
+        type: "segment",
         start: 1418,
         end: 1620,
         label: "Age of Exploration",
@@ -359,6 +358,12 @@ export const timelineData = [
         at: 1492,
         label: "Columbus’ Sail",
         url: "https://en.wikipedia.org/wiki/Voyages_of_Christopher_Columbus"
+      },
+      { 
+        type: "point",
+        at: 1494,
+        label: "Treaty of Tordesillas",
+        url: "https://en.wikipedia.org/wiki/Treaty_of_Tordesillas"
       },
       { 
         type: "point",
@@ -846,18 +851,36 @@ export const timelineData = [
       { 
         type: "point",
         at: 1630,
-        start: 1629,
+        start: 1628,
         end: 1631,
-        label: "Italy Plague",
-        url: "https://en.wikipedia.org/wiki/1629%E2%80%931631_Italian_plague",
+        label: "2nd Plague Pandemic: France+Italy",
+        url: "https://en.wikipedia.org/wiki/Second_plague_pandemic#Major_outbreaks",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1772,
+        start: 1772,
+        end: 1773,
+        label: "2nd Plague Pandemic: Persian Empire",
+        url: "https://en.wikipedia.org/wiki/Second_plague_pandemic#Major_outbreaks",
+        category: "bad"
+      },
+      { 
+        type: "point",
+        at: 1656,
+        start: 1654,
+        end: 1658,
+        label: "2nd Plague Pandemic: Persian Empire",
+        url: "https://en.wikipedia.org/wiki/Second_plague_pandemic#Major_outbreaks",
         category: "bad"
       },
       {
         type: "point",
-        at: 1665,
+        at: 1666,
         start: 1665,
         end: 1666,
-        label: `Great Plague of London`,
+        label: `Great Plague of London + Great Fire of London`,
         url: `https://en.wikipedia.org/wiki/Great_Plague_of_London`,
         category: "bad"
       },
@@ -1086,7 +1109,7 @@ export const timelineData = [
       { 
         type: "point",
         at: 1859,
-        label: "Theory of Evolution by Natural Selection",
+        label: "Origin of the Species",
         url: "https://en.wikipedia.org/wiki/Theory_of_evolution",
         category: "good"
       },
@@ -1475,6 +1498,13 @@ export const timelineData = [
         label: "Bach – Mass in B Minor",
         url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
         category: "good"
+      },
+      { 
+        type: "segment",
+        start: 1800,
+        end: 1850,
+        label: "Romanticism",
+        url: "https://en.wikipedia.org/wiki/Romanticism"
       },
       { 
         type: "segment",

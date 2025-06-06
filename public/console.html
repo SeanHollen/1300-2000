@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dev Console</title>
+    <style>
+        body {
+            font-family: 'Courier New', monospace;
+            background: #1e1e1e;
+            color: #d4d4d4;
+            margin: 0;
+            padding: 20px;
+            height: 100vh;
+            box-sizing: border-box;
+        }
+        .header {
+            border-bottom: 1px solid #333;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .console-area {
+            height: calc(100vh - 100px);
+            overflow-y: auto;
+            background: #252526;
+            border: 1px solid #333;
+            padding: 15px;
+            border-radius: 4px;
+        }
+        .input-area {
+            margin-top: 10px;
+            display: flex;
+            gap: 10px;
+        }
+        input {
+            flex: 1;
+            background: #3c3c3c;
+            border: 1px solid #555;
+            color: #d4d4d4;
+            padding: 8px;
+            border-radius: 3px;
+            font-family: inherit;
+        }
+        button {
+            background: #0e639c;
+            border: none;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1177bb;
+        }
+        .output {
+            margin: 5px 0;
+            white-space: pre-wrap;
+        }
+        .command {
+            color: #569cd6;
+        }
+        .result {
+            color: #ce9178;
+        }
+        .error {
+            color: #f44747;
+        }
+        .scripts-list {
+            background: #2d2d30;
+            padding: 10px;
+            border-radius: 3px;
+            margin-bottom: 15px;
+        }
+        .script-item {
+            color: #4ec9b0;
+            margin: 2px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Dev Console - Independent of React</h2>
+        <div class="scripts-list">
+            <div><strong>Available Scripts:</strong></div>
+            <div id="scripts-list"></div>
+        </div>
+    </div>
+    
+    <div class="console-area" id="console"></div>
+    
+    <div class="input-area">
+        <input type="text" id="command-input" placeholder="Enter JavaScript command..." />
+        <button onclick="executeCommand()">Run</button>
+        <button onclick="clearConsole()">Clear</button>
+    </div>
+
+    <script type="module">
+        // Import the same scripts as the main app
+        import loadFileToConsole from '../scripts/loadFileToConsole.js';
+        import readCsvString from '../scripts/readCsvString.js';
+        import smoothData from '../scripts/smoothData.js';
+        import {sumByYear, countByYear} from '../scripts/sumByYear.js';
+        import Technologies from '../scripts/technologyParse.js';
+
+        // Make scripts available globally
+        window.scripts = {
+            loadFileToConsole,
+            readCsvString,
+            smoothData,
+            sumByYear,
+            countByYear,
+            Technologies,
+        };
+
+        // Display available scripts
+        const scriptsList = document.getElementById('scripts-list');
+        Object.keys(window.scripts).forEach(name => {
+            const div = document.createElement('div');
+            div.className = 'script-item';
+            div.textContent = `scripts.${name}()`;
+            scriptsList.appendChild(div);
+        });
+
+        // Console functionality
+        const consoleEl = document.getElementById('console');
+        const commandInput = document.getElementById('command-input');
+
+        function addToConsole(text, className = '') {
+            const div = document.createElement('div');
+            div.className = `output ${className}`;
+            div.textContent = text;
+            consoleEl.appendChild(div);
+            consoleEl.scrollTop = consoleEl.scrollHeight;
+        }
+
+        window.executeCommand = function() {
+            const command = commandInput.value.trim();
+            if (!command) return;
+
+            addToConsole(`> ${command}`, 'command');
+            
+            try {
+                const result = eval(command);
+                if (result !== undefined) {
+                    addToConsole(JSON.stringify(result, null, 2), 'result');
+                }
+            } catch (error) {
+                addToConsole(`Error: ${error.message}`, 'error');
+            }
+            
+            commandInput.value = '';
+        };
+
+        window.clearConsole = function() {
+            consoleEl.innerHTML = '';
+        };
+
+        // Enter key support
+        commandInput.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                executeCommand();
+            }
+        });
+
+        // Welcome message
+        addToConsole('Dev Console Ready! Scripts are available via window.scripts', 'result');
+        addToConsole('Example: scripts.loadFileToConsole("myfile.csv")', 'result');
+    </script>
+</body>
+</html> 

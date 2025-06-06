@@ -2,8 +2,7 @@ import React, { useMemo } from "react";
 import { Lane, LaneItem, Point, Segment } from "../types/timelineData";
 import { Config } from "../types/config";
 import { isMobileDevice } from "../../utils/deviceUtils";
-import { FaSkull } from "react-icons/fa";
-import { FaDove } from "react-icons/fa";
+import TimelinePoint from "./TimelinePoint";
 
 type Props = {
   data: Lane[];
@@ -20,7 +19,7 @@ type Props = {
   handlePointUnhover: () => void;
 };
 
-export default function PointsAndSegments({
+export default function TimelineItems({
   data,
   config,
   categoryStrategy,
@@ -52,28 +51,6 @@ export default function PointsAndSegments({
     }
   };
 
-  const pointColor = (category: string) => {
-    const colorMap: any = {
-      bad: "#d54b5b",
-      neutral: "#666666",
-      lightGray: "#808080",
-      good: "#4CAF50",
-      peace: "#4CAF50",
-    };
-    if (categoryStrategy !== "color") return colorMap.neutral;
-    return colorMap[category] || colorMap.neutral;
-  };
-
-  const pointIcon = (category: string) => {
-    const iconMap: any = {
-      bad: FaSkull,
-      peace: FaDove,
-      neutral: null,
-      good: null,
-    };
-    return iconMap[category] || null;
-  };
-
   const getSegment = (item: Segment) => {
     return <rect
       x={yearToX(item.start)}
@@ -82,46 +59,6 @@ export default function PointsAndSegments({
       height={String(laneDetails.segmentThickness)}
       className="swimlane-segment"
     />
-  }
-
-  const getPoint = (item: Point, y: number) => {
-    const IconComponent = pointIcon(item.category);
-    return <>
-      <circle
-        cx={yearToX(item.at)}
-        cy="0"
-        r={String(pointRadius)}
-        style={{ fill: pointColor(item.category) }}
-        onMouseEnter={(e) =>
-          handlePointHover(e, item, yearToX(item.at), y)
-        }
-        onMouseLeave={() => handlePointUnhover()}
-      />
-      {categoryStrategy === "icons" && IconComponent && (
-        <foreignObject
-          x={yearToX(item.at) - pointRadius}
-          y={-pointRadius}
-          width={pointRadius * 2}
-          height={pointRadius * 2}
-          style={{ pointerEvents: "none" }}
-        >
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              width: "100%",
-              height: "100%",
-            }}
-          >
-            <IconComponent
-              size={pointRadius * 1.2}
-              color="white"
-            />
-          </div>
-        </foreignObject>
-      )}
-    </>
   }
 
   return (
@@ -144,7 +81,19 @@ export default function PointsAndSegments({
                       onClick={() => handleItemClick(item, laneIndex, y)}
                       style={{ cursor: item.url ? "pointer" : "default" }}
                     >
-                      {item.type === "segment" ? getSegment(item) : getPoint(item, y)}
+                      {item.type === "segment" ? (
+                        getSegment(item)
+                      ) : (
+                        <TimelinePoint
+                          item={item}
+                          y={y}
+                          categoryStrategy={categoryStrategy}
+                          yearToX={yearToX}
+                          pointRadius={pointRadius}
+                          handlePointHover={handlePointHover}
+                          handlePointUnhover={handlePointUnhover}
+                        />
+                      )}
                     </g>
                   );
                 })}

@@ -4,9 +4,9 @@ import { lineChartData as _lineChartData } from "../data/lineChartData/historica
 import LineChartLegends from "./GraphsComponents/LineChartLegends";
 import LineChartLines from "./GraphsComponents/LineChartLines";
 import XAxis from "./GraphsComponents/XAxis";
-import SwimlaneLines from "./GraphsComponents/SwimlaneLines";
+import TimelineBackground from "./GraphsComponents/TimelineBackground";
 import CursorLine from "./GraphsComponents/CursorLine";
-import PointsAndSegments from "./GraphsComponents/PointsAndSegments";
+import TimelineItems from "./GraphsComponents/TimelineItems";
 import SegmentTooltips from "./GraphsComponents/SegmentTooltips";
 import PointTooltips from "./GraphsComponents/PointTooltips";
 import SettingsModal from "./GraphsComponents/SettingsModal";
@@ -102,7 +102,7 @@ export default function GraphsContainer() {
 
   const config: Config = {
     layout: {
-      svgPad: 150,
+      svgPad: 140,
       axisHeight: axisHeight,
       windowHeight:
         typeof window !== "undefined" ? window.innerHeight - 20 : 800,
@@ -211,10 +211,18 @@ export default function GraphsContainer() {
   const [cursorX, setCursorX] = useState<number | null>(null);
   const [hoveredYear, setHoveredYear] = useState<number | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState<{ x: number; scrollLeft: number } | null>(null);
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (containerRef.current) {
       const rect = containerRef.current.getBoundingClientRect();
+      
+      if (isDragging && dragStart) {
+        const deltaX = e.clientX - dragStart.x;
+        document.documentElement.scrollLeft = dragStart.scrollLeft - deltaX;
+      }
+      
       const scrollLeft = containerRef.current.scrollLeft;
       const x = e.clientX - rect.left + scrollLeft;
       setCursorX(x);
@@ -222,9 +230,34 @@ export default function GraphsContainer() {
     }
   };
 
+  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (containerRef.current && !modalOpen) {
+      // Check if the click target is an interactive element (has a cursor pointer style)
+      const target = e.target as HTMLElement;
+      const isInteractive = target.style.cursor === "pointer" || 
+                           target.closest('[style*="cursor: pointer"]') ||
+                           target.closest('.swimlane-segment');
+      
+      if (!isInteractive) {
+        setIsDragging(true);
+        setDragStart({
+          x: e.clientX,
+          scrollLeft: document.documentElement.scrollLeft,
+        });
+      }
+    }
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+    setDragStart(null);
+  };
+
   const handleMouseLeave = () => {
     setCursorX(null);
     setHoveredYear(null);
+    setIsDragging(false);
+    setDragStart(null);
   };
 
   useEffect(() => {
@@ -241,6 +274,17 @@ export default function GraphsContainer() {
 
     return () => container.removeEventListener("wheel", handleWheel);
   }, [modalOpen]);
+
+  useEffect(() => {
+    const handleGlobalMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    if (isDragging) {
+      document.addEventListener("mouseup", handleGlobalMouseUp);
+      return () => document.removeEventListener("mouseup", handleGlobalMouseUp);
+    }
+  }, [isDragging]);
 
   const yearToX = (year: number) => {
     const yearPosition =
@@ -326,7 +370,12 @@ export default function GraphsContainer() {
       className="w-screen h-screen swimlane-container relative m-0"
       ref={containerRef}
       onMouseMove={handleMouseMove}
+      onMouseDown={handleMouseDown}
+      onMouseUp={handleMouseUp}
       onMouseLeave={handleMouseLeave}
+      style={{
+        cursor: isDragging ? "grabbing" : "default",
+      }}
     >
       <LineChartLegends
         lineChartData={markedLineChartData}
@@ -355,7 +404,7 @@ export default function GraphsContainer() {
       )}
 
       <svg width={chartWidth} height={totalHeight} className="overflow-hidden">
-        <SwimlaneLines
+        <TimelineBackground
           data={filteredTimeline}
           config={config}
           chartWidth={chartWidth}
@@ -385,7 +434,7 @@ export default function GraphsContainer() {
         )}
 
         {showTimelineChart && (
-          <PointsAndSegments
+          <TimelineItems
             data={filteredTimeline}
             config={config}
             categoryStrategy={CATEGORY_STRATEGY}
