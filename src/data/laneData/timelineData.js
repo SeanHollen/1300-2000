@@ -612,7 +612,7 @@ export const timelineData = [
         at: 1411,
         start: 1411,
         end: 1503,
-        label: "Long Gun",
+        label: "Long Gun (Arquebus)",
         url: "https://en.wikipedia.org/wiki/Arquebus",
         category: "neutral"
       },
@@ -1003,6 +1003,13 @@ export const timelineData = [
     icon: "telescope",
     toShow: true,
     items: [
+      { 
+        type: "point",
+        at: 1600,
+        label: "Earth's Magnetic Field",
+        url: "https://en.wikipedia.org/wiki/De_Magnete",
+        category: "good"
+      },
       { 
         type: "point",
         at: 1582,

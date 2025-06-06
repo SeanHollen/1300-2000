@@ -32,7 +32,9 @@ export default function TimelineItems({
   const laneDetails = config.lane.getLaneDetails();
   const isMobile = useMemo(() => isMobileDevice(), []);
 
-  const handleItemClick = (item: LaneItem, laneIndex: number, y: number) => {
+  const handleItemClick = (e: React.MouseEvent, item: LaneItem, laneIndex: number, y: number) => {
+    e.preventDefault(); // Prevent default anchor navigation
+    
     if (!isMobile) {
       // open link
       item.url && window.open(item.url, "_blank");
@@ -74,11 +76,11 @@ export default function TimelineItems({
                   a.type === "segment" ? -1 : b.type === "segment" ? 1 : 0
                 )
                 .map((item, idx) => {
-                  return (
+                  const content = (
                     <g
                       key={`${item.type}-${laneIndex}-${idx}`}
                       onMouseEnter={() => handleItemHover(laneIndex, item)}
-                      onClick={() => handleItemClick(item, laneIndex, y)}
+                      onClick={(e) => handleItemClick(e, item, laneIndex, y)}
                       style={{ cursor: item.url ? "pointer" : "default" }}
                     >
                       {item.type === "segment" ? (
@@ -96,6 +98,12 @@ export default function TimelineItems({
                       )}
                     </g>
                   );
+
+                  return item.url ? (
+                    <a key={`link-${item.type}-${laneIndex}-${idx}`} href={item.url} style={{ textDecoration: 'none' }}>
+                      {content}
+                    </a>
+                  ) : content;
                 })}
             </g>
           );
