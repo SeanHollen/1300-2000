@@ -63,7 +63,7 @@ export const timelineData = [
       { 
         type: "point",
         at: 1527,
-        label: "Sack of City of Rome",
+        label: "Sack of Rome",
         url: "https://en.wikipedia.org/wiki/Sack_of_Rome_(1527)",
         category: "bad"
       },
@@ -1008,6 +1008,15 @@ export const timelineData = [
         at: 1600,
         label: "Earth's Magnetic Field",
         url: "https://en.wikipedia.org/wiki/De_Magnete",
+        category: "good"
+      },
+      { 
+        type: "point",
+        at: 1635,
+        start: 1635,
+        end: 1647,
+        label: "Cavalieri's principle",
+        url: "https://en.wikipedia.org/wiki/Cavalieri%27s_principle",
         category: "good"
       },
       { 
