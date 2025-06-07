@@ -1139,7 +1139,7 @@ export const timelineData = [
         at: 1656,
         start: 1654,
         end: 1658,
-        label: "2nd Plague Pandemic: Persian Empire",
+        label: "2nd Plague Pandemic: Rusia+Naples",
         url: "https://en.wikipedia.org/wiki/Second_plague_pandemic#Major_outbreaks",
         category: "bad",
         imageUrl:

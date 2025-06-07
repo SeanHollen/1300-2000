@@ -5,7 +5,7 @@ import LineChartLegends from "./GraphsComponents/LineChartLegends";
 import LineChartLines from "./GraphsComponents/LineChartLines";
 import XAxis from "./GraphsComponents/XAxis";
 import TimelineBackground from "./GraphsComponents/TimelineBackground";
-import CursorLine from "./GraphsComponents/CursorLine";
+import CursorLine, { CursorLineRef } from "./GraphsComponents/CursorLine";
 import TimelineItems from "./GraphsComponents/TimelineItems";
 import TooltipsPersistant from "./GraphsComponents/TooltipsPersistant";
 import TooltipFromHover from "./GraphsComponents/TooltipFromHover";
@@ -19,6 +19,7 @@ import { USE_CACHE, DEFAULT_CHART_WIDTH, CATEGORY_STRATEGY, SHOW_TOOLTIP_IMAGES 
 
 export default function GraphsContainer() {
   const containerRef = useRef<HTMLDivElement>(null);
+  const cursorLineRef = useRef<CursorLineRef>(null);
 
   const getLineChartState = () => {
     return _lineChartData
@@ -240,7 +241,11 @@ export default function GraphsContainer() {
       
       const scrollLeft = containerRef.current.scrollLeft;
       const x = e.clientX - rect.left + scrollLeft;
-      setCursorX(x);
+      
+      // Update cursor position directly via ref (no re-render!)
+      cursorLineRef?.current?.updatePosition(x);
+      
+      // Still update hovered year for other components that need it
       setHoveredYear(xToYear(x));
     }
   };
@@ -269,7 +274,9 @@ export default function GraphsContainer() {
   };
 
   const handleMouseLeave = () => {
-    setCursorX(null);
+    // Hide cursor via ref (no re-render!)
+    cursorLineRef?.current?.hide();
+    
     setHoveredYear(null);
     setIsDragging(false);
     setDragStart(null);
@@ -443,10 +450,11 @@ export default function GraphsContainer() {
 
         {!modalOpen && (
           <CursorLine
-            cursorX={cursorX}
+            ref={cursorLineRef}
             config={config}
             totalHeight={totalHeight}
             xToYear={xToYear}
+            chartWidth={chartWidth}
           />
         )}
 
