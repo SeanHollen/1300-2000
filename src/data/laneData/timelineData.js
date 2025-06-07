@@ -645,7 +645,7 @@ export const timelineData = [
         start: 1870,
         end: 1914,
         label: "Second Industrial Revolution",
-        url: "https://en.wikipedia.org/wiki/Industrial_Revolution",
+        url: "https://en.wikipedia.org/wiki/Second_Industrial_Revolution",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Powerloom_weaving_in_1835.jpg/330px-Powerloom_weaving_in_1835.jpg",
       },
@@ -1141,7 +1141,7 @@ export const timelineData = [
         at: 1656,
         start: 1654,
         end: 1658,
-        label: "2nd Plague Pandemic: Rusia+Naples",
+        label: "2nd Plague Pandemic: Russia+Naples",
         url: "https://en.wikipedia.org/wiki/Second_plague_pandemic#Major_outbreaks",
         category: "bad",
         imageUrl:
