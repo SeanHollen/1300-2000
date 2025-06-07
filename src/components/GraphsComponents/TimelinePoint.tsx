@@ -1,6 +1,10 @@
 import React from "react";
 import { Point } from "../types/timelineData";
-import { FaSkull, FaDove } from "react-icons/fa";
+import { FaSkull, FaDove, FaLightbulb, FaScroll, FaCompass, FaPaintBrush } from "react-icons/fa";
+import { CiBank } from "react-icons/ci";
+import { GiSwordClash } from "react-icons/gi";
+import { RiBankFill } from "react-icons/ri";
+
 
 type Props = {
   item: Point;
@@ -36,6 +40,12 @@ export default function TimelinePoint({
       lightGray: "#808080",
       good: "#4CAF50",
       peace: "#4CAF50",
+      lightbulb: "#4CAF50",
+      scroll: "#666666",
+      compass: "#666666",
+      paintbrush: "#4CAF50",
+      sword: "#666666",
+      bank: "#4CAF50",
     };
     if (categoryStrategy !== "color") return colorMap.neutral;
     return colorMap[category] || colorMap.neutral;
@@ -45,8 +55,13 @@ export default function TimelinePoint({
     const iconMap: any = {
       bad: FaSkull,
       peace: FaDove,
-      neutral: null,
-      good: null,
+      lightbulb: FaLightbulb,
+      writing: FaScroll,
+      document: FaScroll,
+      exchange: FaCompass,
+      art: FaPaintBrush,
+      conflict: GiSwordClash,
+      institution: RiBankFill,
     };
     return iconMap[category] || null;
   };
