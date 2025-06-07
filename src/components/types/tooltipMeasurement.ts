@@ -10,4 +10,7 @@ export type Tooltip = {
   start?: number,
   end?: number,
   content: string,
+  url?: string,
+  imageUrl?: string,
+  laneIndex?: number,
 }

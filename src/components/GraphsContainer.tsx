@@ -7,19 +7,17 @@ import XAxis from "./GraphsComponents/XAxis";
 import TimelineBackground from "./GraphsComponents/TimelineBackground";
 import CursorLine from "./GraphsComponents/CursorLine";
 import TimelineItems from "./GraphsComponents/TimelineItems";
-import SegmentTooltips from "./GraphsComponents/SegmentTooltips";
-import PointTooltips from "./GraphsComponents/PointTooltips";
+import TooltipsPersistant from "./GraphsComponents/TooltipsPersistant";
+import TooltipFromHover from "./GraphsComponents/TooltipFromHover";
 import SettingsModal from "./GraphsComponents/SettingsModal";
 import "../styles/swimlanes.css";
 import { Config } from "./types/config";
 import { LaneItem, Lane, Point } from "./types/timelineData";
 import { Tooltip } from "./types/tooltipMeasurement";
 import { LineTS, TSPoint } from "./types/trendlineData";
+import { USE_CACHE, DEFAULT_CHART_WIDTH, CATEGORY_STRATEGY, SHOW_TOOLTIP_IMAGES } from "../constants";
 
 export default function GraphsContainer() {
-  const USE_CACHE = false;
-  const DEFAULT_CHART_WIDTH = 10000;
-  const CATEGORY_STRATEGY = "icons";
   const containerRef = useRef<HTMLDivElement>(null);
 
   const getLineChartState = () => {
@@ -65,6 +63,11 @@ export default function GraphsContainer() {
 
   const [showAllPointTooltips, setShowAllPointTooltips] = useState(false);
 
+  const [showTooltipImages, setShowTooltipImages] = useState(() => {
+    const savedState = localStorage.getItem("showTooltipImages");
+    return USE_CACHE && savedState ? JSON.parse(savedState) : SHOW_TOOLTIP_IMAGES;
+  });
+
   useEffect(() => {
     localStorage.setItem("lineChartState", JSON.stringify(lineChartState));
   }, [lineChartState]);
@@ -88,12 +91,17 @@ export default function GraphsContainer() {
     );
   }, [showAllPointTooltips]);
 
+  useEffect(() => {
+    localStorage.setItem("showTooltipImages", showTooltipImages.toString());
+  }, [showTooltipImages]);
+
   const onRestoreDefaults = () => {
     setLineChartState(getLineChartState());
     setTimelineState(getTimelineData());
     setChartWidth(DEFAULT_CHART_WIDTH);
     setShowTimelineChart(true);
     setShowAllPointTooltips(false);
+    setShowTooltipImages(SHOW_TOOLTIP_IMAGES);
   };
 
   const [axisHeight, setAxisHeight] = useState(40);
@@ -154,6 +162,9 @@ export default function GraphsContainer() {
         height: 24,
         textY: -8,
       },
+      imagePreview: {
+        size: 240,
+      },
     },
   };
 
@@ -192,7 +203,8 @@ export default function GraphsContainer() {
     _e: React.MouseEvent<SVGElement>,
     item: Point,
     pointX: number,
-    pointY: number
+    pointY: number,
+    laneIndex: number
   ) => {
     if (!item) {
       setPointTooltip(null);
@@ -205,6 +217,9 @@ export default function GraphsContainer() {
       start: item.start,
       end: item.end,
       content: item.label,
+      url: item.url,
+      imageUrl: item.imageUrl,
+      laneIndex: laneIndex,
     });
   };
 
@@ -400,6 +415,8 @@ export default function GraphsContainer() {
           showTimelineChart={showTimelineChart}
           showAllPointTooltips={showAllPointTooltips}
           setShowAllPointTooltips={setShowAllPointTooltips}
+          showTooltipImages={showTooltipImages}
+          setShowTooltipImages={setShowTooltipImages}
         />
       )}
 
@@ -446,24 +463,24 @@ export default function GraphsContainer() {
         )}
 
         {showTimelineChart && (
-          <SegmentTooltips
+          <TooltipsPersistant
             data={filteredTimeline}
             yearToX={yearToX}
             config={config}
             tooltipMeasurements={tooltipMeasurements}
             constrainTooltipPosition={constrainTooltipPosition}
+            timelineState={timelineState}
+            showAllPointTooltips={showAllPointTooltips}
           />
         )}
 
-        <PointTooltips
+        <TooltipFromHover
           config={config}
           hoveredPointTooltip={pointTooltip}
           tooltipMeasurements={tooltipMeasurements}
           tooltipTextRef={tooltipTextRef}
           constrainTooltipPosition={constrainTooltipPosition}
-          yearToX={yearToX}
-          timelineState={filteredTimeline}
-          showAllPointTooltips={showAllPointTooltips && showTimelineChart}
+          showTooltipImages={showTooltipImages}
         />
       </svg>
     </div>

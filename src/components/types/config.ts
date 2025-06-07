@@ -57,4 +57,7 @@ type Tooltip = {
     height: number;
     textY: number;
   };
+  imagePreview: {
+    size: number;
+  };
 }

@@ -8,11 +8,13 @@ type Props = {
   categoryStrategy: string;
   yearToX: (year: number) => number;
   pointRadius: number;
+  laneIndex: number;
   handlePointHover: (
     _e: React.MouseEvent<SVGElement>,
     item: Point,
     pointX: number,
-    pointY: number
+    pointY: number,
+    laneIndex: number
   ) => void;
   handlePointUnhover: () => void;
 };
@@ -23,6 +25,7 @@ export default function TimelinePoint({
   categoryStrategy,
   yearToX,
   pointRadius,
+  laneIndex,
   handlePointHover,
   handlePointUnhover,
 }: Props) {
@@ -57,7 +60,7 @@ export default function TimelinePoint({
         cy="0"
         r={String(pointRadius)}
         style={{ fill: pointColor(item.category) }}
-        onMouseEnter={(e) => handlePointHover(e, item, yearToX(item.at), y)}
+        onMouseEnter={(e) => handlePointHover(e, item, yearToX(item.at), y, laneIndex)}
         onMouseLeave={() => handlePointUnhover()}
       />
       {categoryStrategy === "icons" && IconComponent && (

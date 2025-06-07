@@ -14,7 +14,8 @@ type Props = {
     _e: React.MouseEvent<SVGElement>,
     item: Point,
     pointX: number,
-    pointY: number
+    pointY: number,
+    laneIndex: number
   ) => void;
   handlePointUnhover: () => void;
 };
@@ -48,7 +49,8 @@ export default function TimelineItems({
         {} as React.MouseEvent<SVGElement>,
         item,
         pointX,
-        y
+        y,
+        laneIndex
       );
     }
   };
@@ -92,6 +94,7 @@ export default function TimelineItems({
                           categoryStrategy={categoryStrategy}
                           yearToX={yearToX}
                           pointRadius={pointRadius}
+                          laneIndex={laneIndex}
                           handlePointHover={handlePointHover}
                           handlePointUnhover={handlePointUnhover}
                         />

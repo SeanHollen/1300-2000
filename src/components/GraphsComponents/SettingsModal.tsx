@@ -12,6 +12,8 @@ type Props = {
   showTimelineChart: boolean;
   setShowAllPointTooltips: (show: boolean) => void;
   showAllPointTooltips: boolean;
+  setShowTooltipImages: (show: boolean) => void;
+  showTooltipImages: boolean;
 };
 
 export default function SettingsModal({
@@ -26,6 +28,8 @@ export default function SettingsModal({
   showTimelineChart,
   setShowAllPointTooltips,
   showAllPointTooltips,
+  setShowTooltipImages,
+  showTooltipImages,
 }: Props) {
   return (
     <div
@@ -263,6 +267,38 @@ export default function SettingsModal({
                 <input
                   type="checkbox"
                   checked={!showTimelineChart}
+                  onChange={() => {}} // dummy to silence warning
+                  style={{
+                    pointerEvents: "auto",
+                    cursor: "pointer",
+                  }}
+                />
+              </div>
+            </div>
+          </div>
+          <div>
+            <div
+              key="show-tooltip-images"
+              style={{
+                display: "flex",
+                alignItems: "center",
+                paddingRight: "1rem",
+                fontSize: "14px",
+                justifyContent: "space-between",
+              }}
+            >
+              <span style={{ marginRight: "0.5rem" }}>Show Tooltip Images</span>
+              <div
+                style={{
+                  display: "inline-block",
+                  padding: "5px",
+                  cursor: "pointer",
+                }}
+                onClick={() => setShowTooltipImages(!showTooltipImages)}
+              >
+                <input
+                  type="checkbox"
+                  checked={showTooltipImages}
                   onChange={() => {}} // dummy to silence warning
                   style={{
                     pointerEvents: "auto",
