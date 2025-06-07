@@ -1398,14 +1398,6 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1620,
-        label: "Scientific Method - Experimentation",
-        url: "https://en.wikipedia.org/wiki/History_of_scientific_method#Francis_Bacon's_eliminative_induction",
-        category: "lightbulb",
-        imageUrl: "https://pioneerinstitute.org/wp-content/uploads/image005-6.jpg"
-      },
-      {
-        type: "point",
         at: 1953,
         label: "DNA Structure Discovery",
         url: "https://en.wikipedia.org/wiki/Nucleic_acid_double_helix",
@@ -1550,7 +1542,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Vesalius_Fabrica_fronticepiece.jpg/330px-Vesalius_Fabrica_fronticepiece.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/b/b2/Vesalius_Fabrica_p372.jpg",
       },
       {
         type: "point",
@@ -1804,7 +1796,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/CalvinInstitutio.jpg/330px-CalvinInstitutio.jpg",
+          "https://i0.wp.com/livingtheologically.com/wp-content/uploads/2019/01/john-calvin.jpg?fit=825,510&ssl=1",
       },
       {
         type: "point",
@@ -2021,7 +2013,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/The_Spirit_of_Law",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Montesquieu%2C_De_l%27Esprit_des_loix_%281st_ed%2C_1748%2C_vol_1%2C_title_page%29.jpg/330px-Montesquieu%2C_De_l%27Esprit_des_loix_%281st_ed%2C_1748%2C_vol_1%2C_title_page%29.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/e/e4/Charles_Montesquieu.jpg",
       },
       {
         type: "point",
@@ -2122,10 +2114,10 @@ export const timelineData = [
         type: "point",
         at: 1848,
         label: "Communism - Marx",
-        url: "https://en.wikipedia.org/wiki/Karl_Marx#/media/File:Karl_Marx_001_(rotated).jpg",
+        url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Communist-manifesto.png/330px-Communist-manifesto.png",
+          "https://upload.wikimedia.org/wikipedia/commons/4/4a/Karl_Marx_001_%28rotated%29.jpg",
       },
       {
         type: "point",
