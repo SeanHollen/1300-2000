@@ -24,3 +24,14 @@ cd 1300-2000
 npm i
 npm run dev
 ```
+
+# Categories
+
+* Wars and Revolutions
+* Exchange and Exploration
+* Technology and Economics
+* Health and Disease
+* Science and Education
+* Religion and Ordinance
+* Philosophy and Art
+* Land and Agriculture

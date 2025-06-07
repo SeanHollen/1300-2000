@@ -208,11 +208,11 @@ export const timelineData = [
         at: 1905,
         start: 1904,
         end: 1905,
-        label: "Russo-Japanese War and Russion Revolution",
+        label: "Russo-Japanese War",
         url: "https://en.wikipedia.org/wiki/Russo-Japanese_War",
         category: "conflict",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/RUSSOJAPANESEWARIMAGE.jpg/330px-RUSSOJAPANESEWARIMAGE.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/5/5b/JBMikasa.jpg",
       },
       {
         type: "point",
@@ -355,7 +355,7 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1989,
+        at: 1991,
         label: "End of Cold War",
         url: "https://en.wikipedia.org/wiki/End_of_the_Cold_War",
         category: "document",
@@ -408,6 +408,17 @@ export const timelineData = [
         category: "conflict",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Lenepveu%2C_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg/330px-Lenepveu%2C_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg",
+      },
+      {
+        type: "point",
+        at: 1915,
+        start: 1915,
+        end: 1923,
+        label: "Armenian Genocide",
+        url: "https://en.wikipedia.org/wiki/Armenian_genocide",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/3/3b/Six_Vilayets%2C_Ottoman_Empire_%281900%29.png",
       },
       {
         type: "point",
