@@ -14,6 +14,7 @@ type Props = {
   showAllPointTooltips: boolean;
   setShowTooltipImages: (show: boolean) => void;
   showTooltipImages: boolean;
+  isMobile: boolean;
 };
 
 export default function SettingsModal({
@@ -30,9 +31,18 @@ export default function SettingsModal({
   showAllPointTooltips,
   setShowTooltipImages,
   showTooltipImages,
+  isMobile,
 }: Props) {
   return (
     <div
+    {...(isMobile
+      ? { onClick: () => onClose() }
+      : {
+          onMouseDown: (e) => {
+            e.preventDefault();
+            onClose();
+          },
+        })}
       onClick={onClose}
       style={{
         position: "fixed",

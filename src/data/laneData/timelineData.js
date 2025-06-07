@@ -537,11 +537,13 @@ export const timelineData = [
       {
         type: "point",
         at: 1498,
+        start: 1497,
+        end: 1499,
         label: "Vasco da Gama reaches India",
         url: "https://en.wikipedia.org/wiki/Vasco_da_Gama#First_voyage",
         category: "exchange",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Ignoto_portoghese%2C_ritratto_di_un_cavaliere_dell%27ordine_di_cristo%2C_1525-50_ca._02.jpg/330px-Ignoto_portoghese%2C_ritratto_di_un_cavaliere_dell%27ordine_di_cristo%2C_1525-50_ca._02.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/c/c5/Map_of_Portuguese_Carreira_da_India.gif",
       },
       {
         type: "point",
@@ -1359,7 +1361,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Council_of_Trent",
         category: "institution",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Concilio_Trento_Museo_Buonconsiglio.jpg/330px-Concilio_Trento_Museo_Buonconsiglio.jpg",
+          "https://lh6.googleusercontent.com/proxy/W5_IDuSINKF3g4_Q-DZLvZFRgQLC5lvYqwFYeXdGFI_8HG1Z3Vad0bpLWDR24MJOxKu42Bau3yzBs_kA9sG3q2ShRWKYFbcnZSVZCNHByz1fDH_oTbJFLPV33l1FZO93lS12ZCP8xGH57w",
       },
       {
         type: "point",
@@ -2159,7 +2161,7 @@ export const timelineData = [
     ],
   },
   {
-    lane: "Farming and Climate",
+    lane: "Land and Agriculture",
     icon: "wheat",
     toShow: true,
     items: [
@@ -2209,7 +2211,25 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Great_Famine_of_1876%E2%80%931878",
         category: "bad",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/FaminesMapOfIndia1800-1885.jpg/330px-FaminesMapOfIndia1800-1885.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/3/3b/FaminesMapOfIndia1800-1885.jpg",
+      },
+      // {
+      //   type: "point",
+      //   at: 1931,
+      //   label: "Floods in China",
+      //   url: "https://en.wikipedia.org/wiki/1931_China_floods",
+      //   category: "bad",
+      //   imageUrl:
+      //     "https://upload.wikimedia.org/wikipedia/commons/f/fc/Hankow_city_hall.jpg",
+      // },
+      {
+        type: "point",
+        at: 1556,
+        label: "Shaanxi Earthquake",
+        url: "https://en.wikipedia.org/wiki/1556_Shaanxi_earthquake",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d6/Shaanxi_1556_earthquake_map_of_provinces.png",
       },
       {
         type: "point",

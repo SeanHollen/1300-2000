@@ -1,7 +1,6 @@
-import React, { useMemo } from "react";
+import React from "react";
 import { Lane, LaneItem, Point, Segment } from "../types/timelineData";
 import { Config } from "../types/config";
-import { isMobileDevice } from "../../utils/deviceUtils";
 import TimelinePoint from "./TimelinePoint";
 
 type Props = {
@@ -18,6 +17,7 @@ type Props = {
     laneIndex: number
   ) => void;
   handlePointUnhover: () => void;
+  isMobile: boolean;
 };
 
 export default function TimelineItems({
@@ -28,10 +28,10 @@ export default function TimelineItems({
   handleItemHover,
   handlePointHover,
   handlePointUnhover,
+  isMobile,
 }: Props) {
   const pointRadius = config.point.radius;
   const laneDetails = config.lane.getLaneDetails();
-  const isMobile = useMemo(() => isMobileDevice(), []);
 
   const handleItemClick = (e: React.MouseEvent, item: LaneItem, laneIndex: number, y: number) => {
     e.preventDefault(); // Prevent default anchor navigation

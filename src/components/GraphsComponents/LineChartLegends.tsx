@@ -1,6 +1,6 @@
 import { useRef, useEffect } from "react";
 import { CiSettings } from "react-icons/ci";
-import { LineTS, TSPoint, Range } from "../types/trendlineData";
+import { LineTS, TSPoint } from "../types/trendlineData";
 
 export const findXValueForYear = (points: TSPoint[], year: number) => {
   if (!year) return null;
@@ -33,6 +33,7 @@ type Props = {
   setModalOpen: (open: boolean) => void;
   modalOpen: boolean;
   onWrapChange: (height: number) => void;
+  isMobile: boolean;
 };
 
 export default function LineChartLegends({
@@ -41,6 +42,7 @@ export default function LineChartLegends({
   setModalOpen,
   modalOpen,
   onWrapChange,
+  isMobile,
 }: Props) {
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
@@ -67,7 +69,14 @@ export default function LineChartLegends({
       }}
     >
       <button
-        onClick={() => setModalOpen(true)}
+        {...(isMobile
+          ? { onClick: () => setModalOpen(true) }
+          : {
+              onMouseDown: (e) => {
+                e.preventDefault();
+                setModalOpen(true);
+              },
+            })}
         style={{
           display: "inline-flex",
           alignItems: "center",
