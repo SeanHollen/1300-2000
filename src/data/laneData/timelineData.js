@@ -208,11 +208,11 @@ export const timelineData = [
         at: 1905,
         start: 1904,
         end: 1905,
-        label: "Russo-Japanese War and Russion Revolution",
+        label: "Russo-Japanese War",
         url: "https://en.wikipedia.org/wiki/Russo-Japanese_War",
         category: "conflict",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/RUSSOJAPANESEWARIMAGE.jpg/330px-RUSSOJAPANESEWARIMAGE.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/5/5b/JBMikasa.jpg",
       },
       {
         type: "point",
@@ -355,7 +355,7 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1989,
+        at: 1991,
         label: "End of Cold War",
         url: "https://en.wikipedia.org/wiki/End_of_the_Cold_War",
         category: "document",
@@ -408,6 +408,17 @@ export const timelineData = [
         category: "conflict",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Lenepveu%2C_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg/330px-Lenepveu%2C_Jeanne_d%27Arc_au_si%C3%A8ge_d%27Orl%C3%A9ans.jpg",
+      },
+      {
+        type: "point",
+        at: 1915,
+        start: 1915,
+        end: 1923,
+        label: "Armenian Genocide",
+        url: "https://en.wikipedia.org/wiki/Armenian_genocide",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/3/3b/Six_Vilayets%2C_Ottoman_Empire_%281900%29.png",
       },
       {
         type: "point",
@@ -537,11 +548,13 @@ export const timelineData = [
       {
         type: "point",
         at: 1498,
+        start: 1497,
+        end: 1499,
         label: "Vasco da Gama reaches India",
         url: "https://en.wikipedia.org/wiki/Vasco_da_Gama#First_voyage",
         category: "exchange",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Ignoto_portoghese%2C_ritratto_di_un_cavaliere_dell%27ordine_di_cristo%2C_1525-50_ca._02.jpg/330px-Ignoto_portoghese%2C_ritratto_di_un_cavaliere_dell%27ordine_di_cristo%2C_1525-50_ca._02.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/c/c5/Map_of_Portuguese_Carreira_da_India.gif",
       },
       {
         type: "point",
@@ -643,7 +656,7 @@ export const timelineData = [
         start: 1870,
         end: 1914,
         label: "Second Industrial Revolution",
-        url: "https://en.wikipedia.org/wiki/Industrial_Revolution",
+        url: "https://en.wikipedia.org/wiki/Second_Industrial_Revolution",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/Powerloom_weaving_in_1835.jpg/330px-Powerloom_weaving_in_1835.jpg",
       },
@@ -1139,7 +1152,7 @@ export const timelineData = [
         at: 1656,
         start: 1654,
         end: 1658,
-        label: "2nd Plague Pandemic: Rusia+Naples",
+        label: "2nd Plague Pandemic: Russia+Naples",
         url: "https://en.wikipedia.org/wiki/Second_plague_pandemic#Major_outbreaks",
         category: "bad",
         imageUrl:
@@ -1359,7 +1372,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Council_of_Trent",
         category: "institution",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Concilio_Trento_Museo_Buonconsiglio.jpg/330px-Concilio_Trento_Museo_Buonconsiglio.jpg",
+          "https://lh6.googleusercontent.com/proxy/W5_IDuSINKF3g4_Q-DZLvZFRgQLC5lvYqwFYeXdGFI_8HG1Z3Vad0bpLWDR24MJOxKu42Bau3yzBs_kA9sG3q2ShRWKYFbcnZSVZCNHByz1fDH_oTbJFLPV33l1FZO93lS12ZCP8xGH57w",
       },
       {
         type: "point",
@@ -1395,14 +1408,6 @@ export const timelineData = [
         category: "lightbulb",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Apparent_retrograde_motion.gif/330px-Apparent_retrograde_motion.gif",
-      },
-      {
-        type: "point",
-        at: 1620,
-        label: "Scientific Method - Experimentation",
-        url: "https://en.wikipedia.org/wiki/History_of_scientific_method#Francis_Bacon's_eliminative_induction",
-        category: "lightbulb",
-        imageUrl: "https://pioneerinstitute.org/wp-content/uploads/image005-6.jpg"
       },
       {
         type: "point",
@@ -1550,7 +1555,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Vesalius_Fabrica_fronticepiece.jpg/330px-Vesalius_Fabrica_fronticepiece.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/b/b2/Vesalius_Fabrica_p372.jpg",
       },
       {
         type: "point",
@@ -1804,7 +1809,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Institutes_of_the_Christian_Religion",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/ba/CalvinInstitutio.jpg/330px-CalvinInstitutio.jpg",
+          "https://i0.wp.com/livingtheologically.com/wp-content/uploads/2019/01/john-calvin.jpg?fit=825,510&ssl=1",
       },
       {
         type: "point",
@@ -2021,7 +2026,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/The_Spirit_of_Law",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Montesquieu%2C_De_l%27Esprit_des_loix_%281st_ed%2C_1748%2C_vol_1%2C_title_page%29.jpg/330px-Montesquieu%2C_De_l%27Esprit_des_loix_%281st_ed%2C_1748%2C_vol_1%2C_title_page%29.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/e/e4/Charles_Montesquieu.jpg",
       },
       {
         type: "point",
@@ -2122,10 +2127,10 @@ export const timelineData = [
         type: "point",
         at: 1848,
         label: "Communism - Marx",
-        url: "https://en.wikipedia.org/wiki/Karl_Marx#/media/File:Karl_Marx_001_(rotated).jpg",
+        url: "https://en.wikipedia.org/wiki/The_Communist_Manifesto",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Communist-manifesto.png/330px-Communist-manifesto.png",
+          "https://upload.wikimedia.org/wikipedia/commons/4/4a/Karl_Marx_001_%28rotated%29.jpg",
       },
       {
         type: "point",
@@ -2167,7 +2172,7 @@ export const timelineData = [
     ],
   },
   {
-    lane: "Farming and Climate",
+    lane: "Land and Agriculture",
     icon: "wheat",
     toShow: true,
     items: [
@@ -2217,7 +2222,25 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Great_Famine_of_1876%E2%80%931878",
         category: "bad",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/FaminesMapOfIndia1800-1885.jpg/330px-FaminesMapOfIndia1800-1885.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/3/3b/FaminesMapOfIndia1800-1885.jpg",
+      },
+      // {
+      //   type: "point",
+      //   at: 1931,
+      //   label: "Floods in China",
+      //   url: "https://en.wikipedia.org/wiki/1931_China_floods",
+      //   category: "bad",
+      //   imageUrl:
+      //     "https://upload.wikimedia.org/wikipedia/commons/f/fc/Hankow_city_hall.jpg",
+      // },
+      {
+        type: "point",
+        at: 1556,
+        label: "Shaanxi Earthquake",
+        url: "https://en.wikipedia.org/wiki/1556_Shaanxi_earthquake",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d6/Shaanxi_1556_earthquake_map_of_provinces.png",
       },
       {
         type: "point",

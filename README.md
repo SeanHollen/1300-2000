@@ -34,4 +34,4 @@ npm run dev
 * Science and Education
 * Religion and Ordinance
 * Philosophy and Art
-* Farming and Climate
+* Land and Agriculture

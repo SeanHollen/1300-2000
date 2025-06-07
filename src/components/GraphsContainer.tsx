@@ -1,6 +1,7 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useMemo } from "react";
 import { timelineData as _timelineData } from "../data/laneData/timelineData";
 import { lineChartData as _lineChartData } from "../data/lineChartData/historicalTrends";
+import { isMobileDevice } from "../utils/deviceUtils";
 import LineChartLegends from "./GraphsComponents/LineChartLegends";
 import LineChartLines from "./GraphsComponents/LineChartLines";
 import XAxis from "./GraphsComponents/XAxis";
@@ -105,7 +106,9 @@ export default function GraphsContainer() {
     setShowTooltipImages(SHOW_TOOLTIP_IMAGES);
   };
 
-  const [axisHeight, setAxisHeight] = useState(40);
+  const isMobile = useMemo(() => isMobileDevice(), []);
+
+  const [axisHeight, setAxisHeight] = useState(46);
 
   const filteredTimeline = timelineState.filter((lane: Lane) => lane.toShow);
 
@@ -435,6 +438,7 @@ export default function GraphsContainer() {
         hoveredYear={hoveredYear}
         setModalOpen={setModalOpen}
         modalOpen={modalOpen}
+        isMobile={isMobile}
         onWrapChange={(clientHeight: number) => {
           setAxisHeight(20 + clientHeight);
         }}
@@ -455,6 +459,7 @@ export default function GraphsContainer() {
           setShowAllPointTooltips={setShowAllPointTooltips}
           showTooltipImages={showTooltipImages}
           setShowTooltipImages={setShowTooltipImages}
+          isMobile={isMobile}
         />
       )}
 
@@ -464,6 +469,7 @@ export default function GraphsContainer() {
           config={config}
           chartWidth={chartWidth}
           showTimelineChart={showTimelineChart}
+          isMobile={isMobile}
         />
 
         <LineChartLines
@@ -498,6 +504,7 @@ export default function GraphsContainer() {
             handleItemHover={handleItemHover}
             handlePointHover={handlePointHover}
             handlePointUnhover={handlePointUnhover}
+            isMobile={isMobile}
           />
         )}
 

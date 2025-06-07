@@ -1,5 +1,6 @@
 import { TooltipMeasurement, Tooltip } from "../types/tooltipMeasurement";
 import { Config } from "../types/config";
+import { getThumbnailUrl } from "../../utils/imageUtils";
 
 type Props = {
   hoveredPointTooltip: Tooltip | null;
@@ -8,33 +9,6 @@ type Props = {
   tooltipTextRef: (element: SVGTextElement | null) => void;
   constrainTooltipPosition: (x: number, width: number) => number;
   showTooltipImages: boolean;
-};
-
-// Function to get thumbnail URL from Wikipedia image URL
-const getThumbnailUrl = (imageUrl: string, size: number = 240) => {
-  if (!imageUrl) return imageUrl;
-  
-  // For Wikipedia images, we can request a specific thumbnail size
-  if (imageUrl.includes('upload.wikimedia.org')) {
-    // Pattern: /thumb/.../.../NNNpx-filename or /.../.../filename
-    const thumbMatch = imageUrl.match(/\/thumb\/(.+)\/(\d+px-.+)$/);
-    if (thumbMatch) {
-      // Already a thumbnail, replace the size
-      const [, path, filename] = thumbMatch;
-      const newFilename = filename.replace(/^\d+px-/, `${size}px-`);
-      return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${newFilename}`;
-    } else {
-      // Original image, convert to thumbnail
-      const pathMatch = imageUrl.match(/\/wikipedia\/commons\/(.+)$/);
-      if (pathMatch) {
-        const [, path] = pathMatch;
-        const filename = path.split('/').pop();
-        return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${size}px-${filename}`;
-      }
-    }
-  }
-  
-  return imageUrl;
 };
 
 export default function hoveredPointTooltips({

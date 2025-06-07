@@ -1,4 +1,3 @@
-import { useMemo } from "react";
 import {
   FaCog,
   FaBook,
@@ -18,7 +17,6 @@ import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
 import { Config } from "../types/config";
 import { Lane } from "../types/timelineData";
-import { isMobileDevice } from "../../utils/deviceUtils";
 
 const iconMap: Record<string, any> = {
   sword: GiCrossedSwords,
@@ -42,6 +40,7 @@ type Props = {
   config: Config;
   chartWidth: number;
   showTimelineChart?: boolean;
+  isMobile: boolean;
 };
 
 export default function TimelineBackground({
@@ -49,10 +48,10 @@ export default function TimelineBackground({
   config,
   chartWidth,
   showTimelineChart,
+  isMobile,
 }: Props) {
   const iconRadius = config.point.iconRadius;
   const laneDetails = config.lane.getLaneDetails();
-  const isMobile = useMemo(() => isMobileDevice(), []);
 
   return (
     <>
