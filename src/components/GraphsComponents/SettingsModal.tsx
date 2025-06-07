@@ -36,14 +36,13 @@ export default function SettingsModal({
   return (
     <div
     {...(isMobile
-      ? { onClick: () => onClose() }
+      ? { onClick: onClose }
       : {
           onMouseDown: (e) => {
             e.preventDefault();
             onClose();
           },
         })}
-      onClick={onClose}
       style={{
         position: "fixed",
         top: 0,
@@ -59,6 +58,7 @@ export default function SettingsModal({
     >
       <div
         onClick={(e) => e.stopPropagation()}
+        onMouseDown={(e) => e.stopPropagation()}
         style={{
           background: "white",
           padding: "1rem",
@@ -233,7 +233,7 @@ export default function SettingsModal({
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ marginRight: "0.5rem" }}>Show All Point Tooltips</span>
+              <span style={{ marginRight: "0.5rem" }}>Show All Tooltips at Once</span>
               <div
                 style={{
                   display: "inline-block",
@@ -265,7 +265,7 @@ export default function SettingsModal({
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ marginRight: "0.5rem" }}>Hide Timeline Chart</span>
+              <span style={{ marginRight: "0.5rem" }}>Hide Timeline Chart (Just show Trendlines)</span>
               <div
                 style={{
                   display: "inline-block",
@@ -297,7 +297,7 @@ export default function SettingsModal({
                 justifyContent: "space-between",
               }}
             >
-              <span style={{ marginRight: "0.5rem" }}>Show Tooltip Images</span>
+              <span style={{ marginRight: "0.5rem" }}>Show Images on Tooltips</span>
               <div
                 style={{
                   display: "inline-block",
