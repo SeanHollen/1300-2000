@@ -142,7 +142,7 @@ export default function LineChartLegends({
               </div>
             );
           })}
-      {!showHoverView &&
+      {!showHoverView && !isMobile &&
         lineChartData
           .filter((lineData) => lineData.toShow)
           .map((lineData) => {

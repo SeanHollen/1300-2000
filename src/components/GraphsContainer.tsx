@@ -370,6 +370,7 @@ export default function GraphsContainer() {
           tooltipTextRef={tooltipTextRef}
           constrainTooltipPosition={constrainTooltipPosition}
           showTooltipImages={showTooltipImages}
+          isMobile={isMobile}
         />
       </svg>
     </div>

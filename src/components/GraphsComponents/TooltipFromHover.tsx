@@ -9,6 +9,7 @@ type Props = {
   tooltipTextRef: (element: SVGTextElement | null) => void;
   constrainTooltipPosition: (x: number, width: number) => number;
   showTooltipImages: boolean;
+  isMobile: boolean;
 };
 
 export default function hoveredPointTooltips({
@@ -18,13 +19,14 @@ export default function hoveredPointTooltips({
   tooltipTextRef,
   constrainTooltipPosition,
   showTooltipImages,
+  isMobile,
 }: Props) {
   const imageSize = config.tooltip.imagePreview.size;
-  const imageHeight = Math.round(imageSize * 0.67); // Maintain 3:2 aspect ratio
+  const imageHeight = Math.round(imageSize * 0.67); // 3:2 aspect ratio
   
-  // Check if the item is in the first lane (lane index 0)
   const isFirstLane = hoveredPointTooltip?.laneIndex === 0;
-  const imageY = isFirstLane ? "50" : `-${imageHeight + 20}`;
+  const isTopOfPhoneScreen = isMobile && (hoveredPointTooltip?.laneIndex ?? 0) < 3;
+  const imageY = (isFirstLane || isTopOfPhoneScreen) ? "50" : `-${imageHeight + 20}`;
   
   const optimizedImageUrl = hoveredPointTooltip?.item.imageUrl 
     ? getThumbnailUrl(hoveredPointTooltip.item.imageUrl, imageSize)
