@@ -55,7 +55,14 @@ export default function hoveredPointTooltips({
                   border: "1px solid rgba(0,0,0,0.1)",
                   display: "flex",
                   alignItems: "center",
-                  justifyContent: "center"
+                  justifyContent: "center",
+                  cursor: "pointer"
+                }}
+                onTouchEnd={(e) => {
+                  e.preventDefault();
+                  if (hoveredPointTooltip?.item.url) {
+                    window.open(hoveredPointTooltip.item.url, '_blank');
+                  }
                 }}
               >
                 <img
@@ -66,12 +73,7 @@ export default function hoveredPointTooltips({
                     maxHeight: "100%",
                     objectFit: "contain",
                     borderRadius: "4px",
-                    cursor: "pointer"
-                  }}
-                  onClick={() => {
-                    if (hoveredPointTooltip?.item.url) {
-                      window.open(hoveredPointTooltip.item.url, '_blank');
-                    }
+                    pointerEvents: "none"
                   }}
                 />
               </div>
