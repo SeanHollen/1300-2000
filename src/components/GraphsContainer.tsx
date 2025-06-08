@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import { timelineData as _timelineData } from "../data/laneData/timelineData";
 import { lineChartData as _lineChartData } from "../data/lineChartData/historicalTrends";
 import { isMobileDevice } from "../utils/deviceUtils";
+import { useCursor } from "../utils/useCursor";
 import LineChartLegends from "./GraphsComponents/LineChartLegends";
 import LineChartLines from "./GraphsComponents/LineChartLines";
 import XAxis from "./GraphsComponents/XAxis";
@@ -227,89 +228,7 @@ export default function GraphsContainer() {
     });
   };
 
-  const [cursorX, setCursorX] = useState<number | null>(null);
-  const [hoveredYear, setHoveredYear] = useState<number | null>(null);
   const [modalOpen, setModalOpen] = useState(false);
-  const [isDragging, setIsDragging] = useState(false);
-  const [dragStart, setDragStart] = useState<{ x: number; scrollLeft: number } | null>(null);
-
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (containerRef.current) {
-      const rect = containerRef.current.getBoundingClientRect();
-      
-      if (isDragging && dragStart) {
-        const deltaX = e.clientX - dragStart.x;
-        document.documentElement.scrollLeft = dragStart.scrollLeft - deltaX;
-      }
-      
-      const scrollLeft = containerRef.current.scrollLeft;
-      const x = e.clientX - rect.left + scrollLeft;
-      
-      // Update cursor position directly via ref (no re-render!)
-      cursorLineRef?.current?.updatePosition(x);
-      
-      // Still update hovered year for other components that need it
-      setHoveredYear(xToYear(x));
-    }
-  };
-
-  const handleMouseDown = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (containerRef.current && !modalOpen) {
-      // Check if the click target is an interactive element (has a cursor pointer style)
-      const target = e.target as HTMLElement;
-      const isInteractive = target.style.cursor === "pointer" || 
-                           target.closest('[style*="cursor: pointer"]') ||
-                           target.closest('.swimlane-segment');
-      
-      if (!isInteractive) {
-        setIsDragging(true);
-        setDragStart({
-          x: e.clientX,
-          scrollLeft: document.documentElement.scrollLeft,
-        });
-      }
-    }
-  };
-
-  const handleMouseUp = () => {
-    setIsDragging(false);
-    setDragStart(null);
-  };
-
-  const handleMouseLeave = () => {
-    // Hide cursor via ref (no re-render!)
-    cursorLineRef?.current?.hide();
-    
-    setHoveredYear(null);
-    setIsDragging(false);
-    setDragStart(null);
-  };
-
-  useEffect(() => {
-    const container = containerRef.current as HTMLDivElement | null;
-    if (!container) return;
-
-    const handleWheel = (e: WheelEvent) => {
-      if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && !modalOpen) {
-        document.documentElement.scrollLeft += e.deltaY;
-      }
-    };
-
-    container.addEventListener("wheel", handleWheel);
-
-    return () => container.removeEventListener("wheel", handleWheel);
-  }, [modalOpen]);
-
-  useEffect(() => {
-    const handleGlobalMouseUp = () => {
-      setIsDragging(false);
-    };
-
-    if (isDragging) {
-      document.addEventListener("mouseup", handleGlobalMouseUp);
-      return () => document.removeEventListener("mouseup", handleGlobalMouseUp);
-    }
-  }, [isDragging]);
 
   const yearToX = (year: number) => {
     const yearPosition =
@@ -323,6 +242,21 @@ export default function GraphsContainer() {
       config.timeline.startYear + yearPosition * config.timeline.getYearRange()
     );
   };
+
+  const {
+    debouncedCursorX,
+    hoveredYear,
+    isDragging,
+    handleMouseMove,
+    handleMouseDown,
+    handleMouseUp,
+    handleMouseLeave,
+  } = useCursor({
+    containerRef,
+    cursorLineRef,
+    xToYear,
+    modalOpen,
+  });
 
   const constrainTooltipPosition = (x: number, tooltipWidth: number) => {
     return Math.min(
@@ -446,7 +380,7 @@ export default function GraphsContainer() {
           config={config}
           yearToX={yearToX}
           totalHeight={totalHeight}
-          cursorX={cursorX}
+          cursorX={debouncedCursorX}
           modalOpen={modalOpen}
           hoveredYear={hoveredYear}
           showTimelineChart={showTimelineChart}
