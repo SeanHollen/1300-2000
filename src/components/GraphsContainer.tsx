@@ -163,13 +163,8 @@ export default function GraphsContainer() {
     setPointTooltip({
       x: pointX,
       y: pointY,
-      year: item.at,
-      start: item.start,
-      end: item.end,
-      content: item.label,
-      url: item.url,
-      imageUrl: item.imageUrl,
-      laneIndex: laneIndex,
+      item,
+      laneIndex,
     });
   };
 

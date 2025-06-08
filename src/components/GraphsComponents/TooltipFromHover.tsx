@@ -26,8 +26,8 @@ export default function hoveredPointTooltips({
   const isFirstLane = hoveredPointTooltip?.laneIndex === 0;
   const imageY = isFirstLane ? "50" : `-${imageHeight + 20}`;
   
-  const optimizedImageUrl = hoveredPointTooltip?.imageUrl 
-    ? getThumbnailUrl(hoveredPointTooltip.imageUrl, imageSize)
+  const optimizedImageUrl = hoveredPointTooltip?.item.imageUrl 
+    ? getThumbnailUrl(hoveredPointTooltip.item.imageUrl, imageSize)
     : null;
   
   return (
@@ -65,7 +65,13 @@ export default function hoveredPointTooltips({
                     maxWidth: "100%",
                     maxHeight: "100%",
                     objectFit: "contain",
-                    borderRadius: "4px"
+                    borderRadius: "4px",
+                    cursor: "pointer"
+                  }}
+                  onClick={() => {
+                    if (hoveredPointTooltip?.item.url) {
+                      window.open(hoveredPointTooltip.item.url, '_blank');
+                    }
                   }}
                 />
               </div>
@@ -94,10 +100,11 @@ export default function hoveredPointTooltips({
             fill="#374151"
           >
             {(() => {
-              const year = hoveredPointTooltip.start
-                ? `${hoveredPointTooltip.start}-${hoveredPointTooltip.end}`
-                : hoveredPointTooltip.year;
-              return `${hoveredPointTooltip.content} (${year})`;
+              const item = hoveredPointTooltip.item;
+              const year = item.start
+                ? `${item.start}-${item.end}`
+                : item.at;
+              return `${item.label} (${year})`;
             })()}
           </text>
         </g>
