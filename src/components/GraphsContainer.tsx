@@ -3,6 +3,7 @@ import { timelineData as _timelineData } from "../data/laneData/timelineData";
 import { lineChartData as _lineChartData } from "../data/lineChartData/historicalTrends";
 import { isMobileDevice } from "../utils/deviceUtils";
 import { useCursor } from "../utils/useCursor";
+import { createConfig } from "../utils/createConfig";
 import LineChartLegends from "./GraphsComponents/LineChartLegends";
 import LineChartLines from "./GraphsComponents/LineChartLines";
 import XAxis from "./GraphsComponents/XAxis";
@@ -13,7 +14,6 @@ import TooltipsPersistant from "./GraphsComponents/TooltipsPersistant";
 import TooltipFromHover from "./GraphsComponents/TooltipFromHover";
 import SettingsModal from "./GraphsComponents/SettingsModal";
 import "../styles/swimlanes.css";
-import { Config } from "./types/config";
 import { LaneItem, Lane, Point } from "./types/timelineData";
 import { Tooltip } from "./types/tooltipMeasurement";
 import { LineTS, TSPoint } from "./types/trendlineData";
@@ -113,65 +113,10 @@ export default function GraphsContainer() {
 
   const filteredTimeline = timelineState.filter((lane: Lane) => lane.toShow);
 
-  const config: Config = {
-    layout: {
-      svgPad: 140,
-      axisHeight: axisHeight,
-      windowHeight:
-        typeof window !== "undefined" ? window.innerHeight - 20 : 800,
-      bottomPadding: 20,
-    },
-    lane: {
-      percentages: {
-        lane: 0.1,
-        segment: 0.5,
-      },
-      getLaneDetails: () => {
-        const laneUnit =
-          (config.layout.windowHeight - 50) / (filteredTimeline.length + 0.5);
-        const laneThickness = laneUnit * config.lane.percentages.lane;
-        const lanePadding = laneUnit * (1 - config.lane.percentages.lane);
-        const segmentThickness = laneUnit * config.lane.percentages.segment;
-        return { laneUnit, laneThickness, lanePadding, segmentThickness };
-      },
-      getLaneYPos: (laneIndex: number) => {
-        return (
-          laneIndex * (laneDetails.laneThickness + laneDetails.lanePadding) +
-          config.layout.svgPad
-        );
-      },
-    },
-    point: {
-      radius: 12,
-      iconRadius: 20,
-    },
-    timeline: {
-      startYear: 1300,
-      endYear: 2000,
-      getYearRange: () => config.timeline.endYear - config.timeline.startYear,
-    },
-    tooltip: {
-      defaultWidth: 120,
-      defaultX: -60,
-      padding: 10,
-      yearLabelWidth: 40,
-      yearLabelHeight: 20,
-      yearLabelOffset: {
-        x: -20,
-        y: 12,
-      },
-      segment: {
-        x: -60,
-        y: -20,
-        width: 120,
-        height: 24,
-        textY: -8,
-      },
-      imagePreview: {
-        size: 240,
-      },
-    },
-  };
+  const config = useMemo(() => createConfig({
+    axisHeight,
+    filteredTimeline,
+  }), [axisHeight, filteredTimeline]);
 
   const laneDetails = config.lane.getLaneDetails();
 

@@ -930,7 +930,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Medici_Bank#Founding",
         category: "institution",
         imageUrl:
-          "https://bigthink.com/wp-content/uploads/2018/07/18623421.jpg?w=335",
+          "https://upload.wikimedia.org/wikipedia/commons/6/6b/Giovanni_di_Bicci_de%27_Medici_Portrait_by_Agnolo_Bronzino.jpg",
       },
       {
         type: "point",
@@ -2038,6 +2038,14 @@ export const timelineData = [
         category: "lightbulb",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/2/22/Da_Vinci_Vitruve_Luc_Viatour.jpg/330px-Da_Vinci_Vitruve_Luc_Viatour.jpg",
+      },
+      {
+        type: "point",
+        at: 1350,
+        label: "Petrarch",
+        url: "https://en.wikipedia.org/wiki/Petrarch",
+        category: "art",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Altichiero%2C_ritratto_di_Francesco_Petrarca.jpg"
       },
       {
         type: "point",
