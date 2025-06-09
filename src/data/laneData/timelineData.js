@@ -1988,7 +1988,7 @@ export const timelineData = [
         at: 1650,
         label: "Early Coffeehouses",
         url: "https://en.wikipedia.org/wiki/History_of_coffee",
-        category: "lightbulb",
+        category: "institution",
         imageUrl:
           "https://newenglandhistoricalsociety.com/wp-content/uploads/2016/10/new-england-coffee-houses.jpg",
       },
