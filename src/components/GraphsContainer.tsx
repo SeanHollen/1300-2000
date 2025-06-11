@@ -126,6 +126,36 @@ export default function GraphsContainer() {
     x: -60,
   });
 
+   useEffect(() => {
+    const prefetchImage = (imageUrl: string) => {
+      const link = document.createElement("link");
+      link.rel = "preload";
+      link.as = "image";
+      link.href = imageUrl;
+      // image is no where visible, but since it's part of the
+      // html, it's "cached" for use elsewhere
+      document.head.appendChild(link);
+    };
+    
+    const prefetchImages = () => {
+      const getStart = (item: LaneItem) => {
+        return item.type === "point" ? item.at : item.start;
+      };
+
+      const urls = timelineState
+        .flatMap((lane: Lane) => lane.items)
+        .sort((a: LaneItem, b: LaneItem) => getStart(a) - getStart(b))
+        .map((item: LaneItem) => getOptimizedImageUrl(item.imageUrl, config))
+        .filter((url: string) => url);
+        
+      urls.forEach((url: string) => {
+        prefetchImage(url);
+      });
+    };
+    
+    setTimeout(prefetchImages, 0);
+  }, []);
+
   const tooltipTextRef = (element: SVGTextElement | null) => {
     if (element) {
       const bbox = element.getBBox();

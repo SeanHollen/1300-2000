@@ -1416,7 +1416,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Galileo_Galilei",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Galileo_Galilei_%281564-1642%29_RMG_BHC2700.tiff/lossy-page1-1280px-Galileo_Galilei_%281564-1642%29_RMG_BHC2700.tiff.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/c/c7/Justus_Sustermans_-_Portrait_of_Galileo_Galilei_%28Uffizi%29.jpg",
       },
       {
         type: "point",
@@ -2270,7 +2270,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Chalisa_famine",
         category: "bad",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/en/thumb/9/9d/India1765.jpg/330px-India1765.jpg",
+          "https://upload.wikimedia.org/wikipedia/en/9/9d/India1765.jpg",
       },
       {
         type: "point",
