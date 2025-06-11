@@ -1372,7 +1372,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Council_of_Trent",
         category: "institution",
         imageUrl:
-          "https://lh6.googleusercontent.com/proxy/W5_IDuSINKF3g4_Q-DZLvZFRgQLC5lvYqwFYeXdGFI_8HG1Z3Vad0bpLWDR24MJOxKu42Bau3yzBs_kA9sG3q2ShRWKYFbcnZSVZCNHByz1fDH_oTbJFLPV33l1FZO93lS12ZCP8xGH57w",
+          "https://upload.wikimedia.org/wikipedia/commons/2/27/Francesco_Sicuro_The_college_of_the_jesuits.jpg",
       },
       {
         type: "point",
