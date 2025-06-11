@@ -1,6 +1,6 @@
 import { TooltipMeasurement, Tooltip } from "../types/tooltipMeasurement";
 import { Config } from "../types/config";
-import { getThumbnailUrl } from "../../utils/imageUtils";
+import { getOptimizedImageUrl } from "../../utils/imageUtils";
 
 type Props = {
   hoveredPointTooltip: Tooltip | null;
@@ -23,14 +23,10 @@ export default function hoveredPointTooltips({
 }: Props) {
   const imageSize = config.tooltip.imagePreview.size;
   const imageHeight = Math.round(imageSize * 0.67); // 3:2 aspect ratio
-  
+  const optimizedImageUrl = getOptimizedImageUrl(hoveredPointTooltip?.item.imageUrl, config);
   const isFirstLane = hoveredPointTooltip?.laneIndex === 0;
   const isTopOfPhoneScreen = isMobile && (hoveredPointTooltip?.laneIndex ?? 0) < 3;
   const imageY = (isFirstLane || isTopOfPhoneScreen) ? "50" : `-${imageHeight + 20}`;
-  
-  const optimizedImageUrl = hoveredPointTooltip?.item.imageUrl 
-    ? getThumbnailUrl(hoveredPointTooltip.item.imageUrl, imageSize)
-    : null;
   
   return (
     <>

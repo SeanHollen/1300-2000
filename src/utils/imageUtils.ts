@@ -1,4 +1,14 @@
+import { Config } from '../components/types/config';
 import { timelineData } from '../data/laneData/timelineData';
+
+export function getOptimizedImageUrl(imageUrl: string | undefined, config: Config) {
+  const imageSize = config.tooltip.imagePreview.size;
+  const optimizedImageUrl = imageUrl 
+    ? getThumbnailUrl(imageUrl, imageSize)
+    : null;
+
+  return optimizedImageUrl;
+}
 
 export const getThumbnailUrl = (imageUrl: string, size: number = 240) => {
   if (!imageUrl) return imageUrl;

@@ -17,6 +17,7 @@ import "../styles/swimlanes.css";
 import { LaneItem, Lane, Point } from "./types/timelineData";
 import { Tooltip } from "./types/tooltipMeasurement";
 import { LineTS, TSPoint } from "./types/trendlineData";
+import { getOptimizedImageUrl } from "../utils/imageUtils";
 import { USE_CACHE, DEFAULT_CHART_WIDTH, CATEGORY_STRATEGY, SHOW_TOOLTIP_IMAGES } from "../constants";
 
 export default function GraphsContainer() {

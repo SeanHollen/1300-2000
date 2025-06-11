@@ -1403,11 +1403,20 @@ export const timelineData = [
       {
         type: "point",
         at: 1543,
-        label: "Heliocentrism",
+        label: "Heliocentrism - Copernicus",
         url: "https://en.wikipedia.org/wiki/Copernican_Revolution",
         category: "lightbulb",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Apparent_retrograde_motion.gif/330px-Apparent_retrograde_motion.gif",
+      },
+      {
+        type: "point",
+        at: 1610,
+        label: "Heliocentrism - Galileo",
+        url: "https://en.wikipedia.org/wiki/Galileo_Galilei",
+        category: "lightbulb",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Galileo_Galilei_%281564-1642%29_RMG_BHC2700.tiff/lossy-page1-1280px-Galileo_Galilei_%281564-1642%29_RMG_BHC2700.tiff.jpg",
       },
       {
         type: "point",
@@ -1550,7 +1559,9 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1543,
+        at: 1544,
+        start: 1543,
+        end: 1543,
         label: "Dissection and Anatomy",
         url: "https://en.wikipedia.org/wiki/De_Humani_Corporis_Fabrica_Libri_Septem",
         category: "lightbulb",
