@@ -53,6 +53,7 @@ export default function SegmentTooltips({
                   >
                     <g transform={`translate(${constrainedX}, -25)`}>
                       <rect
+                        id="tooltips-persistant-rect-1"
                         x={config.tooltip.segment.x}
                         y={config.tooltip.segment.y}
                         width={config.tooltip.segment.width}
@@ -125,6 +126,7 @@ export default function SegmentTooltips({
                 >
                   <g transform={`translate(${constrainedX}, -25)`}>
                     <rect
+                      id="tooltips-persistant-rect-2"
                       x={config.tooltip.segment.x}
                       y={config.tooltip.segment.y}
                       width={config.tooltip.segment.width}

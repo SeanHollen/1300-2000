@@ -80,6 +80,7 @@ export default function hoveredPointTooltips({
           
           {/* Existing tooltip */}
           <rect
+            id="tooltip-hover-rect-1"
             x={tooltipMeasurements.x}
             y="-20"
             width={tooltipMeasurements.width}

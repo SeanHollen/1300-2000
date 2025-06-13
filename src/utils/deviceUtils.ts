@@ -3,3 +3,12 @@ export const isMobileDevice = (): boolean => {
     navigator.userAgent
   ) || window.innerWidth <= 768;
 };
+
+export const isSafari = (): boolean => {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return (
+    userAgent.includes('safari') && 
+    !userAgent.includes('chrome') && 
+    !userAgent.includes('android')
+  );
+};

@@ -99,11 +99,12 @@ export const useCursor = ({ containerRef, cursorLineRef, xToYear, modalOpen }: U
 
     const handleWheel = (e: WheelEvent) => {
       if (Math.abs(e.deltaY) > Math.abs(e.deltaX) && !modalOpen) {
+        e.preventDefault(); // Prevent default vertical scrolling
         document.documentElement.scrollLeft += e.deltaY;
       }
     };
 
-    container.addEventListener("wheel", handleWheel);
+    container.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => container.removeEventListener("wheel", handleWheel);
   }, [modalOpen]);

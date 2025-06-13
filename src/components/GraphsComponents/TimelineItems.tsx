@@ -57,6 +57,7 @@ export default function TimelineItems({
 
   const getSegment = (item: Segment) => {
     return <rect
+      id="timeline-items-rect-1"
       x={yearToX(item.start)}
       y={-laneDetails.segmentThickness / 2}
       width={yearToX(item.end) - yearToX(item.start)}

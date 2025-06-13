@@ -130,6 +130,7 @@ const CursorLine = forwardRef<CursorLineRef, Props>(({
         style={{ display: 'none' }}
       >
         <rect
+          id="cursor-line-rect-1"
           x="-20"
           y="8"
           width="40"
@@ -151,6 +152,7 @@ const CursorLine = forwardRef<CursorLineRef, Props>(({
       
       {/* Invisible overlay to capture mouse events - MUST be last to be on top */}
       <rect
+        id="cursor-line-rect-2"
         ref={rectRef}
         x={0}
         y={0}

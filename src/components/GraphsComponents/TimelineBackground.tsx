@@ -17,6 +17,7 @@ import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
 import { Config } from "../types/config";
 import { Lane } from "../types/timelineData";
+import { isSafari } from "../../utils/deviceUtils";
 
 const iconMap: Record<string, any> = {
   sword: GiCrossedSwords,
@@ -52,6 +53,7 @@ export default function TimelineBackground({
 }: Props) {
   const iconRadius = config.point.iconRadius;
   const laneDetails = config.lane.getLaneDetails();
+  const isSafariBrowser = isSafari()
 
   return (
     <>
@@ -62,13 +64,14 @@ export default function TimelineBackground({
           const IconComponent = iconMap[lane.icon] || FaCog;
           const iconOffs = window.screen.width + 200;
 
-          // mobile doesn't recognize the translate(0, y) of the parent <g>
-          const mobileYOffset = isMobile ? y : 0;
+          // mobile and safari don't recognize the translate(0, y) of the parent <g>
+          const mobileYOffset = (isMobile || isSafariBrowser) ? y : 0;
 
           return (
             <g key={`lane-${laneIndex}`} transform={`translate(0, ${y})`}>
               {/* Lane background */}
               <rect
+                id="timeline-background-rect-1"
                 x="0"
                 y={String(-laneDetails.laneThickness / 2)}
                 width={chartWidth}
