@@ -527,12 +527,50 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1770,
+        start: 1768,
+        end: 1779,
+        label: "Cook Expeditions",
+        url: "https://en.wikipedia.org/wiki/James_Cook",
+        category: "exchange",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/4a/Cook_Three_Voyages_59.png",
+      },
+      {
+        type: "point",
+        at: 1325,
+        label: "Founding of Tenochtitlan",
+        url: "https://en.wikipedia.org/wiki/Tenochtitlan#History",
+        category: "exchange",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/a/a1/Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_%289755215791%29.jpg",
+      },
+      {
+        type: "point",
+        at: 1557,
+        label: "Founding of Macau",
+        url: "https://en.wikipedia.org/wiki/History_of_Macau",
+        category: "exchange",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/3/31/Macau_Trade_Routes.png",
+      },
+      {
+        type: "point",
         at: 1521,
         label: "Fall of Tenochtitlan",
         url: "https://en.wikipedia.org/wiki/Fall_of_Tenochtitlan",
         category: "conflict",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Conquista-de-M%C3%A9xico-por-Cort%C3%A9s-Tenochtitlan-Painting.png/330px-Conquista-de-M%C3%A9xico-por-Cort%C3%A9s-Tenochtitlan-Painting.png",
+      },
+      {
+        type: "point",
+        at: 1371,
+        label: "Haijin Chinese Sea Ban",
+        url: "https://en.wikipedia.org/wiki/Haijin",
+        category: "document",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/1/16/Koxinga_territory.jpg",
       },
       {
         type: "point",
@@ -1660,6 +1698,15 @@ export const timelineData = [
     items: [
       {
         type: "point",
+        at: 1611,
+        label: "King James Bible Published",
+        url: "https://en.wikipedia.org/wiki/King_James_Version",
+        category: "lightbulb",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/5/5d/KJV-King-James-Version-Bible-first-edition-title-page-1611.jpg",
+      },
+      {
+        type: "point",
         at: 1873,
         label: "Meiji Restoration",
         url: "https://en.wikipedia.org/wiki/Meiji_Restoration",
@@ -1966,6 +2013,33 @@ export const timelineData = [
         category: "art",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg",
+      },
+      {
+        type: "point",
+        at: 1802,
+        label: "Beethoven",
+        url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6e/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+      },
+      {
+        type: "point",
+        at: 1889,
+        label: "van Gogh - Starry Night",
+        url: "https://en.wikipedia.org/wiki/The_Starry_Night",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      },
+      {
+        type: "point",
+        at: 1786,
+        label: "Mozart",
+        url: "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/47/Portrait_of_Wolfgang_Amadeus_Mozart_at_the_age_of_13_in_Verona%2C_1770.jpg",
       },
       {
         type: "segment",

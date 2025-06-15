@@ -258,7 +258,7 @@ export default function GraphsContainer() {
   const totalHeight =
     filteredTimeline.length *
       (laneDetails.laneThickness + laneDetails.lanePadding) +
-    config.layout.svgPad / 2;
+    config.layout.svgPad;
 
   const toggleSelectTrendline = (label: string, toShow: boolean) => {
     setLineChartState((prev: LaneItem[]) =>
