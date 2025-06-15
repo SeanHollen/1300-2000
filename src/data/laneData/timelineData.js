@@ -541,7 +541,7 @@ export const timelineData = [
         at: 1325,
         label: "Founding of Tenochtitlan",
         url: "https://en.wikipedia.org/wiki/Tenochtitlan#History",
-        category: "exchange",
+        category: "institution",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/a/a1/Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_%289755215791%29.jpg",
       },
@@ -550,7 +550,7 @@ export const timelineData = [
         at: 1557,
         label: "Founding of Macau",
         url: "https://en.wikipedia.org/wiki/History_of_Macau",
-        category: "exchange",
+        category: "institution",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/3/31/Macau_Trade_Routes.png",
       },
