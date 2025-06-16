@@ -307,6 +307,37 @@ export default function GraphsContainer() {
         cursor: isDragging ? "grabbing" : "default",
       }}
     >
+      {/* SEO Content - Hidden but accessible to search engines */}
+      <div className="sr-only" aria-hidden="true">
+        <h1>Interactive Historical Timeline: World Events 1300-2000 AD</h1>
+        <p>
+          Comprehensive visualization of major historical events spanning 700 years of world history. 
+          Explore wars and revolutions including the Hundred Years' War (1337-1453), Thirty Years' War (1618-1648), 
+          World War I (1914-1918), and World War II (1939-1945). Discover technological advances from the 
+          Industrial Revolution (1760-1840) to the Information Age (1947-2000). Learn about cultural movements, 
+          religious reforms including the Protestant Reformation (1517-1648), scientific discoveries, 
+          exploration and exchange including the Age of Exploration (1418-1620), and political transformations 
+          across medieval, renaissance, early modern, and modern periods.
+        </p>
+        <h2>Historical Categories Covered:</h2>
+        <ul>
+          <li>Wars and Revolutions: Major conflicts, battles, and political upheavals</li>
+          <li>Technology and Economics: Industrial revolutions, inventions, and economic systems</li>
+          <li>Exchange and Exploration: Trade routes, discoveries, and cultural exchange</li>
+          <li>Health and Disease: Pandemics, medical advances, and public health</li>
+          <li>Religion and Philosophy: Religious movements, reforms, and philosophical developments</li>
+          <li>Arts and Culture: Renaissance art, literature, music, and cultural movements</li>
+          <li>Farming and Climate: Agricultural developments and environmental changes</li>
+        </ul>
+        <h2>Key Historical Periods:</h2>
+        <ul>
+          <li>Late Medieval Period (1300-1500): Black Death, Hundred Years' War, Renaissance beginnings</li>
+          <li>Early Modern Period (1500-1800): Protestant Reformation, Age of Exploration, Scientific Revolution</li>
+          <li>Industrial Age (1800-1900): Industrial Revolution, nationalism, colonial expansion</li>
+          <li>Modern Era (1900-2000): World Wars, technological revolution, decolonization</li>
+        </ul>
+      </div>
+
       <LineChartLegends
         lineChartData={markedLineChartData}
         hoveredYear={hoveredYear}
