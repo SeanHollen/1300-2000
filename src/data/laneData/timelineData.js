@@ -2538,16 +2538,26 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1536,
+        at: 1570,
         label: "Potato Introduced to Old World",
-        url: "https://wilsonscountry.com/about-us/history",
+        url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_plants",
         category: "exchange",
         imageUrl: "https://ichef.bbci.co.uk/images/ic/1920xn/p0854bls.jpg.webp"
       },
       {
         type: "point",
-        at: 1493,
-        label: "Maize Introduced to Old World",
+        at: 1550,
+        label: "Tobacco Introduced to Old World",
+        url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_plants",
+        category: "exchange",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/3/3c/Chute_tobacco.JPG"
+      },
+      {
+        type: "point",
+        at: 1500,
+        start: 1493,
+        end: 1500,
+        label: "Maize, Beans, Peppers, & Squash Introduced to Old World",
         url: "https://en.wikipedia.org/wiki/Columbian_exchange#Of_plants",
         category: "exchange",
         imageUrl:
