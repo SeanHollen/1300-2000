@@ -24,6 +24,37 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1485,
+        start: 1455,
+        end: 1487,
+        label: "Wars of the Roses",
+        url: "https://en.wikipedia.org/wiki/Wars_of_the_Roses",
+        category: "conflict",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/f/fe/Minature-of-Queen-Isabella-and-her-army-from-royal-ms-15-e-iv-vol-2-f316v.jpg",
+      },
+      {
+        type: "point",
+        at: 1410,
+        label: "Battle of Grunwald",
+        url: "https://en.wikipedia.org/wiki/Battle_of_Grunwald",
+        category: "conflict",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/b/bb/Battle_of_Tannenberg.jpg",
+      },
+      {
+        type: "point",
+        at: 1312,
+        start: 1305,
+        end: 1314,
+        label: "Trials of the Knights Templar",
+        url: "https://en.wikipedia.org/wiki/Trials_of_the_Knights_Templar",
+        category: "conflict",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/9/91/Templars_on_Stake.jpg",
+      },
+      {
+        type: "point",
         at: 1492,
         label: "End of Reconquista",
         url: "https://en.wikipedia.org/wiki/Reconquista",
@@ -1354,6 +1385,24 @@ export const timelineData = [
         category: "lightbulb",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/De_Magnete_Title_Page_1628_edition.jpg/330px-De_Magnete_Title_Page_1628_edition.jpg",
+      },
+      {
+        type: "point",
+        at: 1347,
+        label: "University of Prague Founded",
+        url: "https://en.wikipedia.org/wiki/Charles_University",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/63/Medieval_Class_Bohemia.JPG",
+      },
+      {
+        type: "point",
+        at: 1443,
+        label: "Korean Alphabet",
+        url: "https://en.wikipedia.org/wiki/Origin_of_Hangul",
+        category: "lightbulb",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/en/d/de/King_Sejong_statue_inscription.jpg",
       },
       {
         type: "point",
