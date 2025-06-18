@@ -49,7 +49,7 @@ export const timelineData = [
         end: 1314,
         label: "Trials of the Knights Templar",
         url: "https://en.wikipedia.org/wiki/Trials_of_the_Knights_Templar",
-        category: "conflict",
+        category: "bad",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/9/91/Templars_on_Stake.jpg",
       },
