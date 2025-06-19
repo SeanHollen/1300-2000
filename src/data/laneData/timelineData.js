@@ -44,17 +44,6 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1312,
-        start: 1305,
-        end: 1314,
-        label: "Trials of the Knights Templar",
-        url: "https://en.wikipedia.org/wiki/Trials_of_the_Knights_Templar",
-        category: "bad",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/9/91/Templars_on_Stake.jpg",
-      },
-      {
-        type: "point",
         at: 1492,
         label: "End of Reconquista",
         url: "https://en.wikipedia.org/wiki/Reconquista",
@@ -1745,6 +1734,17 @@ export const timelineData = [
     icon: "bible",
     toShow: true,
     items: [
+      {
+        type: "point",
+        at: 1312,
+        start: 1305,
+        end: 1314,
+        label: "Trials of the Knights Templar",
+        url: "https://en.wikipedia.org/wiki/Trials_of_the_Knights_Templar",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/9/91/Templars_on_Stake.jpg",
+      },
       {
         type: "point",
         at: 1611,
