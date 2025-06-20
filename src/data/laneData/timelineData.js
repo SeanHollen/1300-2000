@@ -487,6 +487,17 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1324,
+        start: 1324,
+        end: 1325,
+        label: "Mansa Musa Pilgrimage",
+        url: "https://en.wikipedia.org/wiki/Mansa_Musa",
+        category: "exchange",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/46/Catalan_Atlas_BNF_Sheet_6_Mansa_Musa_%28cropped%29.jpg",
+      },
+      {
+        type: "point",
         at: 1419,
         start: 1418,
         end: 1498,
@@ -1747,6 +1758,26 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1963,
+        start: 1954,
+        end: 1968,
+        label: "U.S Civil Rights Movement",
+        url: "https://en.wikipedia.org/wiki/Civil_rights_movement",
+        category: "lightbulb",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/8/8b/Martin_Luther_King_Jr_National_Historic_Site_%2836233249121%29.jpg",
+      },
+      {
+        type: "point",
+        at: 1994,
+        label: "End of South African Apartheid",
+        url: "https://en.wikipedia.org/wiki/Apartheid",
+        category: "document",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/2/22/Monomotapa_Map.jpg",
+      },
+      {
+        type: "point",
         at: 1611,
         label: "King James Bible Published",
         url: "https://en.wikipedia.org/wiki/King_James_Version",
@@ -1983,12 +2014,34 @@ export const timelineData = [
     items: [
       {
         type: "point",
+        at: 1420,
+        start: 1406,
+        end: 1420,
+        label: "Forbidden City Built",
+        url: "https://en.wikipedia.org/wiki/Forbidden_City",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/0/08/Die_Gartenlaube_%281853%29_b_445.jpg",
+      },
+      {
+        type: "point",
         at: 1321,
         label: "Divine Comedy - Dante",
         url: "https://en.wikipedia.org/wiki/Divine_Comedy",
         category: "art",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Dante_Domenico_di_Michelino.jpg/330px-Dante_Domenico_di_Michelino.jpg",
+      },
+      {
+        type: "point",
+        at: 1867,
+        start: 1850,
+        end: 1910,
+        label: "Leo Tolstoy",
+        url: "https://en.wikipedia.org/wiki/Leo_Tolstoy",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/1/1c/L._N._Tolstoy%2C_by_Prokudin-Gorsky_%28cropped%29.jpg",
       },
       {
         type: "point",
@@ -2327,6 +2380,14 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Feudalism",
       },
       {
+        type: "segment",
+        start: 1865,
+        end: 1895,
+        label: "The Wild West",
+        category: "institution",
+        url: "https://en.wikipedia.org/wiki/American_frontier",
+      },
+      {
         type: "point",
         at: 1815,
         label: "Mount Tambora Eruption",
@@ -2366,15 +2427,6 @@ export const timelineData = [
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/3/3b/FaminesMapOfIndia1800-1885.jpg",
       },
-      // {
-      //   type: "point",
-      //   at: 1931,
-      //   label: "Floods in China",
-      //   url: "https://en.wikipedia.org/wiki/1931_China_floods",
-      //   category: "bad",
-      //   imageUrl:
-      //     "https://upload.wikimedia.org/wikipedia/commons/f/fc/Hankow_city_hall.jpg",
-      // },
       {
         type: "point",
         at: 1556,
