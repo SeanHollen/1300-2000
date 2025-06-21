@@ -23,6 +23,7 @@ export type Point = {
   at: number;
   start?: number;
   end?: number;
+  ongoing?: boolean;
   url: string;
   imageUrl?: string;
   label: string;

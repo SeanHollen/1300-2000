@@ -103,7 +103,7 @@ export default function hoveredPointTooltips({
             {(() => {
               const item = hoveredPointTooltip.item;
               const year = item.start
-                ? `${item.start}-${item.end}`
+                ? `${item.start}-${item.ongoing ? "present" : item.end}`
                 : item.at;
               return `${item.label} (${year})`;
             })()}

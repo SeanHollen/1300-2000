@@ -35,6 +35,17 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1839,
+        start: 1839,
+        end: 1842,
+        label: "First Opium War",
+        url: "https://en.wikipedia.org/wiki/Opium_Wars",
+        category: "conflict",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/8/89/Destroying_Chinese_war_junks%2C_by_E._Duncan_%281843%29.jpg",
+      },
+      {
+        type: "point",
         at: 1410,
         label: "Battle of Grunwald",
         url: "https://en.wikipedia.org/wiki/Battle_of_Grunwald",
@@ -1182,6 +1193,18 @@ export const timelineData = [
         category: "bad",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Man_being_injected_by_doctor%2C_during_the_outbreak_of_bubonic_Wellcome_V0029287.jpg/330px-Man_being_injected_by_doctor%2C_during_the_outbreak_of_bubonic_Wellcome_V0029287.jpg",
+      },
+      {
+        type: "point",
+        at: 1982,
+        start: 1981,
+        end: 2000,
+        ongoing: true,
+        label: "HIV/AIDS",
+        url: "https://en.wikipedia.org/wiki/Epidemiology_of_HIV/AIDS",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/1/1f/World_map_of_HIV_prevalence%2C_2023.png",
       },
       {
         type: "point",
