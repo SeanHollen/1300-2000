@@ -1781,6 +1781,16 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1382,
+        start: 1328,
+        end: 1384,
+        label: "John Wycliffe",
+        url: "https://en.wikipedia.org/wiki/John_Wycliffe",
+        category: "lightbulb",
+        imageUrl: "https://upload.wikimedia.org/wikipedia/commons/7/7c/Wycliffe%27s_Bible.jpg"
+      },
+      {
+        type: "point",
         at: 1963,
         start: 1954,
         end: 1968,
@@ -2251,11 +2261,23 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1350,
+        at: 1341,
+        start: 1330,
+        end: 1384,
         label: "Petrarch",
         url: "https://en.wikipedia.org/wiki/Petrarch",
         category: "art",
         imageUrl: "https://upload.wikimedia.org/wikipedia/commons/d/d9/Altichiero%2C_ritratto_di_Francesco_Petrarca.jpg"
+      },
+      {
+        type: "point",
+        at: 1350,
+        start: 1348,
+        end: 1353,
+        label: "The Decameron",
+        url: "https://en.wikipedia.org/wiki/The_Decameron",
+        category: "art",
+        imageUrl: "https://the-public-domain-review.imgix.net/collections/the-decameron/Boccaccio_-_Decameron+-+1592+-+thumb.jpg"
       },
       {
         type: "point",
