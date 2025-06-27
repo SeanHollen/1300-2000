@@ -509,6 +509,15 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1606,
+        label: "Exploration of Australia",
+        url: "https://en.wikipedia.org/wiki/European_exploration_of_Australia",
+        category: "exchange",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/9/90/Thevenot_-_Hollandia_Nova_detecta_1644.png",
+      },
+      {
+        type: "point",
         at: 1419,
         start: 1418,
         end: 1498,
@@ -749,6 +758,15 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Information_Age",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Schenker_VIA14_Laptop_asv2021-01.jpg/330px-Schenker_VIA14_Laptop_asv2021-01.jpg",
+      },
+      {
+        type: "point",
+        at: 1944,
+        label: "Bretton Woods",
+        url: "https://en.wikipedia.org/wiki/Bretton_Woods_system",
+        category: "document",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/c/c6/Prince_of_Wales-5.jpg",
       },
       {
         type: "point",
@@ -2067,6 +2085,28 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1937,
+        start: 1881,
+        end: 1973,
+        label: "Picasso",
+        url: "https://en.wikipedia.org/wiki/Pablo_Picasso",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/en/7/74/PicassoGuernica.jpg",
+      },
+      {
+        type: "point",
+        at: 1967,
+        start: 1960,
+        end: 1970,
+        label: "The Beatles",
+        url: "https://en.wikipedia.org/wiki/The_Beatles",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d8/The_Beatles_members_at_New_York_City_in_1964.jpg",
+      },
+      {
+        type: "point",
         at: 1867,
         start: 1850,
         end: 1910,
@@ -2157,6 +2197,15 @@ export const timelineData = [
         category: "art",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/6/6e/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+      },
+      {
+        type: "point",
+        at: 1818,
+        label: "Frankenstein",
+        url: "https://en.wikipedia.org/wiki/Frankenstein",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/e/e6/Frontispiece_to_Frankenstein_1831.jpg",
       },
       {
         type: "point",
@@ -2442,6 +2491,24 @@ export const timelineData = [
           "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/1815_tambora_explosion-2.png/330px-1815_tambora_explosion-2.png",
       },
       {
+        type: "point",
+        at: 1816,
+        label: "Year Without a Summer",
+        url: "https://en.wikipedia.org/wiki/Year_Without_a_Summer",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6d/Caspar_David_Friedrich_-_Two_Men_by_the_Sea_-_WGA8249.jpg",
+      },
+      {
+        type: "point",
+        at: 1883,
+        label: "Krakatoa Eruption",
+        url: "https://en.wikipedia.org/wiki/1883_eruption_of_Krakatoa",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/49/Krakatoa_eruption_lithograph.jpg",
+      },
+      {
         type: "segment",
         start: 1920,
         end: 2000,
@@ -2460,6 +2527,17 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/British_Agricultural_Revolution",
         category: "lightbulb",
         imageUrl: "https://www.worldhistory.org/uploads/images/17160.png?v=1748746208-1678200275"
+      },
+      {
+        type: "point",
+        at: 1333,
+        start: 1333,
+        end: 1337,
+        label: "Famine in China",
+        url: "https://en.wikipedia.org/wiki/Chinese_famine_of_1333%E2%80%931337",
+        category: "bad",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/41/Engraving-FamineRelief-China.gif",
       },
       {
         type: "point",
