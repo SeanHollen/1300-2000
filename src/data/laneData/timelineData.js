@@ -2327,7 +2327,7 @@ export const timelineData = [
         at: 1922,
         start: 1888,
         end: 1965,
-        label: "T. S. Eliot",
+        label: "TS Eliot",
         url: "https://en.wikipedia.org/wiki/T._S._Eliot",
         category: "art",
         imageUrl:
