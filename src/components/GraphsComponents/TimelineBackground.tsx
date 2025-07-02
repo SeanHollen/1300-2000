@@ -12,6 +12,7 @@ import {
   GiGears,
   GiQuillInk,
 } from "react-icons/gi";
+import { MdDesignServices } from "react-icons/md";
 import { FaGears, FaBookBible } from "react-icons/fa6";
 import { IoTelescopeSharp } from "react-icons/io5";
 import { LuWheat } from "react-icons/lu";
@@ -34,6 +35,7 @@ const iconMap: Record<string, any> = {
   cloud: FaCloud,
   wheat: LuWheat,
   quill: GiQuillInk,
+  pen: MdDesignServices
 };
 
 type Props = {

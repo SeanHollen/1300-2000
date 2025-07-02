@@ -589,15 +589,6 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1325,
-        label: "Founding of Tenochtitlan",
-        url: "https://en.wikipedia.org/wiki/Tenochtitlan#History",
-        category: "institution",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/a/a1/Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_%289755215791%29.jpg",
-      },
-      {
-        type: "point",
         at: 1557,
         label: "Founding of Macau",
         url: "https://en.wikipedia.org/wiki/History_of_Macau",
@@ -2059,21 +2050,10 @@ export const timelineData = [
     ],
   },
   {
-    lane: "Philosophy and Art",
+    lane: "Philosophy and Literature",
     icon: "quill",
     toShow: true,
     items: [
-      {
-        type: "point",
-        at: 1420,
-        start: 1406,
-        end: 1420,
-        label: "Forbidden City Built",
-        url: "https://en.wikipedia.org/wiki/Forbidden_City",
-        category: "institution",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/0/08/Die_Gartenlaube_%281853%29_b_445.jpg",
-      },
       {
         type: "point",
         at: 1321,
@@ -2082,28 +2062,6 @@ export const timelineData = [
         category: "art",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Dante_Domenico_di_Michelino.jpg/330px-Dante_Domenico_di_Michelino.jpg",
-      },
-      {
-        type: "point",
-        at: 1937,
-        start: 1881,
-        end: 1973,
-        label: "Picasso",
-        url: "https://en.wikipedia.org/wiki/Pablo_Picasso",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/en/7/74/PicassoGuernica.jpg",
-      },
-      {
-        type: "point",
-        at: 1967,
-        start: 1960,
-        end: 1970,
-        label: "The Beatles",
-        url: "https://en.wikipedia.org/wiki/The_Beatles",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/d/d8/The_Beatles_members_at_New_York_City_in_1964.jpg",
       },
       {
         type: "point",
@@ -2162,77 +2120,12 @@ export const timelineData = [
       },
       {
         type: "point",
-        at: 1492,
-        start: 1492,
-        end: 1498,
-        label: "The Last Supper - da Vinci",
-        url: "https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo)",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/330px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
-      },
-      {
-        type: "point",
-        at: 1434,
-        label: "Arnolfini Portrait",
-        url: "https://en.wikipedia.org/wiki/Arnolfini_Portrait",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_Arnolfini_portrait_%281434%29.jpg/330px-The_Arnolfini_portrait_%281434%29.jpg",
-      },
-      {
-        type: "point",
-        at: 1749,
-        label: "Bach – Mass in B Minor",
-        url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg",
-      },
-      {
-        type: "point",
-        at: 1802,
-        label: "Beethoven",
-        url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/6/6e/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
-      },
-      {
-        type: "point",
         at: 1818,
         label: "Frankenstein",
         url: "https://en.wikipedia.org/wiki/Frankenstein",
         category: "art",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/e/e6/Frontispiece_to_Frankenstein_1831.jpg",
-      },
-      {
-        type: "point",
-        at: 1889,
-        label: "van Gogh - Starry Night",
-        url: "https://en.wikipedia.org/wiki/The_Starry_Night",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
-      },
-      {
-        type: "point",
-        at: 1786,
-        label: "Mozart",
-        url: "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
-        category: "art",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/4/47/Portrait_of_Wolfgang_Amadeus_Mozart_at_the_age_of_13_in_Verona%2C_1770.jpg",
-      },
-      {
-        type: "segment",
-        start: 1800,
-        end: 1850,
-        label: "Romanticism",
-        url: "https://en.wikipedia.org/wiki/Romanticism",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/330px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
       },
       {
         type: "segment",
@@ -2242,15 +2135,6 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Age_of_Enlightenment",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Les_salons_au_XVIIIe_si%C3%A8cle_-_Histoire_Image.jpg/330px-Les_salons_au_XVIIIe_si%C3%A8cle_-_Histoire_Image.jpg",
-      },
-      {
-        type: "segment",
-        start: 1400,
-        end: 1600,
-        label: "Renaissance",
-        url: "https://en.wikipedia.org/wiki/Renaissance",
-        imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg/330px-El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg",
       },
       {
         type: "point",
@@ -2440,6 +2324,237 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1922,
+        start: 1888,
+        end: 1965,
+        label: "T. S. Eliot",
+        url: "https://en.wikipedia.org/wiki/T._S._Eliot",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/2/26/Thomas_Stearns_Eliot_by_Lady_Ottoline_Morrell_%281934%29.jpg",
+      },
+    ],
+  },
+  {
+    lane: "Art and Architecture",
+    icon: "pen",
+    toShow: true,
+    items: [
+      {
+        type: "point",
+        at: 1325,
+        label: "Founding of Tenochtitlan",
+        url: "https://en.wikipedia.org/wiki/Tenochtitlan#History",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/a/a1/Painting_of_Tenochtitlan-Tlatelolco_on_Lake_Texcoco_%289755215791%29.jpg",
+      },
+      {
+        type: "point",
+        at: 1438,
+        start: 1438,
+        end: 1472,
+        label: "Founding of Machu Picchu",
+        url: "https://en.wikipedia.org/wiki/Machu_Picchu",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/b/bb/Machu_Picchu%2C_2023_%28012%29.jpg",
+      },
+      {
+        type: "point",
+        at: 1436,
+        start: 1296,
+        end: 1436,
+        label: "Florence Cathedral - Brunelleschi",
+        url: "https://en.wikipedia.org/wiki/Florence_Cathedral",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/c/c7/Cattedrale_di_Santa_Maria_del_Fiore_%E2%80%93_Il_Duomo_di_Firenze.jpg",
+      },
+      {
+        type: "point",
+        at: 1887,
+        start: 1887,
+        end: 1889,
+        label: "Eiffel Tower",
+        url: "https://en.wikipedia.org/wiki/Eiffel_Tower",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/7/72/Exposition_Universelle_de_Paris_1889_-_Universit%C3%A4ts-_und_Landesbibliothek_Darmstadt.jpg",
+      },
+      {
+        type: "point",
+        at: 1617,
+        start: 1609,
+        end: 1617,
+        label: "Blue Mosque",
+        url: "https://en.wikipedia.org/wiki/Blue_Mosque,_Istanbul",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/0/03/Istanbul_%2834223582516%29_%28cropped%29.jpg",
+      },
+      {
+        type: "point",
+        at: 1508,
+        start: 1505,
+        end: 1508,
+        label: "Sistine Chapel",
+        url: "https://en.wikipedia.org/wiki/Sistine_Chapel",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/5/58/Chapelle_sixtine_plafond.jpg",
+      },
+      {
+        type: "point",
+        at: 1653,
+        start: 1631,
+        end: 1653,
+        label: "Taj Majal",
+        url: "https://en.wikipedia.org/wiki/Taj_Mahal",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/1/1d/Taj_Mahal_%28Edited%29.jpeg",
+      },
+      {
+        type: "point",
+        at: 1561,
+        label: "Saint Basil's Cathedral",
+        url: "https://en.wikipedia.org/wiki/Saint_Basil%27s_Cathedral",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/1/18/Saint_Basil%27s_Cathedral_in_Moscow.jpg",
+      },
+      {
+        type: "point",
+        at: 1931,
+        start: 1930,
+        end: 1931,
+        label: "Empire State Building",
+        url: "https://en.wikipedia.org/wiki/Empire_State_Building",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/1/1a/NARA_Empire_State_Building.jpg",
+      },
+      {
+        type: "point",
+        at: 1345,
+        start: 1163,
+        end: 1345,
+        label: "Notre Dame Completed",
+        url: "https://en.wikipedia.org/wiki/Notre-Dame_de_Paris",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/f/f7/Notre-Dame_de_Paris%2C_4_October_2017.jpg",
+      },
+      {
+        type: "point",
+        at: 1420,
+        start: 1406,
+        end: 1420,
+        label: "Forbidden City Built",
+        url: "https://en.wikipedia.org/wiki/Forbidden_City",
+        category: "institution",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/0/08/Die_Gartenlaube_%281853%29_b_445.jpg",
+      },
+      {
+        type: "point",
+        at: 1937,
+        start: 1881,
+        end: 1973,
+        label: "Picasso",
+        url: "https://en.wikipedia.org/wiki/Pablo_Picasso",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/en/7/74/PicassoGuernica.jpg",
+      },
+      {
+        type: "point",
+        at: 1967,
+        start: 1960,
+        end: 1970,
+        label: "The Beatles",
+        url: "https://en.wikipedia.org/wiki/The_Beatles",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/d/d8/The_Beatles_members_at_New_York_City_in_1964.jpg",
+      },
+      {
+        type: "point",
+        at: 1492,
+        start: 1492,
+        end: 1498,
+        label: "The Last Supper - da Vinci",
+        url: "https://en.wikipedia.org/wiki/The_Last_Supper_(Leonardo)",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg/330px-The_Last_Supper_-_Leonardo_Da_Vinci_-_High_Resolution_32x16.jpg",
+      },
+      {
+        type: "point",
+        at: 1434,
+        label: "Arnolfini Portrait",
+        url: "https://en.wikipedia.org/wiki/Arnolfini_Portrait",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/The_Arnolfini_portrait_%281434%29.jpg/330px-The_Arnolfini_portrait_%281434%29.jpg",
+      },
+      {
+        type: "point",
+        at: 1749,
+        label: "Bach – Mass in B Minor",
+        url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6a/Johann_Sebastian_Bach.jpg",
+      },
+      {
+        type: "point",
+        at: 1802,
+        label: "Beethoven",
+        url: "https://en.wikipedia.org/wiki/Mass_in_B_minor",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/6/6e/Joseph_Karl_Stieler%27s_Beethoven_mit_dem_Manuskript_der_Missa_solemnis.jpg",
+      },
+      {
+        type: "point",
+        at: 1889,
+        label: "van Gogh - Starry Night",
+        url: "https://en.wikipedia.org/wiki/The_Starry_Night",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg",
+      },
+      {
+        type: "point",
+        at: 1786,
+        label: "Mozart",
+        url: "https://en.wikipedia.org/wiki/Wolfgang_Amadeus_Mozart",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/4/47/Portrait_of_Wolfgang_Amadeus_Mozart_at_the_age_of_13_in_Verona%2C_1770.jpg",
+      },
+      {
+        type: "segment",
+        start: 1800,
+        end: 1850,
+        label: "Romanticism",
+        url: "https://en.wikipedia.org/wiki/Romanticism",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg/330px-Caspar_David_Friedrich_-_Wanderer_above_the_sea_of_fog.jpg",
+      },
+      {
+        type: "segment",
+        start: 1400,
+        end: 1600,
+        label: "Renaissance",
+        url: "https://en.wikipedia.org/wiki/Renaissance",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg/330px-El_nacimiento_de_Venus%2C_por_Sandro_Botticelli.jpg",
+      },
+      {
+        type: "point",
         at: 1504,
         start: 1501,
         end: 1504,
@@ -2457,7 +2572,7 @@ export const timelineData = [
         category: "art",
         imageUrl:
           "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Donatello%2C_David%2C_bronze%2C_1435-40%2C_Florence%2C_Bargello%2C_detail.jpg/330px-Donatello%2C_David%2C_bronze%2C_1435-40%2C_Florence%2C_Bargello%2C_detail.jpg",
-      },
+      }
     ],
   },
   {
