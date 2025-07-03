@@ -33,5 +33,6 @@ npm run dev
 * Health and Disease
 * Science and Education
 * Religion and Ordinance
-* Philosophy and Art
+* Philosophy and Literature
+* Art and Architecture
 * Land and Agriculture
