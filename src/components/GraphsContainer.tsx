@@ -41,18 +41,10 @@ export default function GraphsContainer() {
     return _timelineData.map((item) => ({ ...item }));
   };
 
-  const [lineChartState, setLineChartState] = useState(() => {
-    const savedState = localStorage.getItem("lineChartState");
-    return USE_CACHE && savedState
-      ? JSON.parse(savedState)
-      : getLineChartState();
-  });
+  const [lineChartState, setLineChartState] = useState(getLineChartState());
   (window as any).lineChartState = lineChartState;
 
-  const [timelineState, setTimelineState] = useState(() => {
-    const savedState = localStorage.getItem("timelineState");
-    return USE_CACHE && savedState ? JSON.parse(savedState) : getTimelineData();
-  });
+  const [timelineState, setTimelineState] = useState(getTimelineData());
   (window as any).timelineState = timelineState;
 
   const [chartWidth, setChartWidth] = useState(() => {
