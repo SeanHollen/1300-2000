@@ -3,7 +3,7 @@ export type LineTS = {
   label: string;
   shortLabel: string;
   color: string;
-  prefix: string;
+  prefix?: string;
   unit: string;
   toShow: boolean;
   range: Range;

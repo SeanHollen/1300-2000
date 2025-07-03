@@ -38,13 +38,13 @@ export default function GraphsContainer() {
   };
 
   const getTimelineData = () => {
-    return _timelineData.map((item) => ({ ...item }));
+    return _timelineData.map((item) => ({ ...item })) as Lane[];
   };
 
-  const [lineChartState, setLineChartState] = useState(getLineChartState());
+  const [lineChartState, setLineChartState] = useState<LineTS[]>(getLineChartState());
   (window as any).lineChartState = lineChartState;
 
-  const [timelineState, setTimelineState] = useState(getTimelineData());
+  const [timelineState, setTimelineState] = useState<Lane[]>(getTimelineData());
   (window as any).timelineState = timelineState;
 
   const [chartWidth, setChartWidth] = useState(() => {
@@ -138,7 +138,7 @@ export default function GraphsContainer() {
         .flatMap((lane: Lane) => lane.items)
         .sort((a: LaneItem, b: LaneItem) => getStart(a) - getStart(b))
         .map((item: LaneItem) => getOptimizedImageUrl(item.imageUrl, config))
-        .filter((url: string) => url);
+        .filter((url) => url !== null);
         
       urls.forEach((url: string) => {
         prefetchImage(url);
@@ -253,16 +253,16 @@ export default function GraphsContainer() {
     config.layout.svgPad;
 
   const toggleSelectTrendline = (label: string, toShow: boolean) => {
-    setLineChartState((prev: LaneItem[]) =>
-      prev.map((item: LaneItem) =>
+    setLineChartState((prev: LineTS[]) =>
+      prev.map((item: LineTS) =>
         item.label === label ? { ...item, toShow: toShow } : item
       )
     );
   };
 
   const deselectAllTrendlines = () => {
-    setLineChartState((prev: LaneItem[]) =>
-      prev.map((item: LaneItem) => ({ ...item, toShow: false }))
+    setLineChartState((prev: LineTS[]) =>
+      prev.map((item: LineTS) => ({ ...item, toShow: false }))
     );
   };
 

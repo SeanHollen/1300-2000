@@ -2459,6 +2459,28 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1310,
+        start: 1254,
+        end: 1322,
+        label: "Zhao Mengfu",
+        url: "https://en.wikipedia.org/wiki/Zhao_Mengfu",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/10_ZhaoMengfu-_Hoopoe_on_Bamboo._Shanghai_mus..jpg/2560px-10_ZhaoMengfu-_Hoopoe_on_Bamboo._Shanghai_mus..jpg",
+      },
+      {
+        type: "point",
+        at: 1470,
+        start: 1420,
+        end: 1506,
+        label: "Sesshū Tōyō",
+        url: "https://en.wikipedia.org/wiki/Sessh%C5%AB_T%C5%8Dy%C5%8D",
+        category: "art",
+        imageUrl:
+          "https://upload.wikimedia.org/wikipedia/commons/7/74/Flowers_and_Birds_of_the_Four_Seasons%2C_attributed_to_Sesshu_Toyo_%281420-1506%29%2C_Muromachi_period%2C_15th_century%2C_color_on_paper%2C_view_3_-_Tokyo_National_Museum_-_DSC05854.JPG",
+      },
+      {
+        type: "point",
         at: 1937,
         start: 1881,
         end: 1973,
