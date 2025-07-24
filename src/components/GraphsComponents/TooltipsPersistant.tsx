@@ -1,6 +1,7 @@
 import { Lane } from "../types/timelineData";
 import { Config } from "../types/config";
 import { TooltipMeasurement } from "../types/tooltipMeasurement";
+import { useState, useEffect } from "react";
 
 type Props = {
   data: Lane[];
@@ -12,6 +13,53 @@ type Props = {
   showAllPointTooltips: boolean;
 };
 
+function calculateSegmentTooltipPosition(
+  segmentStartX: number,
+  segmentEndX: number,
+  tooltipText: string,
+  scrollLeft: number,
+  viewportWidth: number,
+  padding: number
+): number {
+  const segmentWidth = segmentEndX - segmentStartX;
+  const segmentCenterX = segmentStartX + segmentWidth / 2;
+  
+  const estimatedTextWidth = tooltipText.length * 6.5;
+  const tooltipWidth = Math.max(estimatedTextWidth + 20, 60);
+  
+  const tooltipLeftEdge = segmentCenterX - tooltipWidth / 2;
+  const tooltipRightEdge = segmentCenterX + tooltipWidth / 2;
+  
+  const minAllowedX = scrollLeft + padding;
+  const maxAllowedX = scrollLeft + viewportWidth - padding;
+  
+  if (tooltipLeftEdge >= minAllowedX && tooltipRightEdge <= maxAllowedX) {
+    return segmentCenterX;
+  }
+  
+  const maxLeftShift = Math.min(segmentWidth, tooltipWidth / 2);
+  const maxRightShift = Math.min(segmentWidth, tooltipWidth / 2);
+  
+  const leftmostTooltipCenter = segmentStartX + maxLeftShift;
+  const rightmostTooltipCenter = segmentEndX - maxRightShift;
+  
+  if (segmentWidth < tooltipWidth) {
+    return segmentCenterX;
+  }
+  
+  let adjustedX = segmentCenterX;
+  
+  if (tooltipLeftEdge < minAllowedX) {
+    const neededShift = minAllowedX - tooltipLeftEdge;
+    adjustedX = Math.min(segmentCenterX + neededShift, rightmostTooltipCenter);
+  } else if (tooltipRightEdge > maxAllowedX) {
+    const neededShift = tooltipRightEdge - maxAllowedX;
+    adjustedX = Math.max(segmentCenterX - neededShift, leftmostTooltipCenter);
+  }
+  
+  return adjustedX;
+}
+
 export default function SegmentTooltips({
   data,
   yearToX,
@@ -21,6 +69,31 @@ export default function SegmentTooltips({
   timelineState,
   showAllPointTooltips,
 }: Props) {
+  const [scrollLeft, setScrollLeft] = useState(0);
+  const [viewportWidth, setViewportWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1000);
+
+  useEffect(() => {
+    const updateScrollPosition = () => {
+      const currentScrollLeft = document.documentElement.scrollLeft || document.body.scrollLeft || window.pageXOffset;
+      const currentViewportWidth = window.innerWidth;
+      
+      setScrollLeft(currentScrollLeft);
+      setViewportWidth(currentViewportWidth);
+    };
+
+    updateScrollPosition();
+
+    const handleScroll = () => {
+      updateScrollPosition();
+    };
+
+    document.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      document.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
     <>
       {data.map((lane, laneIndex) => {
@@ -39,11 +112,17 @@ export default function SegmentTooltips({
                 }
 
                 const segmentX = yearToX(item.start);
-                const segmentWidth = yearToX(item.end) - yearToX(item.start);
-                const centerX = segmentX + segmentWidth / 2;
-                const constrainedX = constrainTooltipPosition(
-                  centerX,
-                  tooltipMeasurements.width
+                const segmentEndX = yearToX(item.end);
+                
+                const constrainedX = calculateSegmentTooltipPosition(
+                  segmentX,
+                  segmentEndX,
+                  `${item.label} (${item.start}-${
+                    item.ongoing ? "present" : item.end
+                  })`,
+                  scrollLeft,
+                  viewportWidth,
+                  config.tooltip.padding
                 );
 
                 return (
