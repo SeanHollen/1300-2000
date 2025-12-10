@@ -2620,6 +2620,16 @@ export const timelineData = [
       },
       {
         type: "point",
+        start: 1345,
+        end: 1346,
+        label: "Volcanic Eruptions, Italian grain crisis",
+        url: "https://www.cam.ac.uk/stories/volcanoes-black-death",
+        category: "bad",
+        imageUrl:
+          "https://www.cam.ac.uk/sites/default/files/shorthand/251968/RecB8QP39p/assets/PmRHjALscp/pyrenees_cabanastreeline_11.2017-sh-900x600.jpg",
+      },
+      {
+        type: "point",
         at: 1815,
         label: "Mount Tambora Eruption",
         url: "https://en.wikipedia.org/wiki/1815_eruption_of_Mount_Tambora",
