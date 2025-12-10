@@ -2620,6 +2620,7 @@ export const timelineData = [
       },
       {
         type: "point",
+        at: 1345,
         start: 1345,
         end: 1346,
         label: "Volcanic Eruptions, Italian grain crisis",
