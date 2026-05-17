@@ -10,16 +10,25 @@ export function getOptimizedImageUrl(imageUrl: string | undefined, config: Confi
   return optimizedImageUrl;
 }
 
+// Wikimedia only serves thumbnails at these widths; other sizes return 400.
+// https://www.mediawiki.org/wiki/Common_thumbnail_sizes
+const WIKIMEDIA_THUMB_SIZES = [20, 40, 60, 120, 250, 330, 500, 960, 1280, 1920, 3840];
+
+const snapToWikimediaThumbSize = (size: number) => {
+  return WIKIMEDIA_THUMB_SIZES.find(s => s >= size) ?? WIKIMEDIA_THUMB_SIZES[WIKIMEDIA_THUMB_SIZES.length - 1];
+};
+
 export const getThumbnailUrl = (imageUrl: string, size: number = 240) => {
   if (!imageUrl) return imageUrl;
-  
+
   if (imageUrl.includes('upload.wikimedia.org')) {
+    const snappedSize = snapToWikimediaThumbSize(size);
     // Pattern: /thumb/.../.../NNNpx-filename or /.../.../filename
     const thumbMatch = imageUrl.match(/\/thumb\/(.+)\/(\d+px-.+)$/);
     if (thumbMatch) {
       // Already a thumbnail, replace the size
       const [, path, filename] = thumbMatch;
-      const newFilename = filename.replace(/^\d+px-/, `${size}px-`);
+      const newFilename = filename.replace(/^\d+px-/, `${snappedSize}px-`);
       return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${newFilename}`;
     } else {
       // Original image, convert to thumbnail
@@ -27,11 +36,11 @@ export const getThumbnailUrl = (imageUrl: string, size: number = 240) => {
       if (pathMatch) {
         const [, path] = pathMatch;
         const filename = path.split('/').pop();
-        return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${size}px-${filename}`;
+        return `https://upload.wikimedia.org/wikipedia/commons/thumb/${path}/${snappedSize}px-${filename}`;
       }
     }
   }
-  
+
   return imageUrl;
 };
 
@@ -71,7 +80,7 @@ const preloadImage = (url: string): Promise<void> => {
       resolve();
     };
     
-    img.onerror = async (error) => {
+    img.onerror = async () => {
       if (img.crossOrigin) {
         const img2 = new Image();
         
