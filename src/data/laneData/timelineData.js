@@ -898,7 +898,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Water_frame",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/3/37/Awkright_water_frame_c1775.jpg/330px-Awkright_water_frame_c1775.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Arkwright-water-frame.jpg/330px-Arkwright-water-frame.jpg",
       },
       {
         type: "point",
@@ -1637,7 +1637,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/General_relativity",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/BBH_gravitational_lensing_of_gw150914.webm/320px--BBH_gravitational_lensing_of_gw150914.webm.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/BBH_gravitational_lensing_of_gw150914.webm/330px--BBH_gravitational_lensing_of_gw150914.webm.jpg",
       },
       {
         type: "point",
@@ -2045,7 +2045,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Constitution_of_the_United_States",
         category: "document",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Constitution_of_the_United_States%2C_page_1.jpg/330px-Constitution_of_the_United_States%2C_page_1.jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Constitution_of_the_United_States_-_DPLA_-_9ca804144bd5965e992ae3528bc3c6a3_%28page_1%29.jpg/330px-Constitution_of_the_United_States_-_DPLA_-_9ca804144bd5965e992ae3528bc3c6a3_%28page_1%29.jpg",
       },
     ],
   },
@@ -2466,7 +2466,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Zhao_Mengfu",
         category: "art",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/10_ZhaoMengfu-_Hoopoe_on_Bamboo._Shanghai_mus..jpg/2560px-10_ZhaoMengfu-_Hoopoe_on_Bamboo._Shanghai_mus..jpg",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/10_ZhaoMengfu-_Hoopoe_on_Bamboo._Shanghai_mus..jpg/1920px-10_ZhaoMengfu-_Hoopoe_on_Bamboo._Shanghai_mus..jpg",
       },
       {
         type: "point",
@@ -2836,7 +2836,7 @@ export const timelineData = [
         url: "https://en.wikipedia.org/wiki/Selective_breeding#History",
         category: "lightbulb",
         imageUrl:
-          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Mutation_and_selection_diagram_%282%29.svg/320px-Mutation_and_selection_diagram_%282%29.svg.png",
+          "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Mutation_and_selection_diagram_%282%29.svg/330px-Mutation_and_selection_diagram_%282%29.svg.png",
       },
       {
         type: "point",
